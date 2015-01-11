@@ -7,13 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95CE0E6633DCBA8F5F39E8A4 /* Pods_Rhymo_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F02D650142FCEEAED539E2 /* Pods_Rhymo_iOS.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DD15CF1E1A62E0DB00812A70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15CF1D1A62E0DB00812A70 /* AppDelegate.swift */; };
-		DD15CF201A62E0DB00812A70 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15CF1F1A62E0DB00812A70 /* FirstViewController.swift */; };
-		DD15CF221A62E0DB00812A70 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15CF211A62E0DB00812A70 /* SecondViewController.swift */; };
 		DD15CF251A62E0DB00812A70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD15CF231A62E0DB00812A70 /* Main.storyboard */; };
 		DD15CF271A62E0DB00812A70 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD15CF261A62E0DB00812A70 /* Images.xcassets */; };
 		DD15CF2A1A62E0DB00812A70 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD15CF281A62E0DB00812A70 /* LaunchScreen.xib */; };
 		DD15CF361A62E0DB00812A70 /* Rhymo_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15CF351A62E0DB00812A70 /* Rhymo_iOSTests.swift */; };
+		DD15CF431A62E75C00812A70 /* RhymoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15CF421A62E75C00812A70 /* RhymoClient.swift */; };
+		DD15CF461A62E84B00812A70 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15CF451A62E84B00812A70 /* User.swift */; };
+		DD30F8021A632CFE0033EB63 /* LandingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F8011A632CFD0033EB63 /* LandingInteractor.swift */; };
+		DD30F8041A6331080033EB63 /* LoginWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F8031A6331080033EB63 /* LoginWireframe.swift */; };
+		DD30F8061A6331210033EB63 /* RegisterWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F8051A6331210033EB63 /* RegisterWireframe.swift */; };
+		DD30F8081A6331700033EB63 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F8071A6331700033EB63 /* LoginViewController.swift */; };
+		DD30F80A1A63318F0033EB63 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F8091A63318F0033EB63 /* RegisterViewController.swift */; };
+		DD30F80C1A6333190033EB63 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F80B1A6333190033EB63 /* LoginPresenter.swift */; };
+		DD30F80E1A63335F0033EB63 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F80D1A63335F0033EB63 /* LoginInteractor.swift */; };
+		DD7BFDD81A6308DE009ADC4F /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDD71A6308DE009ADC4F /* AppDependencies.swift */; };
+		DD7BFDE21A630BBB009ADC4F /* AuthWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDE11A630BBB009ADC4F /* AuthWireframe.swift */; };
+		DD7BFDE41A630BE6009ADC4F /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDE31A630BE6009ADC4F /* RootWireframe.swift */; };
+		DDE410511A630DD8008D9A13 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE410501A630DD8008D9A13 /* HomeViewController.swift */; };
+		DDE410531A630E00008D9A13 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE410521A630E00008D9A13 /* LandingViewController.swift */; };
+		DDE410551A630EA5008D9A13 /* HomeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE410541A630EA5008D9A13 /* HomeWireframe.swift */; };
+		DDE410571A6313C5008D9A13 /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE410561A6313C5008D9A13 /* BaseWireframe.swift */; };
+		DDE410591A632776008D9A13 /* SolidButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE410581A632776008D9A13 /* SolidButton.swift */; };
+		DDE4105C1A63292D008D9A13 /* LandingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE4105B1A63292D008D9A13 /* LandingPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,17 +44,37 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5FDD20034E803DD162ABF232 /* Pods-Rhymo-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rhymo-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rhymo-iOS/Pods-Rhymo-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		8DD5EB6CCD74D2441677259E /* Pods-Rhymo-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rhymo-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rhymo-iOS/Pods-Rhymo-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		DD15CF181A62E0DB00812A70 /* Rhymo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rhymo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD15CF1C1A62E0DB00812A70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD15CF1D1A62E0DB00812A70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DD15CF1F1A62E0DB00812A70 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		DD15CF211A62E0DB00812A70 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		DD15CF241A62E0DB00812A70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD15CF261A62E0DB00812A70 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DD15CF291A62E0DB00812A70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DD15CF2F1A62E0DB00812A70 /* Rhymo-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rhymo-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD15CF341A62E0DB00812A70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD15CF351A62E0DB00812A70 /* Rhymo_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rhymo_iOSTests.swift; sourceTree = "<group>"; };
+		DD15CF401A62E65900812A70 /* Rhymo-iOS-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Rhymo-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		DD15CF421A62E75C00812A70 /* RhymoClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RhymoClient.swift; path = RhymoClient/RhymoClient.swift; sourceTree = "<group>"; };
+		DD15CF451A62E84B00812A70 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DD30F8011A632CFD0033EB63 /* LandingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingInteractor.swift; path = Interactor/LandingInteractor.swift; sourceTree = "<group>"; };
+		DD30F8031A6331080033EB63 /* LoginWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginWireframe.swift; path = Wireframe/LoginWireframe.swift; sourceTree = "<group>"; };
+		DD30F8051A6331210033EB63 /* RegisterWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterWireframe.swift; path = Wireframe/RegisterWireframe.swift; sourceTree = "<group>"; };
+		DD30F8071A6331700033EB63 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ViewController/LoginViewController.swift; sourceTree = "<group>"; };
+		DD30F8091A63318F0033EB63 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ViewController/RegisterViewController.swift; sourceTree = "<group>"; };
+		DD30F80B1A6333190033EB63 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPresenter.swift; path = Presenter/LoginPresenter.swift; sourceTree = "<group>"; };
+		DD30F80D1A63335F0033EB63 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginInteractor.swift; path = Interactor/LoginInteractor.swift; sourceTree = "<group>"; };
+		DD7BFDD71A6308DE009ADC4F /* AppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		DD7BFDE11A630BBB009ADC4F /* AuthWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthWireframe.swift; path = Wireframe/AuthWireframe.swift; sourceTree = "<group>"; };
+		DD7BFDE31A630BE6009ADC4F /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootWireframe.swift; path = Wireframe/RootWireframe.swift; sourceTree = "<group>"; };
+		DDE410501A630DD8008D9A13 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewController/HomeViewController.swift; sourceTree = "<group>"; };
+		DDE410521A630E00008D9A13 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingViewController.swift; path = ViewController/LandingViewController.swift; sourceTree = "<group>"; };
+		DDE410541A630EA5008D9A13 /* HomeWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeWireframe.swift; path = Wireframe/HomeWireframe.swift; sourceTree = "<group>"; };
+		DDE410561A6313C5008D9A13 /* BaseWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseWireframe.swift; path = Wireframe/BaseWireframe.swift; sourceTree = "<group>"; };
+		DDE410581A632776008D9A13 /* SolidButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SolidButton.swift; path = View/SolidButton.swift; sourceTree = "<group>"; };
+		DDE4105B1A63292D008D9A13 /* LandingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingPresenter.swift; path = Presenter/LandingPresenter.swift; sourceTree = "<group>"; };
+		E1F02D650142FCEEAED539E2 /* Pods_Rhymo_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rhymo_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95CE0E6633DCBA8F5F39E8A4 /* Pods_Rhymo_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +96,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B4615EBD50575D33E019DBA9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5FDD20034E803DD162ABF232 /* Pods-Rhymo-iOS.debug.xcconfig */,
+				8DD5EB6CCD74D2441677259E /* Pods-Rhymo-iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DD15CF0F1A62E0DB00812A70 = {
 			isa = PBXGroup;
 			children = (
 				DD15CF1A1A62E0DB00812A70 /* Rhymo-iOS */,
 				DD15CF321A62E0DB00812A70 /* Rhymo-iOSTests */,
 				DD15CF191A62E0DB00812A70 /* Products */,
+				B4615EBD50575D33E019DBA9 /* Pods */,
+				F341DC48B3112F834C579838 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,8 +129,15 @@
 			isa = PBXGroup;
 			children = (
 				DD15CF1D1A62E0DB00812A70 /* AppDelegate.swift */,
-				DD15CF1F1A62E0DB00812A70 /* FirstViewController.swift */,
-				DD15CF211A62E0DB00812A70 /* SecondViewController.swift */,
+				DD7BFDD71A6308DE009ADC4F /* AppDependencies.swift */,
+				DDE4104F1A630D3B008D9A13 /* View */,
+				DD7BFDE01A630B2D009ADC4F /* ViewController */,
+				DD7BFDD31A63004D009ADC4F /* Manager */,
+				DDE4105A1A63285D008D9A13 /* Presenter */,
+				DD7BFDD21A630043009ADC4F /* Interactor */,
+				DD15CF441A62E83100812A70 /* Model */,
+				DD7BFDDD1A630AB4009ADC4F /* Wireframe */,
+				DD15CF411A62E71500812A70 /* Client */,
 				DD15CF231A62E0DB00812A70 /* Main.storyboard */,
 				DD15CF261A62E0DB00812A70 /* Images.xcassets */,
 				DD15CF281A62E0DB00812A70 /* LaunchScreen.xib */,
@@ -94,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				DD15CF1C1A62E0DB00812A70 /* Info.plist */,
+				DD15CF401A62E65900812A70 /* Rhymo-iOS-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -115,6 +172,87 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		DD15CF411A62E71500812A70 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				DD15CF421A62E75C00812A70 /* RhymoClient.swift */,
+			);
+			name = Client;
+			sourceTree = "<group>";
+		};
+		DD15CF441A62E83100812A70 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DD15CF451A62E84B00812A70 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DD7BFDD21A630043009ADC4F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				DD30F8011A632CFD0033EB63 /* LandingInteractor.swift */,
+				DD30F80D1A63335F0033EB63 /* LoginInteractor.swift */,
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		DD7BFDD31A63004D009ADC4F /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		DD7BFDDD1A630AB4009ADC4F /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				DD7BFDE31A630BE6009ADC4F /* RootWireframe.swift */,
+				DDE410561A6313C5008D9A13 /* BaseWireframe.swift */,
+				DD7BFDE11A630BBB009ADC4F /* AuthWireframe.swift */,
+				DDE410541A630EA5008D9A13 /* HomeWireframe.swift */,
+				DD30F8031A6331080033EB63 /* LoginWireframe.swift */,
+				DD30F8051A6331210033EB63 /* RegisterWireframe.swift */,
+			);
+			name = Wireframe;
+			sourceTree = "<group>";
+		};
+		DD7BFDE01A630B2D009ADC4F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DDE410501A630DD8008D9A13 /* HomeViewController.swift */,
+				DDE410521A630E00008D9A13 /* LandingViewController.swift */,
+				DD30F8071A6331700033EB63 /* LoginViewController.swift */,
+				DD30F8091A63318F0033EB63 /* RegisterViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		DDE4104F1A630D3B008D9A13 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DDE410581A632776008D9A13 /* SolidButton.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		DDE4105A1A63285D008D9A13 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				DDE4105B1A63292D008D9A13 /* LandingPresenter.swift */,
+				DD30F80B1A6333190033EB63 /* LoginPresenter.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		F341DC48B3112F834C579838 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1F02D650142FCEEAED539E2 /* Pods_Rhymo_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +260,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD15CF391A62E0DB00812A70 /* Build configuration list for PBXNativeTarget "Rhymo-iOS" */;
 			buildPhases = (
+				63C76BC300D8A41E668BF681 /* Check Pods Manifest.lock */,
 				DD15CF141A62E0DB00812A70 /* Sources */,
 				DD15CF151A62E0DB00812A70 /* Frameworks */,
 				DD15CF161A62E0DB00812A70 /* Resources */,
+				2F4B05BDC67451174F072541 /* Embed Pods Frameworks */,
+				2EFC95E4F5A9A43B802E417A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,6 +305,7 @@
 				TargetAttributes = {
 					DD15CF171A62E0DB00812A70 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = X7N27TJG34;
 					};
 					DD15CF2E1A62E0DB00812A70 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -210,14 +352,78 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2EFC95E4F5A9A43B802E417A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rhymo-iOS/Pods-Rhymo-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2F4B05BDC67451174F072541 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rhymo-iOS/Pods-Rhymo-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63C76BC300D8A41E668BF681 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DD15CF141A62E0DB00812A70 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD15CF221A62E0DB00812A70 /* SecondViewController.swift in Sources */,
 				DD15CF1E1A62E0DB00812A70 /* AppDelegate.swift in Sources */,
-				DD15CF201A62E0DB00812A70 /* FirstViewController.swift in Sources */,
+				DD30F80E1A63335F0033EB63 /* LoginInteractor.swift in Sources */,
+				DD7BFDE41A630BE6009ADC4F /* RootWireframe.swift in Sources */,
+				DDE410571A6313C5008D9A13 /* BaseWireframe.swift in Sources */,
+				DD7BFDE21A630BBB009ADC4F /* AuthWireframe.swift in Sources */,
+				DD30F8041A6331080033EB63 /* LoginWireframe.swift in Sources */,
+				DD7BFDD81A6308DE009ADC4F /* AppDependencies.swift in Sources */,
+				DDE410591A632776008D9A13 /* SolidButton.swift in Sources */,
+				DDE410511A630DD8008D9A13 /* HomeViewController.swift in Sources */,
+				DD30F8021A632CFE0033EB63 /* LandingInteractor.swift in Sources */,
+				DD15CF431A62E75C00812A70 /* RhymoClient.swift in Sources */,
+				DD15CF461A62E84B00812A70 /* User.swift in Sources */,
+				DDE410531A630E00008D9A13 /* LandingViewController.swift in Sources */,
+				DD30F80C1A6333190033EB63 /* LoginPresenter.swift in Sources */,
+				DD30F8081A6331700033EB63 /* LoginViewController.swift in Sources */,
+				DD30F80A1A63318F0033EB63 /* RegisterViewController.swift in Sources */,
+				DDE4105C1A63292D008D9A13 /* LandingPresenter.swift in Sources */,
+				DD30F8061A6331210033EB63 /* RegisterWireframe.swift in Sources */,
+				DDE410551A630EA5008D9A13 /* HomeWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,9 +544,12 @@
 		};
 		DD15CF3A1A62E0DB00812A70 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FDD20034E803DD162ABF232 /* Pods-Rhymo-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Rhymo-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -348,9 +557,12 @@
 		};
 		DD15CF3B1A62E0DB00812A70 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DD5EB6CCD74D2441677259E /* Pods-Rhymo-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Rhymo-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -409,6 +621,7 @@
 				DD15CF3B1A62E0DB00812A70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DD15CF3C1A62E0DB00812A70 /* Build configuration list for PBXNativeTarget "Rhymo-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +630,7 @@
 				DD15CF3E1A62E0DB00812A70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
