@@ -23,6 +23,9 @@
 		DD30F80A1A63318F0033EB63 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F8091A63318F0033EB63 /* RegisterViewController.swift */; };
 		DD30F80C1A6333190033EB63 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F80B1A6333190033EB63 /* LoginPresenter.swift */; };
 		DD30F80E1A63335F0033EB63 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F80D1A63335F0033EB63 /* LoginInteractor.swift */; };
+		DD3646BC1A646E17008CA1B6 /* VenuesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3646BB1A646E17008CA1B6 /* VenuesListPresenter.swift */; };
+		DD3646BE1A648708008CA1B6 /* VenuesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3646BD1A648708008CA1B6 /* VenuesListViewController.swift */; };
+		DD3646C01A648786008CA1B6 /* VenuesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3646BF1A648786008CA1B6 /* VenuesListInteractor.swift */; };
 		DD470CFD1A63C59D0082F33D /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD470CFC1A63C59D0082F33D /* BaseInteractor.swift */; };
 		DD470CFF1A63C7AE0082F33D /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD470CFE1A63C7AE0082F33D /* BasePresenter.swift */; };
 		DD470D011A63C8350082F33D /* LoginContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD470D001A63C8350082F33D /* LoginContent.xib */; };
@@ -72,6 +75,9 @@
 		DD30F8091A63318F0033EB63 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ViewController/RegisterViewController.swift; sourceTree = "<group>"; };
 		DD30F80B1A6333190033EB63 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPresenter.swift; path = Presenter/LoginPresenter.swift; sourceTree = "<group>"; };
 		DD30F80D1A63335F0033EB63 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginInteractor.swift; path = Interactor/LoginInteractor.swift; sourceTree = "<group>"; };
+		DD3646BB1A646E17008CA1B6 /* VenuesListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenuesListPresenter.swift; path = Presenter/VenuesListPresenter.swift; sourceTree = "<group>"; };
+		DD3646BD1A648708008CA1B6 /* VenuesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenuesListViewController.swift; path = ViewController/VenuesListViewController.swift; sourceTree = "<group>"; };
+		DD3646BF1A648786008CA1B6 /* VenuesListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenuesListInteractor.swift; path = Interactor/VenuesListInteractor.swift; sourceTree = "<group>"; };
 		DD470CFC1A63C59D0082F33D /* BaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseInteractor.swift; path = Interactor/BaseInteractor.swift; sourceTree = "<group>"; };
 		DD470CFE1A63C7AE0082F33D /* BasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasePresenter.swift; path = Presenter/BasePresenter.swift; sourceTree = "<group>"; };
 		DD470D001A63C8350082F33D /* LoginContent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginContent.xib; path = View/LoginContent.xib; sourceTree = "<group>"; };
@@ -206,6 +212,7 @@
 				DD30F8011A632CFD0033EB63 /* LandingInteractor.swift */,
 				DD30F80D1A63335F0033EB63 /* LoginInteractor.swift */,
 				DD470CFC1A63C59D0082F33D /* BaseInteractor.swift */,
+				DD3646BF1A648786008CA1B6 /* VenuesListInteractor.swift */,
 			);
 			name = Interactor;
 			sourceTree = "<group>";
@@ -238,6 +245,7 @@
 				DD30F8071A6331700033EB63 /* LoginViewController.swift */,
 				DD30F8091A63318F0033EB63 /* RegisterViewController.swift */,
 				DDCD68E31A6436430079089F /* BaseViewController.swift */,
+				DD3646BD1A648708008CA1B6 /* VenuesListViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -267,6 +275,7 @@
 				DDE4105B1A63292D008D9A13 /* LandingPresenter.swift */,
 				DD30F80B1A6333190033EB63 /* LoginPresenter.swift */,
 				DD470CFE1A63C7AE0082F33D /* BasePresenter.swift */,
+				DD3646BB1A646E17008CA1B6 /* VenuesListPresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -436,9 +445,11 @@
 				DD470CFF1A63C7AE0082F33D /* BasePresenter.swift in Sources */,
 				DD470CFD1A63C59D0082F33D /* BaseInteractor.swift in Sources */,
 				DD30F80E1A63335F0033EB63 /* LoginInteractor.swift in Sources */,
+				DD3646BE1A648708008CA1B6 /* VenuesListViewController.swift in Sources */,
 				DD7BFDE41A630BE6009ADC4F /* RootWireframe.swift in Sources */,
 				DDCD68E41A6436430079089F /* BaseViewController.swift in Sources */,
 				DDE410571A6313C5008D9A13 /* BaseWireframe.swift in Sources */,
+				DD3646C01A648786008CA1B6 /* VenuesListInteractor.swift in Sources */,
 				DDCD68E21A6435990079089F /* AuthCompleteTransition.swift in Sources */,
 				DD7BFDE21A630BBB009ADC4F /* AuthWireframe.swift in Sources */,
 				DD30F8041A6331080033EB63 /* LoginWireframe.swift in Sources */,
@@ -456,6 +467,7 @@
 				DDE4105C1A63292D008D9A13 /* LandingPresenter.swift in Sources */,
 				DD30F8061A6331210033EB63 /* RegisterWireframe.swift in Sources */,
 				DDE410551A630EA5008D9A13 /* HomeWireframe.swift in Sources */,
+				DD3646BC1A646E17008CA1B6 /* VenuesListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

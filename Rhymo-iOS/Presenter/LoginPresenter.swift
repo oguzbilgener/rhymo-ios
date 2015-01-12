@@ -45,15 +45,12 @@ class LoginPresenter: BasePresenter {
         hud.indicatorView = JGProgressHUDIndicatorView(contentView: UIView())
         
         if let user = authenticatedUser {
+          // TODO: make this hud actually be seen
           hud.textLabel.text = "Welcome back, "+user.userName+"!"
           hud.showInView(self.userInterface?.view)
           hud.dismissAfterDelay(LoginResultDialogTimeout, animated: true)
           
-          NSLog("switch viewcontrollers")
-          let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-          if let window = appDelegate.window {
-            appDelegate.appDependencies.installRootViewControllerIntoWindow(window)
-          }
+          self.loginSuccess()
         }
         else {
           hud.textLabel.text = "Login failed."
@@ -63,5 +60,12 @@ class LoginPresenter: BasePresenter {
       }
     }
   }
-   
+  
+  private func loginSuccess() {
+    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    if let window = appDelegate.window {
+      appDelegate.appDependencies.installRootViewControllerIntoWindow(window)
+    }
+  }
+  
 }

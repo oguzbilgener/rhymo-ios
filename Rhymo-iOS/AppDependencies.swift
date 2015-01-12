@@ -25,7 +25,7 @@ class AppDependencies {
     if let user = authenticatedUser {
       NSLog("authenticated")
       rootWireframe.homeWireframe?.presentHomeInterfaceFromWindow(window)
-      rootWireframe.homeWireframe?.configureDependencies()
+      rootWireframe.homeWireframe?.configureDependencies(window)
     }
     else {
       NSLog("NOT authenticated")
