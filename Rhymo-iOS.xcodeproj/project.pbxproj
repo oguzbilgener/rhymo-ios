@@ -29,6 +29,8 @@
 		DD7BFDD81A6308DE009ADC4F /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDD71A6308DE009ADC4F /* AppDependencies.swift */; };
 		DD7BFDE21A630BBB009ADC4F /* AuthWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDE11A630BBB009ADC4F /* AuthWireframe.swift */; };
 		DD7BFDE41A630BE6009ADC4F /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDE31A630BE6009ADC4F /* RootWireframe.swift */; };
+		DDCD68E21A6435990079089F /* AuthCompleteTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCD68E11A6435990079089F /* AuthCompleteTransition.swift */; };
+		DDCD68E41A6436430079089F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCD68E31A6436430079089F /* BaseViewController.swift */; };
 		DDE410511A630DD8008D9A13 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE410501A630DD8008D9A13 /* HomeViewController.swift */; };
 		DDE410531A630E00008D9A13 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE410521A630E00008D9A13 /* LandingViewController.swift */; };
 		DDE410551A630EA5008D9A13 /* HomeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE410541A630EA5008D9A13 /* HomeWireframe.swift */; };
@@ -76,6 +78,8 @@
 		DD7BFDD71A6308DE009ADC4F /* AppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		DD7BFDE11A630BBB009ADC4F /* AuthWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthWireframe.swift; path = Wireframe/AuthWireframe.swift; sourceTree = "<group>"; };
 		DD7BFDE31A630BE6009ADC4F /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootWireframe.swift; path = Wireframe/RootWireframe.swift; sourceTree = "<group>"; };
+		DDCD68E11A6435990079089F /* AuthCompleteTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthCompleteTransition.swift; path = Transition/AuthCompleteTransition.swift; sourceTree = "<group>"; };
+		DDCD68E31A6436430079089F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ViewController/BaseViewController.swift; sourceTree = "<group>"; };
 		DDE410501A630DD8008D9A13 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewController/HomeViewController.swift; sourceTree = "<group>"; };
 		DDE410521A630E00008D9A13 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingViewController.swift; path = ViewController/LandingViewController.swift; sourceTree = "<group>"; };
 		DDE410541A630EA5008D9A13 /* HomeWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeWireframe.swift; path = Wireframe/HomeWireframe.swift; sourceTree = "<group>"; };
@@ -145,8 +149,8 @@
 				DD7BFDD21A630043009ADC4F /* Interactor */,
 				DD15CF441A62E83100812A70 /* Model */,
 				DD7BFDDD1A630AB4009ADC4F /* Wireframe */,
+				DDCD68E01A64355C0079089F /* Transition */,
 				DD15CF411A62E71500812A70 /* Client */,
-				DD15CF231A62E0DB00812A70 /* Main.storyboard */,
 				DD15CF261A62E0DB00812A70 /* Images.xcassets */,
 				DD15CF281A62E0DB00812A70 /* LaunchScreen.xib */,
 				DD15CF1B1A62E0DB00812A70 /* Supporting Files */,
@@ -233,13 +237,23 @@
 				DDE410521A630E00008D9A13 /* LandingViewController.swift */,
 				DD30F8071A6331700033EB63 /* LoginViewController.swift */,
 				DD30F8091A63318F0033EB63 /* RegisterViewController.swift */,
+				DDCD68E31A6436430079089F /* BaseViewController.swift */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		DDCD68E01A64355C0079089F /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				DDCD68E11A6435990079089F /* AuthCompleteTransition.swift */,
+			);
+			name = Transition;
 			sourceTree = "<group>";
 		};
 		DDE4104F1A630D3B008D9A13 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DD15CF231A62E0DB00812A70 /* Main.storyboard */,
 				DDE410581A632776008D9A13 /* SolidButton.swift */,
 				DD470D001A63C8350082F33D /* LoginContent.xib */,
 				DD2174041A63E7FB0061D86F /* LineTextField.swift */,
@@ -423,7 +437,9 @@
 				DD470CFD1A63C59D0082F33D /* BaseInteractor.swift in Sources */,
 				DD30F80E1A63335F0033EB63 /* LoginInteractor.swift in Sources */,
 				DD7BFDE41A630BE6009ADC4F /* RootWireframe.swift in Sources */,
+				DDCD68E41A6436430079089F /* BaseViewController.swift in Sources */,
 				DDE410571A6313C5008D9A13 /* BaseWireframe.swift in Sources */,
+				DDCD68E21A6435990079089F /* AuthCompleteTransition.swift in Sources */,
 				DD7BFDE21A630BBB009ADC4F /* AuthWireframe.swift in Sources */,
 				DD30F8041A6331080033EB63 /* LoginWireframe.swift in Sources */,
 				DD7BFDD81A6308DE009ADC4F /* AppDependencies.swift in Sources */,
@@ -570,6 +586,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Rhymo-iOS/Rhymo-iOS-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "Pods/**";
 			};
 			name = Debug;
 		};
@@ -585,6 +602,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Rhymo-iOS/Rhymo-iOS-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "Pods/**";
 			};
 			name = Release;
 		};

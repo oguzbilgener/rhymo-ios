@@ -39,6 +39,8 @@ class AuthWireframe: BaseWireframe {
     loginPresenter.loginInteractor = loginInteractor
     loginPresenter.loginWireframe = login
     
+    loginInteractor.output = loginPresenter
+    
     let viewController = window.rootViewController as LandingViewController
     viewController.eventHandler = authPresenter
     authPresenter?.userInterface = viewController

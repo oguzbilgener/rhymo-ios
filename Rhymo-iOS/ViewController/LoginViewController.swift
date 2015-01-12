@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import AYVibrantButton
 
 let LoginContentNibName = "LoginContent"
 let LoginEmailTag = 21
 let LoginPasswordTag = 22
 let loginButtonTag = 40
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: BaseViewController, UITextFieldDelegate {
   
   var eventHandler: LoginPresenter?
   
@@ -21,12 +22,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   var passwordField: UITextField?
 
   @IBOutlet weak var contentView: UIScrollView!
+  @IBOutlet weak var navigationBar: UINavigationBar!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+    navigationBar.shadowImage = UIImage()
+    navigationBar.translucent = true
 
     // Get the content of Login screen from a nib file
     let loginContent = NSBundle.mainBundle().loadNibNamed(LoginContentNibName, owner: self, options: nil)[0] as UIView
+    
     
     // Find email and passwords fields in it
     emailField = loginContent.viewWithTag(LoginEmailTag) as? UITextField
@@ -34,6 +41,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     let loginButton = loginContent.viewWithTag(loginButtonTag) as? UIButton
     loginButton?.addTarget(self, action: "loginButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+    
     
     // set this VC as delegate
     emailField?.delegate = self
@@ -56,6 +64,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   }
   
   func loginButtonPressed(sender: UIButton!) {
+    emailField?.resignFirstResponder()
+    passwordField?.resignFirstResponder()
     eventHandler?.login(email: emailField!.text, password: passwordField!.text)
   }
   
@@ -77,6 +87,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     else {
       textField.resignFirstResponder()
       eventHandler?.login(email: emailField!.text, password: passwordField!.text)
+    }
+    return true
+  }
+  
+  func textFieldShouldClear(textField: UITextField) -> Bool {
+    if(textField.tag == LoginEmailTag) {
+      passwordField?.text = ""
     }
     return true
   }

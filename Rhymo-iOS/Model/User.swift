@@ -12,6 +12,7 @@ class User {
   
   var id :Int = 0
   var userName : String = ""
+  var email : String = ""
   var password : String = ""
   var publicKey : String = ""
   var secretToken : String = ""

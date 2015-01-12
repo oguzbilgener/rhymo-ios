@@ -1,5 +1,5 @@
 //
-//  RegisterViewController.swift
+//  BaseViewController.swift
 //  Rhymo-iOS
 //
 //  Created by Oguz Bilgener on 12/01/15.
@@ -8,18 +8,21 @@
 
 import UIKit
 
-class RegisterViewController: BaseViewController {
+class BaseViewController: UIViewController {
+  
+  var transitioningBackgroundView : UIView = UIView()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
+    transitioningBackgroundView.userInteractionEnabled = true
         // Do any additional setup after loading the view.
-    }
+  }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
+  }
     
 
     /*

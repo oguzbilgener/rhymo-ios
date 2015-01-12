@@ -10,6 +10,19 @@ import UIKit
 
 class LoginInteractor: BaseInteractor {
   
-  let output: LoginPresenter?
+  var output: LoginPresenter?
+  
+  func login(#email: String, password: String, result: (User?) -> (Void)) {
+
+    let client = RhymoClient()
+    client.login(email: email, password: password, result: result)
+  }
+  
+  func validateLogin(#email: String, password: String) -> Bool {
+    if(email.isEmpty && password.isEmpty) {
+      return false
+    }
+    return true
+  }
    
 }

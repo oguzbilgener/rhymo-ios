@@ -156,6 +156,7 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="contentView" destination="qmL-lc-p5d" id="d2A-D4-eyc"/>
+                        <outlet property="navigationBar" destination="jbl-PT-to2" id="jhy-Z8-oIq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h3L-E5-BKV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -173,6 +174,14 @@
                     <view key="view" contentMode="scaleToFill" id="3UK-gR-Qsy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="logged in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUM-IB-Iwu">
+                                <rect key="frame" x="152" y="323" width="71" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="pRy-q3-G3Q"/>

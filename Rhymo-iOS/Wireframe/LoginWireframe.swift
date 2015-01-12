@@ -16,4 +16,8 @@ class LoginWireframe: BaseWireframe {
   override init() {
     
   }
+  
+  func loginCompleted() {
+    
+  }
 }

@@ -8,19 +8,11 @@
 
 import UIKit
 
-class LandingViewController: UIViewController {
+class LandingViewController: BaseViewController {
   
   var eventHandler: LandingPresenter?
 
   override func viewDidLoad() {
-    super.viewDidLoad()
-    NSLog("landingViewDidLoad")
-    if(eventHandler == nil) {
-      NSLog("eventHandler nil")
-    }
-    else {
-      NSLog("eventHandler not nil")
-    }
         // Do any additional setup after loading the view.
   }
 

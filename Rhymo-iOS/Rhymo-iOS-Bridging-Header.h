@@ -14,6 +14,6 @@
 #import <RPFloatingPlaceholders/RPFloatingPlaceholderTextField.h>
 #import <RPFloatingPlaceholders/RPFloatingPlaceholderTextView.h>
 
-#import <JGProgressHUD/JGProgressHUD.h>
+#import "JGProgressHUD/JGProgressHUD.h"
 
 #endif
