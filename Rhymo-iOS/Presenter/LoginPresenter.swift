@@ -8,14 +8,19 @@
 
 import UIKit
 
-class LoginPresenter {
+class LoginPresenter: BasePresenter {
+  
+  var loginInteractor: LoginInteractor?
+  var loginWireframe: LoginWireframe?
+  
+  var userInterface: LoginViewController?
   
   func cancel() {
-    
+    userInterface?.dismissViewControllerAnimated(true, completion: nil)
   }
   
-  func login() {
-    
+  func login(#email: String, password: String) {
+    NSLog("login")
   }
    
 }

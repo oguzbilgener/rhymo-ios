@@ -25,16 +25,11 @@ class AppDependencies {
     if let user = authenticatedUser {
       NSLog("authenticated")
       rootWireframe.homeWireframe?.presentHomeInterfaceFromWindow(window)
+      rootWireframe.homeWireframe?.configureDependencies()
     }
     else {
       NSLog("NOT authenticated")
-//      var landingViewController = window.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("LandingViewController") as UIViewController
-//      window.rootViewController?.dismissViewControllerAnimated(false, completion: { () -> Void in
-//        NSLog("dismiss rvc")
-//        window.rootViewController?.presentViewController(landingViewController, animated: false, completion: { () -> Void in
-//          NSLog("show landing completed")
-//        })
-//      })
+      rootWireframe.authWireframe?.configureDependencies(window)
       
     }
 
@@ -44,13 +39,19 @@ class AppDependencies {
     let authWireframe = AuthWireframe()
     let homeWireframe = HomeWireframe()
     
+    let landingInteractor = LandingInteractor()
+    let landingPresenter = LandingPresenter()
+    
     rootWireframe.authWireframe = authWireframe
     rootWireframe.homeWireframe = homeWireframe
     
-    let landingInteractor = LandingInteractor()
-    let landingPresenter = LandingPresenter()
-
+    authWireframe.authInteractor = landingInteractor
+    authWireframe.authPresenter = landingPresenter
     
+    landingPresenter.landingWireframe = authWireframe
+    landingPresenter.landingInteractor = landingInteractor
+    
+    landingInteractor.output = landingPresenter
     
   }
 }

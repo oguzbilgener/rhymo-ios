@@ -12,8 +12,11 @@ let LandingViewControllerIdentifier = "LandingViewController"
 
 class AuthWireframe: BaseWireframe {
 
-  var loginWireframe: LoginWireframe?
-  var registerWireframe: RegisterWireframe?
+  var login: LoginWireframe?
+  var register: RegisterWireframe?
+  
+  var authInteractor: LandingInteractor?
+  var authPresenter: LandingPresenter?
   
   func presentLandingInterfaceFromWindow(window: UIWindow) {
     window.rootViewController = landingViewControllerFromStoryboard()
@@ -21,5 +24,23 @@ class AuthWireframe: BaseWireframe {
   
   func landingViewControllerFromStoryboard() -> LandingViewController {
     return mainStoryboard().instantiateViewControllerWithIdentifier(LandingViewControllerIdentifier) as LandingViewController
+  }
+  
+  func configureDependencies(window: UIWindow) {
+    login = LoginWireframe()
+    register = RegisterWireframe()
+    
+    let loginInteractor = LoginInteractor()
+    let loginPresenter = LoginPresenter()
+    
+    login?.loginInteractor = loginInteractor
+    login?.loginPresenter = loginPresenter
+    
+    loginPresenter.loginInteractor = loginInteractor
+    loginPresenter.loginWireframe = login
+    
+    let viewController = window.rootViewController as LandingViewController
+    viewController.eventHandler = authPresenter
+    authPresenter?.userInterface = viewController
   }
 }

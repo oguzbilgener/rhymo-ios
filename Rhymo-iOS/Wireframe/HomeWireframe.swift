@@ -19,4 +19,8 @@ class HomeWireframe: BaseWireframe {
   func homeViewControllerFromStoryboard() -> HomeViewController {
     return mainStoryboard().instantiateViewControllerWithIdentifier(HomeViewControllerIdentifier) as HomeViewController
   }
+  
+  func configureDependencies() {
+    
+  }
 }

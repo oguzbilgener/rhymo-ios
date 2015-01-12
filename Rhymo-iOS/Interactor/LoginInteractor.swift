@@ -8,6 +8,8 @@
 
 import UIKit
 
-class LoginInteractor: NSObject {
+class LoginInteractor: BaseInteractor {
+  
+  let output: LoginPresenter?
    
 }

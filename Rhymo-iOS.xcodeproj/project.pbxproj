@@ -15,6 +15,7 @@
 		DD15CF361A62E0DB00812A70 /* Rhymo_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15CF351A62E0DB00812A70 /* Rhymo_iOSTests.swift */; };
 		DD15CF431A62E75C00812A70 /* RhymoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15CF421A62E75C00812A70 /* RhymoClient.swift */; };
 		DD15CF461A62E84B00812A70 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15CF451A62E84B00812A70 /* User.swift */; };
+		DD2174051A63E7FB0061D86F /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2174041A63E7FB0061D86F /* LineTextField.swift */; };
 		DD30F8021A632CFE0033EB63 /* LandingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F8011A632CFD0033EB63 /* LandingInteractor.swift */; };
 		DD30F8041A6331080033EB63 /* LoginWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F8031A6331080033EB63 /* LoginWireframe.swift */; };
 		DD30F8061A6331210033EB63 /* RegisterWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F8051A6331210033EB63 /* RegisterWireframe.swift */; };
@@ -22,6 +23,9 @@
 		DD30F80A1A63318F0033EB63 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F8091A63318F0033EB63 /* RegisterViewController.swift */; };
 		DD30F80C1A6333190033EB63 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F80B1A6333190033EB63 /* LoginPresenter.swift */; };
 		DD30F80E1A63335F0033EB63 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F80D1A63335F0033EB63 /* LoginInteractor.swift */; };
+		DD470CFD1A63C59D0082F33D /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD470CFC1A63C59D0082F33D /* BaseInteractor.swift */; };
+		DD470CFF1A63C7AE0082F33D /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD470CFE1A63C7AE0082F33D /* BasePresenter.swift */; };
+		DD470D011A63C8350082F33D /* LoginContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD470D001A63C8350082F33D /* LoginContent.xib */; };
 		DD7BFDD81A6308DE009ADC4F /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDD71A6308DE009ADC4F /* AppDependencies.swift */; };
 		DD7BFDE21A630BBB009ADC4F /* AuthWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDE11A630BBB009ADC4F /* AuthWireframe.swift */; };
 		DD7BFDE41A630BE6009ADC4F /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDE31A630BE6009ADC4F /* RootWireframe.swift */; };
@@ -58,6 +62,7 @@
 		DD15CF401A62E65900812A70 /* Rhymo-iOS-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Rhymo-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		DD15CF421A62E75C00812A70 /* RhymoClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RhymoClient.swift; path = RhymoClient/RhymoClient.swift; sourceTree = "<group>"; };
 		DD15CF451A62E84B00812A70 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DD2174041A63E7FB0061D86F /* LineTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineTextField.swift; path = View/LineTextField.swift; sourceTree = "<group>"; };
 		DD30F8011A632CFD0033EB63 /* LandingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingInteractor.swift; path = Interactor/LandingInteractor.swift; sourceTree = "<group>"; };
 		DD30F8031A6331080033EB63 /* LoginWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginWireframe.swift; path = Wireframe/LoginWireframe.swift; sourceTree = "<group>"; };
 		DD30F8051A6331210033EB63 /* RegisterWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterWireframe.swift; path = Wireframe/RegisterWireframe.swift; sourceTree = "<group>"; };
@@ -65,6 +70,9 @@
 		DD30F8091A63318F0033EB63 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ViewController/RegisterViewController.swift; sourceTree = "<group>"; };
 		DD30F80B1A6333190033EB63 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPresenter.swift; path = Presenter/LoginPresenter.swift; sourceTree = "<group>"; };
 		DD30F80D1A63335F0033EB63 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginInteractor.swift; path = Interactor/LoginInteractor.swift; sourceTree = "<group>"; };
+		DD470CFC1A63C59D0082F33D /* BaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseInteractor.swift; path = Interactor/BaseInteractor.swift; sourceTree = "<group>"; };
+		DD470CFE1A63C7AE0082F33D /* BasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasePresenter.swift; path = Presenter/BasePresenter.swift; sourceTree = "<group>"; };
+		DD470D001A63C8350082F33D /* LoginContent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginContent.xib; path = View/LoginContent.xib; sourceTree = "<group>"; };
 		DD7BFDD71A6308DE009ADC4F /* AppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		DD7BFDE11A630BBB009ADC4F /* AuthWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthWireframe.swift; path = Wireframe/AuthWireframe.swift; sourceTree = "<group>"; };
 		DD7BFDE31A630BE6009ADC4F /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootWireframe.swift; path = Wireframe/RootWireframe.swift; sourceTree = "<group>"; };
@@ -193,6 +201,7 @@
 			children = (
 				DD30F8011A632CFD0033EB63 /* LandingInteractor.swift */,
 				DD30F80D1A63335F0033EB63 /* LoginInteractor.swift */,
+				DD470CFC1A63C59D0082F33D /* BaseInteractor.swift */,
 			);
 			name = Interactor;
 			sourceTree = "<group>";
@@ -232,6 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				DDE410581A632776008D9A13 /* SolidButton.swift */,
+				DD470D001A63C8350082F33D /* LoginContent.xib */,
+				DD2174041A63E7FB0061D86F /* LineTextField.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -241,6 +252,7 @@
 			children = (
 				DDE4105B1A63292D008D9A13 /* LandingPresenter.swift */,
 				DD30F80B1A6333190033EB63 /* LoginPresenter.swift */,
+				DD470CFE1A63C7AE0082F33D /* BasePresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -338,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD15CF251A62E0DB00812A70 /* Main.storyboard in Resources */,
+				DD470D011A63C8350082F33D /* LoginContent.xib in Resources */,
 				DD15CF2A1A62E0DB00812A70 /* LaunchScreen.xib in Resources */,
 				DD15CF271A62E0DB00812A70 /* Images.xcassets in Resources */,
 			);
@@ -406,6 +419,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD15CF1E1A62E0DB00812A70 /* AppDelegate.swift in Sources */,
+				DD470CFF1A63C7AE0082F33D /* BasePresenter.swift in Sources */,
+				DD470CFD1A63C59D0082F33D /* BaseInteractor.swift in Sources */,
 				DD30F80E1A63335F0033EB63 /* LoginInteractor.swift in Sources */,
 				DD7BFDE41A630BE6009ADC4F /* RootWireframe.swift in Sources */,
 				DDE410571A6313C5008D9A13 /* BaseWireframe.swift in Sources */,
@@ -420,6 +435,7 @@
 				DDE410531A630E00008D9A13 /* LandingViewController.swift in Sources */,
 				DD30F80C1A6333190033EB63 /* LoginPresenter.swift in Sources */,
 				DD30F8081A6331700033EB63 /* LoginViewController.swift in Sources */,
+				DD2174051A63E7FB0061D86F /* LineTextField.swift in Sources */,
 				DD30F80A1A63318F0033EB63 /* RegisterViewController.swift in Sources */,
 				DDE4105C1A63292D008D9A13 /* LandingPresenter.swift in Sources */,
 				DD30F8061A6331210033EB63 /* RegisterWireframe.swift in Sources */,
@@ -548,10 +564,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Rhymo-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Rhymo-iOS/Rhymo-iOS-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -561,10 +579,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Rhymo-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Rhymo-iOS/Rhymo-iOS-Bridging-Header.h";
 			};
 			name = Release;
 		};

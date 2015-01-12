@@ -7,6 +7,9 @@ platform :ios, '8.0'
 pod 'SwiftyJSON', :git => "https://github.com/orta/SwiftyJSON", :branch => "podspec"
 pod 'Alamofire', :git => "https://github.com/mrackwitz/Alamofire.git", :branch => "podspec"
 pod 'Lockbox', '~> 2.1'
+pod 'RPFloatingPlaceholders', '~> 0.2.6'
+pod 'JGProgressHUD'
+pod 'AYVibrantButton'
 
 end
 

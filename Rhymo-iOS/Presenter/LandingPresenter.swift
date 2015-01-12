@@ -8,21 +8,28 @@
 
 import UIKit
 
-class LandingPresenter {
+class LandingPresenter: BasePresenter {
+  
+  let LoginViewControllerIdentifier = "LoginViewController"
+  let RegisterViewControllerIdentifier = "RegisterViewController"
   
   var landingInteractor: LandingInteractor?
   var landingWireframe: AuthWireframe?
   
-  init() {
-    
-  }
+  var userInterface: LandingViewController?
   
-  func register() {
-    
-  }
-
-  func signup() {
-
+  func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if(segue.identifier? == LoginViewControllerIdentifier) {
+      // Get the view controller
+      let loginViewController  = segue.destinationViewController as? LoginViewController
+      // Set it as the userInterface for LoginPresenter
+      landingWireframe?.login?.loginPresenter?.userInterface = loginViewController
+      // Set its event handler as LoginPresenter
+      loginViewController?.eventHandler = landingWireframe?.login?.loginPresenter
+    }
+    else if(segue.identifier? == RegisterViewControllerIdentifier) {
+      
+    }
   }
   
   func continueWithFacebook() {

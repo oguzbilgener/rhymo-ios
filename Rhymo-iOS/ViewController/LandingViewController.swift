@@ -9,11 +9,18 @@
 import UIKit
 
 class LandingViewController: UIViewController {
-
+  
+  var eventHandler: LandingPresenter?
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    NSLog("landingViewDidLoad")
+    if(eventHandler == nil) {
+      NSLog("eventHandler nil")
+    }
+    else {
+      NSLog("eventHandler not nil")
+    }
         // Do any additional setup after loading the view.
   }
 
@@ -28,14 +35,10 @@ class LandingViewController: UIViewController {
   }
   
 
-    /*
+  
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+      eventHandler?.prepareForSegue(segue, sender: sender)
     }
-    */
 
 }

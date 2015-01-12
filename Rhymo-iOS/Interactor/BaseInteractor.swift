@@ -1,5 +1,5 @@
 //
-//  LandingInteractor.swift
+//  BaseInteractor.swift
 //  Rhymo-iOS
 //
 //  Created by Oguz Bilgener on 12/01/15.
@@ -8,7 +8,10 @@
 
 import UIKit
 
-class LandingInteractor: BaseInteractor {
+class BaseInteractor {
   
-  var output: LandingPresenter?
+  init() {
+
+  }
+   
 }

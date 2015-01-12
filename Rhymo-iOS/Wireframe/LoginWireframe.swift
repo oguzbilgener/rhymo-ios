@@ -9,5 +9,11 @@
 import UIKit
 
 class LoginWireframe: BaseWireframe {
-   
+  
+  var loginInteractor: LoginInteractor?
+  var loginPresenter: LoginPresenter?
+  
+  override init() {
+    
+  }
 }

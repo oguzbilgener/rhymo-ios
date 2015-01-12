@@ -40,6 +40,9 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="CjY-MM-Px5" kind="presentation" identifier="RegisterViewController" id="FnM-EZ-Di9"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="LoginButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZF-3B-O91" customClass="SolidButton" customModule="Rhymo_iOS" customModuleProvider="target">
                                         <rect key="frame" x="156" y="500" width="125" height="39"/>
@@ -48,6 +51,9 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="bB4-56-LlZ" kind="presentation" identifier="LoginViewController" id="5dU-6c-gZA"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -80,7 +86,81 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Pv-Ya-aYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-0.5" y="-994.5"/>
+            <point key="canvasLocation" x="-4.5" y="-1124.5"/>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="Cj8-eq-HkP">
+            <objects>
+                <viewController storyboardIdentifier="RegisterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CjY-MM-Px5" customClass="RegisterViewController" customModule="Rhymo_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wwt-9a-2Bi"/>
+                        <viewControllerLayoutGuide type="bottom" id="MTD-Ee-pzi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RCk-n2-EhA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RVx-gQ-ibY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="590.5" y="-1652.5"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="yw1-f7-ugy">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bB4-56-LlZ" customClass="LoginViewController" customModule="Rhymo_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Itq-h7-t5T"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZiT-hv-a3J"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8fK-ER-0yW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmL-lc-p5d">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </scrollView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbl-PT-to2">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="barTintColor" red="0.78618421052631571" green="0.0039215686269999999" blue="0.1019607843" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Log In" id="4i8-om-uaN">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="DQn-9S-RDu">
+                                            <connections>
+                                                <action selector="cancelButtonPressed:" destination="bB4-56-LlZ" id="v7k-eJ-jcE"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.78823529410000004" green="0.0039215686269999999" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qmL-lc-p5d" firstAttribute="leading" secondItem="8fK-ER-0yW" secondAttribute="leadingMargin" constant="-16" id="2I8-cn-E2W"/>
+                            <constraint firstItem="ZiT-hv-a3J" firstAttribute="top" secondItem="qmL-lc-p5d" secondAttribute="bottom" id="5gL-7Y-3XQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jbl-PT-to2" secondAttribute="trailing" constant="-16" id="IFD-QS-O4o"/>
+                            <constraint firstItem="jbl-PT-to2" firstAttribute="top" secondItem="Itq-h7-t5T" secondAttribute="bottom" id="Zpt-FL-f6Q"/>
+                            <constraint firstItem="qmL-lc-p5d" firstAttribute="top" secondItem="jbl-PT-to2" secondAttribute="bottom" id="aAI-aZ-bAa"/>
+                            <constraint firstItem="jbl-PT-to2" firstAttribute="leading" secondItem="8fK-ER-0yW" secondAttribute="leadingMargin" constant="-16" id="tju-fc-0KS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qmL-lc-p5d" secondAttribute="trailing" constant="-16" id="tnT-ve-DMh"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="contentView" destination="qmL-lc-p5d" id="d2A-D4-eyc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h3L-E5-BKV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="590.5" y="-878.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tij-ch-jLg">
