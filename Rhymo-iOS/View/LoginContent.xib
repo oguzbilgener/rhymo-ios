@@ -55,7 +55,7 @@
                     </state>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.78823529410000004" green="0.0039215686269999999" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.62745098040000002" green="0.0039215686269999999" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="jAe-SV-88c" secondAttribute="trailing" constant="44" id="4vs-TJ-Qzx"/>
                 <constraint firstAttribute="trailing" secondItem="N3c-Mv-DwJ" secondAttribute="trailing" constant="44" id="7D0-Eo-pRI"/>

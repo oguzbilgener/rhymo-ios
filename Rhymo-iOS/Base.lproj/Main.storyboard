@@ -141,7 +141,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="0.78823529410000004" green="0.0039215686269999999" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.62745098039215685" green="0.0039215686274509803" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qmL-lc-p5d" firstAttribute="leading" secondItem="8fK-ER-0yW" secondAttribute="leadingMargin" constant="-16" id="2I8-cn-E2W"/>
                             <constraint firstItem="ZiT-hv-a3J" firstAttribute="top" secondItem="qmL-lc-p5d" secondAttribute="bottom" id="5gL-7Y-3XQ"/>

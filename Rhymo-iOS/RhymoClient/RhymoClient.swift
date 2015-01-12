@@ -64,6 +64,8 @@ class RhymoClient {
             user.profilePic = profilePic
           }
           
+          self.storeAuthenticatedUser(user)
+          
           result(user)
         }
         else {
@@ -87,7 +89,8 @@ class RhymoClient {
     let defaults = RhymoClient.getDefaults()
     
     // get the user object from an unencrypted data store
-    if let user = defaults.objectForKey(kUser) as? User {
+    if let data = defaults.objectForKey(kUser) as? NSData {
+      let user = NSKeyedUnarchiver.unarchiveObjectWithData(data) as User
       // fill the public key and secret token from an encrypted data store
       let publicKey = Lockbox.stringForKey(kPublicKey)
       let secretToken = Lockbox.stringForKey(kSecretToken)
@@ -113,9 +116,8 @@ class RhymoClient {
     
     let defaults = RhymoClient.getDefaults()
     
-    defaults.setObject(user, forKey: kUser)
-    
-    defaults.synchronize()
+    let data = NSKeyedArchiver.archivedDataWithRootObject(user)
+    defaults.setObject(data, forKey: kUser)
   }
   
   class func getDefaults() -> NSUserDefaults {
