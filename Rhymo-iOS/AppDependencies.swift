@@ -12,6 +12,7 @@ import UIKit
 let primaryColor = UIColor(rgba: "#C9011A")
 let darkPrimaryColor = UIColor(rgba: "#A0011A")
 let textOnPrimaryColor = UIColor(rgba: "#FFFFFF")
+let darkerTextOnPrimaryColor = UIColor(rgba: "#FFFFFFDD")
 
 class AppDependencies {
   
@@ -25,9 +26,10 @@ class AppDependencies {
   
   func installRootViewControllerIntoWindow(window: UIWindow) {
     
+    UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
+    
     authenticatedUser = RhymoClient.getAuthenticatedUser()
     if let user = authenticatedUser {
-      NSLog("authenticated")
       rootWireframe.homeWireframe?.presentHomeInterfaceFromWindow(window)
       rootWireframe.homeWireframe?.configureDependencies(window)
     }

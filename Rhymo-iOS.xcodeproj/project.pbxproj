@@ -33,6 +33,7 @@
 		DD7BFDE21A630BBB009ADC4F /* AuthWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDE11A630BBB009ADC4F /* AuthWireframe.swift */; };
 		DD7BFDE41A630BE6009ADC4F /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDE31A630BE6009ADC4F /* RootWireframe.swift */; };
 		DDA4313E1A65359300513755 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA4313D1A65359300513755 /* UIColorExtension.swift */; };
+		DDA431401A6558B500513755 /* VenuesListRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA4313F1A6558B500513755 /* VenuesListRefreshControl.swift */; };
 		DDCD68E21A6435990079089F /* AuthCompleteTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCD68E11A6435990079089F /* AuthCompleteTransition.swift */; };
 		DDCD68E41A6436430079089F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCD68E31A6436430079089F /* BaseViewController.swift */; };
 		DDE410511A630DD8008D9A13 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE410501A630DD8008D9A13 /* HomeViewController.swift */; };
@@ -41,6 +42,9 @@
 		DDE410571A6313C5008D9A13 /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE410561A6313C5008D9A13 /* BaseWireframe.swift */; };
 		DDE410591A632776008D9A13 /* SolidButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE410581A632776008D9A13 /* SolidButton.swift */; };
 		DDE4105C1A63292D008D9A13 /* LandingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE4105B1A63292D008D9A13 /* LandingPresenter.swift */; };
+		DDFDD9A41A65661B001F4AFA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFDD9A31A65661B001F4AFA /* CoreLocation.framework */; };
+		DDFDD9A61A658B85001F4AFA /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFDD9A51A658B85001F4AFA /* Venue.swift */; };
+		DDFDD9A81A658C77001F4AFA /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFDD9A71A658C77001F4AFA /* Point.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +90,7 @@
 		DD7BFDE11A630BBB009ADC4F /* AuthWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthWireframe.swift; path = Wireframe/AuthWireframe.swift; sourceTree = "<group>"; };
 		DD7BFDE31A630BE6009ADC4F /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootWireframe.swift; path = Wireframe/RootWireframe.swift; sourceTree = "<group>"; };
 		DDA4313D1A65359300513755 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = ThirdParty/UIColorExtension.swift; sourceTree = "<group>"; };
+		DDA4313F1A6558B500513755 /* VenuesListRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenuesListRefreshControl.swift; path = View/VenuesListRefreshControl.swift; sourceTree = "<group>"; };
 		DDCD68E11A6435990079089F /* AuthCompleteTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthCompleteTransition.swift; path = Transition/AuthCompleteTransition.swift; sourceTree = "<group>"; };
 		DDCD68E31A6436430079089F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ViewController/BaseViewController.swift; sourceTree = "<group>"; };
 		DDE410501A630DD8008D9A13 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewController/HomeViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +99,9 @@
 		DDE410561A6313C5008D9A13 /* BaseWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseWireframe.swift; path = Wireframe/BaseWireframe.swift; sourceTree = "<group>"; };
 		DDE410581A632776008D9A13 /* SolidButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SolidButton.swift; path = View/SolidButton.swift; sourceTree = "<group>"; };
 		DDE4105B1A63292D008D9A13 /* LandingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingPresenter.swift; path = Presenter/LandingPresenter.swift; sourceTree = "<group>"; };
+		DDFDD9A31A65661B001F4AFA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DDFDD9A51A658B85001F4AFA /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		DDFDD9A71A658C77001F4AFA /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		E1F02D650142FCEEAED539E2 /* Pods_Rhymo_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rhymo_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -102,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDFDD9A41A65661B001F4AFA /* CoreLocation.framework in Frameworks */,
 				95CE0E6633DCBA8F5F39E8A4 /* Pods_Rhymo_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,6 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				DD15CF451A62E84B00812A70 /* User.swift */,
+				DDFDD9A51A658B85001F4AFA /* Venue.swift */,
+				DDFDD9A71A658C77001F4AFA /* Point.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -276,6 +287,7 @@
 				DDE410581A632776008D9A13 /* SolidButton.swift */,
 				DD470D001A63C8350082F33D /* LoginContent.xib */,
 				DD2174041A63E7FB0061D86F /* LineTextField.swift */,
+				DDA4313F1A6558B500513755 /* VenuesListRefreshControl.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -294,6 +306,7 @@
 		F341DC48B3112F834C579838 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DDFDD9A31A65661B001F4AFA /* CoreLocation.framework */,
 				E1F02D650142FCEEAED539E2 /* Pods_Rhymo_iOS.framework */,
 			);
 			name = Frameworks;
@@ -452,7 +465,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDFDD9A81A658C77001F4AFA /* Point.swift in Sources */,
 				DD15CF1E1A62E0DB00812A70 /* AppDelegate.swift in Sources */,
+				DDFDD9A61A658B85001F4AFA /* Venue.swift in Sources */,
 				DD470CFF1A63C7AE0082F33D /* BasePresenter.swift in Sources */,
 				DD470CFD1A63C59D0082F33D /* BaseInteractor.swift in Sources */,
 				DD30F80E1A63335F0033EB63 /* LoginInteractor.swift in Sources */,
@@ -480,6 +495,7 @@
 				DD30F8061A6331210033EB63 /* RegisterWireframe.swift in Sources */,
 				DDE410551A630EA5008D9A13 /* HomeWireframe.swift in Sources */,
 				DD3646BC1A646E17008CA1B6 /* VenuesListPresenter.swift in Sources */,
+				DDA431401A6558B500513755 /* VenuesListRefreshControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

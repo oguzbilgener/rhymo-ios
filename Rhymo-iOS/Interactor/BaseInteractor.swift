@@ -8,9 +8,9 @@
 
 import UIKit
 
-class BaseInteractor {
+class BaseInteractor: NSObject {
   
-  init() {
+  override init() {
 
   }
    

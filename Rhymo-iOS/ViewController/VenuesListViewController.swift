@@ -15,15 +15,26 @@ class VenuesListViewController: BaseViewController {
   @IBOutlet weak var venuesTable: UITableView!
   
   var searchBar: UISearchBar?
+  var refreshControl: VenuesListRefreshControl?
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44))
+    // Set up the search bar
+    searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.navigationController!.navigationBar.frame.size.height))
     searchBar?.delegate = eventHandler
     searchBar?.tintColor = textOnPrimaryColor
     searchBar?.placeholder = "Search Venues"
+    searchBar?.searchBarStyle = UISearchBarStyle.Minimal
+    searchBar?.tintColor = textOnPrimaryColor
     self.navigationItem.titleView = searchBar!
+    
+    // Set up the pull to refresh view
+    refreshControl = VenuesListRefreshControl()
+    refreshControl!.addTarget(eventHandler, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+    venuesTable.addSubview(refreshControl!)
+    
+    eventHandler?.onViewLoadFinish(refreshControl!)
   }
 
   override func didReceiveMemoryWarning() {
@@ -43,7 +54,6 @@ class VenuesListViewController: BaseViewController {
   }
   func hideCancelItem() {
     searchBar?.setShowsCancelButton(false, animated: true)
-//    self.navigationItem.rightBarButtonItem = nil
   }
     
 

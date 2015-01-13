@@ -30,6 +30,8 @@ class RhymoClient {
     }
   }
   
+  // MARK - Unauthenticated requests
+  
   func login(#email: String, password: String, result: (User?) -> (Void)) {
     
     let loginUrl = RhymoEndpoint + "login"
@@ -45,7 +47,6 @@ class RhymoClient {
         (request, response, data, error) in
         if(error == nil && data != nil) {
           var json = JSON(data!)
-          print(json)
           var user = User()
           if let id = json["id"].int {
             user.id = id
@@ -94,7 +95,13 @@ class RhymoClient {
     self.authenticatedUser = nil
   }
   
-  // MARK: - Authentication Helpers
+  // MARK: - Authenticated requests
+  
+  func getVenuesNearby(location: Point) {
+    
+  }
+  
+  // MARK: - Authentication helpers
 
   class func getAuthenticatedUser() -> User? {
     
