@@ -22,7 +22,12 @@ class RhymoClient {
   private var authenticatedUser: User?
   
   init() {
-    authenticatedUser = RhymoClient.getAuthenticatedUser()
+    if let cachedUser = (UIApplication.sharedApplication().delegate as? AppDelegate)?.appDependencies.authenticatedUser {
+      authenticatedUser = cachedUser
+    }
+    else {
+      authenticatedUser = RhymoClient.getAuthenticatedUser()
+    }
   }
   
   func login(#email: String, password: String, result: (User?) -> (Void)) {
@@ -79,7 +84,14 @@ class RhymoClient {
   }
   
   func logout() {
+    let defaults = RhymoClient.getDefaults()
     
+    defaults.removeObjectForKey(kUser)
+    
+    Lockbox.setString("", forKey: kPublicKey)
+    Lockbox.setString("", forKey: kPublicKey)
+    
+    self.authenticatedUser = nil
   }
   
   // MARK: - Authentication Helpers
