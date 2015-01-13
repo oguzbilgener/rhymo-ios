@@ -111,9 +111,6 @@ class RhymoClient {
     Lockbox.setString(publicKey, forKey: kPublicKey)
     Lockbox.setString(secretToken, forKey: kSecretToken)
     
-    user.publicKey = ""
-    user.secretToken = ""
-    
     let defaults = RhymoClient.getDefaults()
     
     let data = NSKeyedArchiver.archivedDataWithRootObject(user)
