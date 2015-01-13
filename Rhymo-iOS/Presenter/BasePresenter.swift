@@ -8,9 +8,9 @@
 
 import UIKit
 
-class BasePresenter {
+class BasePresenter: NSObject {
   
-  init() {
+  override init() {
     
   }
    

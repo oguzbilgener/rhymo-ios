@@ -21,20 +21,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LhG-E8-WBc">
                                 <rect key="frame" x="36" y="60" width="303" height="547"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Rhymo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6r-jc-FuM">
-                                        <rect key="frame" x="33" y="60" width="237" height="96"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rhymo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6r-jc-FuM">
+                                        <rect key="frame" x="33" y="60" width="237" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="make your favourite song heard" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dd2-eF-YiL">
-                                        <rect key="frame" x="22" y="150" width="259" height="54"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="make your favourite song heard" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dd2-eF-YiL">
+                                        <rect key="frame" x="22" y="150" width="259" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="RegisterButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQ5-By-obz" customClass="SolidButton" customModule="Rhymo_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="22" y="500" width="125" height="39"/>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="RegisterButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQ5-By-obz" customClass="SolidButton" customModule="Rhymo_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="22" y="504" width="117" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Register">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -44,8 +44,8 @@
                                             <segue destination="CjY-MM-Px5" kind="presentation" identifier="RegisterViewController" id="FnM-EZ-Di9"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="LoginButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZF-3B-O91" customClass="SolidButton" customModule="Rhymo_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="156" y="500" width="125" height="39"/>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="LoginButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZF-3B-O91" customClass="SolidButton" customModule="Rhymo_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="164" y="504" width="117" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Log in">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -163,7 +163,7 @@
             </objects>
             <point key="canvasLocation" x="590.5" y="-878.5"/>
         </scene>
-        <!--Venues List View Controller-->
+        <!--Venues-->
         <scene sceneID="tij-ch-jLg">
             <objects>
                 <viewController id="dOY-qW-zT7" customClass="VenuesListViewController" customModule="Rhymo_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -175,39 +175,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="logged in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUM-IB-Iwu">
-                                <rect key="frame" x="152" y="323" width="71" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Olm-l4-krN">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="dOY-qW-zT7" id="TlZ-G2-mbe"/>
-                                </connections>
-                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="X7L-Et-SbG">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="X7L-Et-SbG" secondAttribute="trailing" constant="-16" id="BX5-ih-myl"/>
+                            <constraint firstItem="X7L-Et-SbG" firstAttribute="leading" secondItem="3UK-gR-Qsy" secondAttribute="leadingMargin" constant="-16" id="EQj-kc-Qjn"/>
+                            <constraint firstItem="X7L-Et-SbG" firstAttribute="top" secondItem="NXp-TE-o7y" secondAttribute="bottom" id="ZYs-IG-ZHO"/>
+                            <constraint firstItem="3R5-OY-ogB" firstAttribute="top" secondItem="X7L-Et-SbG" secondAttribute="bottom" id="mXe-kG-4oq"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="pRy-q3-G3Q"/>
+                    <navigationItem key="navigationItem" title="Venues" id="pRy-q3-G3Q"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="dHP-Me-u1S" id="Q1c-ps-Qi3"/>
+                        <outlet property="venuesTable" destination="X7L-Et-SbG" id="VH4-WD-HH0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhR-Ur-duB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="dHP-Me-u1S">
-                    <connections>
-                        <outlet property="delegate" destination="dOY-qW-zT7" id="en9-yk-Png"/>
-                        <outlet property="searchBar" destination="Olm-l4-krN" id="Nd7-0P-IR1"/>
-                        <outlet property="searchContentsController" destination="dOY-qW-zT7" id="dzD-1i-aPn"/>
-                        <outlet property="searchResultsDataSource" destination="dOY-qW-zT7" id="wl6-T5-4zo"/>
-                        <outlet property="searchResultsDelegate" destination="dOY-qW-zT7" id="ZwN-oX-cfy"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1247.5" y="-42.5"/>
         </scene>
@@ -221,6 +209,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JPG-bB-a6M">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.78823529410000004" green="0.0039215686269999999" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -232,4 +224,5 @@
             <point key="canvasLocation" x="606.5" y="-42.5"/>
         </scene>
     </scenes>
+    <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
 </document>

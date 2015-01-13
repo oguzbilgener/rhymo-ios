@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+let primaryColor = UIColor(rgba: "#C9011A")
+let darkPrimaryColor = UIColor(rgba: "#A0011A")
+let textOnPrimaryColor = UIColor(rgba: "#FFFFFF")
+
 class AppDependencies {
   
   var authenticatedUser: User?
