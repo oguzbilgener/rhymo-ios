@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Venue: NSObject {
+class Venue: NSObject, Printable {
   
   var id: Int = 0
   var name: String = ""
@@ -18,4 +18,8 @@ class Venue: NSObject {
   var coord: Point = Point()
   var info: String = ""
   var genres: [String] = []
+  
+  override var description: String {
+    return "\(name) at \(coord)"
+  }
 }

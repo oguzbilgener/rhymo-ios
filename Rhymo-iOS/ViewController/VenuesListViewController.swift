@@ -55,6 +55,9 @@ class VenuesListViewController: BaseViewController {
   func hideCancelItem() {
     searchBar?.setShowsCancelButton(false, animated: true)
   }
+  
+  // MARK: - Table data population
+  
     
 
     /*

@@ -160,4 +160,10 @@ class VenuesListInteractor: BaseInteractor, CLLocationManagerDelegate {
       self.submitSuccessfulLocationResult(location)
     }
   }
+  
+  // MARK: - HTTP Interactions
+  func getVenuesNearby(location: CLLocation, result: (error: NSError?, venues: [Venue]!)->()) {
+    let client = RhymoClient()
+    client.getVenuesNearby(Point(location: location), result: result)
+  }
 }

@@ -9,6 +9,8 @@
 #ifndef Rhymo_iOS_Rhymo_iOS_Bridging_Header_h
 #define Rhymo_iOS_Rhymo_iOS_Bridging_Header_h
 
+#import <CommonCrypto/CommonHMAC.h>
+
 #import <Lockbox/Lockbox.h>
 
 #import <RPFloatingPlaceholders/RPFloatingPlaceholderTextField.h>

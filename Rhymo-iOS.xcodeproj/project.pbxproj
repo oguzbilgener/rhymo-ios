@@ -16,6 +16,7 @@
 		DD15CF431A62E75C00812A70 /* RhymoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15CF421A62E75C00812A70 /* RhymoClient.swift */; };
 		DD15CF461A62E84B00812A70 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15CF451A62E84B00812A70 /* User.swift */; };
 		DD2174051A63E7FB0061D86F /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2174041A63E7FB0061D86F /* LineTextField.swift */; };
+		DD29BF301A65AF7700FC4EA3 /* Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD29BF2F1A65AF7700FC4EA3 /* Encryption.swift */; };
 		DD30F8021A632CFE0033EB63 /* LandingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F8011A632CFD0033EB63 /* LandingInteractor.swift */; };
 		DD30F8041A6331080033EB63 /* LoginWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F8031A6331080033EB63 /* LoginWireframe.swift */; };
 		DD30F8061A6331210033EB63 /* RegisterWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F8051A6331210033EB63 /* RegisterWireframe.swift */; };
@@ -73,6 +74,7 @@
 		DD15CF421A62E75C00812A70 /* RhymoClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RhymoClient.swift; path = RhymoClient/RhymoClient.swift; sourceTree = "<group>"; };
 		DD15CF451A62E84B00812A70 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DD2174041A63E7FB0061D86F /* LineTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineTextField.swift; path = View/LineTextField.swift; sourceTree = "<group>"; };
+		DD29BF2F1A65AF7700FC4EA3 /* Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Encryption.swift; path = RhymoClient/Encryption.swift; sourceTree = "<group>"; };
 		DD30F8011A632CFD0033EB63 /* LandingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingInteractor.swift; path = Interactor/LandingInteractor.swift; sourceTree = "<group>"; };
 		DD30F8031A6331080033EB63 /* LoginWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginWireframe.swift; path = Wireframe/LoginWireframe.swift; sourceTree = "<group>"; };
 		DD30F8051A6331210033EB63 /* RegisterWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterWireframe.swift; path = Wireframe/RegisterWireframe.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				DD15CF421A62E75C00812A70 /* RhymoClient.swift */,
+				DD29BF2F1A65AF7700FC4EA3 /* Encryption.swift */,
 			);
 			name = Client;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				DD15CF431A62E75C00812A70 /* RhymoClient.swift in Sources */,
 				DD15CF461A62E84B00812A70 /* User.swift in Sources */,
 				DDE410531A630E00008D9A13 /* LandingViewController.swift in Sources */,
+				DD29BF301A65AF7700FC4EA3 /* Encryption.swift in Sources */,
 				DD30F80C1A6333190033EB63 /* LoginPresenter.swift in Sources */,
 				DD30F8081A6331700033EB63 /* LoginViewController.swift in Sources */,
 				DD2174051A63E7FB0061D86F /* LineTextField.swift in Sources */,

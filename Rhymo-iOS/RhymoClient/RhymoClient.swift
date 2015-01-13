@@ -17,6 +17,8 @@ let kUser = "user_obj"
 let kPublicKey = "public_key"
 let kSecretToken = "secret_token"
 
+let RhymoErrorDomain = NSBundle.mainBundle().bundleIdentifier!
+
 class RhymoClient {
   
   private var authenticatedUser: User?
@@ -97,8 +99,74 @@ class RhymoClient {
   
   // MARK: - Authenticated requests
   
-  func getVenuesNearby(location: Point) {
-    
+  func getVenuesNearby(location: Point, result: (error: NSError?, venues: [Venue]!)->()) {
+    if let user = authenticatedUser {
+      let requestUrl = RhymoEndpoint + "venue/around"
+      
+      let parameters: [String: AnyObject] = [
+        "lat": location.lat,
+        "lon": location.lon
+      ]
+
+      let bodyJson = JSON(parameters)
+      if let bodyStr = bodyJson.rawString(encoding: NSUTF8StringEncoding, options: NSJSONWritingOptions.allZeros) {
+      
+        let publicKey = user.publicKey
+        let signature = RhymoClient.hmacSha1(key: user.secretToken, data: bodyStr)
+        
+        let queryString = "?public_key="+publicKey+"&signature="+signature
+        
+        let request = Alamofire.request(.POST, requestUrl + queryString, parameters: parameters, encoding: .JSON)
+          .validate()
+          .responseJSON {
+            (request, response, data, error) in
+            if(error == nil) {
+              let json = JSON(data!)
+              
+              var venues = [Venue]()
+              
+              for (index: String, values: JSON) in json {
+                let venue = Venue()
+                if let id = values["id"].int {
+                  venue.id = id
+                }
+                if let name = values["name"].string {
+                  venue.name = name
+                }
+                if let online = values["online"].int {
+                  venue.online = online == 1
+                }
+                if let address = values["address"].string {
+                  venue.address = address
+                }
+                if let lat = values["coord"]["lat"].double {
+                  venue.coord.lat = lat
+                }
+                if let lon = values["coord"]["lon"].double {
+                  venue.coord.lon = lon
+                }
+                if let info = values["info"].string {
+                  venue.info = info
+                }
+                venues.append(venue)
+              }
+              result(error: nil, venues: venues)
+            }
+            else {
+              result(error: error, venues: [])
+            }
+        }
+
+      }
+      else {
+        let error = NSError(domain: RhymoErrorDomain, code: 11, userInfo: nil)
+        result(error: error, venues: [])
+      }
+    }
+    else {
+      let error = NSError(domain: RhymoErrorDomain, code: 9, userInfo: nil)
+      result(error: error, venues: [])
+    }
   }
   
   // MARK: - Authentication helpers
@@ -134,6 +202,10 @@ class RhymoClient {
     
     let data = NSKeyedArchiver.archivedDataWithRootObject(user)
     defaults.setObject(data, forKey: kUser)
+  }
+  
+  class func hmacSha1(#key: String, data: String) -> String {
+    return data.hmac(.SHA1, key: key)
   }
   
   class func getDefaults() -> NSUserDefaults {

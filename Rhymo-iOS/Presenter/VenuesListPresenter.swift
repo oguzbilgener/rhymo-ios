@@ -25,19 +25,20 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
       if(interactor.lastLocationValid() == false) {
         interactor.getDeviceLocation({ (success, failReason, location) -> () in
           if(success) {
-            debugPrintln(location)
+            // Now that we have the device location, we can ask the server what venues are nearby
+            self.loadVenuesList(refreshControl, location: location!)
           }
           else {
+            // TODO: show alert, etc
             debugPrintln("location failed: \(failReason)")
           }
           refreshControl.endRefreshing()
           self.hideActivityIndicator()
         })
       }
-    }
-    else {
-      refreshControl.endRefreshing()
-      hideActivityIndicator()
+      else {
+        self.loadVenuesList(refreshControl, location: interactor.lastLocation!)
+      }
     }
   }
   
@@ -46,10 +47,6 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
     // maybe do other things later
   }
   
-  // MARK: - Refresh action
-  func loadVenuesList(location: CLLocation) {
-    
-  }
   
   // MARK: - Search Events
   func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
@@ -64,6 +61,18 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
   func searchBarCancelButtonClicked(searchBar: UISearchBar) {
     userInterface?.hideCancelItem()
     userInterface?.closeSearchBar()
+  }
+  
+  // MARK: - Venue loading
+  func loadVenuesList(refreshControl: UIRefreshControl, location: CLLocation) {
+    venuesListInteractor?.getVenuesNearby(location, result: self.onVenuesLoaded(refreshControl))
+  }
+  
+  func onVenuesLoaded(refreshControl: UIRefreshControl)(error: NSError?, venues: [Venue]!) {
+    debugPrintln("presenter onVenuesLoaded")
+    debugPrintln(venues)
+    refreshControl.endRefreshing()
+    hideActivityIndicator()
   }
   
   // MARK: - Helpers

@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class Point: NSObject {
+class Point: NSObject, Printable {
   
   var lat: Double = 0
   var lon: Double = 0
@@ -22,5 +22,9 @@ class Point: NSObject {
   init(location: CLLocation) {
     lat = location.coordinate.latitude
     lon = location.coordinate.longitude
+  }
+  
+  override var description: String {
+    return "\(lat), \(lon)"
   }
 }
