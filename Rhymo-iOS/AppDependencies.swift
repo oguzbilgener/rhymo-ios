@@ -11,8 +11,15 @@ import UIKit
 
 let primaryColor = UIColor(rgba: "#C9011A")
 let darkPrimaryColor = UIColor(rgba: "#A0011A")
+let accentColor = UIColor(rgba: "#F3F2F3")
+let contentBackgroundColor = UIColor(rgba: "#FFFFFF")
+
 let textOnPrimaryColor = UIColor(rgba: "#FFFFFF")
 let darkerTextOnPrimaryColor = UIColor(rgba: "#FFFFFFDD")
+let textOnLightColor = UIColor(rgba: "#000000")
+let disabledTextOnLightColor = UIColor(rgba: "#666666")
+let secondaryTextOnLightColor = UIColor(rgba: "#444444")
+let disabledSecondaryTextOnLightColor = UIColor(rgba: "#888888")
 
 class AppDependencies {
   

@@ -13,8 +13,9 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
   
   var venuesListInteractor: VenuesListInteractor?
   var venuesListWireframe: HomeWireframe?
-  
   var userInterface: VenuesListViewController?
+  
+  var venues = [Venue]()
   
   // MARK: - Refresh Events
   func refresh(refreshControl: VenuesListRefreshControl) {
@@ -69,11 +70,27 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
   }
   
   func onVenuesLoaded(refreshControl: UIRefreshControl)(error: NSError?, venues: [Venue]!) {
-    debugPrintln("presenter onVenuesLoaded")
-    debugPrintln(venues)
+    // debug mode: make many duplicates of venues to fill the table view
+    var duplicatedVenues = [Venue]()
+    for i in 0..<20 {
+      let v1 = Venue(venue: venues[0])
+      let v2 = Venue(venue: venues[1])
+      if(i % 2 == 0) {
+        v1.online = false
+        v2.online = false
+      }
+      else {
+        v1.online = true
+        v2.online = true
+      }
+      duplicatedVenues += [v1, v2]
+    }
+    self.venues = duplicatedVenues
+    userInterface?.venuesTable.reloadData()
     refreshControl.endRefreshing()
     hideActivityIndicator()
   }
+  
   
   // MARK: - Helpers
   

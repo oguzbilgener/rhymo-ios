@@ -178,6 +178,49 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="X7L-Et-SbG">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="VenueCell" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="0.0" reuseIdentifier="VenueCell" rowHeight="60" id="h2T-xu-PZm" customClass="VenueCell" customModule="Rhymo_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h2T-xu-PZm" id="paK-io-RRr">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_online" translatesAutoresizingMaskIntoConstraints="NO" id="s2d-MM-ow6">
+                                                    <rect key="frame" x="10" y="10" width="21" height="21"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_offline" translatesAutoresizingMaskIntoConstraints="NO" id="2e4-HC-Opx">
+                                                    <rect key="frame" x="10" y="10" width="21" height="21"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Burger House Bilkent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcb-UW-sDh">
+                                                    <rect key="frame" x="35" y="10" width="163" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06800 Cankaya Bilkent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGg-Ho-WQp">
+                                                    <rect key="frame" x="35" y="35" width="129" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VGg-Ho-WQp" firstAttribute="leading" secondItem="paK-io-RRr" secondAttribute="leadingMargin" constant="27" id="aUL-zE-uy2"/>
+                                                <constraint firstItem="s2d-MM-ow6" firstAttribute="leading" secondItem="paK-io-RRr" secondAttribute="leadingMargin" constant="2" id="g5e-fE-DhE"/>
+                                                <constraint firstItem="rcb-UW-sDh" firstAttribute="leading" secondItem="s2d-MM-ow6" secondAttribute="trailing" constant="4" id="hw0-I0-ubL"/>
+                                                <constraint firstItem="s2d-MM-ow6" firstAttribute="top" secondItem="paK-io-RRr" secondAttribute="topMargin" constant="2" id="tog-cJ-ZYw"/>
+                                                <constraint firstItem="VGg-Ho-WQp" firstAttribute="top" secondItem="rcb-UW-sDh" secondAttribute="bottom" constant="4" id="uAd-SC-MWY"/>
+                                                <constraint firstItem="rcb-UW-sDh" firstAttribute="top" secondItem="paK-io-RRr" secondAttribute="topMargin" constant="2" id="zBz-vF-ceO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="iconOffline" destination="2e4-HC-Opx" id="riD-Oh-tOS"/>
+                                            <outlet property="iconOnline" destination="s2d-MM-ow6" id="OSD-rs-qYI"/>
+                                            <outlet property="venueAddress" destination="VGg-Ho-WQp" id="7Zc-dY-GOS"/>
+                                            <outlet property="venueTitle" destination="rcb-UW-sDh" id="t8y-QF-miH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -198,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhR-Ur-duB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1247.5" y="-42.5"/>
+            <point key="canvasLocation" x="1247.5" y="-43.5"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="XEX-Fl-j0d">
@@ -226,5 +269,9 @@
             <point key="canvasLocation" x="606.5" y="-42.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_offline" width="21" height="21"/>
+        <image name="icon_online" width="21" height="21"/>
+    </resources>
     <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
 </document>

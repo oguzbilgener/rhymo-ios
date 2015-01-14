@@ -19,6 +19,22 @@ class Venue: NSObject, Printable {
   var info: String = ""
   var genres: [String] = []
   
+  override init() {
+    
+  }
+  
+  init(venue: Venue) {
+    // TODO: make real deep copy
+    id = venue.id
+    name = venue.name
+    address = venue.address
+    online = venue.online
+    photos = venue.photos
+    coord = Point(point: venue.coord)
+    info = venue.info
+    genres = venue.genres
+  }
+  
   override var description: String {
     return "\(name) at \(coord)"
   }

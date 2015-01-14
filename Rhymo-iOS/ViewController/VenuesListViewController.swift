@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VenuesListViewController: BaseViewController {
+class VenuesListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
   
   var eventHandler: VenuesListPresenter?
 
@@ -34,6 +34,9 @@ class VenuesListViewController: BaseViewController {
     refreshControl!.addTarget(eventHandler, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
     venuesTable.addSubview(refreshControl!)
     
+    venuesTable.dataSource = self
+    venuesTable.delegate = self
+    
     eventHandler?.onViewLoadFinish(refreshControl!)
   }
 
@@ -57,6 +60,55 @@ class VenuesListViewController: BaseViewController {
   }
   
   // MARK: - Table data population
+  
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCellWithIdentifier("VenueCell", forIndexPath: indexPath) as VenueCell
+  
+    let titleLabel = cell.venueTitle
+    let descriptionLabel = cell.venueAddress
+    let onlineIcon = cell.iconOnline
+    let offlineIcon = cell.iconOffline
+    
+    cell.selectionStyle = UITableViewCellSelectionStyle.None
+    
+    let venue = eventHandler!.venues[indexPath.row]
+    
+    titleLabel.text = venue.name
+    descriptionLabel.text = venue.address
+    
+    if(venue.online) {
+      titleLabel.textColor = textOnLightColor
+      descriptionLabel.textColor = secondaryTextOnLightColor
+      onlineIcon.hidden = false
+      offlineIcon.hidden = true
+    }
+    else {
+      titleLabel.textColor = disabledTextOnLightColor
+      descriptionLabel.textColor = disabledSecondaryTextOnLightColor
+      onlineIcon.hidden = true
+      offlineIcon.hidden = false
+    }
+    return cell
+  }
+  
+  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    return 1
+  }
+  
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    if let handler = eventHandler {
+      return eventHandler!.venues.count
+    }
+    return 0
+  }
+  
+  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return 59
+  }
+  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    println("touched \(indexPath.row)")
+  }
   
     
 

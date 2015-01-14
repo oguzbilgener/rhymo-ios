@@ -35,6 +35,8 @@
 		DD7BFDE41A630BE6009ADC4F /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDE31A630BE6009ADC4F /* RootWireframe.swift */; };
 		DDA4313E1A65359300513755 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA4313D1A65359300513755 /* UIColorExtension.swift */; };
 		DDA431401A6558B500513755 /* VenuesListRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA4313F1A6558B500513755 /* VenuesListRefreshControl.swift */; };
+		DDAA4ECB1A666D1D00CF0C82 /* VenueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAA4ECA1A666D1D00CF0C82 /* VenueCell.swift */; };
+		DDCC3BED1A668C3400071EDB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCC3BEC1A668C3400071EDB /* MapKit.framework */; };
 		DDCD68E21A6435990079089F /* AuthCompleteTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCD68E11A6435990079089F /* AuthCompleteTransition.swift */; };
 		DDCD68E41A6436430079089F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCD68E31A6436430079089F /* BaseViewController.swift */; };
 		DDE410511A630DD8008D9A13 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE410501A630DD8008D9A13 /* HomeViewController.swift */; };
@@ -93,6 +95,8 @@
 		DD7BFDE31A630BE6009ADC4F /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootWireframe.swift; path = Wireframe/RootWireframe.swift; sourceTree = "<group>"; };
 		DDA4313D1A65359300513755 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = ThirdParty/UIColorExtension.swift; sourceTree = "<group>"; };
 		DDA4313F1A6558B500513755 /* VenuesListRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenuesListRefreshControl.swift; path = View/VenuesListRefreshControl.swift; sourceTree = "<group>"; };
+		DDAA4ECA1A666D1D00CF0C82 /* VenueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenueCell.swift; path = View/VenueCell.swift; sourceTree = "<group>"; };
+		DDCC3BEC1A668C3400071EDB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DDCD68E11A6435990079089F /* AuthCompleteTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthCompleteTransition.swift; path = Transition/AuthCompleteTransition.swift; sourceTree = "<group>"; };
 		DDCD68E31A6436430079089F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ViewController/BaseViewController.swift; sourceTree = "<group>"; };
 		DDE410501A630DD8008D9A13 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewController/HomeViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDCC3BED1A668C3400071EDB /* MapKit.framework in Frameworks */,
 				DDFDD9A41A65661B001F4AFA /* CoreLocation.framework in Frameworks */,
 				95CE0E6633DCBA8F5F39E8A4 /* Pods_Rhymo_iOS.framework in Frameworks */,
 			);
@@ -287,10 +292,11 @@
 			isa = PBXGroup;
 			children = (
 				DD15CF231A62E0DB00812A70 /* Main.storyboard */,
-				DDE410581A632776008D9A13 /* SolidButton.swift */,
 				DD470D001A63C8350082F33D /* LoginContent.xib */,
+				DDE410581A632776008D9A13 /* SolidButton.swift */,
 				DD2174041A63E7FB0061D86F /* LineTextField.swift */,
 				DDA4313F1A6558B500513755 /* VenuesListRefreshControl.swift */,
+				DDAA4ECA1A666D1D00CF0C82 /* VenueCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -309,6 +315,7 @@
 		F341DC48B3112F834C579838 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DDCC3BEC1A668C3400071EDB /* MapKit.framework */,
 				DDFDD9A31A65661B001F4AFA /* CoreLocation.framework */,
 				E1F02D650142FCEEAED539E2 /* Pods_Rhymo_iOS.framework */,
 			);
@@ -486,6 +493,7 @@
 				DDE410591A632776008D9A13 /* SolidButton.swift in Sources */,
 				DDE410511A630DD8008D9A13 /* HomeViewController.swift in Sources */,
 				DDA4313E1A65359300513755 /* UIColorExtension.swift in Sources */,
+				DDAA4ECB1A666D1D00CF0C82 /* VenueCell.swift in Sources */,
 				DD30F8021A632CFE0033EB63 /* LandingInteractor.swift in Sources */,
 				DD15CF431A62E75C00812A70 /* RhymoClient.swift in Sources */,
 				DD15CF461A62E84B00812A70 /* User.swift in Sources */,

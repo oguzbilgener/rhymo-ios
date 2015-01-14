@@ -19,6 +19,11 @@ class Point: NSObject, Printable {
     lon = 0
   }
   
+  init(point: Point) {
+    lat = point.lat
+    lon = point.lon
+  }
+  
   init(location: CLLocation) {
     lat = location.coordinate.latitude
     lon = location.coordinate.longitude
