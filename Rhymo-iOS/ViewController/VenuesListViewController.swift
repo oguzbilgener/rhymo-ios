@@ -57,6 +57,14 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
     venuesTable.tableHeaderView = headerView
     
     eventHandler?.onViewLoadFinish(refreshControl!)
+    
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+  }
+  
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+    NSNotificationCenter.defaultCenter().removeObserver(self)
   }
 
   override func didReceiveMemoryWarning() {
@@ -156,6 +164,26 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
         annotation.coordinate = venue.coord.asCoordinate
         annotation.title = venue.name
         mapView.addAnnotation(annotation)
+      }
+    }
+  }
+  
+  func keyboardWillShow(notification: NSNotification) {
+    // Prevent keyboard from overlapping the table view
+    debugPrintln(self.venuesTable?.contentOffset)
+    if let userInfo = notification.userInfo {
+      if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+        self.venuesTable?.contentInset.bottom = self.venuesTable!.contentInset.bottom + keyboardSize.height
+      }
+    }
+  }
+  
+  func keyboardWillHide(notification: NSNotification) {
+    // Restore table view to its previous state
+    debugPrintln(self.venuesTable?.contentOffset)
+    if let userInfo = notification.userInfo {
+      if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+          self.venuesTable?.contentInset.bottom = self.venuesTable!.contentInset.bottom - keyboardSize.height
       }
     }
   }

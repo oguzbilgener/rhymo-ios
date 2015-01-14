@@ -10,7 +10,7 @@
             <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" tag="21" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HCt-Rc-Myb">
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" tag="21" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HCt-Rc-Myb">
                     <rect key="frame" x="0.0" y="1" width="300" height="148"/>
                 </mapView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYv-ts-fBT">
@@ -20,7 +20,7 @@
                         <constraint firstAttribute="height" constant="1" id="RdP-tp-MiR"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZq-eh-OrA">
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iZq-eh-OrA">
                     <rect key="frame" x="0.0" y="149" width="300" height="1"/>
                     <color key="backgroundColor" red="0.89803921568627454" green="0.8901960784313725" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -30,7 +30,7 @@
             </subviews>
             <constraints>
                 <constraint firstItem="uYv-ts-fBT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0yb-GT-FlW"/>
-                <constraint firstAttribute="bottom" secondItem="iZq-eh-OrA" secondAttribute="bottom" id="5Sr-o7-Fdt"/>
+                <constraint firstItem="iZq-eh-OrA" firstAttribute="top" secondItem="HCt-Rc-Myb" secondAttribute="bottom" id="Ddo-kV-MFw"/>
                 <constraint firstAttribute="trailing" secondItem="iZq-eh-OrA" secondAttribute="trailing" id="GbX-UC-pcb"/>
                 <constraint firstItem="iZq-eh-OrA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XfK-kO-wsR"/>
                 <constraint firstItem="uYv-ts-fBT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hJt-vZ-a7r"/>

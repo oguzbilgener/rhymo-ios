@@ -85,6 +85,8 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
         v1.online = true
         v2.online = true
       }
+      v1.name += String(2*i)
+      v2.name += String(2*i+1)
       duplicatedVenues += [v1, v2]
     }
     self.venues = duplicatedVenues
