@@ -21,6 +21,7 @@ let textOnLightColor = UIColor(rgba: "#000000")
 let disabledTextOnLightColor = UIColor(rgba: "#666666")
 let secondaryTextOnLightColor = UIColor(rgba: "#444444")
 let disabledSecondaryTextOnLightColor = UIColor(rgba: "#888888")
+let primaryTextOnLightColor = primaryColor
 
 class AppDependencies {
   
@@ -42,9 +43,7 @@ class AppDependencies {
       rootWireframe.homeWireframe?.configureDependencies(window)
     }
     else {
-      NSLog("NOT authenticated")
       rootWireframe.authWireframe?.configureDependencies(window)
-      
     }
 
   }

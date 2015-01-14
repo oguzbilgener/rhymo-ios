@@ -15,6 +15,8 @@ class HomeWireframe: BaseWireframe {
   var venuesListInteractor: VenuesListInteractor?
   var venuesListPresenter: VenuesListPresenter?
   
+  var venueDetailsWireframe: VenueDetailsWireframe?
+  
   func presentHomeInterfaceFromWindow(window: UIWindow) {
     window.rootViewController = homeViewControllerFromStoryboard()
   }
@@ -32,10 +34,16 @@ class HomeWireframe: BaseWireframe {
     venuesListPresenter?.venuesListInteractor = venuesListInteractor
     venuesListPresenter?.venuesListWireframe = self
     
+    venueDetailsWireframe = VenueDetailsWireframe()
+    
     let navigationViewController = window.rootViewController as UINavigationController
 
     let venuesListViewController = navigationViewController.viewControllers[0] as VenuesListViewController
     venuesListViewController.eventHandler = venuesListPresenter
     venuesListPresenter?.userInterface = venuesListViewController
+  }
+  
+  func passVenueToDetails(venue: Venue) {
+    venueDetailsWireframe?.venue = venue
   }
 }

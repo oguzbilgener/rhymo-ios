@@ -86,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Pv-Ya-aYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4.5" y="-1124.5"/>
+            <point key="canvasLocation" x="15.5" y="-1278.5"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="Cj8-eq-HkP">
@@ -220,6 +220,7 @@
                                             <outlet property="iconOnline" destination="s2d-MM-ow6" id="OSD-rs-qYI"/>
                                             <outlet property="venueAddress" destination="VGg-Ho-WQp" id="7Zc-dY-GOS"/>
                                             <outlet property="venueTitle" destination="rcb-UW-sDh" id="t8y-QF-miH"/>
+                                            <segue destination="haa-Iz-Ay3" kind="show" identifier="Show Venue Details" id="kNs-zO-jq4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -243,7 +244,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhR-Ur-duB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1247.5" y="-43.5"/>
+            <point key="canvasLocation" x="590.5" y="18.5"/>
+        </scene>
+        <!--Venue Details-->
+        <scene sceneID="J9e-hb-uzk">
+            <objects>
+                <viewController id="haa-Iz-Ay3" customClass="VenueDetailsViewController" customModule="Rhymo_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FW8-iR-vc4"/>
+                        <viewControllerLayoutGuide type="bottom" id="VTN-Ql-cle"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zlr-JT-b5w">
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Venue Details" id="fYD-C2-PQH"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="335" height="667"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Wt-qJ-Pb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1101.5" y="18.5"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="XEX-Fl-j0d">
@@ -268,7 +291,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ezI-jZ-Szh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="606.5" y="-42.5"/>
+            <point key="canvasLocation" x="15.5" y="18.5"/>
         </scene>
     </scenes>
     <resources>

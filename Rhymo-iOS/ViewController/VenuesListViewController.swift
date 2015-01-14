@@ -139,7 +139,7 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
   }
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    println("touched \(indexPath.row)")
+    // segue already handles it
   }
   
   func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -168,6 +168,7 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
   }
   
   // MARK: - map management
+  
   func buildMap(location: CLLocation, venues: [Venue]) {
     if let mapView = self.mapView {
       let loc = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
@@ -204,14 +205,12 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
   }
     
 
-    /*
+  
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+      eventHandler?.prepareForSegue(segue, sender: sender)
     }
-    */
+  
 
 }

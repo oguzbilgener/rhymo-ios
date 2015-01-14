@@ -134,6 +134,15 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
   // MARK: - Segue delegation
   
   func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-      
+    if let cell = sender as? UITableViewCell {
+      if let path = userInterface?.venuesTable.indexPathForCell(cell) {
+        if let window = UIApplication.sharedApplication().delegate?.window? {
+          if let viewController = segue.destinationViewController as? VenueDetailsViewController {
+            venuesListWireframe?.venueDetailsWireframe?.configureDependencies(window, viewController: viewController)
+            venuesListWireframe?.passVenueToDetails(venues[path.row])
+          }
+        }
+      }
+    }
   }
 }
