@@ -13,6 +13,7 @@ let primaryColor = UIColor(rgba: "#C9011A")
 let darkPrimaryColor = UIColor(rgba: "#A0011A")
 let accentColor = UIColor(rgba: "#F3F2F3")
 let contentBackgroundColor = UIColor(rgba: "#FFFFFF")
+let containerBackgroundColor = UIColor(rgba: "#FAF9FA")
 
 let textOnPrimaryColor = UIColor(rgba: "#FFFFFF")
 let darkerTextOnPrimaryColor = UIColor(rgba: "#FFFFFFDD")

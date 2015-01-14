@@ -23,12 +23,12 @@ class VenueCell: UITableViewCell {
   
   override func touchesEnded(touches: NSSet, withEvent: UIEvent) {
     super.touchesEnded(touches, withEvent: withEvent)
-    self.backgroundColor = UIColor.clearColor()
+    self.backgroundColor = contentBackgroundColor
   }
   
   override func touchesCancelled(touches: NSSet, withEvent: UIEvent) {
     super.touchesCancelled(touches, withEvent: withEvent)
-    self.backgroundColor = UIColor.clearColor()
+    self.backgroundColor = contentBackgroundColor
   }
 
 }

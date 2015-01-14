@@ -7,6 +7,12 @@
 //
 
 import UIKit
+import MapKit
+
+let VenuesListHeaderNibName = "VenuesListHeader"
+let VenuesSectionHeaderNibName = "VenuesSectionHeader"
+
+let MapViewTag = 21
 
 class VenuesListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
   
@@ -16,6 +22,7 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
   
   var searchBar: UISearchBar?
   var refreshControl: VenuesListRefreshControl?
+  var mapView: MKMapView?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -36,6 +43,15 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
     
     venuesTable.dataSource = self
     venuesTable.delegate = self
+    
+    let tableBackgroundView = UIView(frame: venuesTable.bounds)
+    tableBackgroundView.backgroundColor = containerBackgroundColor
+    venuesTable.backgroundView = tableBackgroundView
+    
+    // Set up the table header
+    let headerView = NSBundle.mainBundle().loadNibNamed(VenuesListHeaderNibName, owner: self, options: nil)[0] as UIView
+    mapView = headerView.viewWithTag(MapViewTag) as? MKMapView
+    venuesTable.tableHeaderView = headerView
     
     eventHandler?.onViewLoadFinish(refreshControl!)
   }
@@ -108,6 +124,19 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     println("touched \(indexPath.row)")
+  }
+  
+  func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    if(section == 0) {
+      let headerView = NSBundle.mainBundle().loadNibNamed(VenuesSectionHeaderNibName, owner: self, options: nil)[0] as UITableViewHeaderFooterView
+      headerView.contentView.backgroundColor = containerBackgroundColor
+      return NSBundle.mainBundle().loadNibNamed(VenuesSectionHeaderNibName, owner: self, options: nil)[0] as? UIView
+    }
+    return nil
+  }
+  
+  func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return 33
   }
   
     

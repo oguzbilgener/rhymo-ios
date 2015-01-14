@@ -19,6 +19,7 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
   
   // MARK: - Refresh Events
   func refresh(refreshControl: VenuesListRefreshControl) {
+    refreshControl.beginRefreshing()
     showActivityIndicator()
 
     if let interactor = venuesListInteractor {
