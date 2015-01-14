@@ -35,8 +35,26 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
             self.loadVenuesList(refreshControl, location: location!)
           }
           else {
-            // TODO: show alert, etc
+            // TODO: show a better alert
             debugPrintln("location failed: \(failReason)")
+            if let reason = failReason {
+              let alertTitle = "Location failed"
+              var alertBody = ""
+              switch(reason) {
+              case .Inaccurate:
+                alertBody = "Device location is not accurate enough"
+              case .NoPermission:
+                alertBody = "Not allowed to obtain location"
+              case .Timeout:
+                alertBody = "Timeout while obtaining location"
+              case .OtherError:
+                alertBody = "Some other error"
+              case .None:
+                alertBody = "Some other other error"
+              }
+              let alert = UIAlertView(title: alertTitle, message: alertBody, delegate: nil, cancelButtonTitle: "Ok")
+              alert.show()
+            }
           }
           refreshControl.endRefreshing()
           self.hideActivityIndicator()
@@ -88,24 +106,7 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
   }
   
   func onVenuesLoaded(#refreshControl: UIRefreshControl, location: CLLocation)(error: NSError?, venues: [Venue]!) {
-    // debug mode: make many duplicates of venues to fill the table view
-    var duplicatedVenues = [Venue]()
-    for i in 0..<20 {
-      let v1 = Venue(venue: venues[0])
-      let v2 = Venue(venue: venues[1])
-      if(i % 2 == 0) {
-        v1.online = false
-        v2.online = false
-      }
-      else {
-        v1.online = true
-        v2.online = true
-      }
-      v1.name += String(2*i)
-      v2.name += String(2*i+1)
-      duplicatedVenues += [v1, v2]
-    }
-    self.venues = duplicatedVenues
+    self.venues = venues
     self.filteredVenues = self.venues
     self.lastLocation = location
     userInterface?.venuesTable.reloadData()
