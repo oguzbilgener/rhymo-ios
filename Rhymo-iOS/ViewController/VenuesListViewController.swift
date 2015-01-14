@@ -98,7 +98,7 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
     
     cell.selectionStyle = UITableViewCellSelectionStyle.None
     
-    let venue = eventHandler!.venues[indexPath.row]
+    let venue = eventHandler!.filteredVenues[indexPath.row]
     
     titleLabel.text = venue.name
     descriptionLabel.text = venue.address
@@ -124,7 +124,7 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if let handler = eventHandler {
-      return eventHandler!.venues.count
+      return eventHandler!.filteredVenues.count
     }
     return 0
   }
@@ -170,7 +170,6 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
   
   func keyboardWillShow(notification: NSNotification) {
     // Prevent keyboard from overlapping the table view
-    debugPrintln(self.venuesTable?.contentOffset)
     if let userInfo = notification.userInfo {
       if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
         self.venuesTable?.contentInset.bottom = self.venuesTable!.contentInset.bottom + keyboardSize.height
@@ -180,7 +179,6 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
   
   func keyboardWillHide(notification: NSNotification) {
     // Restore table view to its previous state
-    debugPrintln(self.venuesTable?.contentOffset)
     if let userInfo = notification.userInfo {
       if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
           self.venuesTable?.contentInset.bottom = self.venuesTable!.contentInset.bottom - keyboardSize.height

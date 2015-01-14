@@ -45,7 +45,7 @@ class VenuesListInteractor: BaseInteractor, CLLocationManagerDelegate {
     locationManager.delegate = self
   }
   
-  // MARK - Location Interface
+  // MARK: - Location Interface
   
   func getDeviceLocation(resultClosure: ((success: Bool, failReason: FailReason?, location: CLLocation?) -> ())!) {
     self.locationResultClosure = resultClosure
@@ -124,6 +124,7 @@ class VenuesListInteractor: BaseInteractor, CLLocationManagerDelegate {
   }
   
   // MARK: - Location Events
+  
   func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
     self.failedAttempts = self.failedAttempts + 1
     if(self.failedAttempts > LocationMaximumFailedAttempts) {
@@ -162,8 +163,25 @@ class VenuesListInteractor: BaseInteractor, CLLocationManagerDelegate {
   }
   
   // MARK: - HTTP Interactions
+  
   func getVenuesNearby(location: CLLocation, result: (error: NSError?, venues: [Venue]!)->()) {
     let client = RhymoClient()
     client.getVenuesNearby(Point(location: location), result: result)
+  }
+  
+  // MARK: - Search
+  
+  func filterVenuesByName(#venues: [Venue], keyword: String) -> [Venue] {
+    if(countElements(keyword) == 0) {
+      return venues
+    }
+    let keywordLowercase = keyword.lowercaseString
+    var filteredVenues = [Venue]()
+    for venue in venues {
+      if(venue.name.lowercaseString.rangeOfString(keywordLowercase) != nil) {
+        filteredVenues.append(venue)
+      }
+    }
+    return filteredVenues
   }
 }

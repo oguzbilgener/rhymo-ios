@@ -15,9 +15,12 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
   var venuesListWireframe: HomeWireframe?
   var userInterface: VenuesListViewController?
   
+  var lastLocation: CLLocation?
   var venues = [Venue]()
+  var filteredVenues = [Venue]()
   
   // MARK: - Refresh Events
+  
   func refresh(refreshControl: VenuesListRefreshControl) {
     refreshControl.beginRefreshing()
     userInterface?.venuesTable.contentOffset = CGPoint(x:0, y:-60)
@@ -52,8 +55,9 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
   
   
   // MARK: - Search Events
+  
   func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-    // TODO: Filter the list, update the UI accordingly
+    searchInVenues(searchText)
   }
   
   func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
@@ -62,11 +66,23 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
   }
   
   func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+    searchInVenues("")
     userInterface?.hideCancelItem()
     userInterface?.closeSearchBar()
   }
   
+  func searchInVenues(keyword: String) {
+    if let interactor = venuesListInteractor {
+      filteredVenues = interactor.filterVenuesByName(venues: venues, keyword: keyword)
+      if let location = lastLocation {
+        userInterface?.buildMap(location, venues: venues)
+      }
+      userInterface?.venuesTable.reloadData()
+    }
+  }
+  
   // MARK: - Venue loading
+  
   func loadVenuesList(refreshControl: UIRefreshControl, location: CLLocation) {
     venuesListInteractor?.getVenuesNearby(location, result: self.onVenuesLoaded(refreshControl: refreshControl, location: location))
   }
@@ -90,6 +106,8 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
       duplicatedVenues += [v1, v2]
     }
     self.venues = duplicatedVenues
+    self.filteredVenues = self.venues
+    self.lastLocation = location
     userInterface?.venuesTable.reloadData()
     userInterface?.buildMap(location, venues: venues)
     refreshControl.endRefreshing()
