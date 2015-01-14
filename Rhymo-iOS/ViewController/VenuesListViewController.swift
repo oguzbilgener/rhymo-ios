@@ -47,6 +47,8 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
     let tableBackgroundView = UIView(frame: venuesTable.bounds)
     tableBackgroundView.backgroundColor = containerBackgroundColor
     venuesTable.backgroundView = tableBackgroundView
+
+    venuesTable.tableFooterView = UIView(frame: CGRectZero)
     
     // Set up the table header and map view
     let headerView = NSBundle.mainBundle().loadNibNamed(VenuesListHeaderNibName, owner: self, options: nil)[0] as UIView
