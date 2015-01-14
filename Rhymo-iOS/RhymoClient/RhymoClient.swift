@@ -126,28 +126,7 @@ class RhymoClient {
               var venues = [Venue]()
               
               for (index: String, values: JSON) in json {
-                let venue = Venue()
-                if let id = values["id"].int {
-                  venue.id = id
-                }
-                if let name = values["name"].string {
-                  venue.name = name
-                }
-                if let online = values["online"].int {
-                  venue.online = online == 1
-                }
-                if let address = values["address"].string {
-                  venue.address = address
-                }
-                if let lat = values["coord"]["lat"].double {
-                  venue.coord.lat = lat
-                }
-                if let lon = values["coord"]["lon"].double {
-                  venue.coord.lon = lon
-                }
-                if let info = values["info"].string {
-                  venue.info = info
-                }
+                let venue = self.parseVenue(values)
                 venues.append(venue)
               }
               result(error: nil, venues: venues)
@@ -167,6 +146,74 @@ class RhymoClient {
       let error = NSError(domain: RhymoErrorDomain, code: 9, userInfo: nil)
       result(error: error, venues: [])
     }
+  }
+  
+  func getVenueDetails(venueId: Int, result: (error: NSError?, venue: Venue?)->()) {
+    if let user = authenticatedUser {
+      let requestUrl = RhymoEndpoint + "venue/\(venueId)"
+      
+      let parameters: [String: AnyObject] = [
+        "id": venueId
+      ]
+      
+      let bodyJson = JSON(parameters)
+      if let bodyStr = bodyJson.rawString(encoding: NSUTF8StringEncoding, options: NSJSONWritingOptions.allZeros) {
+        
+        let publicKey = user.publicKey
+        let signature = RhymoClient.hmacSha1(key: user.secretToken, data: bodyStr)
+        
+        let queryString = "?public_key="+publicKey+"&signature="+signature
+        
+        let request = Alamofire.request(.POST, requestUrl + queryString, parameters: parameters, encoding: .JSON)
+          .validate()
+          .responseJSON {
+            (request, response, data, error) in
+            if(error == nil) {
+              let json = JSON(data!)
+              let venue = self.parseVenue(json)
+              result(error: nil, venue: venue)
+            }
+            else {
+              result(error: error, venue: nil)
+            }
+        }
+      }
+      else {
+        let error = NSError(domain: RhymoErrorDomain, code: 11, userInfo: nil)
+        result(error: error, venue: nil)
+      }
+    }
+    else {
+      let error = NSError(domain: RhymoErrorDomain, code: 9, userInfo: nil)
+      result(error: error, venue: nil)
+    }
+  }
+  
+  // MARK: - Parsing helpers
+  private func parseVenue(json: JSON) -> Venue {
+    let venue = Venue()
+    if let id = json["id"].int {
+      venue.id = id
+    }
+    if let name = json["name"].string {
+      venue.name = name
+    }
+    if let online = json["online"].int {
+      venue.online = online == 1
+    }
+    if let address = json["address"].string {
+      venue.address = address
+    }
+    if let lat = json["coord"]["lat"].double {
+      venue.coord.lat = lat
+    }
+    if let lon = json["coord"]["lon"].double {
+      venue.coord.lon = lon
+    }
+    if let info = json["info"].string {
+      venue.info = info
+    }
+    return venue
   }
   
   // MARK: - Authentication helpers
