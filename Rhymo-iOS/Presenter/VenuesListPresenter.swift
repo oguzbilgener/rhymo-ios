@@ -95,7 +95,7 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
       if let location = lastLocation {
         userInterface?.buildMap(location, venues: venues)
       }
-      userInterface?.venuesTable.reloadData()
+      updateVenuesList()
     }
   }
   
@@ -109,10 +109,15 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
     self.venues = venues
     self.filteredVenues = self.venues
     self.lastLocation = location
-    userInterface?.venuesTable.reloadData()
+    updateVenuesList()
     userInterface?.buildMap(location, venues: venues)
     refreshControl.endRefreshing()
     hideActivityIndicator()
+  }
+  
+  func updateVenuesList() {
+    userInterface?.updateTableSectionHeaderView(filteredVenues.count)
+    userInterface?.venuesTable.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Fade)
   }
   
   

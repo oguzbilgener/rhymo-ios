@@ -13,16 +13,17 @@ let VenuesListHeaderNibName = "VenuesListHeader"
 let VenuesSectionHeaderNibName = "VenuesSectionHeader"
 
 let MapViewTag = 21
+let VenuesSectionTitleTag = 24
 
 class VenuesListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
   
   var eventHandler: VenuesListPresenter?
 
   @IBOutlet weak var venuesTable: UITableView!
-  
   var searchBar: UISearchBar?
   var refreshControl: VenuesListRefreshControl?
   var mapView: MKMapView?
+  var tableSectionHeaderView: UIView?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -58,7 +59,7 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
     mapView!.updateConstraints()
     venuesTable.tableHeaderView = headerView
     
-    venuesTable.registerNib(UINib(nibName: VenuesSectionHeaderNibName, bundle: NSBundle.mainBundle()), forHeaderFooterViewReuseIdentifier: "VenuesSectionHeader")
+    tableSectionHeaderView = NSBundle.mainBundle().loadNibNamed(VenuesSectionHeaderNibName, owner: self, options: nil)[0] as? UITableViewHeaderFooterView
     
     eventHandler?.onViewLoadFinish(refreshControl!)
     
@@ -142,19 +143,28 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
   }
   
   func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    if(section == 0 && eventHandler != nil && eventHandler?.filteredVenues.count > 0) {
-      var headerView = tableView.dequeueReusableHeaderFooterViewWithIdentifier("VenuesSectionHeader") as? UITableViewHeaderFooterView
-      if(headerView == nil) {
-        headerView = NSBundle.mainBundle().loadNibNamed(VenuesSectionHeaderNibName, owner: self, options: nil)[0] as? UITableViewHeaderFooterView
-      }
-      headerView?.contentView.backgroundColor = containerBackgroundColor
-      return headerView
-    }
-    return nil
+    return tableSectionHeaderView
   }
   
   func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     return 33
+  }
+  
+  func updateTableSectionHeaderView(venueCount: Int) {
+    if let headerView = tableSectionHeaderView {
+      if(venueCount > 0) {
+        if let label = headerView.viewWithTag(VenuesSectionTitleTag) as? UILabel {
+          label.textColor = primaryTextOnLightColor
+          label.text = "Venues Around You"
+        }
+      }
+      else {
+        if let label = headerView.viewWithTag(VenuesSectionTitleTag) as? UILabel {
+          label.textColor = disabledTextOnLightColor
+          label.text = "No Venues Around"
+        }
+      }
+    }
   }
   
   // MARK: - map management
