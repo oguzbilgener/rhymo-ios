@@ -58,6 +58,8 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
     mapView!.updateConstraints()
     venuesTable.tableHeaderView = headerView
     
+    venuesTable.registerNib(UINib(nibName: VenuesSectionHeaderNibName, bundle: NSBundle.mainBundle()), forHeaderFooterViewReuseIdentifier: "VenuesSectionHeader")
+    
     eventHandler?.onViewLoadFinish(refreshControl!)
     
     NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
@@ -140,10 +142,13 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
   }
   
   func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    if(section == 0) {
-      let headerView = NSBundle.mainBundle().loadNibNamed(VenuesSectionHeaderNibName, owner: self, options: nil)[0] as UITableViewHeaderFooterView
-      headerView.contentView.backgroundColor = containerBackgroundColor
-      return NSBundle.mainBundle().loadNibNamed(VenuesSectionHeaderNibName, owner: self, options: nil)[0] as? UIView
+    if(section == 0 && eventHandler != nil && eventHandler?.filteredVenues.count > 0) {
+      var headerView = tableView.dequeueReusableHeaderFooterViewWithIdentifier("VenuesSectionHeader") as? UITableViewHeaderFooterView
+      if(headerView == nil) {
+        headerView = NSBundle.mainBundle().loadNibNamed(VenuesSectionHeaderNibName, owner: self, options: nil)[0] as? UITableViewHeaderFooterView
+      }
+      headerView?.contentView.backgroundColor = containerBackgroundColor
+      return headerView
     }
     return nil
   }
