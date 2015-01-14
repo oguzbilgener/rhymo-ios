@@ -6,44 +6,40 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="355" height="170"/>
+        <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" tag="21" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HCt-Rc-Myb">
-                    <rect key="frame" x="0.0" y="1" width="355" height="168"/>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" tag="21" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HCt-Rc-Myb">
+                    <rect key="frame" x="0.0" y="1" width="300" height="148"/>
                 </mapView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYv-ts-fBT">
-                    <rect key="frame" x="0.0" y="0.0" width="355" height="1"/>
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="1"/>
                     <color key="backgroundColor" red="0.8980392157" green="0.89019607840000003" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="1" id="w5V-F0-mwx"/>
+                        <constraint firstAttribute="height" constant="1" id="RdP-tp-MiR"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZq-eh-OrA">
-                    <rect key="frame" x="0.0" y="169" width="355" height="1"/>
+                    <rect key="frame" x="0.0" y="149" width="300" height="1"/>
                     <color key="backgroundColor" red="0.89803921568627454" green="0.8901960784313725" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="1" id="dio-U3-foZ"/>
+                        <constraint firstAttribute="height" constant="1" id="Mcn-26-wzQ"/>
                     </constraints>
                 </view>
             </subviews>
             <constraints>
-                <constraint firstItem="iZq-eh-OrA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="38F-tp-vDo"/>
-                <constraint firstItem="uYv-ts-fBT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5ww-Fn-NB7"/>
-                <constraint firstAttribute="trailing" secondItem="HCt-Rc-Myb" secondAttribute="trailing" id="FUf-Hf-a9t"/>
-                <constraint firstItem="HCt-Rc-Myb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="1" id="RoE-34-Vms"/>
-                <constraint firstItem="uYv-ts-fBT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dzL-fK-zOn"/>
-                <constraint firstItem="HCt-Rc-Myb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="i13-wZ-hNg"/>
-                <constraint firstAttribute="trailing" secondItem="iZq-eh-OrA" secondAttribute="trailing" id="kjF-fL-txT"/>
-                <constraint firstAttribute="bottom" secondItem="HCt-Rc-Myb" secondAttribute="bottom" constant="1" id="l7w-mk-lhK"/>
-                <constraint firstItem="iZq-eh-OrA" firstAttribute="top" secondItem="HCt-Rc-Myb" secondAttribute="bottom" id="o4C-Yu-gG3"/>
-                <constraint firstAttribute="trailing" secondItem="uYv-ts-fBT" secondAttribute="trailing" id="oBy-Ef-nNc"/>
+                <constraint firstItem="uYv-ts-fBT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0yb-GT-FlW"/>
+                <constraint firstAttribute="bottom" secondItem="iZq-eh-OrA" secondAttribute="bottom" id="5Sr-o7-Fdt"/>
+                <constraint firstAttribute="trailing" secondItem="iZq-eh-OrA" secondAttribute="trailing" id="GbX-UC-pcb"/>
+                <constraint firstItem="iZq-eh-OrA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XfK-kO-wsR"/>
+                <constraint firstItem="uYv-ts-fBT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hJt-vZ-a7r"/>
+                <constraint firstAttribute="trailing" secondItem="uYv-ts-fBT" secondAttribute="trailing" id="xaI-LO-ZzX"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="508.5" y="468"/>
+            <point key="canvasLocation" x="475" y="468"/>
         </view>
     </objects>
 </document>

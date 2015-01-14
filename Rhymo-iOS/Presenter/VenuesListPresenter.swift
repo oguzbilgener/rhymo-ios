@@ -20,6 +20,7 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
   // MARK: - Refresh Events
   func refresh(refreshControl: VenuesListRefreshControl) {
     refreshControl.beginRefreshing()
+    userInterface?.venuesTable.contentOffset = CGPoint(x:0, y:-60)
     showActivityIndicator()
 
     if let interactor = venuesListInteractor {
@@ -67,10 +68,10 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
   
   // MARK: - Venue loading
   func loadVenuesList(refreshControl: UIRefreshControl, location: CLLocation) {
-    venuesListInteractor?.getVenuesNearby(location, result: self.onVenuesLoaded(refreshControl))
+    venuesListInteractor?.getVenuesNearby(location, result: self.onVenuesLoaded(refreshControl: refreshControl, location: location))
   }
   
-  func onVenuesLoaded(refreshControl: UIRefreshControl)(error: NSError?, venues: [Venue]!) {
+  func onVenuesLoaded(#refreshControl: UIRefreshControl, location: CLLocation)(error: NSError?, venues: [Venue]!) {
     // debug mode: make many duplicates of venues to fill the table view
     var duplicatedVenues = [Venue]()
     for i in 0..<20 {
@@ -88,6 +89,7 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
     }
     self.venues = duplicatedVenues
     userInterface?.venuesTable.reloadData()
+    userInterface?.buildMap(location, venues: venues)
     refreshControl.endRefreshing()
     hideActivityIndicator()
   }

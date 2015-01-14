@@ -10,6 +10,10 @@
             <rect key="frame" x="0.0" y="0.0" width="355" height="33"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jl8-Tk-gRX">
+                    <rect key="frame" x="0.0" y="0.0" width="355" height="33"/>
+                    <color key="backgroundColor" red="0.98039215686274506" green="0.97647058823529409" blue="0.98039215686274506" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I43-bc-1vo">
                     <rect key="frame" x="0.0" y="32" width="355" height="1"/>
                     <color key="backgroundColor" red="0.8980392157" green="0.89019607840000003" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -26,11 +30,15 @@
             </subviews>
             <constraints>
                 <constraint firstItem="I43-bc-1vo" firstAttribute="top" secondItem="PtI-xb-kAf" secondAttribute="bottom" constant="5" id="Fkl-l6-KP3"/>
+                <constraint firstAttribute="bottom" secondItem="jl8-Tk-gRX" secondAttribute="bottom" id="Leg-m2-RN1"/>
                 <constraint firstItem="PtI-xb-kAf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="Qlp-MT-QjD"/>
+                <constraint firstItem="jl8-Tk-gRX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VBE-ca-k3p"/>
+                <constraint firstAttribute="trailing" secondItem="jl8-Tk-gRX" secondAttribute="trailing" id="adl-Py-Tnf"/>
                 <constraint firstAttribute="centerX" secondItem="PtI-xb-kAf" secondAttribute="centerX" id="as9-LG-QB6"/>
                 <constraint firstAttribute="bottom" secondItem="I43-bc-1vo" secondAttribute="bottom" id="doh-FY-GSu"/>
                 <constraint firstItem="I43-bc-1vo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nuN-Ti-qa5"/>
                 <constraint firstAttribute="trailing" secondItem="I43-bc-1vo" secondAttribute="trailing" id="rT9-lu-mU4"/>
+                <constraint firstItem="jl8-Tk-gRX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vzz-bN-OFu"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>

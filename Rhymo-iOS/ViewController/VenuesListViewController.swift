@@ -48,9 +48,12 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
     tableBackgroundView.backgroundColor = containerBackgroundColor
     venuesTable.backgroundView = tableBackgroundView
     
-    // Set up the table header
+    // Set up the table header and map view
     let headerView = NSBundle.mainBundle().loadNibNamed(VenuesListHeaderNibName, owner: self, options: nil)[0] as UIView
+    headerView.bounds.size.width = self.view.bounds.size.width
     mapView = headerView.viewWithTag(MapViewTag) as? MKMapView
+    mapView!.bounds.size.width = self.view.bounds.size.width
+    mapView!.updateConstraints()
     venuesTable.tableHeaderView = headerView
     
     eventHandler?.onViewLoadFinish(refreshControl!)
@@ -139,6 +142,23 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
     return 33
   }
   
+  // MARK: - map management
+  func buildMap(location: CLLocation, venues: [Venue]) {
+    if let mapView = self.mapView {
+      let loc = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+      let region = MKCoordinateRegionMakeWithDistance(loc, 600, 600)
+      mapView.region = region
+      
+      
+      mapView.removeAnnotations(mapView.annotations)
+      for venue in venues {
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = venue.coord.asCoordinate
+        annotation.title = venue.name
+        mapView.addAnnotation(annotation)
+      }
+    }
+  }
     
 
     /*

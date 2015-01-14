@@ -32,4 +32,8 @@ class Point: NSObject, Printable {
   override var description: String {
     return "\(lat), \(lon)"
   }
+  
+  var asCoordinate: CLLocationCoordinate2D {
+    return CLLocationCoordinate2DMake(lat, lon)
+  }
 }
