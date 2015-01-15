@@ -88,6 +88,7 @@ class VenuesListInteractor: BaseInteractor, CLLocationManagerDelegate {
     if let result = locationResultClosure {
       result(success: true, failReason: nil, location: location)
       self.locationResultClosure = nil
+      self.lastLocation = location
     }
   }
   

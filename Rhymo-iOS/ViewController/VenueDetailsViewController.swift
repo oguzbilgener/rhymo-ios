@@ -15,7 +15,14 @@ class VenueDetailsViewController: BaseViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     println(eventHandler?.venueDetailsWireframe?.venue)
+    
+    // Transparent navbar
+//    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+//    self.navigationController?.navigationBar.shadowImage = UIImage()
+//    self.navigationController?.navigationBar.translucent = true
 
+    
+//    self.navigationItem.backBarButtonItem = 
   }
 
   override func didReceiveMemoryWarning() {

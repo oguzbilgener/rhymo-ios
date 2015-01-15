@@ -255,18 +255,43 @@
                         <viewControllerLayoutGuide type="bottom" id="VTN-Ql-cle"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Zlr-JT-b5w">
-                        <rect key="frame" x="0.0" y="0.0" width="335" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SLZ-HE-AQj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="toC-t9-y8V">
+                                        <rect key="frame" x="17" y="86" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="Vf9-Iw-BIW"/>
+                                            <constraint firstAttribute="width" constant="80" id="iyu-b5-paB"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="1Jk-7e-kAF"/>
+                                    <constraint firstItem="toC-t9-y8V" firstAttribute="leading" secondItem="SLZ-HE-AQj" secondAttribute="leading" constant="17" id="OZM-4N-WKZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="toC-t9-y8V" secondAttribute="bottom" constant="14" id="Oft-cr-yET"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SLZ-HE-AQj" firstAttribute="leading" secondItem="Zlr-JT-b5w" secondAttribute="leadingMargin" constant="-16" id="4kZ-sD-RDd"/>
+                            <constraint firstItem="SLZ-HE-AQj" firstAttribute="top" secondItem="Zlr-JT-b5w" secondAttribute="topMargin" id="Ajp-7e-8Cd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SLZ-HE-AQj" secondAttribute="trailing" constant="-16" id="uLd-fc-5li"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Venue Details" id="fYD-C2-PQH"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="335" height="667"/>
+                    <size key="freeformSize" width="375" height="667"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Wt-qJ-Pb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1101.5" y="18.5"/>
+            <point key="canvasLocation" x="1161.5" y="18.5"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="XEX-Fl-j0d">
