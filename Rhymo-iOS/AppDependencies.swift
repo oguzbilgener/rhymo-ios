@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-let primaryColor = UIColor(rgba: "#C9011A")
+let primaryColor = UIColor(rgba: "#B71221") // B71221 // C9011A
 let darkPrimaryColor = UIColor(rgba: "#A0011A")
 let accentColor = UIColor(rgba: "#F3F2F3")
 let contentBackgroundColor = UIColor(rgba: "#FFFFFF")

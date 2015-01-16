@@ -14,4 +14,8 @@ class VenueDetailsPresenter: BasePresenter {
   var venueDetailsInteractor: VenueDetailsInteractor?
   var venueDetailsWireframe: VenueDetailsWireframe?
   var userInterface: VenueDetailsViewController?
+  
+  func backPressed(sender: AnyObject?) {
+    userInterface?.navigationController?.popViewControllerAnimated(true)
+  }
 }

@@ -15,27 +15,73 @@ let VenuesSectionHeaderNibName = "VenuesSectionHeader"
 let MapViewTag = 21
 let VenuesSectionTitleTag = 24
 
-class VenuesListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class VenuesListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate {
   
   var eventHandler: VenuesListPresenter?
 
   @IBOutlet weak var venuesTable: UITableView!
+  var customNavigationBar: UINavigationBar?
+  var customNavigationItem: UINavigationItem?
   var searchBar: UISearchBar?
   var refreshControl: VenuesListRefreshControl?
   var mapView: MKMapView?
   var tableSectionHeaderView: UIView?
   
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+
+    // A little hack from https://www.codeschool.com/blog/2014/11/11/ios-app-creating-custom-nav-bar/
+    weak var wSelf = self
+    self.navigationController?.interactivePopGestureRecognizer.delegate = wSelf
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    debugPrintln(self.topLayoutGuide)
+    
+    // define custom nav bar
+    let originalBarFrame = self.navigationController!.navigationBar.frame
+    let customBarFrame = CGRect(x: 0, y: 20, width: originalBarFrame.size.width, height: originalBarFrame.size.height)
+    customNavigationBar = UINavigationBar(frame: customBarFrame)
+    self.navigationController?.setNavigationBarHidden(true, animated: false)
+    customNavigationBar!.barTintColor = UIColor(hue:0.98, saturation:0.8, brightness:0.79, alpha:1)
+    customNavigationBar!.translucent = false
+    customNavigationItem = UINavigationItem()
+    customNavigationItem!.title = self.navigationItem.title
+    customNavigationBar!.setItems([customNavigationItem!], animated: false)
+    self.view.addSubview(customNavigationBar!)
+    
+    // TODO: fix this titlebg with AutoLayout
+    let titlebg = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.height, height: 20))
+    titlebg.backgroundColor = UIColor(hue:0.98, saturation:0.8, brightness:0.79, alpha:1)
+    self.view.addSubview(titlebg)
+    titlebg.setTranslatesAutoresizingMaskIntoConstraints(false)
+    self.view.addConstraint(NSLayoutConstraint(item: titlebg, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .Leading, multiplier: 1, constant: 0))
+    self.view.addConstraint(NSLayoutConstraint(item: titlebg, attribute: .Trailing, relatedBy: .Equal, toItem: self.view, attribute: .Trailing, multiplier: 1, constant: 0))
+    self.view.addConstraint(NSLayoutConstraint(item: titlebg, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1, constant: 0))
+    self.view.addConstraint(NSLayoutConstraint(item: titlebg, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 20))
+    
+    
+    
     // Set up the search bar
-    searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.navigationController!.navigationBar.frame.size.height))
-    searchBar?.delegate = eventHandler
-    searchBar?.tintColor = textOnPrimaryColor
-    searchBar?.placeholder = "Search Venues"
-    searchBar?.searchBarStyle = UISearchBarStyle.Minimal
-    searchBar?.tintColor = textOnPrimaryColor
-    self.navigationItem.titleView = searchBar!
+    searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: originalBarFrame.size.height))
+    searchBar!.delegate = eventHandler
+    searchBar!.tintColor = textOnPrimaryColor
+    searchBar!.placeholder = "Search Venues"
+    searchBar!.searchBarStyle = UISearchBarStyle.Minimal
+    searchBar!.tintColor = textOnPrimaryColor
+    customNavigationItem?.titleView = searchBar!
+
+    customNavigationBar?.setTranslatesAutoresizingMaskIntoConstraints(false)
+    self.view.addConstraint(NSLayoutConstraint(item: customNavigationBar!, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .Leading, multiplier: 1, constant: 0))
+    self.view.addConstraint(NSLayoutConstraint(item: customNavigationBar!, attribute: .Trailing, relatedBy: .Equal, toItem: self.view, attribute: .Trailing, multiplier: 1, constant: 0))
+    self.view.addConstraint(NSLayoutConstraint(item: customNavigationBar!, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1, constant: 20))
+    self.view.addConstraint(NSLayoutConstraint(item: customNavigationBar!, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: originalBarFrame.size.height))
+
+//    self.view.addConstraint(NSLayoutConstraint(item: searchBar!, attribute: .Width, relatedBy: .Equal, toItem: self.view, attribute: .Width, multiplier: 1, constant: 0))
+    
+    self.venuesTable.contentInset.top = 44
     
     // Set up the pull to refresh view
     refreshControl = VenuesListRefreshControl()
@@ -206,11 +252,14 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
     
 
   
-    // MARK: - Navigation
+  // MARK: - Navigation
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-      eventHandler?.prepareForSegue(segue, sender: sender)
-    }
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    eventHandler?.prepareForSegue(segue, sender: sender)
+  }
   
+  override func preferredStatusBarStyle() -> UIStatusBarStyle {
+    return UIStatusBarStyle.LightContent
+  }
 
 }

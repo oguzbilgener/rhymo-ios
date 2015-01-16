@@ -11,6 +11,8 @@ import UIKit
 class VenueDetailsViewController: BaseViewController {
   
   var eventHandler: VenueDetailsPresenter?
+  var customNavigationBar: UINavigationBar?
+  var customNavigationItem: UINavigationItem?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -20,9 +22,19 @@ class VenueDetailsViewController: BaseViewController {
 //    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
 //    self.navigationController?.navigationBar.shadowImage = UIImage()
 //    self.navigationController?.navigationBar.translucent = true
+    
+    customNavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 20, width: self.view.frame.width, height: 44))
+    customNavigationBar!.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+    customNavigationBar!.translucent = true
+    customNavigationBar!.shadowImage = UIImage()
+    customNavigationItem = UINavigationItem()
+    customNavigationItem!.title = ""
+    customNavigationBar!.setItems([customNavigationItem!], animated: false)
+    self.view.addSubview(customNavigationBar!)
 
     
-//    self.navigationItem.backBarButtonItem = 
+    let backItem = UIBarButtonItem(title: "back", style: UIBarButtonItemStyle.Bordered, target: eventHandler, action: "backPressed:")
+    customNavigationItem!.backBarButtonItem = backItem
   }
 
   override func didReceiveMemoryWarning() {
@@ -40,5 +52,9 @@ class VenueDetailsViewController: BaseViewController {
         // Pass the selected object to the new view controller.
     }
     */
+  
+  override func preferredStatusBarStyle() -> UIStatusBarStyle {
+    return UIStatusBarStyle.LightContent
+  }
 
 }
