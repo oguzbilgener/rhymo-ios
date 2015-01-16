@@ -269,12 +269,19 @@
                                             <constraint firstAttribute="width" constant="80" id="iyu-b5-paB"/>
                                         </constraints>
                                     </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LHr-4t-g9B">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="1Jk-7e-kAF"/>
+                                    <constraint firstAttribute="trailing" secondItem="LHr-4t-g9B" secondAttribute="trailing" id="8et-uK-e6k"/>
                                     <constraint firstItem="toC-t9-y8V" firstAttribute="leading" secondItem="SLZ-HE-AQj" secondAttribute="leading" constant="17" id="OZM-4N-WKZ"/>
                                     <constraint firstAttribute="bottom" secondItem="toC-t9-y8V" secondAttribute="bottom" constant="14" id="Oft-cr-yET"/>
+                                    <constraint firstItem="LHr-4t-g9B" firstAttribute="top" secondItem="SLZ-HE-AQj" secondAttribute="top" id="VLe-PW-XS2"/>
+                                    <constraint firstItem="LHr-4t-g9B" firstAttribute="leading" secondItem="SLZ-HE-AQj" secondAttribute="leading" id="gKL-vT-4L7"/>
+                                    <constraint firstAttribute="bottom" secondItem="LHr-4t-g9B" secondAttribute="bottom" id="o40-cU-cFY"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -289,6 +296,10 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="nowPlayingAlbumImageView" destination="LHr-4t-g9B" id="7xO-F7-Atf"/>
+                        <outlet property="venueCoverImageView" destination="LHr-4t-g9B" id="3hu-J0-qp2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Wt-qJ-Pb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

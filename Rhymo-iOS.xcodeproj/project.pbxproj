@@ -30,6 +30,7 @@
 		DD470CFD1A63C59D0082F33D /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD470CFC1A63C59D0082F33D /* BaseInteractor.swift */; };
 		DD470CFF1A63C7AE0082F33D /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD470CFE1A63C7AE0082F33D /* BasePresenter.swift */; };
 		DD470D011A63C8350082F33D /* LoginContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD470D001A63C8350082F33D /* LoginContent.xib */; };
+		DD7B2AD41A69CABE00A21780 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7B2AD31A69CABE00A21780 /* UIImageEffects.m */; };
 		DD7BFDD81A6308DE009ADC4F /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDD71A6308DE009ADC4F /* AppDependencies.swift */; };
 		DD7BFDE21A630BBB009ADC4F /* AuthWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDE11A630BBB009ADC4F /* AuthWireframe.swift */; };
 		DD7BFDE41A630BE6009ADC4F /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDE31A630BE6009ADC4F /* RootWireframe.swift */; };
@@ -96,6 +97,8 @@
 		DD470CFC1A63C59D0082F33D /* BaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseInteractor.swift; path = Interactor/BaseInteractor.swift; sourceTree = "<group>"; };
 		DD470CFE1A63C7AE0082F33D /* BasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasePresenter.swift; path = Presenter/BasePresenter.swift; sourceTree = "<group>"; };
 		DD470D001A63C8350082F33D /* LoginContent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginContent.xib; path = View/LoginContent.xib; sourceTree = "<group>"; };
+		DD7B2AD21A69CABE00A21780 /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
+		DD7B2AD31A69CABE00A21780 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
 		DD7BFDD71A6308DE009ADC4F /* AppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		DD7BFDE11A630BBB009ADC4F /* AuthWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthWireframe.swift; path = Wireframe/AuthWireframe.swift; sourceTree = "<group>"; };
 		DD7BFDE31A630BE6009ADC4F /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootWireframe.swift; path = Wireframe/RootWireframe.swift; sourceTree = "<group>"; };
@@ -290,6 +293,8 @@
 		DDA4313C1A65356C00513755 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				DD7B2AD21A69CABE00A21780 /* UIImageEffects.h */,
+				DD7B2AD31A69CABE00A21780 /* UIImageEffects.m */,
 				DDA4313D1A65359300513755 /* UIColorExtension.swift */,
 			);
 			name = ThirdParty;
@@ -523,6 +528,7 @@
 				DDE410531A630E00008D9A13 /* LandingViewController.swift in Sources */,
 				DD29BF301A65AF7700FC4EA3 /* Encryption.swift in Sources */,
 				DD30F80C1A6333190033EB63 /* LoginPresenter.swift in Sources */,
+				DD7B2AD41A69CABE00A21780 /* UIImageEffects.m in Sources */,
 				DD30F8081A6331700033EB63 /* LoginViewController.swift in Sources */,
 				DD2174051A63E7FB0061D86F /* LineTextField.swift in Sources */,
 				DD30F80A1A63318F0033EB63 /* RegisterViewController.swift in Sources */,

@@ -107,6 +107,7 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
   }
   
   func onVenuesLoaded(#refreshControl: UIRefreshControl, location: CLLocation)(error: NSError?, venues: [Venue]!) {
+    // TODO: if 401, logout
     self.venues = venues
     self.filteredVenues = self.venues
     self.lastLocation = location

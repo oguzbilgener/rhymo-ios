@@ -213,6 +213,13 @@ class RhymoClient {
     if let info = json["info"].string {
       venue.info = info
     }
+    var photosArray = [String]()
+    for (index: String, values: JSON) in json["photos"] {
+    if let photoUrl = values.string {
+      photosArray.append(photoUrl)
+    }
+    venue.photos = photosArray
+    }
     return venue
   }
   

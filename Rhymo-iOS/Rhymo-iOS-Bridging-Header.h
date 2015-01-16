@@ -12,11 +12,15 @@
 #import <CommonCrypto/CommonHMAC.h>
 
 #import <Lockbox/Lockbox.h>
+
+#import <SDWebImage/SDImageCache.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
 #import <RPFloatingPlaceholders/RPFloatingPlaceholderTextField.h>
 #import <RPFloatingPlaceholders/RPFloatingPlaceholderTextView.h>
 
 #import "JGProgressHUD/JGProgressHUD.h"
+
+#import "UIImageEffects.h"
 
 #endif

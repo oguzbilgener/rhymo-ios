@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class VenueDetailsViewController: BaseViewController {
   
@@ -14,6 +15,12 @@ class VenueDetailsViewController: BaseViewController {
   var customNavigationBar: UINavigationBar?
   var customNavigationItem: UINavigationItem?
 
+  @IBOutlet weak var venueCoverImageView: UIImageView!
+  @IBOutlet weak var nowPlayingAlbumImageView: UIImageView!
+  
+  let imageManager = SDWebImageManager.sharedManager() // cannot use objc class extensions with swift :(
+  
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     println(eventHandler?.venueDetailsWireframe?.venue)
@@ -26,6 +33,8 @@ class VenueDetailsViewController: BaseViewController {
     customNavigationBar!.shadowImage = UIImage()
     customNavigationItem = UINavigationItem()
     customNavigationItem!.title = ""
+    let titleTextAttributes = [NSForegroundColorAttributeName: textOnPrimaryColor]
+    customNavigationBar!.titleTextAttributes = titleTextAttributes
     self.view.addSubview(customNavigationBar!)
 
     
@@ -33,13 +42,23 @@ class VenueDetailsViewController: BaseViewController {
     customNavigationItem!.leftBarButtonItem = backItem
     
     customNavigationBar!.setItems([customNavigationItem!], animated: false)
-    
+        
     eventHandler?.onViewLoadFinish()
   }
   
   func updateHeader(venue: Venue) {
     customNavigationItem?.title = venue.name
     
+    let headerImgUrl = NSURL(string: venue.photos[0])
+    if(venue.photos.count > 0) {
+      imageManager.downloadImageWithURL(headerImgUrl, options: SDWebImageOptions.allZeros, progress: { (receivedSize: Int, expectedSize: Int) -> Void in
+        
+        }) { (image: UIImage!, error: NSError!, cacheType: SDImageCacheType, finished: Bool, url: NSURL!) -> Void in
+          if(finished) {
+            self.venueCoverImageView.image = UIImageEffects.imageByApplyingBlurToImage(image, withRadius: 10, tintColor: UIColor(rgba: "#00000033"), saturationDeltaFactor: 1, maskImage: nil)
+          }
+      }
+    }
   }
 
   override func didReceiveMemoryWarning() {
