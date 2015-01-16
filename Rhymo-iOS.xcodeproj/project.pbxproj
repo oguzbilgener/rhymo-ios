@@ -31,6 +31,7 @@
 		DD470CFF1A63C7AE0082F33D /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD470CFE1A63C7AE0082F33D /* BasePresenter.swift */; };
 		DD470D011A63C8350082F33D /* LoginContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD470D001A63C8350082F33D /* LoginContent.xib */; };
 		DD7B2AD41A69CABE00A21780 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7B2AD31A69CABE00A21780 /* UIImageEffects.m */; };
+		DD7B2AD61A69DC9E00A21780 /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7B2AD51A69DC9D00A21780 /* SongCell.swift */; };
 		DD7BFDD81A6308DE009ADC4F /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDD71A6308DE009ADC4F /* AppDependencies.swift */; };
 		DD7BFDE21A630BBB009ADC4F /* AuthWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDE11A630BBB009ADC4F /* AuthWireframe.swift */; };
 		DD7BFDE41A630BE6009ADC4F /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDE31A630BE6009ADC4F /* RootWireframe.swift */; };
@@ -99,6 +100,7 @@
 		DD470D001A63C8350082F33D /* LoginContent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginContent.xib; path = View/LoginContent.xib; sourceTree = "<group>"; };
 		DD7B2AD21A69CABE00A21780 /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
 		DD7B2AD31A69CABE00A21780 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
+		DD7B2AD51A69DC9D00A21780 /* SongCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SongCell.swift; path = View/SongCell.swift; sourceTree = "<group>"; };
 		DD7BFDD71A6308DE009ADC4F /* AppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		DD7BFDE11A630BBB009ADC4F /* AuthWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthWireframe.swift; path = Wireframe/AuthWireframe.swift; sourceTree = "<group>"; };
 		DD7BFDE31A630BE6009ADC4F /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootWireframe.swift; path = Wireframe/RootWireframe.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				DDAA4ECA1A666D1D00CF0C82 /* VenueCell.swift */,
 				DDCC3BEE1A66924E00071EDB /* VenuesListHeader.xib */,
 				DDCC3BF01A6699D800071EDB /* VenuesSectionHeader.xib */,
+				DD7B2AD51A69DC9D00A21780 /* SongCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDFDD9A81A658C77001F4AFA /* Point.swift in Sources */,
+				DD7B2AD61A69DC9E00A21780 /* SongCell.swift in Sources */,
 				DD15CF1E1A62E0DB00812A70 /* AppDelegate.swift in Sources */,
 				DDD258AF1A66E0CE008FD58B /* VenueDetailsViewController.swift in Sources */,
 				DDFDD9A61A658B85001F4AFA /* Venue.swift in Sources */,
