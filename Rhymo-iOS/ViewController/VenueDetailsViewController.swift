@@ -17,6 +17,9 @@ class VenueDetailsViewController: BaseViewController {
 
   @IBOutlet weak var venueCoverImageView: UIImageView!
   @IBOutlet weak var nowPlayingAlbumImageView: UIImageView!
+  @IBOutlet weak var nowPlayingTitleLabel: UILabel!
+  @IBOutlet weak var NowPlayingArtistLabel: UILabel!
+  @IBOutlet weak var venueSongTable: UITableView!
   
   let imageManager = SDWebImageManager.sharedManager() // cannot use objc class extensions with swift :(
   
@@ -42,7 +45,7 @@ class VenueDetailsViewController: BaseViewController {
     customNavigationItem!.leftBarButtonItem = backItem
     
     customNavigationBar!.setItems([customNavigationItem!], animated: false)
-        
+    
     eventHandler?.onViewLoadFinish()
   }
   
