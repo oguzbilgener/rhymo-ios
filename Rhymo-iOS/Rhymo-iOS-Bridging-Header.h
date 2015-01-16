@@ -12,6 +12,7 @@
 #import <CommonCrypto/CommonHMAC.h>
 
 #import <Lockbox/Lockbox.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 #import <RPFloatingPlaceholders/RPFloatingPlaceholderTextField.h>
 #import <RPFloatingPlaceholders/RPFloatingPlaceholderTextView.h>

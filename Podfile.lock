@@ -5,6 +5,9 @@ PODS:
   - JGProgressHUD (1.2.3)
   - Lockbox (2.1.0)
   - RPFloatingPlaceholders (0.2.6)
+  - SDWebImage (3.7.1):
+    - SDWebImage/Core (= 3.7.1)
+  - SDWebImage/Core (3.7.1)
   - SwiftyJSON (2.1.1)
 
 DEPENDENCIES:
@@ -14,6 +17,7 @@ DEPENDENCIES:
   - JGProgressHUD
   - Lockbox (~> 2.1)
   - RPFloatingPlaceholders (~> 0.2.6)
+  - SDWebImage (~> 3.6)
   - SwiftyJSON (from `https://github.com/orta/SwiftyJSON`, branch `podspec`)
 
 EXTERNAL SOURCES:
@@ -39,6 +43,7 @@ SPEC CHECKSUMS:
   JGProgressHUD: 733523c80f69b6dfc41b88a0f33883a89a8b4c3b
   Lockbox: 3168f08cb26680b05a0702b8c0cc6da32788059d
   RPFloatingPlaceholders: a5c88c55c73b9118607f8bafc28df7dfd717dbad
+  SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
   SwiftyJSON: 626bbe0ede796bf69e849b7aa7473778b03fe44c
 
 COCOAPODS: 0.36.0.beta.1

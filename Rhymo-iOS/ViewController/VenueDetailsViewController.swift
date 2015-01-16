@@ -18,23 +18,28 @@ class VenueDetailsViewController: BaseViewController {
     super.viewDidLoad()
     println(eventHandler?.venueDetailsWireframe?.venue)
     
-    // Transparent navbar
-//    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-//    self.navigationController?.navigationBar.shadowImage = UIImage()
-//    self.navigationController?.navigationBar.translucent = true
-    
+
+    // Set up custom navigation bar
     customNavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 20, width: self.view.frame.width, height: 44))
     customNavigationBar!.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
     customNavigationBar!.translucent = true
     customNavigationBar!.shadowImage = UIImage()
     customNavigationItem = UINavigationItem()
     customNavigationItem!.title = ""
-    customNavigationBar!.setItems([customNavigationItem!], animated: false)
     self.view.addSubview(customNavigationBar!)
 
     
-    let backItem = UIBarButtonItem(title: "back", style: UIBarButtonItemStyle.Bordered, target: eventHandler, action: "backPressed:")
-    customNavigationItem!.backBarButtonItem = backItem
+    let backItem = UIBarButtonItem(image: UIImage(named: "nav_back"), style: UIBarButtonItemStyle.Bordered, target: eventHandler, action: "backPressed:")
+    customNavigationItem!.leftBarButtonItem = backItem
+    
+    customNavigationBar!.setItems([customNavigationItem!], animated: false)
+    
+    eventHandler?.onViewLoadFinish()
+  }
+  
+  func updateHeader(venue: Venue) {
+    customNavigationItem?.title = venue.name
+    
   }
 
   override func didReceiveMemoryWarning() {

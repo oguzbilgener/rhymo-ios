@@ -24,13 +24,13 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
   func refresh(refreshControl: VenuesListRefreshControl) {
     refreshControl.beginRefreshing()
     userInterface?.venuesTable.contentOffset = CGPoint(x:0, y:-60)
-    showActivityIndicator()
 
     if let interactor = venuesListInteractor {
       
       if(interactor.lastLocationValid() == false) {
         interactor.getDeviceLocation({ (success, failReason, location) -> () in
           if(success) {
+            self.showActivityIndicator()
             debugPrintln(location)
             // Now that we have the device location, we can ask the server what venues are nearby
             self.loadVenuesList(refreshControl, location: location!)
@@ -55,9 +55,9 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
               }
               let alert = UIAlertView(title: alertTitle, message: alertBody, delegate: nil, cancelButtonTitle: "Ok")
               alert.show()
+              refreshControl.endRefreshing()
+              self.hideActivityIndicator()
             }
-            refreshControl.endRefreshing()
-            self.hideActivityIndicator()
           }
         })
       }

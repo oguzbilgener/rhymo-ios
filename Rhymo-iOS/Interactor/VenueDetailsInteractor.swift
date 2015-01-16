@@ -11,4 +11,9 @@ import UIKit
 class VenueDetailsInteractor: BaseInteractor {
   
   var output: VenueDetailsPresenter?
+  
+  func getVenueDetails(venueId: Int, result: (error: NSError?, venue: Venue?) -> ()) {
+    let client = RhymoClient()
+    client.getVenueDetails(venueId, result: result)
+  }
 }
