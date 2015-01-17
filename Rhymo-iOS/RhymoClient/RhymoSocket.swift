@@ -1,5 +1,5 @@
 //
-//  SongCell.swift
+//  RhymoSocket.swift
 //  Rhymo-iOS
 //
 //  Created by Oguz Bilgener on 17/01/15.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class SongCell: UITableViewCell {
-  
+class RhymoSocket: NSObject {
+
 }

@@ -117,14 +117,10 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
     hideActivityIndicator()
   }
   
+  // MARK: - UI Update Delegation
+  
   func updateVenuesList() {
-    userInterface?.updateTableSectionHeaderView(filteredVenues.count)
-    dispatch_async(dispatch_get_main_queue()) {
-      UIView.transitionWithView(self.userInterface!.venuesTable, duration: 0.2, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
-        self.userInterface!.venuesTable.reloadData()
-        }, completion: nil)
-    }
-    // userInterface?.venuesTable.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Fade)
+    userInterface?.updateVenuesList()
   }
   
   

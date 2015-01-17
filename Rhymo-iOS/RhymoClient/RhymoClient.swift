@@ -11,7 +11,7 @@ import Lockbox
 import Alamofire
 import SwiftyJSON
 
-let RhymoEndpoint = "http://192.168.2.254:9000/v1/"
+let RhymoEndpoint = "http://192.168.1.101:9000/v1/" // 192.168.2.254
 
 let kUser = "user_obj"
 let kPublicKey = "public_key"

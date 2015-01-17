@@ -38,8 +38,6 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    debugPrintln(self.topLayoutGuide)
-    
     // define custom nav bar
     let originalBarFrame = self.navigationController!.navigationBar.frame
     let customBarFrame = CGRect(x: 0, y: 20, width: originalBarFrame.size.width, height: originalBarFrame.size.height)
@@ -213,7 +211,19 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
     }
   }
   
-  // MARK: - map management
+  // MARK: - UI Update
+  
+  func updateVenuesList() {
+    self.updateTableSectionHeaderView(self.eventHandler!.filteredVenues.count)
+    dispatch_async(dispatch_get_main_queue()) {
+      UIView.transitionWithView(self.venuesTable, duration: 0.2, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
+        self.venuesTable.reloadData()
+        }, completion: nil)
+    }
+    // venuesTable.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Fade)
+  }
+  
+  // MARK: - Map Management
   
   func buildMap(location: CLLocation, venues: [Venue]) {
     if let mapView = self.mapView {

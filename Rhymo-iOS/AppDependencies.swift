@@ -22,6 +22,7 @@ let disabledTextOnLightColor = UIColor(rgba: "#666666")
 let secondaryTextOnLightColor = UIColor(rgba: "#444444")
 let disabledSecondaryTextOnLightColor = UIColor(rgba: "#888888")
 let primaryTextOnLightColor = primaryColor
+let shadowOnLightColor = UIColor(rgba: "#444444")
 
 class AppDependencies {
   

@@ -9,7 +9,9 @@
 import UIKit
 import SDWebImage
 
-class VenueDetailsViewController: BaseViewController {
+let TracksSectionHeaderLabelIdentifier = 24
+
+class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
   
   var eventHandler: VenueDetailsPresenter?
   var customNavigationBar: UINavigationBar?
@@ -18,8 +20,13 @@ class VenueDetailsViewController: BaseViewController {
   @IBOutlet weak var venueCoverImageView: UIImageView!
   @IBOutlet weak var nowPlayingAlbumImageView: UIImageView!
   @IBOutlet weak var nowPlayingTitleLabel: UILabel!
-  @IBOutlet weak var NowPlayingArtistLabel: UILabel!
+  @IBOutlet weak var nowPlayingArtistLabel: UILabel!
+  @IBOutlet weak var nowPlayingAlbumLabel: UILabel!
   @IBOutlet weak var venueSongTable: UITableView!
+  @IBOutlet weak var requestButton: SolidButton!
+  
+  var historySectionTitleView: UIView?
+  var upcomingSectionTitleView: UIView?
   
   let imageManager = SDWebImageManager.sharedManager() // cannot use objc class extensions with swift :(
   
@@ -36,7 +43,12 @@ class VenueDetailsViewController: BaseViewController {
     customNavigationBar!.shadowImage = UIImage()
     customNavigationItem = UINavigationItem()
     customNavigationItem!.title = ""
-    let titleTextAttributes = [NSForegroundColorAttributeName: textOnPrimaryColor]
+    let shadow = NSShadow()
+    shadow.shadowBlurRadius = 3
+    shadow.shadowColor = shadowOnLightColor
+    shadow.shadowOffset = CGSize(width:0, height:1)
+    let font = UIFont(name: nowPlayingTitleLabel.font.fontName, size: 20)!
+    let titleTextAttributes = [NSForegroundColorAttributeName: textOnPrimaryColor, NSShadowAttributeName: shadow, NSFontAttributeName: font]
     customNavigationBar!.titleTextAttributes = titleTextAttributes
     self.view.addSubview(customNavigationBar!)
 
@@ -46,6 +58,16 @@ class VenueDetailsViewController: BaseViewController {
     customNavigationItem!.leftBarButtonItem = backItem
     
     customNavigationBar!.setItems([customNavigationItem!], animated: false)
+    
+    // Set up songs table
+    venueSongTable.delegate = self
+    venueSongTable.dataSource = self
+    
+    historySectionTitleView = NSBundle.mainBundle().loadNibNamed("TracksSectionHeader", owner: self, options: nil)[0] as? UIView
+    upcomingSectionTitleView = NSBundle.mainBundle().loadNibNamed("TracksSectionHeader", owner: self, options: nil)[0] as? UIView
+//    venueSongTable.registerClass(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "TracksSectionHeader")
+    
+    venueSongTable.tableFooterView = UIView(frame: CGRectZero)
     
     eventHandler?.onViewLoadFinish()
   }
@@ -59,13 +81,24 @@ class VenueDetailsViewController: BaseViewController {
       // So download it
       let headerImgUrl = NSURL(string: venue.photos[0])
       imageManager.downloadImageWithURL(headerImgUrl, options: SDWebImageOptions.allZeros, progress: { (receivedSize: Int, expectedSize: Int) -> Void in
-        
+        // TODO: add placeholder
         }) { (image: UIImage!, error: NSError!, cacheType: SDImageCacheType, finished: Bool, url: NSURL!) -> Void in
-          // When completed, give it some blur and set it
+           // When completed, give it some blur and set it
           if(finished) {
-            self.venueCoverImageView.image = UIImageEffects.imageByApplyingBlurToImage(image, withRadius: 10, tintColor: UIColor(rgba: "#00000033"), saturationDeltaFactor: 1, maskImage: nil)
+            self.venueCoverImageView.image = UIImageEffects.imageByApplyingBlurToImage(image, withRadius: 15, tintColor: UIColor(rgba: "#00000033"), saturationDeltaFactor: 1, maskImage: nil)
           }
       }
+    }
+    
+    dispatch_async(dispatch_get_main_queue()) {
+      UIView.transitionWithView(self.requestButton, duration: 0.2, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
+        if(venue.online) {
+          self.requestButton.hidden = false
+        }
+        else {
+          self.requestButton.hidden = true
+        }
+        }, completion: nil)
     }
   }
 
@@ -73,7 +106,136 @@ class VenueDetailsViewController: BaseViewController {
       super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
   }
+  
+  // MARK: - Table data population
+  
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCellWithIdentifier("TrackCell", forIndexPath: indexPath) as TrackCell
     
+    let albumArtView = cell.albumArtView
+    let nameLabel = cell.nameLabel
+    let artistLabel = cell.artistLabel
+    
+    var albumArtUrl = NSURL(string: "")
+    if(indexPath.section == 0) {
+      nameLabel.textColor = disabledTextOnLightColor
+      artistLabel.textColor = disabledSecondaryTextOnLightColor
+      
+      if let track = self.eventHandler?.historyPlaylist?[indexPath.row] {
+        nameLabel.text = track.name
+        artistLabel.text = track.artistName
+        albumArtUrl = NSURL(string: track.albumCoverUrl)
+      }
+    }
+    else {
+      nameLabel.textColor = textOnLightColor
+      artistLabel.textColor = secondaryTextOnLightColor
+      
+      if let track = self.eventHandler?.upcomingPlaylist?[indexPath.row] {
+        nameLabel.text = track.name
+        artistLabel.text = track.artistName
+        albumArtUrl = NSURL(string: track.albumCoverUrl)
+      }
+    }
+    
+
+    imageManager.downloadImageWithURL(albumArtUrl, options: SDWebImageOptions.allZeros, progress: { (receivedSize: Int, expectedSize: Int) -> Void in
+      
+      }) { (image: UIImage!, error: NSError!, cacheType: SDImageCacheType, finished: Bool, url: NSURL!) -> Void in
+        // When completed, give it some blur and set it
+        if(finished) {
+          dispatch_async(dispatch_get_main_queue()) {
+            UIView.transitionWithView(self.nowPlayingAlbumImageView, duration: 0.2, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
+              albumArtView.image = image
+              }, completion: nil)
+          }
+        }
+    }
+
+    
+    return cell
+  }
+  
+  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    return 2
+  }
+  
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    if let handler = eventHandler {
+      if(section == 0) {
+        if let playlist = eventHandler?.historyPlaylist {
+          return playlist.count
+        }
+      }
+      else if(section == 1) {
+        if let playlist = eventHandler?.upcomingPlaylist {
+          return playlist.count
+        }
+      }
+    }
+    return 0
+  }
+  
+  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return 55
+  }
+  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    // segue already handles it
+  }
+  
+  func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+
+    var view: UIView?
+    if(section == 0) {
+      view = historySectionTitleView
+      if let label = historySectionTitleView!.viewWithTag(TracksSectionHeaderLabelIdentifier) as? UILabel {
+        label.text = "Played Recently".uppercaseStringWithLocale(NSLocale.currentLocale())
+      }
+    }
+    else {
+      view = upcomingSectionTitleView
+      if let label = upcomingSectionTitleView!.viewWithTag(TracksSectionHeaderLabelIdentifier) as? UILabel {
+        label.text = "Upcoming".uppercaseStringWithLocale(NSLocale.currentLocale())
+      }
+    }
+    return view
+  }
+  
+  func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return 33
+  }
+  
+  // MARK: - UI Update
+  
+  func updateTracksList() {
+    dispatch_async(dispatch_get_main_queue()) {
+      UIView.transitionWithView(self.venueSongTable, duration: 0.2, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
+        self.venueSongTable.reloadData()
+        }, completion: nil)
+    }
+  }
+  
+  func updateNowPlaying(track: PlaylistTrack) {
+    if(track.albumCoverUrl != "") {
+      let coverUrl = NSURL(string: track.albumCoverUrl)
+      imageManager.downloadImageWithURL(coverUrl, options: SDWebImageOptions.allZeros, progress: { (receivedSize: Int, expectedSize: Int) -> Void in
+        
+        }) { (image: UIImage!, error: NSError!, cacheType: SDImageCacheType, finished: Bool, url: NSURL!) -> Void in
+          if(finished) {
+            dispatch_async(dispatch_get_main_queue()) {
+              UIView.transitionWithView(self.nowPlayingAlbumImageView, duration: 0.2, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
+                self.nowPlayingAlbumImageView.image = image
+                }, completion: nil)
+            }
+          }
+      }
+    }
+    self.nowPlayingTitleLabel.text = track.name
+    self.nowPlayingArtistLabel.text = track.artistName
+    self.nowPlayingAlbumLabel.text = track.albumName
+  }
+  
 
     /*
     // MARK: - Navigation

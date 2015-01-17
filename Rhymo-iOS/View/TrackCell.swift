@@ -1,20 +1,18 @@
 //
-//  VenueCell.swift
+//  TrackCell.swift
 //  Rhymo-iOS
 //
-//  Created by Oguz Bilgener on 14/01/15.
+//  Created by Oguz Bilgener on 17/01/15.
 //  Copyright (c) 2015 Oguz Bilgener. All rights reserved.
 //
 
 import UIKit
 
-class VenueCell: UITableViewCell {
+class TrackCell: UITableViewCell {
   
-  @IBOutlet weak var venueTitle: UILabel!
-  @IBOutlet weak var venueAddress: UILabel!
-  
-  @IBOutlet weak var iconOnline: UIImageView!
-  @IBOutlet weak var iconOffline: UIImageView!
+  @IBOutlet weak var albumArtView: UIImageView!
+  @IBOutlet weak var nameLabel: UILabel!
+  @IBOutlet weak var artistLabel: UILabel!
   
   override func touchesBegan(touches: NSSet, withEvent: UIEvent) {
     super.touchesBegan(touches, withEvent: withEvent)
@@ -30,5 +28,4 @@ class VenueCell: UITableViewCell {
     super.touchesCancelled(touches, withEvent: withEvent)
     self.backgroundColor = contentBackgroundColor
   }
-
 }
