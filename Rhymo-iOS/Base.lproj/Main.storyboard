@@ -305,7 +305,7 @@
                                         </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.38131313131313127" green="0.38131313131313127" blue="0.38131313131313127" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="c8Y-kg-KVo" firstAttribute="leading" secondItem="toC-t9-y8V" secondAttribute="trailing" constant="8" id="0DH-AO-pSW"/>
                                     <constraint firstAttribute="height" constant="180" id="1Jk-7e-kAF"/>

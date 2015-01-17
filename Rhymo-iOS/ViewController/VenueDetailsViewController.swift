@@ -10,6 +10,7 @@ import UIKit
 import SDWebImage
 
 let TracksSectionHeaderLabelIdentifier = 24
+let VenueDetailsAnimationDuration = 0.3
 
 class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
   
@@ -85,13 +86,17 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
         }) { (image: UIImage!, error: NSError!, cacheType: SDImageCacheType, finished: Bool, url: NSURL!) -> Void in
            // When completed, give it some blur and set it
           if(finished) {
-            self.venueCoverImageView.image = UIImageEffects.imageByApplyingBlurToImage(image, withRadius: 15, tintColor: UIColor(rgba: "#00000033"), saturationDeltaFactor: 1, maskImage: nil)
+            dispatch_async(dispatch_get_main_queue()) {
+              UIView.transitionWithView(self.venueCoverImageView, duration: VenueDetailsAnimationDuration, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
+                self.venueCoverImageView.image = UIImageEffects.imageByApplyingBlurToImage(image, withRadius: 15, tintColor: UIColor(rgba: "#00000033"), saturationDeltaFactor: 1, maskImage: nil)
+                }, completion: nil)
+            }
           }
       }
     }
     
     dispatch_async(dispatch_get_main_queue()) {
-      UIView.transitionWithView(self.requestButton, duration: 0.2, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
+      UIView.transitionWithView(self.requestButton, duration: 0.4, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
         if(venue.online) {
           self.requestButton.hidden = false
         }
@@ -145,7 +150,7 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
         // When completed, give it some blur and set it
         if(finished) {
           dispatch_async(dispatch_get_main_queue()) {
-            UIView.transitionWithView(self.nowPlayingAlbumImageView, duration: 0.2, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
+            UIView.transitionWithView(self.nowPlayingAlbumImageView, duration: VenueDetailsAnimationDuration, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
               albumArtView.image = image
               }, completion: nil)
           }
@@ -210,7 +215,7 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
   
   func updateTracksList() {
     dispatch_async(dispatch_get_main_queue()) {
-      UIView.transitionWithView(self.venueSongTable, duration: 0.2, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
+      UIView.transitionWithView(self.venueSongTable, duration: VenueDetailsAnimationDuration, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
         self.venueSongTable.reloadData()
         }, completion: nil)
     }
@@ -224,7 +229,7 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
         }) { (image: UIImage!, error: NSError!, cacheType: SDImageCacheType, finished: Bool, url: NSURL!) -> Void in
           if(finished) {
             dispatch_async(dispatch_get_main_queue()) {
-              UIView.transitionWithView(self.nowPlayingAlbumImageView, duration: 0.2, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
+              UIView.transitionWithView(self.nowPlayingAlbumImageView, duration: VenueDetailsAnimationDuration, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
                 self.nowPlayingAlbumImageView.image = image
                 }, completion: nil)
             }
