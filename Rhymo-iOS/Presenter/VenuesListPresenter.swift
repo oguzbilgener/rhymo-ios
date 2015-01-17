@@ -151,7 +151,7 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
         if let window = UIApplication.sharedApplication().delegate?.window? {
           if let viewController = segue.destinationViewController as? VenueDetailsViewController {
             venuesListWireframe?.venueDetailsWireframe?.configureDependencies(window, viewController: viewController)
-            venuesListWireframe?.passVenueToDetails(venues[path.row])
+            venuesListWireframe?.passVenueToDetails(filteredVenues[path.row])
           }
         }
       }
