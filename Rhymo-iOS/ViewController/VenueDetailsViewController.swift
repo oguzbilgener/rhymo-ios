@@ -41,6 +41,7 @@ class VenueDetailsViewController: BaseViewController {
     self.view.addSubview(customNavigationBar!)
 
     
+    // Manually set a back bar ittem
     let backItem = UIBarButtonItem(image: UIImage(named: "nav_back"), style: UIBarButtonItemStyle.Bordered, target: eventHandler, action: "backPressed:")
     customNavigationItem!.leftBarButtonItem = backItem
     
@@ -50,13 +51,17 @@ class VenueDetailsViewController: BaseViewController {
   }
   
   func updateHeader(venue: Venue) {
+    // update the title with given venue data
     customNavigationItem?.title = venue.name
     
+    // the first one of venue's photos is the cover image
     if(venue.photos.count > 0) {
+      // So download it
       let headerImgUrl = NSURL(string: venue.photos[0])
       imageManager.downloadImageWithURL(headerImgUrl, options: SDWebImageOptions.allZeros, progress: { (receivedSize: Int, expectedSize: Int) -> Void in
         
         }) { (image: UIImage!, error: NSError!, cacheType: SDImageCacheType, finished: Bool, url: NSURL!) -> Void in
+          // When completed, give it some blur and set it
           if(finished) {
             self.venueCoverImageView.image = UIImageEffects.imageByApplyingBlurToImage(image, withRadius: 10, tintColor: UIColor(rgba: "#00000033"), saturationDeltaFactor: 1, maskImage: nil)
           }
