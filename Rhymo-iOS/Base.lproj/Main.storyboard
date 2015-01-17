@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="d3P-Z7-o9t">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -267,10 +268,6 @@
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="toC-t9-y8V">
                                         <rect key="frame" x="17" y="76" width="90" height="90"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="90" id="Vf9-Iw-BIW"/>
-                                            <constraint firstAttribute="width" constant="90" id="iyu-b5-paB"/>
-                                        </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRP-IL-Muh">
                                         <rect key="frame" x="115" y="76" width="61" height="25"/>
@@ -321,6 +318,8 @@
                                     <constraint firstItem="LHr-4t-g9B" firstAttribute="leading" secondItem="SLZ-HE-AQj" secondAttribute="leading" id="gKL-vT-4L7"/>
                                     <constraint firstItem="c8Y-kg-KVo" firstAttribute="top" secondItem="HRP-IL-Muh" secondAttribute="bottom" constant="14" id="jyL-ii-nZD"/>
                                     <constraint firstItem="2gV-XW-DVT" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="x14-QP-JMl" secondAttribute="leading" id="m5S-08-19b"/>
+                                    <constraint firstItem="toC-t9-y8V" firstAttribute="height" secondItem="SLZ-HE-AQj" secondAttribute="width" multiplier="0.24" id="n3h-ae-JAt"/>
+                                    <constraint firstItem="toC-t9-y8V" firstAttribute="width" secondItem="SLZ-HE-AQj" secondAttribute="width" multiplier="0.24" id="nG3-mi-bhp"/>
                                     <constraint firstItem="HRP-IL-Muh" firstAttribute="leading" secondItem="toC-t9-y8V" secondAttribute="trailing" constant="8" id="nLS-8w-sK2"/>
                                     <constraint firstAttribute="bottom" secondItem="LHr-4t-g9B" secondAttribute="bottom" id="o40-cU-cFY"/>
                                     <constraint firstItem="HRP-IL-Muh" firstAttribute="top" secondItem="SLZ-HE-AQj" secondAttribute="top" constant="76" id="p8S-9l-QId"/>
