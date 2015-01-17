@@ -52,8 +52,8 @@ class VenueDetailsViewController: BaseViewController {
   func updateHeader(venue: Venue) {
     customNavigationItem?.title = venue.name
     
-    let headerImgUrl = NSURL(string: venue.photos[0])
     if(venue.photos.count > 0) {
+      let headerImgUrl = NSURL(string: venue.photos[0])
       imageManager.downloadImageWithURL(headerImgUrl, options: SDWebImageOptions.allZeros, progress: { (receivedSize: Int, expectedSize: Int) -> Void in
         
         }) { (image: UIImage!, error: NSError!, cacheType: SDImageCacheType, finished: Bool, url: NSURL!) -> Void in
