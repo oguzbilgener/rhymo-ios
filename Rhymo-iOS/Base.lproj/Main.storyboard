@@ -296,13 +296,16 @@
                                         <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <size key="shadowOffset" width="0.0" height="1"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x14-QP-JMl" customClass="SolidButton" customModule="Rhymo_iOS" customModuleProvider="target">
+                                    <button opaque="NO" tag="77" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x14-QP-JMl" customClass="SolidButton" customModule="Rhymo_iOS" customModuleProvider="target">
                                         <rect key="frame" x="251" y="140" width="114" height="30"/>
                                         <inset key="contentEdgeInsets" minX="6" minY="6" maxX="6" maxY="6"/>
                                         <state key="normal" title="Play your song">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="uuA-Sn-G0G" kind="show" id="QJh-nj-djd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.38131313131313127" green="0.38131313131313127" blue="0.38131313131313127" alpha="1" colorSpace="calibratedRGB"/>
@@ -372,7 +375,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="d4N-HQ-hIT">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d4N-HQ-hIT">
                                 <rect key="frame" x="0.0" y="179" width="375" height="2"/>
                                 <color key="progressTintColor" red="0.78823529410000004" green="0.0039215686269999999" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
@@ -398,6 +401,7 @@
                         <outlet property="nowPlayingArtistLabel" destination="c8Y-kg-KVo" id="4yh-Ie-a2i"/>
                         <outlet property="nowPlayingTitleLabel" destination="HRP-IL-Muh" id="i3g-YQ-t7M"/>
                         <outlet property="requestButton" destination="x14-QP-JMl" id="GD7-uH-T7T"/>
+                        <outlet property="trackProgress" destination="d4N-HQ-hIT" id="Cj4-Yw-M5m"/>
                         <outlet property="venueCoverImageView" destination="LHr-4t-g9B" id="3hu-J0-qp2"/>
                         <outlet property="venueSongTable" destination="pKn-Fp-Syg" id="1Sa-Ue-Uki"/>
                     </connections>
@@ -405,6 +409,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Wt-qJ-Pb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1161.5" y="18.5"/>
+        </scene>
+        <!--Search Tracks View Controller-->
+        <scene sceneID="3CF-8O-DeT">
+            <objects>
+                <viewController storyboardIdentifier="SearchTracksViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uuA-Sn-G0G" customClass="SearchTracksViewController" customModule="Rhymo_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sOi-g9-J8Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="EhI-W1-uLh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AhY-4J-Yt0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c0S-he-Ohf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1735.5" y="18.5"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="XEX-Fl-j0d">

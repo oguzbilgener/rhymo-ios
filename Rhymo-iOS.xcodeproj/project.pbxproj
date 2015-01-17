@@ -38,6 +38,10 @@
 		DDA4313E1A65359300513755 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA4313D1A65359300513755 /* UIColorExtension.swift */; };
 		DDA431401A6558B500513755 /* VenuesListRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA4313F1A6558B500513755 /* VenuesListRefreshControl.swift */; };
 		DDAA4ECB1A666D1D00CF0C82 /* VenueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAA4ECA1A666D1D00CF0C82 /* VenueCell.swift */; };
+		DDAAD7B51A6AB4A400355C71 /* SearchTracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAAD7B41A6AB4A400355C71 /* SearchTracksViewController.swift */; };
+		DDAAD7B71A6AD10000355C71 /* SearchTracksWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAAD7B61A6AD10000355C71 /* SearchTracksWireframe.swift */; };
+		DDAAD7B91A6AD1B400355C71 /* SearchTracksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAAD7B81A6AD1B400355C71 /* SearchTracksPresenter.swift */; };
+		DDAAD7BB1A6AD33400355C71 /* SearchTracksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAAD7BA1A6AD33400355C71 /* SearchTracksInteractor.swift */; };
 		DDCC3BED1A668C3400071EDB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCC3BEC1A668C3400071EDB /* MapKit.framework */; };
 		DDCC3BEF1A66924E00071EDB /* VenuesListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDCC3BEE1A66924E00071EDB /* VenuesListHeader.xib */; };
 		DDCC3BF11A6699D800071EDB /* VenuesSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDCC3BF01A6699D800071EDB /* VenuesSectionHeader.xib */; };
@@ -111,6 +115,10 @@
 		DDA4313D1A65359300513755 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = ThirdParty/UIColorExtension.swift; sourceTree = "<group>"; };
 		DDA4313F1A6558B500513755 /* VenuesListRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenuesListRefreshControl.swift; path = View/VenuesListRefreshControl.swift; sourceTree = "<group>"; };
 		DDAA4ECA1A666D1D00CF0C82 /* VenueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenueCell.swift; path = View/VenueCell.swift; sourceTree = "<group>"; };
+		DDAAD7B41A6AB4A400355C71 /* SearchTracksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTracksViewController.swift; path = ViewController/SearchTracksViewController.swift; sourceTree = "<group>"; };
+		DDAAD7B61A6AD10000355C71 /* SearchTracksWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTracksWireframe.swift; path = Wireframe/SearchTracksWireframe.swift; sourceTree = "<group>"; };
+		DDAAD7B81A6AD1B400355C71 /* SearchTracksPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTracksPresenter.swift; path = Presenter/SearchTracksPresenter.swift; sourceTree = "<group>"; };
+		DDAAD7BA1A6AD33400355C71 /* SearchTracksInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTracksInteractor.swift; path = Interactor/SearchTracksInteractor.swift; sourceTree = "<group>"; };
 		DDCC3BEC1A668C3400071EDB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DDCC3BEE1A66924E00071EDB /* VenuesListHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VenuesListHeader.xib; path = View/VenuesListHeader.xib; sourceTree = "<group>"; };
 		DDCC3BF01A6699D800071EDB /* VenuesSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VenuesSectionHeader.xib; path = View/VenuesSectionHeader.xib; sourceTree = "<group>"; };
@@ -193,7 +201,6 @@
 				DD7BFDD71A6308DE009ADC4F /* AppDependencies.swift */,
 				DDE4104F1A630D3B008D9A13 /* View */,
 				DD7BFDE01A630B2D009ADC4F /* ViewController */,
-				DD7BFDD31A63004D009ADC4F /* Manager */,
 				DDE4105A1A63285D008D9A13 /* Presenter */,
 				DD7BFDD21A630043009ADC4F /* Interactor */,
 				DD15CF441A62E83100812A70 /* Model */,
@@ -264,15 +271,9 @@
 				DD470CFC1A63C59D0082F33D /* BaseInteractor.swift */,
 				DD3646BF1A648786008CA1B6 /* VenuesListInteractor.swift */,
 				DDD258B01A66E0E9008FD58B /* VenueDetailsInteractor.swift */,
+				DDAAD7BA1A6AD33400355C71 /* SearchTracksInteractor.swift */,
 			);
 			name = Interactor;
-			sourceTree = "<group>";
-		};
-		DD7BFDD31A63004D009ADC4F /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Manager;
 			sourceTree = "<group>";
 		};
 		DD7BFDDD1A630AB4009ADC4F /* Wireframe */ = {
@@ -285,6 +286,7 @@
 				DD30F8031A6331080033EB63 /* LoginWireframe.swift */,
 				DD30F8051A6331210033EB63 /* RegisterWireframe.swift */,
 				DDD258B41A66E119008FD58B /* VenueDetailsWireframe.swift */,
+				DDAAD7B61A6AD10000355C71 /* SearchTracksWireframe.swift */,
 			);
 			name = Wireframe;
 			sourceTree = "<group>";
@@ -299,6 +301,7 @@
 				DDCD68E31A6436430079089F /* BaseViewController.swift */,
 				DD3646BD1A648708008CA1B6 /* VenuesListViewController.swift */,
 				DDD258AE1A66E0CE008FD58B /* VenueDetailsViewController.swift */,
+				DDAAD7B41A6AB4A400355C71 /* SearchTracksViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				DD470CFE1A63C7AE0082F33D /* BasePresenter.swift */,
 				DD3646BB1A646E17008CA1B6 /* VenuesListPresenter.swift */,
 				DDD258B21A66E0FF008FD58B /* VenueDetailsPresenter.swift */,
+				DDAAD7B81A6AD1B400355C71 /* SearchTracksPresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -520,7 +524,9 @@
 				DD7B2AD61A69DC9E00A21780 /* TrackCell.swift in Sources */,
 				DD15CF1E1A62E0DB00812A70 /* AppDelegate.swift in Sources */,
 				DDD258AF1A66E0CE008FD58B /* VenueDetailsViewController.swift in Sources */,
+				DDAAD7B91A6AD1B400355C71 /* SearchTracksPresenter.swift in Sources */,
 				DDFDD9A61A658B85001F4AFA /* Venue.swift in Sources */,
+				DDAAD7BB1A6AD33400355C71 /* SearchTracksInteractor.swift in Sources */,
 				DD470CFF1A63C7AE0082F33D /* BasePresenter.swift in Sources */,
 				DDD258B51A66E119008FD58B /* VenueDetailsWireframe.swift in Sources */,
 				DD470CFD1A63C59D0082F33D /* BaseInteractor.swift in Sources */,
@@ -542,11 +548,13 @@
 				DDE410511A630DD8008D9A13 /* HomeViewController.swift in Sources */,
 				DDA4313E1A65359300513755 /* UIColorExtension.swift in Sources */,
 				DDAA4ECB1A666D1D00CF0C82 /* VenueCell.swift in Sources */,
+				DDAAD7B71A6AD10000355C71 /* SearchTracksWireframe.swift in Sources */,
 				DD30F8021A632CFE0033EB63 /* LandingInteractor.swift in Sources */,
 				DD15CF431A62E75C00812A70 /* RhymoClient.swift in Sources */,
 				DD15CF461A62E84B00812A70 /* User.swift in Sources */,
 				DDE410531A630E00008D9A13 /* LandingViewController.swift in Sources */,
 				DD29BF301A65AF7700FC4EA3 /* Encryption.swift in Sources */,
+				DDAAD7B51A6AB4A400355C71 /* SearchTracksViewController.swift in Sources */,
 				DD30F80C1A6333190033EB63 /* LoginPresenter.swift in Sources */,
 				DD7B2AD41A69CABE00A21780 /* UIImageEffects.m in Sources */,
 				DD30F8081A6331700033EB63 /* LoginViewController.swift in Sources */,

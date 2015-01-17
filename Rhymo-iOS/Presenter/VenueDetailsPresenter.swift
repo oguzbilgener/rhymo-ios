@@ -8,6 +8,8 @@
 
 import UIKit
 
+let RequestButtonTag = 77
+
 class VenueDetailsPresenter: BasePresenter {
   
   
@@ -18,6 +20,8 @@ class VenueDetailsPresenter: BasePresenter {
   var historyPlaylist: [PlaylistTrack]?
   var upcomingPlaylist: [PlaylistTrack]?
   var nowPlaying: PlaylistTrack?
+  
+  var progressIntervalTimer: NSTimer?
   
   func onViewLoadFinish() {
     userInterface?.updateNowPlaying(PlaylistTrack())
@@ -33,6 +37,7 @@ class VenueDetailsPresenter: BasePresenter {
         debugPrintln(error)
       }
       else if let loadedVenue = venue {
+        self.venueDetailsWireframe?.venue = loadedVenue
         self.userInterface?.updateHeader(loadedVenue)
       }
       self.hideActivityIndicator()
@@ -61,6 +66,31 @@ class VenueDetailsPresenter: BasePresenter {
     self.userInterface!.updateTracksList()
   }
   
+  // MARK: - Progress Bar
+  
+  func startProgress(track: PlaylistTrack) {
+    resetProgress()
+    let interval = NSTimeInterval(track.duration / 100)
+    progressIntervalTimer = NSTimer(timeInterval: interval, target: self, selector: "updateProgress:", userInfo: nil, repeats: true)
+  }
+  
+  func stopProgress() {
+    progressIntervalTimer?.invalidate()
+  }
+  
+  func updateProgress(sender: AnyObject?) {
+    if let ui = userInterface {
+      ui.trackProgress.setProgress(ui.trackProgress.progress + 1, animated: true)
+      if(ui.trackProgress.progress == 100) {
+        stopProgress()
+      }
+    }
+  }
+  
+  func resetProgress() {
+    userInterface?.trackProgress.setProgress(0, animated: true)
+  }
+  
   // MARK: - Helpers
   
   func showActivityIndicator() {
@@ -73,5 +103,18 @@ class VenueDetailsPresenter: BasePresenter {
   
   func backPressed(sender: AnyObject?) {
     userInterface?.navigationController?.popViewControllerAnimated(true)
+  }
+  
+  func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if let button = sender as? UIButton {
+      if(button.tag == RequestButtonTag) {
+        if let window = UIApplication.sharedApplication().delegate?.window? {
+          if let viewController = segue.destinationViewController as? SearchTracksViewController {
+            venueDetailsWireframe?.searchTracksWireframe?.configureDependencies(window, viewController: viewController)
+            venueDetailsWireframe?.passVenueToDetails()
+          }
+        }
+      }
+    }
   }
 }

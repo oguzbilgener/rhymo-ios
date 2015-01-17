@@ -258,9 +258,7 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
           self.venuesTable?.contentInset.bottom = self.venuesTable!.contentInset.bottom - keyboardSize.height
       }
     }
-  }
-    
-
+  }  
   
   // MARK: - Navigation
 

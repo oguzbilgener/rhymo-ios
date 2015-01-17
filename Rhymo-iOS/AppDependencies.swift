@@ -35,7 +35,7 @@ class AppDependencies {
   }
   
   func installRootViewControllerIntoWindow(window: UIWindow) {
-    
+
     UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
     
     authenticatedUser = RhymoClient.getAuthenticatedUser()
@@ -67,5 +67,16 @@ class AppDependencies {
     
     landingInteractor.output = landingPresenter
     
+  }
+  
+  func logout(#window: UIWindow) {
+    let client = RhymoClient()
+    client.logout()
+    self.showLandingAfterLogout(window)
+  }
+
+  func showLandingAfterLogout(window: UIWindow) {
+    rootWireframe.authWireframe?.presentLandingInterfaceFromWindow(window)
+    rootWireframe.authWireframe?.configureDependencies(window)
   }
 }

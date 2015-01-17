@@ -11,13 +11,14 @@ import Lockbox
 import Alamofire
 import SwiftyJSON
 
-let RhymoEndpoint = "http://192.168.1.101:9000/v1/" // 192.168.2.254
+let RhymoEndpoint = "http://192.168.2.254:9000/v1/" // 192.168.2.254 192.168.1.101
 
 let kUser = "user_obj"
 let kPublicKey = "public_key"
 let kSecretToken = "secret_token"
 
 let RhymoErrorDomain = NSBundle.mainBundle().bundleIdentifier!
+let RhymoUnauthorizedCode = 401
 
 class RhymoClient {
   
@@ -132,7 +133,12 @@ class RhymoClient {
               result(error: nil, venues: venues)
             }
             else {
-              result(error: error, venues: [])
+              if(response?.statusCode == 401) {
+                result(error: NSError(domain: RhymoErrorDomain, code: RhymoUnauthorizedCode, userInfo: nil), venues: [])
+              }
+              else {
+                result(error: error, venues: [])
+              }
             }
         }
 
@@ -174,7 +180,12 @@ class RhymoClient {
               result(error: nil, venue: venue)
             }
             else {
-              result(error: error, venue: nil)
+              if(response?.statusCode == 401) {
+                result(error: NSError(domain: RhymoErrorDomain, code: RhymoUnauthorizedCode, userInfo: nil), venue: nil)
+              }
+              else {
+                result(error: error, venue: nil)
+              }
             }
         }
       }

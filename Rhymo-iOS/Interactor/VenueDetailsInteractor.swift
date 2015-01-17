@@ -29,6 +29,7 @@ class VenueDetailsInteractor: BaseInteractor {
     nowPlaying.artistName = "Frank Sinatra"
     nowPlaying.albumName = "Best of The Best"
     nowPlaying.albumCoverUrl = "http://server2.oguzdev.com/file/B005HR04HK.01_SL75_.jpg"
+    nowPlaying.duration = 300
     output?.nowPlaying = nowPlaying
     
     let maggie = PlaylistTrack()
@@ -47,5 +48,6 @@ class VenueDetailsInteractor: BaseInteractor {
     
     output?.updateNowPlaying()
     output?.updateTracksList()
+    output?.startProgress(nowPlaying)
   }
 }

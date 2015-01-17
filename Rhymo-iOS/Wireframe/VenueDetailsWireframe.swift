@@ -10,13 +10,12 @@ import UIKit
 
 class VenueDetailsWireframe: BaseWireframe {
   
+  var searchTracksWireframe: SearchTracksWireframe?
+  
   var venueDetailsInteractor: VenueDetailsInteractor?
   var venueDetailsPresenter: VenueDetailsPresenter?
   var venue = Venue()
   
-//  override init() {
-//    
-//  }
   
   func configureDependencies(window: UIWindow, viewController: VenueDetailsViewController?) {
     venueDetailsInteractor = VenueDetailsInteractor()
@@ -31,6 +30,12 @@ class VenueDetailsWireframe: BaseWireframe {
       userInterface.eventHandler = venueDetailsPresenter
       venueDetailsPresenter?.userInterface = userInterface
     }
+    
+    searchTracksWireframe = SearchTracksWireframe()
+  }
+  
+  func passVenueToDetails() {
+    searchTracksWireframe?.venue = venue
   }
   
 }

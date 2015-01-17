@@ -107,7 +107,11 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
   }
   
   func onVenuesLoaded(#refreshControl: UIRefreshControl, location: CLLocation)(error: NSError?, venues: [Venue]!) {
-    // TODO: if 401, logout
+    if(error != nil && error?.code == RhymoUnauthorizedCode) {
+      hideActivityIndicator()
+      self.logout()
+      return
+    }
     self.venues = venues
     self.filteredVenues = self.venues
     self.lastLocation = location
@@ -132,6 +136,11 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
   
   func hideActivityIndicator() {
     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+  }
+  
+  func logout() {
+    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    appDelegate.appDependencies.logout(window: appDelegate.window!)
   }
   
   // MARK: - Segue delegation

@@ -25,6 +25,8 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
   @IBOutlet weak var nowPlayingAlbumLabel: UILabel!
   @IBOutlet weak var venueSongTable: UITableView!
   @IBOutlet weak var requestButton: SolidButton!
+  @IBOutlet weak var trackProgress: UIProgressView!
+  
   
   var historySectionTitleView: UIView?
   var upcomingSectionTitleView: UIView?
@@ -222,6 +224,9 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
   }
   
   func updateNowPlaying(track: PlaylistTrack) {
+    self.nowPlayingTitleLabel.text = track.name
+    self.nowPlayingArtistLabel.text = track.artistName
+    self.nowPlayingAlbumLabel.text = track.albumName
     if(track.albumCoverUrl != "") {
       let coverUrl = NSURL(string: track.albumCoverUrl)
       imageManager.downloadImageWithURL(coverUrl, options: SDWebImageOptions.allZeros, progress: { (receivedSize: Int, expectedSize: Int) -> Void in
@@ -236,21 +241,20 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
           }
       }
     }
-    self.nowPlayingTitleLabel.text = track.name
-    self.nowPlayingArtistLabel.text = track.artistName
-    self.nowPlayingAlbumLabel.text = track.albumName
+    
+    if(track.name == "") {
+      trackProgress.setProgress(0, animated: false)
+    }
   }
   
 
-    /*
-    // MARK: - Navigation
+  
+  // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    eventHandler?.prepareForSegue(segue, sender: sender)
+  }
+
   
   override func preferredStatusBarStyle() -> UIStatusBarStyle {
     return UIStatusBarStyle.LightContent
