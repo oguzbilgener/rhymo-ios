@@ -425,7 +425,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchTrackCell" textLabel="udw-5g-DPN" detailTextLabel="Voj-DO-mgd" style="IBUITableViewCellStyleSubtitle" id="gVo-Pq-PtD" customClass="SearchTrackCell" customModule="Rhymo_iOS" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchTrackCell" textLabel="udw-5g-DPN" detailTextLabel="Voj-DO-mgd" style="IBUITableViewCellStyleSubtitle" id="gVo-Pq-PtD" customClass="SearchTrackCell" customModule="Rhymo_iOS" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gVo-Pq-PtD" id="dTu-6X-a1q">
                                             <autoresizingMask key="autoresizingMask"/>
