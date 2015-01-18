@@ -15,6 +15,10 @@ class SearchTracksInteractor: BaseInteractor {
   var output: SearchTracksPresenter?
   
   func getTracksByName(name: String, result:(error: NSError?, tracks: [Track])->()) {
+    if(countElements(name) == 0) {
+      output?.clearTracksList()
+      return
+    }
     if(countElements(name) < TrackSearchMinimumLength) {
       // keyword is too short yet. return without sending any callbacks
       return

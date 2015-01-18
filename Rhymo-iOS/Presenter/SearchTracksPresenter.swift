@@ -35,6 +35,7 @@ class SearchTracksPresenter: BasePresenter, UISearchBarDelegate {
   }
   
   func searchTrack(keyword: String) {
+    showActivityIndicator()
     if let interactor = searchTracksInteractor {
       interactor.getTracksByName(keyword, result: { (error, tracks) -> () in
         if(error != nil) {
@@ -45,6 +46,7 @@ class SearchTracksPresenter: BasePresenter, UISearchBarDelegate {
           self.displayedTracks = tracks
           self.updateTracksList()
         }
+        self.hideActivityIndicator()
       })
     }
   }
@@ -53,6 +55,13 @@ class SearchTracksPresenter: BasePresenter, UISearchBarDelegate {
   
   func updateTracksList() {
     userInterface?.updateTracksList()
+  }
+  
+  func clearTracksList() {
+    if(countElements(displayedTracks) > 0) {
+      displayedTracks.removeAll(keepCapacity: false)
+    }
+    updateTracksList()
   }
   
   // MARK: - Helpers

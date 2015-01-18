@@ -37,7 +37,7 @@ class SearchTracksViewController: BaseViewController, UITableViewDelegate, UITab
     customNavigationItem!.leftBarButtonItem = backItem
     self.view.addSubview(customNavigationBar!)
     
-    // TODO: fix this titlebg with AutoLayout
+    // TODO: fix this titlebg with AutoLayout, make it disappear when the screen is landscape
     let titlebg = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.height, height: 20))
     titlebg.backgroundColor = UIColor(hue:0.98, saturation:0.8, brightness:0.79, alpha:1)
     self.view.addSubview(titlebg)
@@ -48,9 +48,26 @@ class SearchTracksViewController: BaseViewController, UITableViewDelegate, UITab
     self.view.addConstraint(NSLayoutConstraint(item: titlebg, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 20))
     
     self.trackResultsTable.contentInset.top = 44
-    
     self.trackResultsTable.delegate = self
     self.trackResultsTable.dataSource = self
+    
+    let tableBackgroundView = UIView(frame: self.trackResultsTable.bounds)
+    tableBackgroundView.backgroundColor = containerBackgroundColor
+    self.trackResultsTable.backgroundView = tableBackgroundView
+    
+    // Put a "Powered by Fizy" banner to the bottom of the table
+    let fizyPoweredImage = UIImage(named: "fizy_powered")
+    let fizyPoweredImageView = UIImageView(frame: CGRect(x:0, y:0, width: 100, height: 21))
+    fizyPoweredImageView.image = fizyPoweredImage
+    let fizyPoweredContainer = UIView(frame: CGRect(x:0, y:0, width: trackResultsTable.frame.size.width, height: 44))
+    self.trackResultsTable.tableFooterView = fizyPoweredContainer
+    
+    fizyPoweredContainer.addSubview(fizyPoweredImageView)
+    fizyPoweredImageView.setTranslatesAutoresizingMaskIntoConstraints(false)
+    fizyPoweredContainer.addConstraint(NSLayoutConstraint(item: fizyPoweredImageView, attribute: .CenterX, relatedBy: .Equal, toItem: fizyPoweredContainer, attribute: .CenterX, multiplier: 1, constant: 0))
+    fizyPoweredContainer.addConstraint(NSLayoutConstraint(item: fizyPoweredImageView, attribute: .CenterY, relatedBy: .Equal, toItem: fizyPoweredContainer, attribute: .CenterY, multiplier: 1, constant: 0))
+    fizyPoweredContainer.addConstraint(NSLayoutConstraint(item: fizyPoweredImageView, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 100))
+    fizyPoweredContainer.addConstraint(NSLayoutConstraint(item: fizyPoweredImageView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 21))
     
     
     // Set up the search bar
@@ -110,6 +127,8 @@ class SearchTracksViewController: BaseViewController, UITableViewDelegate, UITab
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     // segue already handles it
   }
+  
+  // TODO: Add a "Powered by Fizy" footer
   
   // MARK - UI Update
   
