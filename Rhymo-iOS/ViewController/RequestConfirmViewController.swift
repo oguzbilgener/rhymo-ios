@@ -150,7 +150,7 @@ class RequestConfirmViewController: BaseViewController {
   
   
   @IBAction func playConfirmButtonTouched(sender: UIButton) {
-//    eventHandler?.playConfirmButtonTouched(sender: UIButton)
+    eventHandler?.playConfirmButtonTouched(sender)
   }
     
 

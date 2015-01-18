@@ -8,7 +8,9 @@
 
 import UIKit
 
-class RequestConfirmPresenter: BasePresenter {
+let RequestSuccessfulAlertTag = 99
+
+class RequestConfirmPresenter: BasePresenter, UIAlertViewDelegate {
   
   var requestConfirmInteractor: RequestConfirmInteractor?
   var requestConfirmWireframe: RequestConfirmWireframe?
@@ -35,7 +37,45 @@ class RequestConfirmPresenter: BasePresenter {
   }
 
   func playConfirmButtonTouched(sender: UIButton) {
-    debugPrintln("play confirmed, start purchase")
+    // No purchase this time, go ahead and make the request right away
+    sendTrackRequest()
+  }
+  
+  // MARK: - Payment
+  
+  // MARK: - Request
+  
+  func sendTrackRequest() {
+    let venue = requestConfirmWireframe!.venue
+    let track = requestConfirmWireframe!.track
+    
+    showActivityIndicator()
+    requestConfirmInteractor?.sendTrackRequest(venue, track: track, result: { (error, success) -> () in
+      self.hideActivityIndicator()
+      if(success) {
+          // TODO: show a better alert
+        let alert = UIAlertView(title: "Payment successful!", message: "Your track will be played shortly at \(venue.name). Thanks!", delegate: self, cancelButtonTitle: "Ok")
+        alert.tag = RequestSuccessfulAlertTag
+        alert.show()
+      }
+      else {
+        if(error != nil) {
+          debugPrintln(error)
+          let alert = UIAlertView(title: "Oh no!", message: "Something went wrong...", delegate: self, cancelButtonTitle: "Ok")
+          alert.tag = RequestSuccessfulAlertTag
+          alert.show()
+        }
+      }
+    })
+  }
+  
+  // MARK: - AlertView delegation
+  
+  func alertView(alertView: UIAlertView, didDismissWithButtonIndex buttonIndex: Int) {
+    if(alertView.tag == RequestSuccessfulAlertTag) {
+      // close this VC when ok button is clicked
+      backPressed(nil)
+    }
   }
   
   // MARK: - Helpers

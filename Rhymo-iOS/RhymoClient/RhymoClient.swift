@@ -250,7 +250,52 @@ class RhymoClient {
     else {
       let error = NSError(domain: RhymoErrorDomain, code: 9, userInfo: nil)
       result(error: error, tracks: [Track]())
+    }
+  }
+  
+  func requestTrack(#track: Track, venue: Venue, result: (error: NSError?, success: Bool) -> ()) {
+    if let user = authenticatedUser {
+      let requestUrl = RhymoEndpoint + "request"
+      
+      let parameters: [String: AnyObject] = [
+        "venue_id": venue.id,
+        "track_id": track.fizyId
+      ]
+      
+      let bodyJson = JSON(parameters)
+      if let bodyStr = bodyJson.rawString(encoding: NSUTF8StringEncoding, options: NSJSONWritingOptions.allZeros) {
+        
+        let publicKey = user.publicKey
+        let signature = RhymoClient.hmacSha1(key: user.secretToken, data: bodyStr)
+        
+        let queryString = "?public_key="+publicKey+"&signature="+signature
+        
+        let request = Alamofire.request(.POST, requestUrl + queryString, parameters: parameters, encoding: .JSON)
+          .response {
+            (request, response, data, error) in
+            if(error == nil && response?.statusCode == 200) {
+              // 200 = request is successful
+              result(error: nil, success: true)
+            }
+            else {
+              if(response?.statusCode == 401) {
+                result(error: NSError(domain: RhymoErrorDomain, code: RhymoUnauthorizedCode, userInfo: nil), success: false)
+              }
+              else {
+                result(error: error, success: false)
+              }
+            }
+        }
+      }
+      else {
+        let error = NSError(domain: RhymoErrorDomain, code: 11, userInfo: nil)
+        result(error: error, success: false)
+      }
 
+    }
+    else {
+      let error = NSError(domain: RhymoErrorDomain, code: 9, userInfo: nil)
+      result(error: error, success: false)
     }
   }
   
