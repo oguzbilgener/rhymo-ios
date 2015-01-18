@@ -27,6 +27,12 @@ class SolidButton: UIButton {
     
   }
   
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    self.layer.borderColor = self.currentTitleColor?.CGColor
+    // Initialization code
+  }
+  
 //  override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
 //    super.touchesBegan(touches, withEvent: event)
 //    self.layer.borderColor = self.currentTitleColor!.CGColor
