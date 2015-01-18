@@ -30,6 +30,7 @@
 		DD470CFD1A63C59D0082F33D /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD470CFC1A63C59D0082F33D /* BaseInteractor.swift */; };
 		DD470CFF1A63C7AE0082F33D /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD470CFE1A63C7AE0082F33D /* BasePresenter.swift */; };
 		DD470D011A63C8350082F33D /* LoginContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD470D001A63C8350082F33D /* LoginContent.xib */; };
+		DD75F9E61A6B2E18009A4E9E /* SearchTrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD75F9E51A6B2E18009A4E9E /* SearchTrackCell.swift */; };
 		DD7B2AD41A69CABE00A21780 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7B2AD31A69CABE00A21780 /* UIImageEffects.m */; };
 		DD7B2AD61A69DC9E00A21780 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7B2AD51A69DC9D00A21780 /* TrackCell.swift */; };
 		DD7BFDD81A6308DE009ADC4F /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDD71A6308DE009ADC4F /* AppDependencies.swift */; };
@@ -106,6 +107,7 @@
 		DD470CFC1A63C59D0082F33D /* BaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseInteractor.swift; path = Interactor/BaseInteractor.swift; sourceTree = "<group>"; };
 		DD470CFE1A63C7AE0082F33D /* BasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasePresenter.swift; path = Presenter/BasePresenter.swift; sourceTree = "<group>"; };
 		DD470D001A63C8350082F33D /* LoginContent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginContent.xib; path = View/LoginContent.xib; sourceTree = "<group>"; };
+		DD75F9E51A6B2E18009A4E9E /* SearchTrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTrackCell.swift; path = View/SearchTrackCell.swift; sourceTree = "<group>"; };
 		DD7B2AD21A69CABE00A21780 /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
 		DD7B2AD31A69CABE00A21780 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
 		DD7B2AD51A69DC9D00A21780 /* TrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackCell.swift; path = View/TrackCell.swift; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				DDCC3BF01A6699D800071EDB /* VenuesSectionHeader.xib */,
 				DDDE30911A6A6C4F001F33F3 /* TracksSectionHeader.xib */,
 				DD7B2AD51A69DC9D00A21780 /* TrackCell.swift */,
+				DD75F9E51A6B2E18009A4E9E /* SearchTrackCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				DDD258B31A66E0FF008FD58B /* VenueDetailsPresenter.swift in Sources */,
 				DD3646C01A648786008CA1B6 /* VenuesListInteractor.swift in Sources */,
 				DDDE30981A6A73C5001F33F3 /* PlaylistTrack.swift in Sources */,
+				DD75F9E61A6B2E18009A4E9E /* SearchTrackCell.swift in Sources */,
 				DDCD68E21A6435990079089F /* AuthCompleteTransition.swift in Sources */,
 				DD7BFDE21A630BBB009ADC4F /* AuthWireframe.swift in Sources */,
 				DD30F8041A6331080033EB63 /* LoginWireframe.swift in Sources */,

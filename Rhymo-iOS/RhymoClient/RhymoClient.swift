@@ -84,7 +84,7 @@ class RhymoClient {
   }
   
   func register() {
-    
+    // TODO
   }
   
   func logout() {
@@ -200,6 +200,60 @@ class RhymoClient {
     }
   }
   
+  func getTracksByName(keyword: String, result: (error: NSError?, tracks: [Track])->()) {
+    if let user = authenticatedUser {
+      let repStr = keyword.stringByReplacingOccurrencesOfString(" ", withString: "+", options: nil, range: nil)
+      let requestUrl = RhymoEndpoint + "search/tracks/\(repStr)"
+      
+      let parameters: [String: AnyObject] = [
+        "keyword": keyword
+      ]
+      
+      let bodyJson = JSON(parameters)
+      if let bodyStr = bodyJson.rawString(encoding: NSUTF8StringEncoding, options: NSJSONWritingOptions.allZeros) {
+        
+        let publicKey = user.publicKey
+        let signature = RhymoClient.hmacSha1(key: user.secretToken, data: bodyStr)
+        
+        let queryString = "?public_key="+publicKey+"&signature="+signature
+
+        let request = Alamofire.request(.POST, requestUrl + queryString, parameters: parameters, encoding: .JSON)
+          .validate()
+          .responseJSON {
+            (request, response, data, error) in
+            if(error == nil) {
+              let json = JSON(data!)
+              var tracks = [Track]()
+              
+              for (index: String, values: JSON) in json {
+                let track = self.parseTrack(values)
+                tracks.append(track)
+              }
+              
+              result(error: nil, tracks: tracks)
+            }
+            else {
+              if(response?.statusCode == 401) {
+                result(error: NSError(domain: RhymoErrorDomain, code: RhymoUnauthorizedCode, userInfo: nil), tracks: [Track]())
+              }
+              else {
+                result(error: error, tracks: [Track]())
+              }
+            }
+        }
+      }
+      else {
+        let error = NSError(domain: RhymoErrorDomain, code: 11, userInfo: nil)
+        result(error: error, tracks: [Track]())
+      }
+    }
+    else {
+      let error = NSError(domain: RhymoErrorDomain, code: 9, userInfo: nil)
+      result(error: error, tracks: [Track]())
+
+    }
+  }
+  
   // MARK: - Parsing helpers
   private func parseVenue(json: JSON) -> Venue {
     let venue = Venue()
@@ -232,6 +286,29 @@ class RhymoClient {
     venue.photos = photosArray
     }
     return venue
+  }
+  
+  private func parseTrack(json: JSON) -> Track {
+    let track = Track()
+    if let albumName = json["album"]["name"].string {
+      track.albumName = albumName
+    }
+    if let coverUrl = json["album"]["cover_large"].string {
+      track.albumCoverUrl = coverUrl
+    }
+    if let artistName = json["artist"]["name"].string {
+      track.artistName = artistName
+    }
+    if let name = json["name"].string {
+      track.name = name
+    }
+    if let duration = json["duration"].int {
+      track.duration = duration
+    }
+    if let id = json["id"].int {
+      track.fizyId = id
+    }
+    return track
   }
   
   // MARK: - Authentication helpers
