@@ -36,7 +36,6 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    println(eventHandler?.venueDetailsWireframe?.venue)
     
 
     // Set up custom navigation bar

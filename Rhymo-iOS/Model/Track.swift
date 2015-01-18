@@ -28,5 +28,9 @@ class Track: NSObject {
     albumCoverUrl = ""
     duration = 0
   }
+  
+  override var description: String {
+    return "\(name) by \(artistName) (\(fizyId))"
+  }
    
 }

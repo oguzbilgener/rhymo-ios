@@ -10,6 +10,8 @@ import UIKit
 
 class SearchTracksWireframe: BaseWireframe {
   
+  var requestConfirmWireframe: RequestConfirmWireframe?
+  
   var searchTracksInteractor: SearchTracksInteractor?
   var searchTracksPresenter: SearchTracksPresenter?
   var venue = Venue()
@@ -27,6 +29,13 @@ class SearchTracksWireframe: BaseWireframe {
       userInterface.eventHandler = searchTracksPresenter
       searchTracksPresenter?.userInterface = userInterface
     }
+    
+    requestConfirmWireframe = RequestConfirmWireframe()
+  }
+  
+  func passVenueAndTrackToDetails(#track: Track) {
+    requestConfirmWireframe?.venue = venue
+    requestConfirmWireframe?.track = track
   }
   
 }

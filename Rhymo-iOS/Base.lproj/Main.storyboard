@@ -447,6 +447,7 @@
                                         <connections>
                                             <outlet property="trackArtistLabel" destination="Voj-DO-mgd" id="lDd-6L-EMJ"/>
                                             <outlet property="trackNameLabel" destination="udw-5g-DPN" id="eV5-7H-u30"/>
+                                            <segue destination="dgW-vT-yJB" kind="show" id="58H-va-Y1u"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -471,6 +472,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c0S-he-Ohf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1735.5" y="18.5"/>
+        </scene>
+        <!--Request Confirm View Controller-->
+        <scene sceneID="efa-Jq-gur">
+            <objects>
+                <viewController storyboardIdentifier="RequestConfirmViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dgW-vT-yJB" customClass="RequestConfirmViewController" customModule="Rhymo_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Eb7-Qs-fCl"/>
+                        <viewControllerLayoutGuide type="bottom" id="B7K-Hp-vSV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Ar-eb-pHd">
+                        <rect key="frame" x="0.0" y="0.0" width="355" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="355" height="667"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a4W-M5-erc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2291.5" y="18.5"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="XEX-Fl-j0d">

@@ -36,6 +36,10 @@
 		DD7BFDD81A6308DE009ADC4F /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDD71A6308DE009ADC4F /* AppDependencies.swift */; };
 		DD7BFDE21A630BBB009ADC4F /* AuthWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDE11A630BBB009ADC4F /* AuthWireframe.swift */; };
 		DD7BFDE41A630BE6009ADC4F /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDE31A630BE6009ADC4F /* RootWireframe.swift */; };
+		DD9C6A5D1A6BD8BE0077BC37 /* RequestConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9C6A5C1A6BD8BE0077BC37 /* RequestConfirmViewController.swift */; };
+		DD9C6A5F1A6BDA390077BC37 /* RequestConfirmWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9C6A5E1A6BDA390077BC37 /* RequestConfirmWireframe.swift */; };
+		DD9C6A611A6BDAA20077BC37 /* RequestConfirmInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9C6A601A6BDAA20077BC37 /* RequestConfirmInteractor.swift */; };
+		DD9C6A631A6BDAB90077BC37 /* RequestConfirmPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9C6A621A6BDAB90077BC37 /* RequestConfirmPresenter.swift */; };
 		DDA4313E1A65359300513755 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA4313D1A65359300513755 /* UIColorExtension.swift */; };
 		DDA431401A6558B500513755 /* VenuesListRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA4313F1A6558B500513755 /* VenuesListRefreshControl.swift */; };
 		DDAA4ECB1A666D1D00CF0C82 /* VenueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAA4ECA1A666D1D00CF0C82 /* VenueCell.swift */; };
@@ -114,6 +118,10 @@
 		DD7BFDD71A6308DE009ADC4F /* AppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		DD7BFDE11A630BBB009ADC4F /* AuthWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthWireframe.swift; path = Wireframe/AuthWireframe.swift; sourceTree = "<group>"; };
 		DD7BFDE31A630BE6009ADC4F /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootWireframe.swift; path = Wireframe/RootWireframe.swift; sourceTree = "<group>"; };
+		DD9C6A5C1A6BD8BE0077BC37 /* RequestConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestConfirmViewController.swift; path = ViewController/RequestConfirmViewController.swift; sourceTree = "<group>"; };
+		DD9C6A5E1A6BDA390077BC37 /* RequestConfirmWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestConfirmWireframe.swift; path = Wireframe/RequestConfirmWireframe.swift; sourceTree = "<group>"; };
+		DD9C6A601A6BDAA20077BC37 /* RequestConfirmInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestConfirmInteractor.swift; path = Interactor/RequestConfirmInteractor.swift; sourceTree = "<group>"; };
+		DD9C6A621A6BDAB90077BC37 /* RequestConfirmPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestConfirmPresenter.swift; path = Presenter/RequestConfirmPresenter.swift; sourceTree = "<group>"; };
 		DDA4313D1A65359300513755 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = ThirdParty/UIColorExtension.swift; sourceTree = "<group>"; };
 		DDA4313F1A6558B500513755 /* VenuesListRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenuesListRefreshControl.swift; path = View/VenuesListRefreshControl.swift; sourceTree = "<group>"; };
 		DDAA4ECA1A666D1D00CF0C82 /* VenueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenueCell.swift; path = View/VenueCell.swift; sourceTree = "<group>"; };
@@ -274,6 +282,7 @@
 				DD3646BF1A648786008CA1B6 /* VenuesListInteractor.swift */,
 				DDD258B01A66E0E9008FD58B /* VenueDetailsInteractor.swift */,
 				DDAAD7BA1A6AD33400355C71 /* SearchTracksInteractor.swift */,
+				DD9C6A601A6BDAA20077BC37 /* RequestConfirmInteractor.swift */,
 			);
 			name = Interactor;
 			sourceTree = "<group>";
@@ -289,6 +298,7 @@
 				DD30F8051A6331210033EB63 /* RegisterWireframe.swift */,
 				DDD258B41A66E119008FD58B /* VenueDetailsWireframe.swift */,
 				DDAAD7B61A6AD10000355C71 /* SearchTracksWireframe.swift */,
+				DD9C6A5E1A6BDA390077BC37 /* RequestConfirmWireframe.swift */,
 			);
 			name = Wireframe;
 			sourceTree = "<group>";
@@ -304,6 +314,7 @@
 				DD3646BD1A648708008CA1B6 /* VenuesListViewController.swift */,
 				DDD258AE1A66E0CE008FD58B /* VenueDetailsViewController.swift */,
 				DDAAD7B41A6AB4A400355C71 /* SearchTracksViewController.swift */,
+				DD9C6A5C1A6BD8BE0077BC37 /* RequestConfirmViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -353,6 +364,7 @@
 				DD3646BB1A646E17008CA1B6 /* VenuesListPresenter.swift */,
 				DDD258B21A66E0FF008FD58B /* VenueDetailsPresenter.swift */,
 				DDAAD7B81A6AD1B400355C71 /* SearchTracksPresenter.swift */,
+				DD9C6A621A6BDAB90077BC37 /* RequestConfirmPresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -528,6 +540,7 @@
 				DD15CF1E1A62E0DB00812A70 /* AppDelegate.swift in Sources */,
 				DDD258AF1A66E0CE008FD58B /* VenueDetailsViewController.swift in Sources */,
 				DDAAD7B91A6AD1B400355C71 /* SearchTracksPresenter.swift in Sources */,
+				DD9C6A631A6BDAB90077BC37 /* RequestConfirmPresenter.swift in Sources */,
 				DDFDD9A61A658B85001F4AFA /* Venue.swift in Sources */,
 				DDAAD7BB1A6AD33400355C71 /* SearchTracksInteractor.swift in Sources */,
 				DD470CFF1A63C7AE0082F33D /* BasePresenter.swift in Sources */,
@@ -552,8 +565,10 @@
 				DDE410511A630DD8008D9A13 /* HomeViewController.swift in Sources */,
 				DDA4313E1A65359300513755 /* UIColorExtension.swift in Sources */,
 				DDAA4ECB1A666D1D00CF0C82 /* VenueCell.swift in Sources */,
+				DD9C6A5F1A6BDA390077BC37 /* RequestConfirmWireframe.swift in Sources */,
 				DDAAD7B71A6AD10000355C71 /* SearchTracksWireframe.swift in Sources */,
 				DD30F8021A632CFE0033EB63 /* LandingInteractor.swift in Sources */,
+				DD9C6A5D1A6BD8BE0077BC37 /* RequestConfirmViewController.swift in Sources */,
 				DD15CF431A62E75C00812A70 /* RhymoClient.swift in Sources */,
 				DD15CF461A62E84B00812A70 /* User.swift in Sources */,
 				DDE410531A630E00008D9A13 /* LandingViewController.swift in Sources */,
@@ -566,6 +581,7 @@
 				DD30F80A1A63318F0033EB63 /* RegisterViewController.swift in Sources */,
 				DDE4105C1A63292D008D9A13 /* LandingPresenter.swift in Sources */,
 				DD30F8061A6331210033EB63 /* RegisterWireframe.swift in Sources */,
+				DD9C6A611A6BDAA20077BC37 /* RequestConfirmInteractor.swift in Sources */,
 				DDE410551A630EA5008D9A13 /* HomeWireframe.swift in Sources */,
 				DDD258B11A66E0E9008FD58B /* VenueDetailsInteractor.swift in Sources */,
 				DD3646BC1A646E17008CA1B6 /* VenuesListPresenter.swift in Sources */,
