@@ -11,7 +11,9 @@ import Lockbox
 import Alamofire
 import SwiftyJSON
 
-let RhymoEndpoint = "http://192.168.2.254:9000/v1/" // 192.168.2.254 192.168.1.101
+
+let RhymoHost = "192.168.1.101"
+let RhymoEndpoint = "http://"+RhymoHost+":9000/v1/" // 192.168.2.254 192.168.1.101
 
 let kUser = "user_obj"
 let kPublicKey = "public_key"
@@ -91,7 +93,7 @@ class RhymoClient {
     let defaults = RhymoClient.getDefaults()
     
     defaults.removeObjectForKey(kUser)
-    
+
     Lockbox.setString("", forKey: kPublicKey)
     Lockbox.setString("", forKey: kPublicKey)
     
@@ -176,6 +178,7 @@ class RhymoClient {
             (request, response, data, error) in
             if(error == nil) {
               let json = JSON(data!)
+              println(data)
               let venue = RhymoClient.parseVenue(json)
               result(error: nil, venue: venue)
             }

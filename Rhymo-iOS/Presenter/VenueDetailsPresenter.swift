@@ -56,6 +56,10 @@ class VenueDetailsPresenter: BasePresenter {
   // MARK: - UI Lifecycle
   
   func viewWillDisappear() {
+    
+  }
+  
+  func viewDidDisappear() {
     self.venueDetailsInteractor?.userInterfaceWillHide()
   }
   

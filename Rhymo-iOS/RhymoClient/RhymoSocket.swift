@@ -23,15 +23,17 @@ class RhymoSocket: NSObject, WebSocketDelegate {
     self.venueId = venueId
     super.init()
     println("init rhymosocket")
-    socket = WebSocket(url: NSURL(scheme: "ws", host: "192.168.2.254:9000", path: "/v1/socket/client")!)
+    socket = WebSocket(url: NSURL(scheme: "ws", host: RhymoHost+":9000", path: "/v1/socket/client")!)
     socket!.delegate = self
   }
   
   func connect() {
+    println("connect requested")
     socket?.connect()
   }
   
   func disconnect() {
+    println("disconnect requested")
     socket?.disconnect()
   }
   
@@ -66,19 +68,19 @@ class RhymoSocket: NSObject, WebSocketDelegate {
         openVenue()
       }
       else if(label == "request_playlist") {
+        let playlist = parsePlaylist(obj)
         delegate?.requestPlaylistUpdated(parsePlaylist(obj))
       }
       else if(label == "history_playlist") {
-        delegate?.historyPlaylistUpdated(parsePlaylist(obj))
+        let playlist = parsePlaylist(obj)
+        delegate?.historyPlaylistUpdated(playlist)
       }
       else if(label == "auto_playlist") {
-        delegate?.autoPlaylistUpdated(parsePlaylist(obj))
+        let playlist = parsePlaylist(obj)
+        delegate?.autoPlaylistUpdated(playlist)
       }
       else if(label == "startSong") {
-        println(obj["name"].stringValue)
-        debugPrintln(obj["name"].error)
         let t = RhymoClient.parsePlaylistTrack(obj)
-        println(t)
         delegate?.nowPlaylingUpdated(t)
       }
       else if(label == "noSong") {

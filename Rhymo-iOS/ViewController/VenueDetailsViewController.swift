@@ -84,9 +84,15 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
     NSNotificationCenter.defaultCenter().removeObserver(eventHandler!)
   }
   
+  override func viewDidDisappear(animated: Bool) {
+    eventHandler?.viewDidDisappear()
+  }
+  
   override func viewWillAppear(animated: Bool) {
     if(!isMovingToParentViewController()) {
       eventHandler?.viewWillAppear()
+      NSNotificationCenter.defaultCenter().addObserver(eventHandler!, selector: "applicationWillResign:", name: UIApplicationWillResignActiveNotification, object: nil)
+      NSNotificationCenter.defaultCenter().addObserver(eventHandler!, selector: "applicationWillEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
     }
   }
   
