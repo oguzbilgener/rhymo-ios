@@ -30,7 +30,7 @@ class VenueDetailsInteractor: BaseInteractor, RhymoSocketDelegate {
     output?.historyPlaylist = [PlaylistTrack]()
     output?.upcomingPlaylist = [PlaylistTrack]()
     
-    output?.updateNowPlaying()
+//    output?.updateNowPlaying()
 //    output?.startProgress(nowPlaying)
 
     if let user = RhymoClient.getAuthenticatedUser() {

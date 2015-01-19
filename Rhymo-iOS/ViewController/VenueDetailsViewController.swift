@@ -250,6 +250,7 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
   }
   
   func updateNowPlaying(track: PlaylistTrack) {
+    println("updatenow ("+track.name+")")
     self.nowPlayingTitleLabel.text = track.name
     self.nowPlayingArtistLabel.text = track.artistName
     self.nowPlayingAlbumLabel.text = track.albumName

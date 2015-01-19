@@ -178,7 +178,6 @@ class RhymoClient {
             (request, response, data, error) in
             if(error == nil) {
               let json = JSON(data!)
-              println(data)
               let venue = RhymoClient.parseVenue(json)
               result(error: nil, venue: venue)
             }

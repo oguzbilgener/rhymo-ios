@@ -38,6 +38,7 @@ class VenueDetailsPresenter: BasePresenter {
       else if let loadedVenue = venue {
         self.venueDetailsWireframe?.venue = loadedVenue
         self.userInterface?.updateHeader(loadedVenue)
+        self.updateNowPlaying()
       }
       self.hideActivityIndicator()
     })
