@@ -32,7 +32,7 @@ class VenueDetailsPresenter: BasePresenter {
     }
     showActivityIndicator()
     venueDetailsInteractor?.getVenueDetails(venueDetailsWireframe!.venue.id, result: { (error, venue) -> () in
-      if(error == nil) {
+      if(error != nil) {
         // TODO: show error
       }
       else if let loadedVenue = venue {

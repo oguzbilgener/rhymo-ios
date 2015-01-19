@@ -37,7 +37,7 @@ class SearchTracksPresenter: BasePresenter, UISearchBarDelegate {
   func searchTrack(keyword: String) {
     showActivityIndicator()
     if let interactor = searchTracksInteractor {
-      interactor.getTracksByName(keyword, result: { (error, tracks) -> () in
+      interactor.getTracksByName(keyword, venueId: self.searchTracksWireframe!.venue.id, result: { (error, tracks) -> () in
         if(error != nil) {
           // TODO: display an error message maybe?
           debugPrintln(error)

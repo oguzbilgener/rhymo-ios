@@ -10,6 +10,7 @@ pod 'Starscream', :git => "https://github.com/daltoniam/Starscream.git", :branch
 pod 'CommonCrypto', '~> 1.1'
 pod 'Lockbox', '~> 2.1'
 pod 'SDWebImage', '~>3.6' # couldn't import class extensions in swift
+pod 'GPUImage', '~> 0.1'
 pod 'RPFloatingPlaceholders', '~> 0.2.6'
 pod 'JGProgressHUD'
 pod 'AYVibrantButton'

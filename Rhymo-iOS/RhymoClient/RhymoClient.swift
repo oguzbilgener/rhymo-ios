@@ -93,9 +93,6 @@ class RhymoClient {
     let defaults = RhymoClient.getDefaults()
     
     defaults.removeObjectForKey(kUser)
-
-    Lockbox.setString("", forKey: kPublicKey)
-    Lockbox.setString("", forKey: kPublicKey)
     
     self.authenticatedUser = nil
   }
@@ -202,13 +199,17 @@ class RhymoClient {
     }
   }
   
-  func getTracksByName(keyword: String, result: (error: NSError?, tracks: [Track])->()) {
+  func getTracksByName(keyword: String, venueId: Int, result: (error: NSError?, tracks: [Track])->()) -> Request? {
     if let user = authenticatedUser {
-      let repStr = keyword.stringByReplacingOccurrencesOfString(" ", withString: "+", options: nil, range: nil)
-      let requestUrl = RhymoEndpoint + "search/tracks/\(repStr)"
-      
+      var orepStr = keyword.stringByReplacingOccurrencesOfString(" ", withString: "+", options: nil, range: nil).stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())
+      var repStr = ""
+      if let encodedKeyword = orepStr {
+        repStr = encodedKeyword
+      }
+      let requestUrl = RhymoEndpoint + "search/tracks"
       let parameters: [String: AnyObject] = [
-        "keyword": keyword
+        "query": keyword,
+        "venue_id": venueId
       ]
       
       let bodyJson = JSON(parameters)
@@ -220,7 +221,7 @@ class RhymoClient {
         let queryString = "?public_key="+publicKey+"&signature="+signature
 
         let request = Alamofire.request(.POST, requestUrl + queryString, parameters: parameters, encoding: .JSON)
-          .validate()
+//          .validate()
           .responseJSON {
             (request, response, data, error) in
             if(error == nil) {
@@ -243,6 +244,7 @@ class RhymoClient {
               }
             }
         }
+        return request
       }
       else {
         let error = NSError(domain: RhymoErrorDomain, code: 11, userInfo: nil)
@@ -253,6 +255,7 @@ class RhymoClient {
       let error = NSError(domain: RhymoErrorDomain, code: 9, userInfo: nil)
       result(error: error, tracks: [Track]())
     }
+    return nil
   }
   
   func requestTrack(#track: Track, venue: Venue, result: (error: NSError?, success: Bool) -> ()) {
@@ -401,12 +404,14 @@ class RhymoClient {
     // get the user object from an unencrypted data store
     if let data = defaults.objectForKey(kUser) as? NSData {
       let user = NSKeyedUnarchiver.unarchiveObjectWithData(data) as User
-      // fill the public key and secret token from an encrypted data store
-      let publicKey = Lockbox.stringForKey(kPublicKey)
-      let secretToken = Lockbox.stringForKey(kSecretToken)
-      
-      user.publicKey = publicKey
-      user.secretToken = secretToken
+//      // fill the public key and secret token from an encrypted data store
+//      if let publicKey = defaults.stringForKey(kPublicKey) {
+//        user.publicKey = publicKey
+//      }
+//      if let secretToken = defaults.stringForKey(kSecretToken) {
+//        user.secretToken = secretToken
+//      }
+
       
       return user
     }
@@ -415,13 +420,8 @@ class RhymoClient {
   
   private func storeAuthenticatedUser(user: User) {
     
-    let publicKey = user.publicKey
-    let secretToken = user.secretToken
-    
-    Lockbox.setString(publicKey, forKey: kPublicKey)
-    Lockbox.setString(secretToken, forKey: kSecretToken)
-    
     let defaults = RhymoClient.getDefaults()
+
     
     let data = NSKeyedArchiver.archivedDataWithRootObject(user)
     defaults.setObject(data, forKey: kUser)

@@ -2,6 +2,7 @@ PODS:
   - Alamofire (1.1.3)
   - AYVibrantButton (1.0.3)
   - CommonCrypto (1.1)
+  - GPUImage (0.1.6)
   - JGProgressHUD (1.2.3)
   - Lockbox (2.1.0)
   - RPFloatingPlaceholders (0.2.6)
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - Alamofire (from `https://github.com/mrackwitz/Alamofire.git`, branch `podspec`)
   - AYVibrantButton
   - CommonCrypto (~> 1.1)
+  - GPUImage (~> 0.1)
   - JGProgressHUD
   - Lockbox (~> 2.1)
   - RPFloatingPlaceholders (~> 0.2.6)
@@ -48,6 +50,7 @@ SPEC CHECKSUMS:
   Alamofire: 82bd273df6adffbda9740509993f29b2fa5a6d10
   AYVibrantButton: 6ef08db44395e9b819560191a048297be2e8b727
   CommonCrypto: e29ad10d288d7da1cad5d5eec03ed68b010b0072
+  GPUImage: cecb0830bb9428f50192042e3c7b53810f51388e
   JGProgressHUD: 733523c80f69b6dfc41b88a0f33883a89a8b4c3b
   Lockbox: 3168f08cb26680b05a0702b8c0cc6da32788059d
   RPFloatingPlaceholders: a5c88c55c73b9118607f8bafc28df7dfd717dbad

@@ -23,4 +23,6 @@
 
 #import "UIImageEffects.h"
 
+#import "GPUImage.h"
+
 #endif

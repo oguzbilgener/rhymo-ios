@@ -47,6 +47,11 @@
 		DDAAD7B71A6AD10000355C71 /* SearchTracksWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAAD7B61A6AD10000355C71 /* SearchTracksWireframe.swift */; };
 		DDAAD7B91A6AD1B400355C71 /* SearchTracksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAAD7B81A6AD1B400355C71 /* SearchTracksPresenter.swift */; };
 		DDAAD7BB1A6AD33400355C71 /* SearchTracksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAAD7BA1A6AD33400355C71 /* SearchTracksInteractor.swift */; };
+		DDBD48531A6DAAD00029425A /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDBD48521A6DAAD00029425A /* CoreMedia.framework */; };
+		DDBD48551A6DAADA0029425A /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDBD48541A6DAADA0029425A /* CoreVideo.framework */; };
+		DDBD48571A6DAAE20029425A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDBD48561A6DAAE20029425A /* OpenGLES.framework */; };
+		DDBD48591A6DAAEA0029425A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDBD48581A6DAAEA0029425A /* AVFoundation.framework */; };
+		DDBD485B1A6DAAEF0029425A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDBD485A1A6DAAEF0029425A /* QuartzCore.framework */; };
 		DDCC3BED1A668C3400071EDB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCC3BEC1A668C3400071EDB /* MapKit.framework */; };
 		DDCC3BEF1A66924E00071EDB /* VenuesListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDCC3BEE1A66924E00071EDB /* VenuesListHeader.xib */; };
 		DDCC3BF11A6699D800071EDB /* VenuesSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDCC3BF01A6699D800071EDB /* VenuesSectionHeader.xib */; };
@@ -129,6 +134,11 @@
 		DDAAD7B61A6AD10000355C71 /* SearchTracksWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTracksWireframe.swift; path = Wireframe/SearchTracksWireframe.swift; sourceTree = "<group>"; };
 		DDAAD7B81A6AD1B400355C71 /* SearchTracksPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTracksPresenter.swift; path = Presenter/SearchTracksPresenter.swift; sourceTree = "<group>"; };
 		DDAAD7BA1A6AD33400355C71 /* SearchTracksInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTracksInteractor.swift; path = Interactor/SearchTracksInteractor.swift; sourceTree = "<group>"; };
+		DDBD48521A6DAAD00029425A /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		DDBD48541A6DAADA0029425A /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		DDBD48561A6DAAE20029425A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		DDBD48581A6DAAEA0029425A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DDBD485A1A6DAAEF0029425A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DDCC3BEC1A668C3400071EDB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DDCC3BEE1A66924E00071EDB /* VenuesListHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VenuesListHeader.xib; path = View/VenuesListHeader.xib; sourceTree = "<group>"; };
 		DDCC3BF01A6699D800071EDB /* VenuesSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VenuesSectionHeader.xib; path = View/VenuesSectionHeader.xib; sourceTree = "<group>"; };
@@ -159,6 +169,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDBD485B1A6DAAEF0029425A /* QuartzCore.framework in Frameworks */,
+				DDBD48591A6DAAEA0029425A /* AVFoundation.framework in Frameworks */,
+				DDBD48571A6DAAE20029425A /* OpenGLES.framework in Frameworks */,
+				DDBD48551A6DAADA0029425A /* CoreVideo.framework in Frameworks */,
+				DDBD48531A6DAAD00029425A /* CoreMedia.framework in Frameworks */,
 				DDCC3BED1A668C3400071EDB /* MapKit.framework in Frameworks */,
 				DDFDD9A41A65661B001F4AFA /* CoreLocation.framework in Frameworks */,
 				95CE0E6633DCBA8F5F39E8A4 /* Pods_Rhymo_iOS.framework in Frameworks */,
@@ -372,6 +387,11 @@
 		F341DC48B3112F834C579838 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DDBD485A1A6DAAEF0029425A /* QuartzCore.framework */,
+				DDBD48581A6DAAEA0029425A /* AVFoundation.framework */,
+				DDBD48561A6DAAE20029425A /* OpenGLES.framework */,
+				DDBD48541A6DAADA0029425A /* CoreVideo.framework */,
+				DDBD48521A6DAAD00029425A /* CoreMedia.framework */,
 				DDCC3BEC1A668C3400071EDB /* MapKit.framework */,
 				DDFDD9A31A65661B001F4AFA /* CoreLocation.framework */,
 				E1F02D650142FCEEAED539E2 /* Pods_Rhymo_iOS.framework */,
@@ -431,7 +451,6 @@
 				TargetAttributes = {
 					DD15CF171A62E0DB00812A70 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = X7N27TJG34;
 					};
 					DD15CF2E1A62E0DB00812A70 = {
 						CreatedOnToolsVersion = 6.1.1;

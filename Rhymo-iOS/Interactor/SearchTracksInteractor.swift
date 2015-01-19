@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import Alamofire
 
 let TrackSearchMinimumLength = 3
 
 class SearchTracksInteractor: BaseInteractor {
   
   var output: SearchTracksPresenter?
+  var lastSearchRequestDate = NSDate()
+  var lastSearchRequest: Request?
+  let minSearchInterval = 0.3
   
-  func getTracksByName(name: String, result:(error: NSError?, tracks: [Track])->()) {
+  func getTracksByName(name: String, venueId: Int, result:(error: NSError?, tracks: [Track])->()) {
     if(countElements(name) == 0) {
       output?.clearTracksList()
       return
@@ -23,8 +27,14 @@ class SearchTracksInteractor: BaseInteractor {
       // keyword is too short yet. return without sending any callbacks
       return
     }
+    if let last = lastSearchRequest {
+      if((NSDate().timeIntervalSince1970 - lastSearchRequestDate.timeIntervalSince1970) < minSearchInterval) {
+        last.cancel()
+      }
+    }
+    lastSearchRequestDate = NSDate()
     let client = RhymoClient()
-    client.getTracksByName(name, result: result)
+    client.getTracksByName(name, venueId: venueId, result: result)
   }
    
 }

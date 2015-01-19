@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import GPUImage
 
 let TracksSectionHeaderLabelIdentifier = 24
 let VenueDetailsAnimationDuration = 0.3
@@ -109,26 +110,33 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
         }) { (image: UIImage!, error: NSError!, cacheType: SDImageCacheType, finished: Bool, url: NSURL!) -> Void in
            // When completed, give it some blur and set it
           if(finished) {
-            dispatch_async(dispatch_get_main_queue()) {
+            let model = UIDevice.currentDevice().model
+            println(model)
+            if(model == "iPod Touch") {
+              self.venueCoverImageView.image = image
+              println("noblur")
+            }
+            else {
               UIView.transitionWithView(self.venueCoverImageView, duration: VenueDetailsAnimationDuration, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
-                self.venueCoverImageView.image = UIImageEffects.imageByApplyingBlurToImage(image, withRadius: 15, tintColor: UIColor(rgba: "#00000033"), saturationDeltaFactor: 1, maskImage: nil)
-                }, completion: nil)
+                  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+
+                    let blurFilter = GPUImageiOSBlurFilter()
+                    self.venueCoverImageView.image = blurFilter.imageByFilteringImage(image)
+                  }
+
+              }, completion: nil)
             }
           }
       }
     }
     
-    self.updateNowPlaying(venue.nowPlaying)
+//    self.updateNowPlaying(venue.nowPlaying)
     
-    dispatch_async(dispatch_get_main_queue()) {
-      UIView.transitionWithView(self.requestButton, duration: 0.4, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
-        if(venue.online) {
-          self.requestButton.hidden = false
-        }
-        else {
-          self.requestButton.hidden = true
-        }
-        }, completion: nil)
+    if(venue.online) {
+      self.requestButton.hidden = false
+    }
+    else {
+      self.requestButton.hidden = true
     }
   }
 
@@ -174,11 +182,9 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
       }) { (image: UIImage!, error: NSError!, cacheType: SDImageCacheType, finished: Bool, url: NSURL!) -> Void in
         // When completed, give it some blur and set it
         if(finished) {
-          dispatch_async(dispatch_get_main_queue()) {
             UIView.transitionWithView(self.nowPlayingAlbumImageView, duration: VenueDetailsAnimationDuration, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
               albumArtView.image = image
               }, completion: nil)
-          }
         }
     }
 
@@ -239,14 +245,12 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
   // MARK: - UI Update
   
   func updateTracksList() {
-    dispatch_async(dispatch_get_main_queue()) {
-      UIView.transitionWithView(self.venueSongTable, duration: VenueDetailsAnimationDuration, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
-        self.venueSongTable.reloadData()
-        if(self.eventHandler?.historyPlaylist?.count > 10) {
-          
-        }
-        }, completion: nil)
-    }
+    UIView.transitionWithView(self.venueSongTable, duration: VenueDetailsAnimationDuration, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
+      self.venueSongTable.reloadData()
+      if(self.eventHandler?.historyPlaylist?.count > 10) {
+        
+      }
+      }, completion: nil)
   }
   
   func updateNowPlaying(track: PlaylistTrack) {
@@ -260,11 +264,9 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
         
         }) { (image: UIImage!, error: NSError!, cacheType: SDImageCacheType, finished: Bool, url: NSURL!) -> Void in
           if(finished) {
-            dispatch_async(dispatch_get_main_queue()) {
-              UIView.transitionWithView(self.nowPlayingAlbumImageView, duration: VenueDetailsAnimationDuration, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
-                self.nowPlayingAlbumImageView.image = image
-                }, completion: nil)
-            }
+            UIView.transitionWithView(self.nowPlayingAlbumImageView, duration: VenueDetailsAnimationDuration, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
+              self.nowPlayingAlbumImageView.image = image
+              }, completion: nil)
           }
       }
     }
