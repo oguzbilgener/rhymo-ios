@@ -59,6 +59,10 @@ class VenueDetailsPresenter: BasePresenter {
     self.venueDetailsInteractor?.userInterfaceWillHide()
   }
   
+  func viewWillAppear() {
+    self.venueDetailsInteractor?.userInterfaceWillShowAgain()
+  }
+  
   func applicationWillResign(notification: NSNotification) {
     self.venueDetailsInteractor?.userInterfaceWillHide()
   }

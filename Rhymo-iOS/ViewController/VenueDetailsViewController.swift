@@ -84,6 +84,12 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
     NSNotificationCenter.defaultCenter().removeObserver(eventHandler!)
   }
   
+  override func viewWillAppear(animated: Bool) {
+    if(!isMovingToParentViewController()) {
+      eventHandler?.viewWillAppear()
+    }
+  }
+  
   func updateHeader(venue: Venue) {
     // update the title with given venue data
     customNavigationItem?.title = venue.name
