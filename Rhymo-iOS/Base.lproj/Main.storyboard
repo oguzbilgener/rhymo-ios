@@ -293,7 +293,7 @@
                                         <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <size key="shadowOffset" width="0.0" height="1"/>
                                     </label>
-                                    <button opaque="NO" tag="77" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x14-QP-JMl" customClass="SolidButton" customModule="Rhymo_iOS" customModuleProvider="target">
+                                    <button opaque="NO" tag="77" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x14-QP-JMl" customClass="SolidButton" customModule="Rhymo_iOS" customModuleProvider="target">
                                         <rect key="frame" x="251" y="140" width="114" height="30"/>
                                         <inset key="contentEdgeInsets" minX="6" minY="6" maxX="6" maxY="6"/>
                                         <state key="normal" title="Play your song">
@@ -309,12 +309,14 @@
                                 <constraints>
                                     <constraint firstItem="c8Y-kg-KVo" firstAttribute="leading" secondItem="toC-t9-y8V" secondAttribute="trailing" constant="8" id="0DH-AO-pSW"/>
                                     <constraint firstAttribute="height" constant="180" id="1Jk-7e-kAF"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="c8Y-kg-KVo" secondAttribute="trailing" constant="8" id="8JO-L0-oYt"/>
                                     <constraint firstAttribute="trailing" secondItem="LHr-4t-g9B" secondAttribute="trailing" id="8et-uK-e6k"/>
                                     <constraint firstItem="2gV-XW-DVT" firstAttribute="leading" secondItem="toC-t9-y8V" secondAttribute="trailing" constant="8" id="G3T-ra-ii9"/>
                                     <constraint firstItem="2gV-XW-DVT" firstAttribute="top" secondItem="c8Y-kg-KVo" secondAttribute="bottom" constant="14" id="Jb0-TG-Sau"/>
                                     <constraint firstItem="toC-t9-y8V" firstAttribute="leading" secondItem="SLZ-HE-AQj" secondAttribute="leading" constant="17" id="OZM-4N-WKZ"/>
                                     <constraint firstAttribute="bottom" secondItem="toC-t9-y8V" secondAttribute="bottom" constant="14" id="Oft-cr-yET"/>
                                     <constraint firstItem="LHr-4t-g9B" firstAttribute="top" secondItem="SLZ-HE-AQj" secondAttribute="top" id="VLe-PW-XS2"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HRP-IL-Muh" secondAttribute="trailing" constant="8" id="W6o-3T-hrl"/>
                                     <constraint firstItem="LHr-4t-g9B" firstAttribute="leading" secondItem="SLZ-HE-AQj" secondAttribute="leading" id="gKL-vT-4L7"/>
                                     <constraint firstItem="c8Y-kg-KVo" firstAttribute="top" secondItem="HRP-IL-Muh" secondAttribute="bottom" constant="14" id="jyL-ii-nZD"/>
                                     <constraint firstItem="2gV-XW-DVT" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="x14-QP-JMl" secondAttribute="leading" id="m5S-08-19b"/>
@@ -513,8 +515,8 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTh-C2-YzX" customClass="SolidButton" customModule="Rhymo_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="287" y="60" width="58" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTh-C2-YzX" customClass="SolidButton" customModule="Rhymo_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="289" y="60" width="58" height="30"/>
                                         <inset key="contentEdgeInsets" minX="6" minY="6" maxX="6" maxY="6"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" red="0.78823529410000004" green="0.0039215686269999999" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -538,7 +540,9 @@
                                     <constraint firstItem="GPP-uj-OgH" firstAttribute="leading" secondItem="sBE-vm-F7P" secondAttribute="trailing" constant="8" id="bFe-fG-6Dd"/>
                                     <constraint firstAttribute="trailing" secondItem="GTh-C2-YzX" secondAttribute="trailing" constant="10" id="ck8-eR-SJX"/>
                                     <constraint firstAttribute="bottom" secondItem="GTh-C2-YzX" secondAttribute="bottom" constant="10" id="lo5-JL-wdT"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pP8-ED-dNZ" secondAttribute="trailing" constant="8" id="oAf-pL-6Ko"/>
                                     <constraint firstItem="pP8-ED-dNZ" firstAttribute="top" secondItem="DaQ-Ep-O96" secondAttribute="top" constant="10" id="t6K-eQ-0g4"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GPP-uj-OgH" secondAttribute="trailing" constant="8" id="yJL-6D-KTp"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvb-qM-rHi">

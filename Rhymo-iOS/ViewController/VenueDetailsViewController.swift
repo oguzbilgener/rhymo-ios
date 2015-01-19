@@ -72,6 +72,16 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
     venueSongTable.tableFooterView = UIView(frame: CGRectZero)
     
     eventHandler?.onViewLoadFinish()
+    
+//    UIApplicationWillResignActiveNotification
+    NSNotificationCenter.defaultCenter().addObserver(eventHandler!, selector: "applicationWillResign:", name: UIApplicationWillResignActiveNotification, object: nil)
+    NSNotificationCenter.defaultCenter().addObserver(eventHandler!, selector: "applicationWillEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
+  }
+
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+    eventHandler?.viewWillDisappear()
+    NSNotificationCenter.defaultCenter().removeObserver(eventHandler!)
   }
   
   func updateHeader(venue: Venue) {
@@ -95,6 +105,8 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
           }
       }
     }
+    
+    self.updateNowPlaying(venue.nowPlaying)
     
     dispatch_async(dispatch_get_main_queue()) {
       UIView.transitionWithView(self.requestButton, duration: 0.4, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
@@ -218,6 +230,9 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
     dispatch_async(dispatch_get_main_queue()) {
       UIView.transitionWithView(self.venueSongTable, duration: VenueDetailsAnimationDuration, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
         self.venueSongTable.reloadData()
+        if(self.eventHandler?.historyPlaylist?.count > 10) {
+          
+        }
         }, completion: nil)
     }
   }
@@ -239,6 +254,9 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
             }
           }
       }
+    }
+    else {
+      self.nowPlayingAlbumImageView.image = nil
     }
     
     if(track.name == "") {

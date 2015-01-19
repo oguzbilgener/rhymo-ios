@@ -34,7 +34,6 @@ class VenueDetailsPresenter: BasePresenter {
     venueDetailsInteractor?.getVenueDetails(venueDetailsWireframe!.venue.id, result: { (error, venue) -> () in
       if(error == nil) {
         // TODO: show error
-        debugPrintln(error)
       }
       else if let loadedVenue = venue {
         self.venueDetailsWireframe?.venue = loadedVenue
@@ -54,16 +53,50 @@ class VenueDetailsPresenter: BasePresenter {
     updateTracksList()
   }
   
+  // MARK: - UI Lifecycle
+  
+  func viewWillDisappear() {
+    self.venueDetailsInteractor?.userInterfaceWillHide()
+  }
+  
+  func applicationWillResign(notification: NSNotification) {
+    self.venueDetailsInteractor?.userInterfaceWillHide()
+  }
+  
+  func applicationWillEnterForeground(notification: NSNotification) {
+    self.venueDetailsInteractor?.userInterfaceWillShowAgain()
+  }
+  
   // MARK: - UI Update Delegation
   
   func updateNowPlaying() {
     if let track = nowPlaying {
-      self.userInterface!.updateNowPlaying(track)
+      self.userInterface?.updateNowPlaying(track)
     }
   }
   
   func updateTracksList() {
-    self.userInterface!.updateTracksList()
+    self.userInterface?.updateTracksList()
+  }
+  
+  func didUpdateNowPlaying(track: PlaylistTrack?) {
+    if let existingTrack = track {
+      nowPlaying = existingTrack
+    }
+    else {
+      nowPlaying = PlaylistTrack() // dummy track
+    }
+    updateNowPlaying()
+  }
+  
+  func didUpdateHistoryTracksList(historyTracks: [PlaylistTrack]) {
+    self.historyPlaylist = historyTracks
+    updateTracksList()
+  }
+  
+  func didUpdateUpcomingPlaylist(upcomingTracks: [PlaylistTrack]) {
+    self.upcomingPlaylist = upcomingTracks
+    updateTracksList()
   }
   
   // MARK: - Progress Bar

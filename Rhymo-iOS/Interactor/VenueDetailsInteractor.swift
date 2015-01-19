@@ -8,9 +8,15 @@
 
 import UIKit
 
-class VenueDetailsInteractor: BaseInteractor {
+class VenueDetailsInteractor: BaseInteractor, RhymoSocketDelegate {
   
   var output: VenueDetailsPresenter?
+  var socket: RhymoSocket?
+  
+  var venue: Venue?
+  
+  var autoPlaylist = [PlaylistTrack]()
+  var requestPlaylist = [PlaylistTrack]()
   
   func getVenueDetails(venueId: Int, result: (error: NSError?, venue: Venue?) -> ()) {
     let client = RhymoClient()
@@ -24,30 +30,59 @@ class VenueDetailsInteractor: BaseInteractor {
     output?.historyPlaylist = [PlaylistTrack]()
     output?.upcomingPlaylist = [PlaylistTrack]()
     
-    let nowPlaying = PlaylistTrack()
-    nowPlaying.name = "Fly Me To The Moon"
-    nowPlaying.artistName = "Frank Sinatra"
-    nowPlaying.albumName = "Best of The Best"
-    nowPlaying.albumCoverUrl = "http://server2.oguzdev.com/file/B005HR04HK.01_SL75_.jpg"
-    nowPlaying.duration = 300
-    output?.nowPlaying = nowPlaying
-    
-    let maggie = PlaylistTrack()
-    maggie.name = "The Adventures of Rain Dance Maggie"
-    maggie.artistName = "Red Hot Chili Peppers"
-    maggie.albumName = "I'm With You"
-    maggie.albumCoverUrl = "http://server2.oguzdev.com/file/RHCP_I'm_With_You_Cover.jpg"
-    output?.historyPlaylist?.append(maggie)
-    
-    let rol = PlaylistTrack()
-    rol.name = "Monkey Man"
-    rol.artistName = "The Rolling Stones"
-    rol.albumName = "Let It Bleed"
-    rol.albumCoverUrl = "http://server2.oguzdev.com/file/LetitbleedRS.jpg"
-    output?.upcomingPlaylist?.append(rol)
-    
     output?.updateNowPlaying()
-    output?.updateTracksList()
-    output?.startProgress(nowPlaying)
+//    output?.startProgress(nowPlaying)
+
+    if let user = RhymoClient.getAuthenticatedUser() {
+      if let venue = output?.venueDetailsWireframe?.venue {
+        socket = RhymoSocket(userId: user.id, venueId: venue.id)
+        socket!.delegate = self
+        socket!.connect()
+      }
+    }
+  }
+  
+  func userInterfaceWillHide() {
+    socket?.disconnect()
+  }
+  
+  func userInterfaceWillShowAgain() {
+    socket?.connect()
+  }
+  
+  // MARK: - Socket Delegation
+  
+  func socketConnected() {
+    println("socket connected at interactor")
+  }
+  
+  func socketDisconnected() {
+    println("socket disconnected at interactor")
+  }
+  
+  func historyPlaylistUpdated(playlist: [PlaylistTrack]) {
+    println("history playlist updated")
+    output?.didUpdateHistoryTracksList(playlist.reverse())
+  }
+  
+  func requestPlaylistUpdated(playlist: [PlaylistTrack]) {
+    println("request playlist updated")
+    self.requestPlaylist = playlist
+    output?.didUpdateUpcomingPlaylist(makeUpcomingTrackList())
+  }
+  
+  func autoPlaylistUpdated(playlist: [PlaylistTrack]) {
+    println("auto playlist updated")
+    self.autoPlaylist = playlist
+    output?.didUpdateUpcomingPlaylist(makeUpcomingTrackList())
+  }
+  
+  func nowPlaylingUpdated(track: PlaylistTrack?) {
+    println("now playing updated \((track == nil)) track: \(track?.name)")
+    output?.didUpdateNowPlaying(track)
+  }
+  
+  func makeUpcomingTrackList() -> [PlaylistTrack] {
+    return (requestPlaylist + autoPlaylist)
   }
 }

@@ -18,6 +18,7 @@ class Venue: NSObject, Printable {
   var coord: Point = Point()
   var info: String = ""
   var genres: [String] = []
+  var nowPlaying: PlaylistTrack = PlaylistTrack()
   
   override init() {
     
@@ -33,6 +34,7 @@ class Venue: NSObject, Printable {
     coord = Point(point: venue.coord)
     info = venue.info
     genres = venue.genres
+    nowPlaying = venue.nowPlaying
   }
   
   override var description: String {

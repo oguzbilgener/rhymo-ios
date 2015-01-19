@@ -127,7 +127,7 @@ class RhymoClient {
               var venues = [Venue]()
               
               for (index: String, values: JSON) in json {
-                let venue = self.parseVenue(values)
+                let venue = RhymoClient.parseVenue(values)
                 venues.append(venue)
               }
               result(error: nil, venues: venues)
@@ -176,7 +176,7 @@ class RhymoClient {
             (request, response, data, error) in
             if(error == nil) {
               let json = JSON(data!)
-              let venue = self.parseVenue(json)
+              let venue = RhymoClient.parseVenue(json)
               result(error: nil, venue: venue)
             }
             else {
@@ -226,7 +226,7 @@ class RhymoClient {
               var tracks = [Track]()
               
               for (index: String, values: JSON) in json {
-                let track = self.parseTrack(values)
+                let track = RhymoClient.parseTrack(values)
                 tracks.append(track)
               }
               
@@ -300,7 +300,8 @@ class RhymoClient {
   }
   
   // MARK: - Parsing helpers
-  private func parseVenue(json: JSON) -> Venue {
+  
+  class func parseVenue(json: JSON) -> Venue {
     let venue = Venue()
     if let id = json["id"].int {
       venue.id = id
@@ -323,6 +324,7 @@ class RhymoClient {
     if let info = json["info"].string {
       venue.info = info
     }
+    venue.nowPlaying = RhymoClient.parsePlaylistTrack(json["now_playing"])
     var photosArray = [String]()
     for (index: String, values: JSON) in json["photos"] {
     if let photoUrl = values.string {
@@ -333,7 +335,7 @@ class RhymoClient {
     return venue
   }
   
-  private func parseTrack(json: JSON) -> Track {
+  class func parseTrack(json: JSON) -> Track {
     let track = Track()
     if let albumName = json["album"]["name"].string {
       track.albumName = albumName
@@ -353,6 +355,39 @@ class RhymoClient {
     if let id = json["id"].int {
       track.fizyId = id
     }
+    return track
+  }
+  
+  class func parsePlaylistTrack(json: JSON) -> PlaylistTrack {
+    let track = PlaylistTrack()
+    if let albumName = json["album"]["name"].string {
+      track.albumName = albumName
+    }
+    if let coverUrl = json["album"]["cover_large"].string {
+      track.albumCoverUrl = coverUrl
+    }
+    if let artistName = json["artist"]["name"].string {
+      track.artistName = artistName
+    }
+    if let name = json["name"].string {
+      track.name = name
+    }
+    if let duration = json["duration"].int {
+      track.duration = duration
+    }
+    if let id = json["id"].int {
+      track.fizyId = id
+    }
+    if let playBegan = json["play_began"].int {
+      track.playBegan = playBegan
+    }
+    if let playEnded = json["play_ended"].int {
+      track.playEnded = playEnded
+    }
+    if let storeId = json["store_id"].int {
+      track.storeId = storeId
+    }
+    println(track)
     return track
   }
   

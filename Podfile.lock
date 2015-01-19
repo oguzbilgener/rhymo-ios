@@ -8,6 +8,7 @@ PODS:
   - SDWebImage (3.7.1):
     - SDWebImage/Core (= 3.7.1)
   - SDWebImage/Core (3.7.1)
+  - Starscream (0.9.1)
   - SwiftyJSON (2.1.1)
 
 DEPENDENCIES:
@@ -18,12 +19,16 @@ DEPENDENCIES:
   - Lockbox (~> 2.1)
   - RPFloatingPlaceholders (~> 0.2.6)
   - SDWebImage (~> 3.6)
+  - Starscream (from `https://github.com/daltoniam/Starscream.git`, branch `master`)
   - SwiftyJSON (from `https://github.com/orta/SwiftyJSON`, branch `podspec`)
 
 EXTERNAL SOURCES:
   Alamofire:
     :branch: podspec
     :git: https://github.com/mrackwitz/Alamofire.git
+  Starscream:
+    :branch: master
+    :git: https://github.com/daltoniam/Starscream.git
   SwiftyJSON:
     :branch: podspec
     :git: https://github.com/orta/SwiftyJSON
@@ -32,6 +37,9 @@ CHECKOUT OPTIONS:
   Alamofire:
     :commit: e4baf843f89e7c5d2d2478cebcf196f9338a86ba
     :git: https://github.com/mrackwitz/Alamofire.git
+  Starscream:
+    :commit: f8dfae1e6065fc41e8bd2c18349e5b30ca73d2be
+    :git: https://github.com/daltoniam/Starscream.git
   SwiftyJSON:
     :commit: 252838693668023571c46f56d7ea8347e6948d1b
     :git: https://github.com/orta/SwiftyJSON
@@ -44,6 +52,7 @@ SPEC CHECKSUMS:
   Lockbox: 3168f08cb26680b05a0702b8c0cc6da32788059d
   RPFloatingPlaceholders: a5c88c55c73b9118607f8bafc28df7dfd717dbad
   SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
+  Starscream: 6fcbd646fc23bbc55bb27d3479eb3a2758abe1e6
   SwiftyJSON: 626bbe0ede796bf69e849b7aa7473778b03fe44c
 
 COCOAPODS: 0.36.0.beta.1
