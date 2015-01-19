@@ -387,7 +387,6 @@ class RhymoClient {
     if let storeId = json["store_id"].int {
       track.storeId = storeId
     }
-    println(track)
     return track
   }
   

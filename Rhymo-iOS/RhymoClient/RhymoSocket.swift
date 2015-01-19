@@ -61,9 +61,6 @@ class RhymoSocket: NSObject, WebSocketDelegate {
       let label = json["label"].stringValue
       let obj = json["object"]
       println(label)
-      println("--")
-      println(obj)
-      println("--")
       
       if(label == "shakeBack") {
         openVenue()
@@ -78,7 +75,11 @@ class RhymoSocket: NSObject, WebSocketDelegate {
         delegate?.autoPlaylistUpdated(parsePlaylist(obj))
       }
       else if(label == "startSong") {
-        delegate?.nowPlaylingUpdated(RhymoClient.parsePlaylistTrack(obj))
+        println(obj["name"].stringValue)
+        debugPrintln(obj["name"].error)
+        let t = RhymoClient.parsePlaylistTrack(obj)
+        println(t)
+        delegate?.nowPlaylingUpdated(t)
       }
       else if(label == "noSong") {
         delegate?.nowPlaylingUpdated(PlaylistTrack())
