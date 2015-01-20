@@ -21,6 +21,7 @@ let kSecretToken = "secret_token"
 
 let RhymoErrorDomain = NSBundle.mainBundle().bundleIdentifier!
 let RhymoUnauthorizedCode = 401
+let RhymoBadRequestCode = 400
 
 class RhymoClient {
   
@@ -121,15 +122,20 @@ class RhymoClient {
           .responseJSON {
             (request, response, data, error) in
             if(error == nil) {
-              let json = JSON(data!)
-              
-              var venues = [Venue]()
-              
-              for (index: String, values: JSON) in json {
-                let venue = RhymoClient.parseVenue(values)
-                venues.append(venue)
+              if (data != nil) {
+                let json = JSON(data!)
+                
+                var venues = [Venue]()
+                
+                for (index: String, values: JSON) in json {
+                  let venue = RhymoClient.parseVenue(values)
+                  venues.append(venue)
+                }
+                result(error: nil, venues: venues)
               }
-              result(error: nil, venues: venues)
+              else {
+               result(error: nil, venues: [Venue]())
+              }
             }
             else {
               if(response?.statusCode == 401) {
@@ -174,9 +180,14 @@ class RhymoClient {
           .responseJSON {
             (request, response, data, error) in
             if(error == nil) {
-              let json = JSON(data!)
-              let venue = RhymoClient.parseVenue(json)
-              result(error: nil, venue: venue)
+              if (data != nil) {
+                let json = JSON(data!)
+                let venue = RhymoClient.parseVenue(json)
+                result(error: nil, venue: venue)
+              }
+              else {
+                result(error: nil, venue: nil)
+              }
             }
             else {
               if(response?.statusCode == 401) {
@@ -225,15 +236,20 @@ class RhymoClient {
           .responseJSON {
             (request, response, data, error) in
             if(error == nil) {
-              let json = JSON(data!)
-              var tracks = [Track]()
-              
-              for (index: String, values: JSON) in json {
-                let track = RhymoClient.parseTrack(values)
-                tracks.append(track)
+              if (data != nil) {
+                let json = JSON(data!)
+                var tracks = [Track]()
+                
+                for (index: String, values: JSON) in json {
+                  let track = RhymoClient.parseTrack(values)
+                  tracks.append(track)
+                }
+                
+                result(error: nil, tracks: tracks)
               }
-              
-              result(error: nil, tracks: tracks)
+              else {
+                result(error: nil, tracks: [Track]())
+              }
             }
             else {
               if(response?.statusCode == 401) {
@@ -283,6 +299,9 @@ class RhymoClient {
               result(error: nil, success: true)
             }
             else {
+              if(response?.statusCode == 400) {
+                result(error: NSError(domain: RhymoErrorDomain, code: RhymoBadRequestCode, userInfo: nil), success: false)
+              }
               if(response?.statusCode == 401) {
                 result(error: NSError(domain: RhymoErrorDomain, code: RhymoUnauthorizedCode, userInfo: nil), success: false)
               }

@@ -115,7 +115,7 @@ class SearchTracksViewController: BaseViewController, UITableViewDelegate, UITab
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if let handler = eventHandler {
-      return eventHandler!.displayedTracks.count
+      return handler.displayedTracks.count
     }
     return 0
   }

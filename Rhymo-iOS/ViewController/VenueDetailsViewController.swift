@@ -110,22 +110,14 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
         }) { (image: UIImage!, error: NSError!, cacheType: SDImageCacheType, finished: Bool, url: NSURL!) -> Void in
            // When completed, give it some blur and set it
           if(finished) {
-            let model = UIDevice.currentDevice().model
-            println(model)
-            if(model == "iPod Touch") {
-              self.venueCoverImageView.image = image
-              println("noblur")
-            }
-            else {
-              UIView.transitionWithView(self.venueCoverImageView, duration: VenueDetailsAnimationDuration, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
-                  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+            UIView.transitionWithView(self.venueCoverImageView, duration: VenueDetailsAnimationDuration, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
 
-                    let blurFilter = GPUImageiOSBlurFilter()
-                    self.venueCoverImageView.image = blurFilter.imageByFilteringImage(image)
-                  }
+                  let blurFilter = GPUImageiOSBlurFilter()
+                  self.venueCoverImageView.image = blurFilter.imageByFilteringImage(image)
+                }
 
-              }, completion: nil)
-            }
+            }, completion: nil)
           }
       }
     }

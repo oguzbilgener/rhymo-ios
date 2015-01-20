@@ -34,10 +34,12 @@ class VenueDetailsPresenter: BasePresenter {
     venueDetailsInteractor?.getVenueDetails(venueDetailsWireframe!.venue.id, result: { (error, venue) -> () in
       if(error != nil) {
         // TODO: show error
+        debugPrintln(error)
       }
       else if let loadedVenue = venue {
         self.venueDetailsWireframe?.venue = loadedVenue
         self.userInterface?.updateHeader(loadedVenue)
+        self.nowPlaying = loadedVenue.nowPlaying
         self.updateNowPlaying()
       }
       self.hideActivityIndicator()

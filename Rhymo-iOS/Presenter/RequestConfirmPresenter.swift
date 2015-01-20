@@ -61,9 +61,17 @@ class RequestConfirmPresenter: BasePresenter, UIAlertViewDelegate {
       else {
         if(error != nil) {
           debugPrintln(error)
-          let alert = UIAlertView(title: "Oh no!", message: "Something went wrong...", delegate: self, cancelButtonTitle: "Ok")
-          alert.tag = RequestSuccessfulAlertTag
-          alert.show()
+          if(error?.code == RhymoBadRequestCode) {
+            let alert = UIAlertView(title: "Slow down!", message: "You have sent too many requests already!", delegate: self, cancelButtonTitle: "Ok")
+            alert.tag = RequestSuccessfulAlertTag
+            alert.show()
+          }
+          else {
+            let alert = UIAlertView(title: "Oh no!", message: "Something went wrong...", delegate: self, cancelButtonTitle: "Ok")
+            alert.tag = RequestSuccessfulAlertTag
+            alert.show()
+          }
+          
         }
       }
     })
