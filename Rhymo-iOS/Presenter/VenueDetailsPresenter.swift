@@ -31,19 +31,7 @@ class VenueDetailsPresenter: BasePresenter {
       }
     }
     showActivityIndicator()
-    venueDetailsInteractor?.getVenueDetails(venueDetailsWireframe!.venue.id, result: { (error, venue) -> () in
-      if(error != nil) {
-        // TODO: show error
-        debugPrintln(error)
-      }
-      else if let loadedVenue = venue {
-        self.venueDetailsWireframe?.venue = loadedVenue
-        self.userInterface?.updateHeader(loadedVenue)
-        self.nowPlaying = loadedVenue.nowPlaying
-        self.updateNowPlaying()
-      }
-      self.hideActivityIndicator()
-    })
+    updateVenueDetails()
     
     // Tell the interactor that UI is ready, so that socket can start
     venueDetailsInteractor?.userInterfaceReady()
@@ -68,6 +56,7 @@ class VenueDetailsPresenter: BasePresenter {
   
   func viewWillAppear() {
     self.venueDetailsInteractor?.userInterfaceWillShowAgain()
+    updateVenueDetails()
   }
   
   func applicationWillResign(notification: NSNotification) {
@@ -79,6 +68,22 @@ class VenueDetailsPresenter: BasePresenter {
   }
   
   // MARK: - UI Update Delegation
+  
+  func updateVenueDetails() {
+    venueDetailsInteractor?.getVenueDetails(venueDetailsWireframe!.venue.id, result: { (error, venue) -> () in
+      if(error != nil) {
+        // TODO: show error
+        debugPrintln(error)
+      }
+      else if let loadedVenue = venue {
+        self.venueDetailsWireframe?.venue = loadedVenue
+        self.userInterface?.updateHeader(loadedVenue)
+        self.nowPlaying = loadedVenue.nowPlaying
+        self.updateNowPlaying()
+      }
+      self.hideActivityIndicator()
+    })
+  }
   
   func updateNowPlaying() {
     if let track = nowPlaying {

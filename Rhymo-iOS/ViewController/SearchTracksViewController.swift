@@ -133,11 +133,12 @@ class SearchTracksViewController: BaseViewController, UITableViewDelegate, UITab
   // MARK - UI Update
   
   func updateTracksList() {
-    dispatch_async(dispatch_get_main_queue()) {
-      UIView.transitionWithView(self.trackResultsTable, duration: SearchTracksAnimationDuration, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
-        self.trackResultsTable.reloadData()
-        }, completion: nil)
-    }
+//    dispatch_async(dispatch_get_main_queue()) {
+//      UIView.transitionWithView(self.trackResultsTable, duration: SearchTracksAnimationDuration, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
+//
+//        }, completion: nil)
+//    }
+    self.trackResultsTable.reloadData()
   }
   
   

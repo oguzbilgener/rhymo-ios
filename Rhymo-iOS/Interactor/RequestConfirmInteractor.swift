@@ -12,7 +12,7 @@ class RequestConfirmInteractor: BaseInteractor {
   
   var output: RequestConfirmPresenter?
   
-  func sendTrackRequest(venue: Venue, track: Track, result: (error: NSError?, success: Bool)->()) {
+  func sendTrackRequest(venue: Venue, track: Track, result: (error: NSError?, success: Bool, reason: String)->()) {
     let client = RhymoClient()
     client.requestTrack(track: track, venue: venue, result: result)
   }

@@ -50,7 +50,7 @@ class RequestConfirmPresenter: BasePresenter, UIAlertViewDelegate {
     let track = requestConfirmWireframe!.track
     
     showActivityIndicator()
-    requestConfirmInteractor?.sendTrackRequest(venue, track: track, result: { (error, success) -> () in
+    requestConfirmInteractor?.sendTrackRequest(venue, track: track, result: { (error, success, reason) -> () in
       self.hideActivityIndicator()
       if(success) {
           // TODO: show a better alert
@@ -62,7 +62,7 @@ class RequestConfirmPresenter: BasePresenter, UIAlertViewDelegate {
         if(error != nil) {
           debugPrintln(error)
           if(error?.code == RhymoBadRequestCode) {
-            let alert = UIAlertView(title: "Slow down!", message: "You have sent too many requests already!", delegate: self, cancelButtonTitle: "Ok")
+            let alert = UIAlertView(title: "Slow down!", message: "You have sent too many requests already! "+reason, delegate: self, cancelButtonTitle: "Ok")
             alert.tag = RequestSuccessfulAlertTag
             alert.show()
           }

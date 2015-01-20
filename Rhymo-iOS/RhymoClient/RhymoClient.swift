@@ -274,7 +274,7 @@ class RhymoClient {
     return nil
   }
   
-  func requestTrack(#track: Track, venue: Venue, result: (error: NSError?, success: Bool) -> ()) {
+  func requestTrack(#track: Track, venue: Venue, result: (error: NSError?, success: Bool, reason: String) -> ()) {
     if let user = authenticatedUser {
       let requestUrl = RhymoEndpoint + "request"
       
@@ -291,35 +291,53 @@ class RhymoClient {
         
         let queryString = "?public_key="+publicKey+"&signature="+signature
         
+        println(requestUrl + queryString)
+        println(bodyStr)
+        
         let request = Alamofire.request(.POST, requestUrl + queryString, parameters: parameters, encoding: .JSON)
-          .response {
+          .responseJSON {
             (request, response, data, error) in
             if(error == nil && response?.statusCode == 200) {
               // 200 = request is successful
-              result(error: nil, success: true)
+              if (data != nil) {
+                let json = JSON(data!)
+                println(json)
+                result(error: nil, success: true, reason: "")
+              }
+              else {
+//                result(error: nil, success: true)
+                println("data null?")
+              }
             }
             else {
               if(response?.statusCode == 400) {
-                result(error: NSError(domain: RhymoErrorDomain, code: RhymoBadRequestCode, userInfo: nil), success: false)
+                if(data != nil) {
+                  let json = JSON(data!)
+                  let reason = json["reason"].stringValue
+                  result(error: NSError(domain: RhymoErrorDomain, code: RhymoBadRequestCode, userInfo: nil), success: false, reason: reason)
+                }
+                else {
+                  result(error: NSError(domain: RhymoErrorDomain, code: RhymoBadRequestCode, userInfo: nil), success: false, reason: "")
+                }
               }
               if(response?.statusCode == 401) {
-                result(error: NSError(domain: RhymoErrorDomain, code: RhymoUnauthorizedCode, userInfo: nil), success: false)
+                result(error: NSError(domain: RhymoErrorDomain, code: RhymoUnauthorizedCode, userInfo: nil), success: false, reason: "unauthorized")
               }
               else {
-                result(error: error, success: false)
+                result(error: error, success: false, reason: "")
               }
             }
         }
       }
       else {
         let error = NSError(domain: RhymoErrorDomain, code: 11, userInfo: nil)
-        result(error: error, success: false)
+        result(error: error, success: false, reason: "")
       }
 
     }
     else {
       let error = NSError(domain: RhymoErrorDomain, code: 9, userInfo: nil)
-      result(error: error, success: false)
+      result(error: error, success: false, reason: "")
     }
   }
   
