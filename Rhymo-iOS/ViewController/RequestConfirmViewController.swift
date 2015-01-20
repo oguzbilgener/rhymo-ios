@@ -140,6 +140,9 @@ class RequestConfirmViewController: BaseViewController {
     let region = MKCoordinateRegionMakeWithDistance(venue.coord.asCoordinate, 300, 300)
     venueDisplayMap.region = region
     
+    venueDisplayMap.zoomEnabled = false
+    venueDisplayMap.scrollEnabled = false
+    venueDisplayMap.rotateEnabled = false
     
     venueDisplayMap.removeAnnotations(venueDisplayMap.annotations)
     let annotation = MKPointAnnotation()

@@ -231,6 +231,10 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
       let region = MKCoordinateRegionMakeWithDistance(loc, 600, 600)
       mapView.region = region
       
+      mapView.zoomEnabled = false
+      mapView.scrollEnabled = false
+      mapView.rotateEnabled = false
+      
       
       mapView.removeAnnotations(mapView.annotations)
       for venue in venues {
