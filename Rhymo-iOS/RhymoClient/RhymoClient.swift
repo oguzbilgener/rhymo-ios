@@ -444,7 +444,7 @@ class RhymoClient {
     
     let defaults = RhymoClient.getDefaults()
     
-    if let logout_enabled = defaults.objectForKey(kLogoutEnabled) as? String {
+    if let logout_enabled = defaults.objectForKey(kLogoutEnabled) as? Bool {
       defaults.removeObjectForKey(kLogoutEnabled)
       (RhymoClient()).logout()
       return nil
