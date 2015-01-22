@@ -110,14 +110,41 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
         }) { (image: UIImage!, error: NSError!, cacheType: SDImageCacheType, finished: Bool, url: NSURL!) -> Void in
            // When completed, give it some blur and set it
           if(finished) {
-            UIView.transitionWithView(self.venueCoverImageView, duration: VenueDetailsAnimationDuration, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-
-                  let blurFilter = GPUImageiOSBlurFilter()
-                  self.venueCoverImageView.image = blurFilter.imageByFilteringImage(image)
-                }
-
-            }, completion: nil)
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+              
+              let t1 = NSDate().timeIntervalSince1970
+              
+              let filterGroup = GPUImageFilterGroup()
+              let brightnessFilter = GPUImageBrightnessFilter()
+              let blurFilter = GPUImageiOSBlurFilter()
+              blurFilter.blurRadiusInPixels = 4
+              blurFilter.saturation = 1.0
+              // downsample if the image is too large
+              if(image.size.width > self.view.frame.size.width) {
+                blurFilter.downsampling = image.size.width / self.view.frame.size.width
+              }
+              else {
+                blurFilter.downsampling = 0
+              }
+              blurFilter.rangeReductionFactor = 0.3
+              brightnessFilter.brightness = -0.2
+              blurFilter.addTarget(brightnessFilter)
+              
+              filterGroup.addFilter(blurFilter)
+              filterGroup.initialFilters = [blurFilter]
+              filterGroup.terminalFilter = brightnessFilter
+              let blurryImage = filterGroup.imageByFilteringImage(image)
+              
+              let t2 = NSDate().timeIntervalSince1970
+              
+              dispatch_async(dispatch_get_main_queue(), {
+                UIView.transitionWithView(self.venueCoverImageView, duration: VenueDetailsAnimationDuration, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
+                  self.venueCoverImageView.image = blurryImage                  
+                  }, completion: nil)
+              })
+              
+            }
+            
           }
       }
     }
