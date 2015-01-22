@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		95CE0E6633DCBA8F5F39E8A4 /* Pods_Rhymo_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F02D650142FCEEAED539E2 /* Pods_Rhymo_iOS.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		DD0C64101A6F0A84002E7C49 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD0C640F1A6F0A84002E7C49 /* Settings.bundle */; };
 		DD15CF1E1A62E0DB00812A70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15CF1D1A62E0DB00812A70 /* AppDelegate.swift */; };
 		DD15CF251A62E0DB00812A70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD15CF231A62E0DB00812A70 /* Main.storyboard */; };
 		DD15CF271A62E0DB00812A70 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD15CF261A62E0DB00812A70 /* Images.xcassets */; };
@@ -89,6 +90,7 @@
 /* Begin PBXFileReference section */
 		5FDD20034E803DD162ABF232 /* Pods-Rhymo-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rhymo-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rhymo-iOS/Pods-Rhymo-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		8DD5EB6CCD74D2441677259E /* Pods-Rhymo-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rhymo-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rhymo-iOS/Pods-Rhymo-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		DD0C640F1A6F0A84002E7C49 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		DD15CF181A62E0DB00812A70 /* Rhymo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rhymo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD15CF1C1A62E0DB00812A70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD15CF1D1A62E0DB00812A70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 			children = (
 				DD15CF1C1A62E0DB00812A70 /* Info.plist */,
 				DD15CF401A62E65900812A70 /* Rhymo-iOS-Bridging-Header.h */,
+				DD0C640F1A6F0A84002E7C49 /* Settings.bundle */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD0C64101A6F0A84002E7C49 /* Settings.bundle in Resources */,
 				DD15CF251A62E0DB00812A70 /* Main.storyboard in Resources */,
 				DD470D011A63C8350082F33D /* LoginContent.xib in Resources */,
 				DDDE30921A6A6C4F001F33F3 /* TracksSectionHeader.xib in Resources */,

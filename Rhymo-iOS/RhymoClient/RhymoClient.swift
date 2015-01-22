@@ -12,12 +12,15 @@ import Alamofire
 import SwiftyJSON
 
 
-let RhymoHost = "192.168.1.101"
-let RhymoEndpoint = "http://"+RhymoHost+":9000/v1/" // 192.168.2.254 192.168.1.101
+let HardcodedRhymoHost = "192.168.2.254" // .114
+// 192.168.2.254 192.168.1.101
 
+let kHostname = "hostname"
 let kUser = "user_obj"
 let kPublicKey = "public_key"
 let kSecretToken = "secret_token"
+let kLogoutEnabled = "logout_enabled"
+let kLoggedInEmailAddress = "logged_in_email_address"
 
 let RhymoErrorDomain = NSBundle.mainBundle().bundleIdentifier!
 let RhymoUnauthorizedCode = 401
@@ -26,8 +29,10 @@ let RhymoBadRequestCode = 400
 class RhymoClient {
   
   private var authenticatedUser: User?
+  private var endpoint: String
   
   init() {
+    endpoint = RhymoClient.getEndpoint()
     if let cachedUser = (UIApplication.sharedApplication().delegate as? AppDelegate)?.appDependencies.authenticatedUser {
       authenticatedUser = cachedUser
     }
@@ -40,7 +45,7 @@ class RhymoClient {
   
   func login(#email: String, password: String, result: (User?) -> (Void)) {
     
-    let loginUrl = RhymoEndpoint + "login"
+    let loginUrl = self.endpoint + "login"
     
     let parameters = [
       "email": email,
@@ -94,6 +99,7 @@ class RhymoClient {
     let defaults = RhymoClient.getDefaults()
     
     defaults.removeObjectForKey(kUser)
+    defaults.removeObjectForKey(kLoggedInEmailAddress)
     
     self.authenticatedUser = nil
   }
@@ -102,7 +108,7 @@ class RhymoClient {
   
   func getVenuesNearby(location: Point, result: (error: NSError?, venues: [Venue]!)->()) {
     if let user = authenticatedUser {
-      let requestUrl = RhymoEndpoint + "venue/around"
+      let requestUrl = self.endpoint + "venue/around"
       
       let parameters: [String: AnyObject] = [
         "lat": location.lat,
@@ -161,7 +167,7 @@ class RhymoClient {
   
   func getVenueDetails(venueId: Int, result: (error: NSError?, venue: Venue?)->()) {
     if let user = authenticatedUser {
-      let requestUrl = RhymoEndpoint + "venue/\(venueId)"
+      let requestUrl = self.endpoint + "venue/\(venueId)"
       
       let parameters: [String: AnyObject] = [
         "id": venueId
@@ -217,7 +223,7 @@ class RhymoClient {
       if let encodedKeyword = orepStr {
         repStr = encodedKeyword
       }
-      let requestUrl = RhymoEndpoint + "search/tracks"
+      let requestUrl = self.endpoint + "search/tracks"
       let parameters: [String: AnyObject] = [
         "query": keyword,
         "venue_id": venueId
@@ -276,7 +282,7 @@ class RhymoClient {
   
   func requestTrack(#track: Track, venue: Venue, result: (error: NSError?, success: Bool, reason: String) -> ()) {
     if let user = authenticatedUser {
-      let requestUrl = RhymoEndpoint + "request"
+      let requestUrl = self.endpoint + "request"
       
       let parameters: [String: AnyObject] = [
         "venue_id": venue.id,
@@ -438,6 +444,12 @@ class RhymoClient {
     
     let defaults = RhymoClient.getDefaults()
     
+    if let logout_enabled = defaults.objectForKey(kLogoutEnabled) as? String {
+      defaults.removeObjectForKey(kLogoutEnabled)
+      (RhymoClient()).logout()
+      return nil
+    }
+    
     // get the user object from an unencrypted data store
     if let data = defaults.objectForKey(kUser) as? NSData {
       let user = NSKeyedUnarchiver.unarchiveObjectWithData(data) as User
@@ -462,6 +474,24 @@ class RhymoClient {
     
     let data = NSKeyedArchiver.archivedDataWithRootObject(user)
     defaults.setObject(data, forKey: kUser)
+    defaults.setObject(user.email, forKey: kLoggedInEmailAddress)
+  }
+  
+  class func getEndpoint() -> String {
+    return "http://" + RhymoClient.retrievePreferredHostname() + ":9000/v1/"
+  }
+  
+  class func retrievePreferredHostname() -> String {
+    if let hostname = RhymoClient.getDefaults().stringForKey(kHostname) {
+      if(hostname != "") {
+        return hostname
+      }
+    }
+    return HardcodedRhymoHost
+  }
+  
+  class func storePreferredHostname(hostname: String) {
+    getDefaults().setObject(hostname, forKey: kHostname)
   }
   
   class func hmacSha1(#key: String, data: String) -> String {
