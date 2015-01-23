@@ -12,7 +12,7 @@ import Alamofire
 import SwiftyJSON
 
 
-let HardcodedRhymoHost = "192.168.2.254" // .114
+let HardcodedRhymoHost = "rhymo.oguzdev.com" // .114
 // 192.168.2.254 192.168.1.101
 
 let kHostname = "hostname"
@@ -21,6 +21,7 @@ let kPublicKey = "public_key"
 let kSecretToken = "secret_token"
 let kLogoutEnabled = "logout_enabled"
 let kLoggedInEmailAddress = "logged_in_email_address"
+let kFakeLocation = "DebugSettingsUseFakeLocation"
 
 let RhymoErrorDomain = NSBundle.mainBundle().bundleIdentifier!
 let RhymoUnauthorizedCode = 401
@@ -438,6 +439,10 @@ class RhymoClient {
     return track
   }
   
+  class func fakeLocationEnabled() -> Bool {
+    return getDefaults().boolForKey(kFakeLocation)
+  }
+  
   // MARK: - Authentication helpers
 
   class func getAuthenticatedUser() -> User? {
@@ -478,7 +483,7 @@ class RhymoClient {
   }
   
   class func getEndpoint() -> String {
-    return "http://" + RhymoClient.retrievePreferredHostname() + ":9000/v1/"
+    return "http://" + RhymoClient.retrievePreferredHostname() + "/v1/"
   }
   
   class func retrievePreferredHostname() -> String {

@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import AYVibrantButton
 
 class LandingViewController: BaseViewController {
   
   var eventHandler: LandingPresenter?
-
+  
   override func viewDidLoad() {
-        // Do any additional setup after loading the view.
+
   }
 
   override func didReceiveMemoryWarning() {

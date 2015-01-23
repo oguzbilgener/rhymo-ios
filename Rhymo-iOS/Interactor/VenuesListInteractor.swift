@@ -116,6 +116,10 @@ class VenuesListInteractor: BaseInteractor, CLLocationManagerDelegate {
   }
   
   func lastLocationValid() -> Bool {
+    if(RhymoClient.fakeLocationEnabled()) {
+      self.lastLocation = CLLocation(latitude: 39.9235423, longitude: 32.8213822)
+      return true
+    }
     if(self.lastLocation != nil && locationLastUpdated != nil) {
       if(Int(NSDate().timeIntervalSince1970) - Int(locationLastUpdated!.timeIntervalSince1970) < LocationInvalidationPeriod) {
         return true

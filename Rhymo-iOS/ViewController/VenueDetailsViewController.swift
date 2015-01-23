@@ -139,7 +139,7 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
               
               dispatch_async(dispatch_get_main_queue(), {
                 UIView.transitionWithView(self.venueCoverImageView, duration: VenueDetailsAnimationDuration, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
-                  self.venueCoverImageView.image = blurryImage                  
+                  self.venueCoverImageView.image = blurryImage
                   }, completion: nil)
               })
               

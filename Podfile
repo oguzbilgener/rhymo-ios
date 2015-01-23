@@ -13,7 +13,7 @@ pod 'SDWebImage', '~>3.6' # couldn't import class extensions in swift
 pod 'GPUImage', '~> 0.1'
 pod 'RPFloatingPlaceholders', '~> 0.2.6'
 pod 'JGProgressHUD'
-pod 'AYVibrantButton'
+pod 'AYVibrantButton', :git => "https://github.com/delannoyk/AYVibrantButton.git", :branch => "master"
 
 end
 

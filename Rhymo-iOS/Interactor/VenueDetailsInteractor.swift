@@ -53,26 +53,21 @@ class VenueDetailsInteractor: BaseInteractor, RhymoSocketDelegate {
   // MARK: - Socket Delegation
   
   func socketConnected() {
-    println("socket connected at interactor")
   }
   
   func socketDisconnected() {
-    println("socket disconnected at interactor")
   }
   
   func historyPlaylistUpdated(playlist: [PlaylistTrack]) {
-    println("history playlist updated")
     output?.didUpdateHistoryTracksList(playlist.reverse())
   }
   
   func requestPlaylistUpdated(playlist: [PlaylistTrack]) {
-    println("request playlist updated")
     self.requestPlaylist = playlist
     output?.didUpdateUpcomingPlaylist(makeUpcomingTrackList())
   }
   
   func autoPlaylistUpdated(playlist: [PlaylistTrack]) {
-    println("auto playlist updated")
     self.autoPlaylist = playlist
     output?.didUpdateUpcomingPlaylist(makeUpcomingTrackList())
   }

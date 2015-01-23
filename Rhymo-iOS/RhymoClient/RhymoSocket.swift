@@ -23,7 +23,7 @@ class RhymoSocket: NSObject, WebSocketDelegate {
     self.venueId = venueId
     super.init()
     println("init rhymosocket")
-    socket = WebSocket(url: NSURL(scheme: "ws", host: RhymoClient.retrievePreferredHostname()+":9000", path: "/v1/socket/client")!)
+    socket = WebSocket(url: NSURL(scheme: "ws", host: RhymoClient.retrievePreferredHostname(), path: "/v1/socket/client")!)
     socket!.delegate = self
   }
   

@@ -14,7 +14,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/mrackwitz/Alamofire.git`, branch `podspec`)
-  - AYVibrantButton
+  - AYVibrantButton (from `https://github.com/delannoyk/AYVibrantButton.git`, branch `master`)
   - CommonCrypto (~> 1.1)
   - GPUImage (~> 0.1)
   - JGProgressHUD
@@ -28,6 +28,9 @@ EXTERNAL SOURCES:
   Alamofire:
     :branch: podspec
     :git: https://github.com/mrackwitz/Alamofire.git
+  AYVibrantButton:
+    :branch: master
+    :git: https://github.com/delannoyk/AYVibrantButton.git
   Starscream:
     :branch: master
     :git: https://github.com/daltoniam/Starscream.git
@@ -39,6 +42,9 @@ CHECKOUT OPTIONS:
   Alamofire:
     :commit: e4baf843f89e7c5d2d2478cebcf196f9338a86ba
     :git: https://github.com/mrackwitz/Alamofire.git
+  AYVibrantButton:
+    :commit: a280e53e6dee1a78803d60a14c6a95be901635bd
+    :git: https://github.com/delannoyk/AYVibrantButton.git
   Starscream:
     :commit: f8dfae1e6065fc41e8bd2c18349e5b30ca73d2be
     :git: https://github.com/daltoniam/Starscream.git
@@ -48,7 +54,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 82bd273df6adffbda9740509993f29b2fa5a6d10
-  AYVibrantButton: 6ef08db44395e9b819560191a048297be2e8b727
+  AYVibrantButton: 7cc5b2c74f6f6a0a52d5b0db361a9d3b755bc448
   CommonCrypto: e29ad10d288d7da1cad5d5eec03ed68b010b0072
   GPUImage: cecb0830bb9428f50192042e3c7b53810f51388e
   JGProgressHUD: 733523c80f69b6dfc41b88a0f33883a89a8b4c3b
