@@ -38,7 +38,7 @@ class LoginPresenter: BasePresenter {
       hud.dismissAfterDelay(LoginMaxDelay)
       
       loginInteractor!.login(email: email, password: password) {
-        (authenticatedUser: User?) -> (Void) in
+        (error: NSError?, authenticatedUser: User?) -> (Void) in
         hud.dismissAnimated(false)
         
         let hud = JGProgressHUD(style: JGProgressHUDStyle.Dark)
@@ -53,6 +53,7 @@ class LoginPresenter: BasePresenter {
           self.loginSuccess()
         }
         else {
+          debugPrintln(error)
           hud.textLabel.text = "Login failed."
           hud.showInView(self.userInterface?.view)
           hud.dismissAfterDelay(LoginResultDialogTimeout, animated: true)

@@ -12,7 +12,7 @@ class LoginInteractor: BaseInteractor {
   
   var output: LoginPresenter?
   
-  func login(#email: String, password: String, result: (User?) -> (Void)) {
+  func login(#email: String, password: String, result: (NSError?, User?) -> (Void)) {
 
     let client = RhymoClient()
     client.login(email: email, password: password, result: result)

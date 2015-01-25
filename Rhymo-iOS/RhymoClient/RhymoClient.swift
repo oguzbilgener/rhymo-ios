@@ -44,7 +44,7 @@ class RhymoClient {
   
   // MARK - Unauthenticated requests
   
-  func login(#email: String, password: String, result: (User?) -> (Void)) {
+  func login(#email: String, password: String, result: (NSError?, User?) -> (Void)) {
     
     let loginUrl = self.endpoint + "login"
     
@@ -84,10 +84,14 @@ class RhymoClient {
           
           self.storeAuthenticatedUser(user)
           
-          result(user)
+          result(nil, user)
+        }
+        else if(error != nil) {
+          result(error, nil)
         }
         else {
-          result(nil)
+          let error = NSError(domain: RhymoErrorDomain, code: 11, userInfo: nil)
+          result(error, nil)
         }
     }
   }

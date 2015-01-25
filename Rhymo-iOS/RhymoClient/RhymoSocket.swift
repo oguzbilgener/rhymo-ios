@@ -80,11 +80,17 @@ class RhymoSocket: NSObject, WebSocketDelegate {
         delegate?.autoPlaylistUpdated(playlist)
       }
       else if(label == "startSong") {
+        var nowPlayingIndex:Int? = nil
+        if let index = obj["currentAutoIndex"].int {
+          nowPlayingIndex = index
+        }
         let t = RhymoClient.parsePlaylistTrack(obj)
-        delegate?.nowPlaylingUpdated(t)
+        delegate?.nowPlayingUpdated(t, currentAutoIndex: nowPlayingIndex)
       }
       else if(label == "noSong") {
-        delegate?.nowPlaylingUpdated(PlaylistTrack())
+        delegate?.nowPlayingUpdated(PlaylistTrack(), currentAutoIndex: nil)
+        delegate?.autoPlaylistUpdated([PlaylistTrack]())
+        delegate?.historyPlaylistUpdated([PlaylistTrack]())
       }
       else {
         println("got some gibberish: \(text)")
@@ -136,5 +142,5 @@ protocol RhymoSocketDelegate: class {
   func historyPlaylistUpdated(playlist: [PlaylistTrack])
   func requestPlaylistUpdated(playlist: [PlaylistTrack])
   func autoPlaylistUpdated(playlist: [PlaylistTrack])
-  func nowPlaylingUpdated(track: PlaylistTrack?)
+  func nowPlayingUpdated(track: PlaylistTrack?, currentAutoIndex: Int?)
 }

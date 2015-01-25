@@ -25,6 +25,7 @@
 		DD30F80A1A63318F0033EB63 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F8091A63318F0033EB63 /* RegisterViewController.swift */; };
 		DD30F80C1A6333190033EB63 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F80B1A6333190033EB63 /* LoginPresenter.swift */; };
 		DD30F80E1A63335F0033EB63 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F80D1A63335F0033EB63 /* LoginInteractor.swift */; };
+		DD351E6C1A753A3F000A15B3 /* Array+slice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD351E6B1A753A3F000A15B3 /* Array+slice.swift */; };
 		DD3646BC1A646E17008CA1B6 /* VenuesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3646BB1A646E17008CA1B6 /* VenuesListPresenter.swift */; };
 		DD3646BE1A648708008CA1B6 /* VenuesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3646BD1A648708008CA1B6 /* VenuesListViewController.swift */; };
 		DD3646C01A648786008CA1B6 /* VenuesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3646BF1A648786008CA1B6 /* VenuesListInteractor.swift */; };
@@ -113,6 +114,7 @@
 		DD30F8091A63318F0033EB63 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ViewController/RegisterViewController.swift; sourceTree = "<group>"; };
 		DD30F80B1A6333190033EB63 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPresenter.swift; path = Presenter/LoginPresenter.swift; sourceTree = "<group>"; };
 		DD30F80D1A63335F0033EB63 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginInteractor.swift; path = Interactor/LoginInteractor.swift; sourceTree = "<group>"; };
+		DD351E6B1A753A3F000A15B3 /* Array+slice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+slice.swift"; sourceTree = "<group>"; };
 		DD3646BB1A646E17008CA1B6 /* VenuesListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenuesListPresenter.swift; path = Presenter/VenuesListPresenter.swift; sourceTree = "<group>"; };
 		DD3646BD1A648708008CA1B6 /* VenuesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenuesListViewController.swift; path = ViewController/VenuesListViewController.swift; sourceTree = "<group>"; };
 		DD3646BF1A648786008CA1B6 /* VenuesListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenuesListInteractor.swift; path = Interactor/VenuesListInteractor.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				DD7B2AD21A69CABE00A21780 /* UIImageEffects.h */,
 				DD7B2AD31A69CABE00A21780 /* UIImageEffects.m */,
 				DDA4313D1A65359300513755 /* UIColorExtension.swift */,
+				DD351E6B1A753A3F000A15B3 /* Array+slice.swift */,
 			);
 			name = ThirdParty;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				DDD258B51A66E119008FD58B /* VenueDetailsWireframe.swift in Sources */,
 				DD470CFD1A63C59D0082F33D /* BaseInteractor.swift in Sources */,
 				DD30F80E1A63335F0033EB63 /* LoginInteractor.swift in Sources */,
+				DD351E6C1A753A3F000A15B3 /* Array+slice.swift in Sources */,
 				DD3646BE1A648708008CA1B6 /* VenuesListViewController.swift in Sources */,
 				DD7BFDE41A630BE6009ADC4F /* RootWireframe.swift in Sources */,
 				DDCD68E41A6436430079089F /* BaseViewController.swift in Sources */,
