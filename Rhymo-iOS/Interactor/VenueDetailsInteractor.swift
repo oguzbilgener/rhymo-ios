@@ -93,6 +93,9 @@ class VenueDetailsInteractor: BaseInteractor, RhymoSocketDelegate {
   func makeUpcomingTrackList() -> [PlaylistTrack] {
     println("r \(requestPlaylist.count) a \(autoPlaylist.count) c \(currentAutoIndex)")
     var auto = autoPlaylist
+    if(autoPlaylist.count == self.currentAutoIndex + 1) {
+      autoPlaylist = []
+    }
     if(autoPlaylist.count > self.currentAutoIndex + 1 && self.currentAutoIndex > 0) {
       auto = auto.slice(self.currentAutoIndex + 1)
     }
