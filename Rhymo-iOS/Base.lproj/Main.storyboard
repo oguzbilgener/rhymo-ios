@@ -34,24 +34,30 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="RegisterButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQ5-By-obz" customClass="SolidButton" customModule="Rhymo_iOS" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="RegisterButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQ5-By-obz" customClass="InvertButton">
                                         <rect key="frame" x="22" y="504" width="117" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Register">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="5.0"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="CjY-MM-Px5" kind="presentation" identifier="RegisterViewController" id="FnM-EZ-Di9"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="LoginButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZF-3B-O91" customClass="SolidButton" customModule="Rhymo_iOS" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="LoginButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZF-3B-O91" customClass="InvertButton">
                                         <rect key="frame" x="164" y="504" width="117" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Log in">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="5.0"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="bB4-56-LlZ" kind="presentation" identifier="LoginViewController" id="5dU-6c-gZA"/>
                                         </connections>
@@ -293,13 +299,16 @@
                                         <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <size key="shadowOffset" width="0.0" height="1"/>
                                     </label>
-                                    <button opaque="NO" tag="77" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x14-QP-JMl" customClass="SolidButton" customModule="Rhymo_iOS" customModuleProvider="target">
+                                    <button opaque="NO" tag="77" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x14-QP-JMl" customClass="InvertButton">
                                         <rect key="frame" x="251" y="140" width="114" height="30"/>
                                         <inset key="contentEdgeInsets" minX="6" minY="6" maxX="6" maxY="6"/>
                                         <state key="normal" title="Play your song">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="5.0"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="uuA-Sn-G0G" kind="show" id="QJh-nj-djd"/>
                                         </connections>
@@ -401,7 +410,7 @@
                         <outlet property="nowPlayingAlbumLabel" destination="2gV-XW-DVT" id="dca-6s-tEG"/>
                         <outlet property="nowPlayingArtistLabel" destination="c8Y-kg-KVo" id="4yh-Ie-a2i"/>
                         <outlet property="nowPlayingTitleLabel" destination="HRP-IL-Muh" id="i3g-YQ-t7M"/>
-                        <outlet property="requestButton" destination="x14-QP-JMl" id="GD7-uH-T7T"/>
+                        <outlet property="requestButton" destination="x14-QP-JMl" id="hmB-es-CZ2"/>
                         <outlet property="trackProgress" destination="d4N-HQ-hIT" id="Cj4-Yw-M5m"/>
                         <outlet property="venueCoverImageView" destination="LHr-4t-g9B" id="3hu-J0-qp2"/>
                         <outlet property="venueSongTable" destination="pKn-Fp-Syg" id="1Sa-Ue-Uki"/>
@@ -515,13 +524,19 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTh-C2-YzX" customClass="SolidButton" customModule="Rhymo_iOS" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTh-C2-YzX" customClass="InvertButton">
                                         <rect key="frame" x="289" y="60" width="58" height="30"/>
                                         <inset key="contentEdgeInsets" minX="6" minY="6" maxX="6" maxY="6"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" red="0.78823529410000004" green="0.0039215686269999999" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="5.0"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                                <color key="value" red="0.38823529411764707" green="0.63921568627450975" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="playConfirmButtonTouched:" destination="dgW-vT-yJB" eventType="touchUpInside" id="Oea-LH-Obx"/>
                                         </connections>

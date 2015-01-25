@@ -25,7 +25,7 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
   @IBOutlet weak var nowPlayingArtistLabel: UILabel!
   @IBOutlet weak var nowPlayingAlbumLabel: UILabel!
   @IBOutlet weak var venueSongTable: UITableView!
-  @IBOutlet weak var requestButton: SolidButton!
+  @IBOutlet weak var requestButton: InvertButton!
   @IBOutlet weak var trackProgress: UIProgressView!
   
   

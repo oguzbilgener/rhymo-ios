@@ -10,6 +10,7 @@
 
 @interface InvertButton : UIButton
 
+@property (nonatomic) CGFloat cornerRadius;
 @property (nonatomic, strong) UIColor* primaryColor;
 @property (nonatomic, strong) UIColor* secondaryColor;
 

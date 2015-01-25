@@ -10,11 +10,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" tag="21" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email or Username" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="V0B-U5-W81" customClass="LineTextField" customModule="Rhymo_iOS" customModuleProvider="target">
-                    <rect key="frame" x="44" y="139" width="287" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" tag="21" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email or Username" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="V0B-U5-W81" customClass="LineTextField" customModule="Rhymo_iOS" customModuleProvider="target">
+                    <rect key="frame" x="44" y="134" width="287" height="30"/>
                     <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="next"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -22,23 +22,23 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome back!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xr-ez-JoA">
-                    <rect key="frame" x="78" y="21" width="219" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xr-ez-JoA">
+                    <rect key="frame" x="129" y="21" width="118" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sign in with your email to see what is playing on your favourite café and play your favourite song." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3c-Mv-DwJ">
-                    <rect key="frame" x="44" y="50" width="287" height="66"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with your email to see what is playing on your favourite café and play your favourite song." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3c-Mv-DwJ">
+                    <rect key="frame" x="44" y="50" width="287" height="51"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" tag="22" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mCS-3A-NHv" customClass="LineTextField" customModule="Rhymo_iOS" customModuleProvider="target">
-                    <rect key="frame" x="44" y="187" width="287" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" tag="22" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mCS-3A-NHv" customClass="LineTextField" customModule="Rhymo_iOS" customModuleProvider="target">
+                    <rect key="frame" x="44" y="192" width="287" height="30"/>
                     <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="go" secureTextEntry="YES"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -46,13 +46,17 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <button opaque="NO" tag="40" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAe-SV-88c">
-                    <rect key="frame" x="243" y="235" width="88" height="30"/>
+                <button opaque="NO" tag="40" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAe-SV-88c" customClass="InvertButton">
+                    <rect key="frame" x="264" y="240" width="67" height="31"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                    <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                     <state key="normal" title="Log in">
-                        <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="5.0"/>
+                    </userDefinedRuntimeAttributes>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.62745098040000002" green="0.0039215686269999999" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -63,11 +67,11 @@
                 <constraint firstAttribute="centerX" secondItem="7xr-ez-JoA" secondAttribute="centerX" id="Rpe-Nc-BB4"/>
                 <constraint firstItem="mCS-3A-NHv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="44" id="XgG-jv-hge"/>
                 <constraint firstAttribute="trailing" secondItem="mCS-3A-NHv" secondAttribute="trailing" constant="44" id="YLa-K0-OIp"/>
-                <constraint firstItem="jAe-SV-88c" firstAttribute="top" secondItem="mCS-3A-NHv" secondAttribute="bottom" constant="18" id="b3k-Fe-gm2"/>
+                <constraint firstItem="jAe-SV-88c" firstAttribute="top" secondItem="mCS-3A-NHv" secondAttribute="bottom" constant="28" id="b3k-Fe-gm2"/>
                 <constraint firstAttribute="trailing" secondItem="V0B-U5-W81" secondAttribute="trailing" constant="44" id="fV8-93-Rq0"/>
                 <constraint firstItem="N3c-Mv-DwJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="44" id="g40-Bn-f4q"/>
-                <constraint firstItem="V0B-U5-W81" firstAttribute="top" secondItem="N3c-Mv-DwJ" secondAttribute="bottom" constant="23" id="jrf-ou-b2K"/>
-                <constraint firstItem="mCS-3A-NHv" firstAttribute="top" secondItem="V0B-U5-W81" secondAttribute="bottom" constant="18" id="kEG-20-M74"/>
+                <constraint firstItem="V0B-U5-W81" firstAttribute="top" secondItem="N3c-Mv-DwJ" secondAttribute="bottom" constant="33" id="jrf-ou-b2K"/>
+                <constraint firstItem="mCS-3A-NHv" firstAttribute="top" secondItem="V0B-U5-W81" secondAttribute="bottom" constant="28" id="kEG-20-M74"/>
                 <constraint firstItem="N3c-Mv-DwJ" firstAttribute="top" secondItem="7xr-ez-JoA" secondAttribute="bottom" constant="8" id="lT2-0I-JKV"/>
                 <constraint firstItem="7xr-ez-JoA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="21" id="m3m-kZ-aX3"/>
             </constraints>

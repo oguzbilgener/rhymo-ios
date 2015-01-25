@@ -25,4 +25,6 @@
 
 #import "GPUImage.h"
 
+#import "InvertButton.h"
+
 #endif
