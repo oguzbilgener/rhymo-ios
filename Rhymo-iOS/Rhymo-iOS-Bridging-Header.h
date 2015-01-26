@@ -25,6 +25,8 @@
 
 #import "GPUImage.h"
 
+#import "KASlideShow.h"
+
 #import "InvertButton.h"
 
 #endif

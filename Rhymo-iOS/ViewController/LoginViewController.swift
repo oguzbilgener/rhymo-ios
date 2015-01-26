@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AYVibrantButton
 
 let LoginContentNibName = "LoginContent"
 let LoginEmailTag = 21

@@ -7,16 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		95CE0E6633DCBA8F5F39E8A4 /* Pods_Rhymo_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F02D650142FCEEAED539E2 /* Pods_Rhymo_iOS.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		508BB485C5541E34F7F52CBA /* Pods_Rhymo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB55828126E458EF2ABF341E /* Pods_Rhymo.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DD0C64101A6F0A84002E7C49 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD0C640F1A6F0A84002E7C49 /* Settings.bundle */; };
 		DD15CF1E1A62E0DB00812A70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15CF1D1A62E0DB00812A70 /* AppDelegate.swift */; };
-		DD15CF251A62E0DB00812A70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD15CF231A62E0DB00812A70 /* Main.storyboard */; };
 		DD15CF271A62E0DB00812A70 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD15CF261A62E0DB00812A70 /* Images.xcassets */; };
-		DD15CF2A1A62E0DB00812A70 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD15CF281A62E0DB00812A70 /* LaunchScreen.xib */; };
 		DD15CF361A62E0DB00812A70 /* Rhymo_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15CF351A62E0DB00812A70 /* Rhymo_iOSTests.swift */; };
 		DD15CF431A62E75C00812A70 /* RhymoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15CF421A62E75C00812A70 /* RhymoClient.swift */; };
 		DD15CF461A62E84B00812A70 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15CF451A62E84B00812A70 /* User.swift */; };
 		DD2174051A63E7FB0061D86F /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2174041A63E7FB0061D86F /* LineTextField.swift */; };
+		DD237B8A1A76EE8900DD4802 /* Pods-Rhymo.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DD237B881A76EE8900DD4802 /* Pods-Rhymo.debug.xcconfig */; };
+		DD237B8B1A76EE8900DD4802 /* Pods-Rhymo.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DD237B891A76EE8900DD4802 /* Pods-Rhymo.release.xcconfig */; };
+		DD237B8D1A76F08700DD4802 /* Array+Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD237B8C1A76F08700DD4802 /* Array+Shuffle.swift */; };
+		DD237B8E1A76F2BD00DD4802 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD15CF231A62E0DB00812A70 /* Main.storyboard */; };
+		DD237B8F1A76F2C400DD4802 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD15CF281A62E0DB00812A70 /* LaunchScreen.xib */; };
 		DD29BF301A65AF7700FC4EA3 /* Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD29BF2F1A65AF7700FC4EA3 /* Encryption.swift */; };
 		DD30F8021A632CFE0033EB63 /* LandingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F8011A632CFD0033EB63 /* LandingInteractor.swift */; };
 		DD30F8041A6331080033EB63 /* LoginWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F8031A6331080033EB63 /* LoginWireframe.swift */; };
@@ -90,22 +93,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5FDD20034E803DD162ABF232 /* Pods-Rhymo-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rhymo-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rhymo-iOS/Pods-Rhymo-iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		8DD5EB6CCD74D2441677259E /* Pods-Rhymo-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rhymo-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rhymo-iOS/Pods-Rhymo-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		DB55828126E458EF2ABF341E /* Pods_Rhymo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rhymo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD0C640F1A6F0A84002E7C49 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		DD15CF181A62E0DB00812A70 /* Rhymo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rhymo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD15CF181A62E0DB00812A70 /* Rhymo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rhymo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD15CF1C1A62E0DB00812A70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD15CF1D1A62E0DB00812A70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD15CF241A62E0DB00812A70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD15CF261A62E0DB00812A70 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DD15CF291A62E0DB00812A70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		DD15CF2F1A62E0DB00812A70 /* Rhymo-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rhymo-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD15CF2F1A62E0DB00812A70 /* RhymoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RhymoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD15CF341A62E0DB00812A70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD15CF351A62E0DB00812A70 /* Rhymo_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rhymo_iOSTests.swift; sourceTree = "<group>"; };
 		DD15CF401A62E65900812A70 /* Rhymo-iOS-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Rhymo-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		DD15CF421A62E75C00812A70 /* RhymoClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RhymoClient.swift; path = RhymoClient/RhymoClient.swift; sourceTree = "<group>"; };
 		DD15CF451A62E84B00812A70 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DD2174041A63E7FB0061D86F /* LineTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineTextField.swift; path = View/LineTextField.swift; sourceTree = "<group>"; };
+		DD237B881A76EE8900DD4802 /* Pods-Rhymo.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-Rhymo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rhymo/Pods-Rhymo.debug.xcconfig"; sourceTree = "<group>"; };
+		DD237B891A76EE8900DD4802 /* Pods-Rhymo.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-Rhymo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rhymo/Pods-Rhymo.release.xcconfig"; sourceTree = "<group>"; };
+		DD237B8C1A76F08700DD4802 /* Array+Shuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Shuffle.swift"; sourceTree = "<group>"; };
 		DD29BF2F1A65AF7700FC4EA3 /* Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Encryption.swift; path = RhymoClient/Encryption.swift; sourceTree = "<group>"; };
 		DD30F8011A632CFD0033EB63 /* LandingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingInteractor.swift; path = Interactor/LandingInteractor.swift; sourceTree = "<group>"; };
 		DD30F8031A6331080033EB63 /* LoginWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginWireframe.swift; path = Wireframe/LoginWireframe.swift; sourceTree = "<group>"; };
@@ -183,7 +188,7 @@
 				DDBD48531A6DAAD00029425A /* CoreMedia.framework in Frameworks */,
 				DDCC3BED1A668C3400071EDB /* MapKit.framework in Frameworks */,
 				DDFDD9A41A65661B001F4AFA /* CoreLocation.framework in Frameworks */,
-				95CE0E6633DCBA8F5F39E8A4 /* Pods_Rhymo_iOS.framework in Frameworks */,
+				508BB485C5541E34F7F52CBA /* Pods_Rhymo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,8 +205,8 @@
 		B4615EBD50575D33E019DBA9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5FDD20034E803DD162ABF232 /* Pods-Rhymo-iOS.debug.xcconfig */,
-				8DD5EB6CCD74D2441677259E /* Pods-Rhymo-iOS.release.xcconfig */,
+				DD237B881A76EE8900DD4802 /* Pods-Rhymo.debug.xcconfig */,
+				DD237B891A76EE8900DD4802 /* Pods-Rhymo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -220,8 +225,8 @@
 		DD15CF191A62E0DB00812A70 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DD15CF181A62E0DB00812A70 /* Rhymo-iOS.app */,
-				DD15CF2F1A62E0DB00812A70 /* Rhymo-iOSTests.xctest */,
+				DD15CF181A62E0DB00812A70 /* Rhymo.app */,
+				DD15CF2F1A62E0DB00812A70 /* RhymoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -349,6 +354,7 @@
 				DD7B2AD31A69CABE00A21780 /* UIImageEffects.m */,
 				DDA4313D1A65359300513755 /* UIColorExtension.swift */,
 				DD351E6B1A753A3F000A15B3 /* Array+slice.swift */,
+				DD237B8C1A76F08700DD4802 /* Array+Shuffle.swift */,
 			);
 			name = ThirdParty;
 			sourceTree = "<group>";
@@ -406,6 +412,7 @@
 				DDCC3BEC1A668C3400071EDB /* MapKit.framework */,
 				DDFDD9A31A65661B001F4AFA /* CoreLocation.framework */,
 				E1F02D650142FCEEAED539E2 /* Pods_Rhymo_iOS.framework */,
+				DB55828126E458EF2ABF341E /* Pods_Rhymo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -413,9 +420,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DD15CF171A62E0DB00812A70 /* Rhymo-iOS */ = {
+		DD15CF171A62E0DB00812A70 /* Rhymo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DD15CF391A62E0DB00812A70 /* Build configuration list for PBXNativeTarget "Rhymo-iOS" */;
+			buildConfigurationList = DD15CF391A62E0DB00812A70 /* Build configuration list for PBXNativeTarget "Rhymo" */;
 			buildPhases = (
 				63C76BC300D8A41E668BF681 /* Check Pods Manifest.lock */,
 				DD15CF141A62E0DB00812A70 /* Sources */,
@@ -428,14 +435,14 @@
 			);
 			dependencies = (
 			);
-			name = "Rhymo-iOS";
+			name = Rhymo;
 			productName = "Rhymo-iOS";
-			productReference = DD15CF181A62E0DB00812A70 /* Rhymo-iOS.app */;
+			productReference = DD15CF181A62E0DB00812A70 /* Rhymo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DD15CF2E1A62E0DB00812A70 /* Rhymo-iOSTests */ = {
+		DD15CF2E1A62E0DB00812A70 /* RhymoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DD15CF3C1A62E0DB00812A70 /* Build configuration list for PBXNativeTarget "Rhymo-iOSTests" */;
+			buildConfigurationList = DD15CF3C1A62E0DB00812A70 /* Build configuration list for PBXNativeTarget "RhymoTests" */;
 			buildPhases = (
 				DD15CF2B1A62E0DB00812A70 /* Sources */,
 				DD15CF2C1A62E0DB00812A70 /* Frameworks */,
@@ -446,9 +453,9 @@
 			dependencies = (
 				DD15CF311A62E0DB00812A70 /* PBXTargetDependency */,
 			);
-			name = "Rhymo-iOSTests";
+			name = RhymoTests;
 			productName = "Rhymo-iOSTests";
-			productReference = DD15CF2F1A62E0DB00812A70 /* Rhymo-iOSTests.xctest */;
+			productReference = DD15CF2F1A62E0DB00812A70 /* RhymoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -469,7 +476,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DD15CF131A62E0DB00812A70 /* Build configuration list for PBXProject "Rhymo-iOS" */;
+			buildConfigurationList = DD15CF131A62E0DB00812A70 /* Build configuration list for PBXProject "Rhymo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -482,8 +489,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DD15CF171A62E0DB00812A70 /* Rhymo-iOS */,
-				DD15CF2E1A62E0DB00812A70 /* Rhymo-iOSTests */,
+				DD15CF171A62E0DB00812A70 /* Rhymo */,
+				DD15CF2E1A62E0DB00812A70 /* RhymoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -493,14 +500,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD237B8F1A76F2C400DD4802 /* LaunchScreen.xib in Resources */,
+				DD237B8E1A76F2BD00DD4802 /* Main.storyboard in Resources */,
 				DD0C64101A6F0A84002E7C49 /* Settings.bundle in Resources */,
-				DD15CF251A62E0DB00812A70 /* Main.storyboard in Resources */,
 				DD470D011A63C8350082F33D /* LoginContent.xib in Resources */,
+				DD237B8B1A76EE8900DD4802 /* Pods-Rhymo.release.xcconfig in Resources */,
 				DDDE30921A6A6C4F001F33F3 /* TracksSectionHeader.xib in Resources */,
 				DDCC3BEF1A66924E00071EDB /* VenuesListHeader.xib in Resources */,
-				DD15CF2A1A62E0DB00812A70 /* LaunchScreen.xib in Resources */,
 				DDCC3BF11A6699D800071EDB /* VenuesSectionHeader.xib in Resources */,
 				DD15CF271A62E0DB00812A70 /* Images.xcassets in Resources */,
+				DD237B8A1A76EE8900DD4802 /* Pods-Rhymo.debug.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,7 +535,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rhymo-iOS/Pods-Rhymo-iOS-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rhymo/Pods-Rhymo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2F4B05BDC67451174F072541 /* Embed Pods Frameworks */ = {
@@ -541,7 +550,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rhymo-iOS/Pods-Rhymo-iOS-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rhymo/Pods-Rhymo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		63C76BC300D8A41E668BF681 /* Check Pods Manifest.lock */ = {
@@ -597,6 +606,7 @@
 				DDE410511A630DD8008D9A13 /* HomeViewController.swift in Sources */,
 				DDA4313E1A65359300513755 /* UIColorExtension.swift in Sources */,
 				DD4549A71A7238D400048027 /* InvertButton.m in Sources */,
+				DD237B8D1A76F08700DD4802 /* Array+Shuffle.swift in Sources */,
 				DDAA4ECB1A666D1D00CF0C82 /* VenueCell.swift in Sources */,
 				DD9C6A5F1A6BDA390077BC37 /* RequestConfirmWireframe.swift in Sources */,
 				DDAAD7B71A6AD10000355C71 /* SearchTracksWireframe.swift in Sources */,
@@ -635,7 +645,7 @@
 /* Begin PBXTargetDependency section */
 		DD15CF311A62E0DB00812A70 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DD15CF171A62E0DB00812A70 /* Rhymo-iOS */;
+			target = DD15CF171A62E0DB00812A70 /* Rhymo */;
 			targetProxy = DD15CF301A62E0DB00812A70 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -697,6 +707,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = Rhymo;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -732,6 +743,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Rhymo;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -739,7 +751,7 @@
 		};
 		DD15CF3A1A62E0DB00812A70 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5FDD20034E803DD162ABF232 /* Pods-Rhymo-iOS.debug.xcconfig */;
+			baseConfigurationReference = DD237B881A76EE8900DD4802 /* Pods-Rhymo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -747,7 +759,7 @@
 				INFOPLIST_FILE = "Rhymo-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Rhymo;
 				SWIFT_OBJC_BRIDGING_HEADER = "Rhymo-iOS/Rhymo-iOS-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "Pods/**";
 			};
@@ -755,7 +767,7 @@
 		};
 		DD15CF3B1A62E0DB00812A70 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8DD5EB6CCD74D2441677259E /* Pods-Rhymo-iOS.release.xcconfig */;
+			baseConfigurationReference = DD237B891A76EE8900DD4802 /* Pods-Rhymo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -763,7 +775,7 @@
 				INFOPLIST_FILE = "Rhymo-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Rhymo;
 				SWIFT_OBJC_BRIDGING_HEADER = "Rhymo-iOS/Rhymo-iOS-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "Pods/**";
 			};
@@ -783,7 +795,7 @@
 				);
 				INFOPLIST_FILE = "Rhymo-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RhymoTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rhymo-iOS.app/Rhymo-iOS";
 			};
 			name = Debug;
@@ -798,7 +810,7 @@
 				);
 				INFOPLIST_FILE = "Rhymo-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RhymoTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rhymo-iOS.app/Rhymo-iOS";
 			};
 			name = Release;
@@ -806,7 +818,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DD15CF131A62E0DB00812A70 /* Build configuration list for PBXProject "Rhymo-iOS" */ = {
+		DD15CF131A62E0DB00812A70 /* Build configuration list for PBXProject "Rhymo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DD15CF371A62E0DB00812A70 /* Debug */,
@@ -815,7 +827,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DD15CF391A62E0DB00812A70 /* Build configuration list for PBXNativeTarget "Rhymo-iOS" */ = {
+		DD15CF391A62E0DB00812A70 /* Build configuration list for PBXNativeTarget "Rhymo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DD15CF3A1A62E0DB00812A70 /* Debug */,
@@ -824,7 +836,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DD15CF3C1A62E0DB00812A70 /* Build configuration list for PBXNativeTarget "Rhymo-iOSTests" */ = {
+		DD15CF3C1A62E0DB00812A70 /* Build configuration list for PBXNativeTarget "RhymoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DD15CF3D1A62E0DB00812A70 /* Debug */,
