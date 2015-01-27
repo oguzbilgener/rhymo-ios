@@ -17,7 +17,7 @@
 
 @implementation InvertButton
 
-- (id) init: (CGRect) rect {
+- (id) initWithFrame: (CGRect) rect {
   if ( self = [super init] ) {
     self.primaryColor = [self titleColorForState:UIControlStateNormal];
     self.secondaryColor = self.backgroundColor;

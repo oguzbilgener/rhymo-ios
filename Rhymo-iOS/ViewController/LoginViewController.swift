@@ -19,6 +19,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
   
   var emailField: UITextField?
   var passwordField: UITextField?
+  var modalDelegate: LandingModalDelegate?
 
   @IBOutlet weak var contentView: UIScrollView!
   @IBOutlet weak var navigationBar: UINavigationBar!
@@ -59,6 +60,9 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
   @IBAction func cancelButtonPressed(sender: AnyObject) {
     emailField?.resignFirstResponder()
     passwordField?.resignFirstResponder()
+    if let delegate = modalDelegate {
+      delegate.didDismissModal(sender)
+    }
     eventHandler?.cancel()
   }
   
@@ -106,6 +110,5 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
   }
-
 
 }

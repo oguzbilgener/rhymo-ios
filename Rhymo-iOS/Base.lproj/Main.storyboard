@@ -10,7 +10,7 @@
         <!--Landing View Controller-->
         <scene sceneID="pJb-60-2WR">
             <objects>
-                <viewController storyboardIdentifier="LandingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="d3P-Z7-o9t" customClass="LandingViewController" customModule="Rhymo_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LandingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="d3P-Z7-o9t" customClass="LandingViewController" customModule="Rhymo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5uI-VY-rjq"/>
                         <viewControllerLayoutGuide type="bottom" id="rQG-zd-sfF"/>
@@ -23,16 +23,12 @@
                                 <rect key="frame" x="36" y="60" width="303" height="547"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rhymo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6r-jc-FuM">
-                                        <rect key="frame" x="33" y="60" width="237" height="48"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <rect key="frame" x="33" y="203" width="237" height="55"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="40"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="make your favourite song heard" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dd2-eF-YiL">
-                                        <rect key="frame" x="22" y="150" width="259" height="20"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="0.3813131313" green="0.3813131313" blue="0.3813131313" alpha="1" colorSpace="calibratedRGB"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="RegisterButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQ5-By-obz" customClass="InvertButton">
                                         <rect key="frame" x="22" y="504" width="117" height="35"/>
@@ -45,7 +41,7 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="5.0"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="CjY-MM-Px5" kind="presentation" identifier="RegisterViewController" id="FnM-EZ-Di9"/>
+                                            <segue destination="CjY-MM-Px5" kind="presentation" identifier="RegisterViewController" modalPresentationStyle="overCurrentContext" id="FnM-EZ-Di9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="LoginButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZF-3B-O91" customClass="InvertButton">
@@ -59,22 +55,42 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="5.0"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="bB4-56-LlZ" kind="presentation" identifier="LoginViewController" id="5dU-6c-gZA"/>
+                                            <segue destination="bB4-56-LlZ" kind="presentation" identifier="LoginViewController" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="5dU-6c-gZA"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RhymoLogoSemiOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="lIi-DC-ivz">
+                                        <rect key="frame" x="79" y="15" width="144" height="160"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="160" id="86g-yQ-mhB"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="144" id="Z0X-xw-bs1"/>
+                                            <constraint firstAttribute="width" secondItem="lIi-DC-ivz" secondAttribute="height" multiplier="9:10" id="im6-IY-n8I"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="slogan goes here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dd2-eF-YiL">
+                                        <rect key="frame" x="22" y="286" width="259" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Dd2-eF-YiL" secondAttribute="trailing" constant="22" id="1jL-x3-qqA"/>
-                                    <constraint firstItem="f6r-jc-FuM" firstAttribute="top" secondItem="LhG-E8-WBc" secondAttribute="top" constant="60" id="AFO-h2-CqX"/>
                                     <constraint firstAttribute="bottom" secondItem="gZF-3B-O91" secondAttribute="bottom" constant="8" id="Bfi-HS-YQZ"/>
                                     <constraint firstAttribute="trailing" secondItem="f6r-jc-FuM" secondAttribute="trailing" constant="33" id="F9R-Yp-Xrt"/>
+                                    <constraint firstItem="lIi-DC-ivz" firstAttribute="top" secondItem="LhG-E8-WBc" secondAttribute="top" constant="15" id="G7U-Fu-tT0"/>
+                                    <constraint firstAttribute="trailing" secondItem="lIi-DC-ivz" secondAttribute="trailing" constant="80" id="Hmp-5V-zbl"/>
                                     <constraint firstAttribute="trailing" secondItem="gZF-3B-O91" secondAttribute="trailing" constant="22" id="JbH-9n-che"/>
-                                    <constraint firstItem="Dd2-eF-YiL" firstAttribute="top" secondItem="LhG-E8-WBc" secondAttribute="top" constant="150" id="Jdx-Rf-UCD"/>
                                     <constraint firstItem="Dd2-eF-YiL" firstAttribute="leading" secondItem="LhG-E8-WBc" secondAttribute="leading" constant="22" id="SV0-8i-MDe"/>
                                     <constraint firstItem="f6r-jc-FuM" firstAttribute="leading" secondItem="LhG-E8-WBc" secondAttribute="leading" constant="33" id="aAR-G8-U8R"/>
                                     <constraint firstAttribute="width" secondItem="UQ5-By-obz" secondAttribute="width" multiplier="2.6" id="gJe-8i-WEJ"/>
+                                    <constraint firstItem="f6r-jc-FuM" firstAttribute="top" secondItem="lIi-DC-ivz" secondAttribute="bottom" constant="28" id="ga9-1r-wHQ"/>
+                                    <constraint firstItem="gZF-3B-O91" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Dd2-eF-YiL" secondAttribute="bottom" constant="20" id="gqM-Cg-6ht"/>
                                     <constraint firstItem="UQ5-By-obz" firstAttribute="leading" secondItem="LhG-E8-WBc" secondAttribute="leading" constant="22" id="gqv-Ac-vbM"/>
                                     <constraint firstAttribute="width" secondItem="gZF-3B-O91" secondAttribute="width" multiplier="2.6" id="ha0-Xg-wBY"/>
+                                    <constraint firstItem="lIi-DC-ivz" firstAttribute="leading" secondItem="LhG-E8-WBc" secondAttribute="leading" constant="79" id="mTj-gm-OBF"/>
+                                    <constraint firstItem="Dd2-eF-YiL" firstAttribute="top" secondItem="f6r-jc-FuM" secondAttribute="bottom" constant="28" id="paZ-o2-6u7"/>
                                     <constraint firstAttribute="bottom" secondItem="UQ5-By-obz" secondAttribute="bottom" constant="8" id="rfS-OP-Dy8"/>
                                 </constraints>
                             </view>
@@ -90,6 +106,13 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="Dd2-eF-YiL" id="XIW-1o-sVX"/>
+                        <outlet property="loginButton" destination="gZF-3B-O91" id="qyL-sc-u3O"/>
+                        <outlet property="logoImageView" destination="lIi-DC-ivz" id="teD-TT-KY6"/>
+                        <outlet property="registerButton" destination="UQ5-By-obz" id="GcA-LE-m1u"/>
+                        <outlet property="titleLabel" destination="f6r-jc-FuM" id="ttD-pt-con"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Pv-Ya-aYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,7 +121,7 @@
         <!--Register View Controller-->
         <scene sceneID="Cj8-eq-HkP">
             <objects>
-                <viewController storyboardIdentifier="RegisterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CjY-MM-Px5" customClass="RegisterViewController" customModule="Rhymo_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CjY-MM-Px5" customClass="RegisterViewController" customModule="Rhymo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wwt-9a-2Bi"/>
                         <viewControllerLayoutGuide type="bottom" id="MTD-Ee-pzi"/>
@@ -118,12 +141,12 @@
         <!--Login View Controller-->
         <scene sceneID="yw1-f7-ugy">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bB4-56-LlZ" customClass="LoginViewController" customModule="Rhymo_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bB4-56-LlZ" customClass="LoginViewController" customModule="Rhymo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Itq-h7-t5T"/>
                         <viewControllerLayoutGuide type="bottom" id="ZiT-hv-a3J"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8fK-ER-0yW">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="8fK-ER-0yW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -138,17 +161,17 @@
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Log In" id="4i8-om-uaN">
+                                    <navigationItem title="Log in" id="4i8-om-uaN">
                                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="DQn-9S-RDu">
                                             <connections>
-                                                <action selector="cancelButtonPressed:" destination="bB4-56-LlZ" id="v7k-eJ-jcE"/>
+                                                <action selector="cancelButtonPressed:" destination="bB4-56-LlZ" id="a4U-0V-Nu9"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="0.62745098039215685" green="0.0039215686274509803" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qmL-lc-p5d" firstAttribute="leading" secondItem="8fK-ER-0yW" secondAttribute="leadingMargin" constant="-16" id="2I8-cn-E2W"/>
                             <constraint firstItem="ZiT-hv-a3J" firstAttribute="top" secondItem="qmL-lc-p5d" secondAttribute="bottom" id="5gL-7Y-3XQ"/>
@@ -173,7 +196,7 @@
         <!--Venues-->
         <scene sceneID="tij-ch-jLg">
             <objects>
-                <viewController id="dOY-qW-zT7" customClass="VenuesListViewController" customModule="Rhymo_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dOY-qW-zT7" customClass="VenuesListViewController" customModule="Rhymo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NXp-TE-o7y"/>
                         <viewControllerLayoutGuide type="bottom" id="3R5-OY-ogB"/>
@@ -187,7 +210,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="VenueCell" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="0.0" reuseIdentifier="VenueCell" rowHeight="60" id="h2T-xu-PZm" customClass="VenueCell" customModule="Rhymo_iOS" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="VenueCell" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="0.0" reuseIdentifier="VenueCell" rowHeight="60" id="h2T-xu-PZm" customClass="VenueCell" customModule="Rhymo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h2T-xu-PZm" id="paK-io-RRr">
@@ -257,7 +280,7 @@
         <!--Venue Details-->
         <scene sceneID="J9e-hb-uzk">
             <objects>
-                <viewController id="haa-Iz-Ay3" customClass="VenueDetailsViewController" customModule="Rhymo_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="haa-Iz-Ay3" customClass="VenueDetailsViewController" customModule="Rhymo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FW8-iR-vc4"/>
                         <viewControllerLayoutGuide type="bottom" id="VTN-Ql-cle"/>
@@ -343,7 +366,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrackCell" rowHeight="55" id="zYr-gG-l0z" customClass="TrackCell" customModule="Rhymo_iOS" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrackCell" rowHeight="55" id="zYr-gG-l0z" customClass="TrackCell" customModule="Rhymo" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zYr-gG-l0z" id="9pA-za-AUe">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -423,7 +446,7 @@
         <!--Search Tracks View Controller-->
         <scene sceneID="3CF-8O-DeT">
             <objects>
-                <viewController storyboardIdentifier="SearchTracksViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uuA-Sn-G0G" customClass="SearchTracksViewController" customModule="Rhymo_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchTracksViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uuA-Sn-G0G" customClass="SearchTracksViewController" customModule="Rhymo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sOi-g9-J8Y"/>
                         <viewControllerLayoutGuide type="bottom" id="EhI-W1-uLh"/>
@@ -436,7 +459,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchTrackCell" textLabel="udw-5g-DPN" detailTextLabel="Voj-DO-mgd" style="IBUITableViewCellStyleSubtitle" id="gVo-Pq-PtD" customClass="SearchTrackCell" customModule="Rhymo_iOS" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchTrackCell" textLabel="udw-5g-DPN" detailTextLabel="Voj-DO-mgd" style="IBUITableViewCellStyleSubtitle" id="gVo-Pq-PtD" customClass="SearchTrackCell" customModule="Rhymo" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gVo-Pq-PtD" id="dTu-6X-a1q">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -487,7 +510,7 @@
         <!--Request Confirm View Controller-->
         <scene sceneID="efa-Jq-gur">
             <objects>
-                <viewController storyboardIdentifier="RequestConfirmViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dgW-vT-yJB" customClass="RequestConfirmViewController" customModule="Rhymo_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RequestConfirmViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dgW-vT-yJB" customClass="RequestConfirmViewController" customModule="Rhymo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Eb7-Qs-fCl"/>
                         <viewControllerLayoutGuide type="bottom" id="B7K-Hp-vSV"/>
@@ -666,7 +689,7 @@
         <!--Home View Controller-->
         <scene sceneID="XEX-Fl-j0d">
             <objects>
-                <navigationController storyboardIdentifier="HomeViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="JqP-RL-vVP" customClass="HomeViewController" customModule="Rhymo_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="JqP-RL-vVP" customClass="HomeViewController" customModule="Rhymo" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -690,6 +713,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="RhymoLogoSemiOpaque" width="288" height="321"/>
         <image name="fizy_powered" width="197" height="37"/>
         <image name="icon_offline" width="21" height="21"/>
         <image name="icon_online" width="21" height="21"/>

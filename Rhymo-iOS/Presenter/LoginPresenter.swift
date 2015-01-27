@@ -69,4 +69,10 @@ class LoginPresenter: BasePresenter {
     }
   }
   
+  func prepareForUnwind(segue: UIStoryboardSegue) {
+    if let viewController = segue.destinationViewController as? LandingViewController {
+      viewController.setContentVisibility(true)
+    }
+  }
+  
 }

@@ -14,7 +14,8 @@
 		DD15CF361A62E0DB00812A70 /* Rhymo_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15CF351A62E0DB00812A70 /* Rhymo_iOSTests.swift */; };
 		DD15CF431A62E75C00812A70 /* RhymoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15CF421A62E75C00812A70 /* RhymoClient.swift */; };
 		DD15CF461A62E84B00812A70 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15CF451A62E84B00812A70 /* User.swift */; };
-		DD2174051A63E7FB0061D86F /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2174041A63E7FB0061D86F /* LineTextField.swift */; };
+		DD1675901A77A4E400DEB858 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE410521A630E00008D9A13 /* LandingViewController.swift */; };
+		DD1675931A77BC9700DEB858 /* UnderlinedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1675921A77BC9700DEB858 /* UnderlinedTextField.m */; };
 		DD237B8A1A76EE8900DD4802 /* Pods-Rhymo.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DD237B881A76EE8900DD4802 /* Pods-Rhymo.debug.xcconfig */; };
 		DD237B8B1A76EE8900DD4802 /* Pods-Rhymo.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DD237B891A76EE8900DD4802 /* Pods-Rhymo.release.xcconfig */; };
 		DD237B8D1A76F08700DD4802 /* Array+Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD237B8C1A76F08700DD4802 /* Array+Shuffle.swift */; };
@@ -72,7 +73,6 @@
 		DDDE30961A6A7398001F33F3 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDE30951A6A7398001F33F3 /* Track.swift */; };
 		DDDE30981A6A73C5001F33F3 /* PlaylistTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDE30971A6A73C5001F33F3 /* PlaylistTrack.swift */; };
 		DDE410511A630DD8008D9A13 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE410501A630DD8008D9A13 /* HomeViewController.swift */; };
-		DDE410531A630E00008D9A13 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE410521A630E00008D9A13 /* LandingViewController.swift */; };
 		DDE410551A630EA5008D9A13 /* HomeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE410541A630EA5008D9A13 /* HomeWireframe.swift */; };
 		DDE410571A6313C5008D9A13 /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE410561A6313C5008D9A13 /* BaseWireframe.swift */; };
 		DDE410591A632776008D9A13 /* SolidButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE410581A632776008D9A13 /* SolidButton.swift */; };
@@ -107,7 +107,8 @@
 		DD15CF401A62E65900812A70 /* Rhymo-iOS-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Rhymo-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		DD15CF421A62E75C00812A70 /* RhymoClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RhymoClient.swift; path = RhymoClient/RhymoClient.swift; sourceTree = "<group>"; };
 		DD15CF451A62E84B00812A70 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		DD2174041A63E7FB0061D86F /* LineTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineTextField.swift; path = View/LineTextField.swift; sourceTree = "<group>"; };
+		DD1675911A77BC9700DEB858 /* UnderlinedTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnderlinedTextField.h; path = View/UnderlinedTextField.h; sourceTree = "<group>"; };
+		DD1675921A77BC9700DEB858 /* UnderlinedTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UnderlinedTextField.m; path = View/UnderlinedTextField.m; sourceTree = "<group>"; };
 		DD237B881A76EE8900DD4802 /* Pods-Rhymo.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-Rhymo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rhymo/Pods-Rhymo.debug.xcconfig"; sourceTree = "<group>"; };
 		DD237B891A76EE8900DD4802 /* Pods-Rhymo.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-Rhymo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rhymo/Pods-Rhymo.release.xcconfig"; sourceTree = "<group>"; };
 		DD237B8C1A76F08700DD4802 /* Array+Shuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Shuffle.swift"; sourceTree = "<group>"; };
@@ -373,7 +374,6 @@
 				DD15CF231A62E0DB00812A70 /* Main.storyboard */,
 				DD470D001A63C8350082F33D /* LoginContent.xib */,
 				DDE410581A632776008D9A13 /* SolidButton.swift */,
-				DD2174041A63E7FB0061D86F /* LineTextField.swift */,
 				DDA4313F1A6558B500513755 /* VenuesListRefreshControl.swift */,
 				DDAA4ECA1A666D1D00CF0C82 /* VenueCell.swift */,
 				DDCC3BEE1A66924E00071EDB /* VenuesListHeader.xib */,
@@ -383,6 +383,8 @@
 				DD75F9E51A6B2E18009A4E9E /* SearchTrackCell.swift */,
 				DD4549A51A7238D400048027 /* InvertButton.h */,
 				DD4549A61A7238D400048027 /* InvertButton.m */,
+				DD1675911A77BC9700DEB858 /* UnderlinedTextField.h */,
+				DD1675921A77BC9700DEB858 /* UnderlinedTextField.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -591,6 +593,7 @@
 				DD3646BE1A648708008CA1B6 /* VenuesListViewController.swift in Sources */,
 				DD7BFDE41A630BE6009ADC4F /* RootWireframe.swift in Sources */,
 				DDCD68E41A6436430079089F /* BaseViewController.swift in Sources */,
+				DD1675901A77A4E400DEB858 /* LandingViewController.swift in Sources */,
 				DDE410571A6313C5008D9A13 /* BaseWireframe.swift in Sources */,
 				DDD258B31A66E0FF008FD58B /* VenueDetailsPresenter.swift in Sources */,
 				DD3646C01A648786008CA1B6 /* VenuesListInteractor.swift in Sources */,
@@ -614,19 +617,18 @@
 				DD9C6A5D1A6BD8BE0077BC37 /* RequestConfirmViewController.swift in Sources */,
 				DD15CF431A62E75C00812A70 /* RhymoClient.swift in Sources */,
 				DD15CF461A62E84B00812A70 /* User.swift in Sources */,
-				DDE410531A630E00008D9A13 /* LandingViewController.swift in Sources */,
 				DD29BF301A65AF7700FC4EA3 /* Encryption.swift in Sources */,
 				DDAAD7B51A6AB4A400355C71 /* SearchTracksViewController.swift in Sources */,
 				DD30F80C1A6333190033EB63 /* LoginPresenter.swift in Sources */,
 				DD7B2AD41A69CABE00A21780 /* UIImageEffects.m in Sources */,
 				DD30F8081A6331700033EB63 /* LoginViewController.swift in Sources */,
-				DD2174051A63E7FB0061D86F /* LineTextField.swift in Sources */,
 				DD30F80A1A63318F0033EB63 /* RegisterViewController.swift in Sources */,
 				DDE4105C1A63292D008D9A13 /* LandingPresenter.swift in Sources */,
 				DD30F8061A6331210033EB63 /* RegisterWireframe.swift in Sources */,
 				DD9C6A611A6BDAA20077BC37 /* RequestConfirmInteractor.swift in Sources */,
 				DDE410551A630EA5008D9A13 /* HomeWireframe.swift in Sources */,
 				DDD258B11A66E0E9008FD58B /* VenueDetailsInteractor.swift in Sources */,
+				DD1675931A77BC9700DEB858 /* UnderlinedTextField.m in Sources */,
 				DD3646BC1A646E17008CA1B6 /* VenuesListPresenter.swift in Sources */,
 				DDA431401A6558B500513755 /* VenuesListRefreshControl.swift in Sources */,
 			);
