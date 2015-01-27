@@ -32,14 +32,21 @@ class AuthWireframe: BaseWireframe {
     
     let loginInteractor = LoginInteractor()
     let loginPresenter = LoginPresenter()
+    let registerInteractor = RegisterInteractor()
+    let registerPresenter = RegisterPresenter()
     
     login?.loginInteractor = loginInteractor
     login?.loginPresenter = loginPresenter
+    register?.registerInteractor = registerInteractor
+    register?.registerPresenter = registerPresenter
     
     loginPresenter.loginInteractor = loginInteractor
     loginPresenter.loginWireframe = login
+    registerPresenter.registerInteractor = registerInteractor
+    registerPresenter.registerWireframe = register
     
     loginInteractor.output = loginPresenter
+    registerInteractor.output = registerPresenter
     
     if let viewController = window.rootViewController as? LandingViewController {
       viewController.eventHandler = authPresenter

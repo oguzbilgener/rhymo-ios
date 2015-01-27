@@ -59,29 +59,7 @@ class RhymoClient {
         (request, response, data, error) in
         if(error == nil && data != nil) {
           var json = JSON(data!)
-          var user = User()
-          if let id = json["id"].int {
-            user.id = id
-          }
-          if let username = json["user_name"].string {
-            user.userName = username
-          }
-          if let email = json["email"].string {
-            user.email = email
-          }
-          if let publicKey = json["public_key"].string {
-              user.publicKey = publicKey
-          }
-          if let secretToken = json["secret_token"].string {
-            user.secretToken = secretToken
-          }
-          if let birthday = json["birthday"].string {
-            user.birthday = birthday
-          }
-          if let profilePic = json["profile_pic"].string {
-            user.profilePic = profilePic
-          }
-          
+          var user = RhymoClient.parseUser(json)
           self.storeAuthenticatedUser(user)
           
           result(nil, user)
@@ -96,8 +74,33 @@ class RhymoClient {
     }
   }
   
-  func register() {
-    // TODO
+  func register(#email: String, password: String, result: (NSError?, User?) -> (Void)) {
+    let loginUrl = self.endpoint + "signup"
+    
+    let parameters = [
+      "email": email,
+      "password": password
+    ]
+    
+    let request = Alamofire.request(.POST, loginUrl, parameters: parameters, encoding: .JSON)
+      .validate()
+      .responseJSON {
+        (request, response, data, error) in
+        if(error == nil && data != nil) {
+          var json = JSON(data!)
+          var user = RhymoClient.parseUser(json)
+          self.storeAuthenticatedUser(user)
+          
+          result(nil, user)
+        }
+        else if(error != nil) {
+          result(error, nil)
+        }
+        else {
+          let error = NSError(domain: RhymoErrorDomain, code: 11, userInfo: nil)
+          result(error, nil)
+        }
+    }
   }
   
   func logout() {
@@ -353,6 +356,34 @@ class RhymoClient {
   }
   
   // MARK: - Parsing helpers
+  
+  class func parseUser(json: JSON) -> User {
+    let user = User()
+    
+    if let id = json["id"].int {
+      user.id = id
+    }
+    if let username = json["user_name"].string {
+      user.userName = username
+    }
+    if let email = json["email"].string {
+      user.email = email
+    }
+    if let publicKey = json["public_key"].string {
+      user.publicKey = publicKey
+    }
+    if let secretToken = json["secret_token"].string {
+      user.secretToken = secretToken
+    }
+    if let birthday = json["birthday"].string {
+      user.birthday = birthday
+    }
+    if let profilePic = json["profile_pic"].string {
+      user.profilePic = profilePic
+    }
+
+    return user
+  }
   
   class func parseVenue(json: JSON) -> Venue {
     let venue = Venue()

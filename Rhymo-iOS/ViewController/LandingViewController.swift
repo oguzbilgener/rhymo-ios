@@ -101,6 +101,7 @@ class LandingViewController: BaseViewController, KASlideShowDelegate, LandingMod
     }
     else if let viewController = segue.destinationViewController as? RegisterViewController {
       self.setContentVisibility(false)
+      viewController.modalDelegate = self
     }
     eventHandler?.prepareForSegue(segue, sender: sender)
   }

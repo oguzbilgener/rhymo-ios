@@ -41,7 +41,7 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="5.0"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="CjY-MM-Px5" kind="presentation" identifier="RegisterViewController" modalPresentationStyle="overCurrentContext" id="FnM-EZ-Di9"/>
+                                            <segue destination="CjY-MM-Px5" kind="presentation" identifier="RegisterViewController" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="FnM-EZ-Di9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="LoginButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZF-3B-O91" customClass="InvertButton">
@@ -61,7 +61,6 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RhymoLogoSemiOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="lIi-DC-ivz">
                                         <rect key="frame" x="79" y="15" width="144" height="160"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="160" id="86g-yQ-mhB"/>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="144" id="Z0X-xw-bs1"/>
                                             <constraint firstAttribute="width" secondItem="lIi-DC-ivz" secondAttribute="height" multiplier="9:10" id="im6-IY-n8I"/>
                                         </constraints>
@@ -129,10 +128,40 @@
                     <view key="view" contentMode="scaleToFill" id="RCk-n2-EhA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ymp-Fj-l7G">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="m02-hS-MLv">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="MGH-yP-vS0">
+                                            <connections>
+                                                <action selector="cancelButtonPressed:" destination="CjY-MM-Px5" id="qwg-Lb-pCA"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yM8-qn-wWN">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ymp-Fj-l7G" secondAttribute="trailing" constant="-16" id="5Fe-pM-5Uf"/>
+                            <constraint firstItem="MTD-Ee-pzi" firstAttribute="top" secondItem="yM8-qn-wWN" secondAttribute="bottom" id="98V-sG-Lj3"/>
+                            <constraint firstItem="yM8-qn-wWN" firstAttribute="leading" secondItem="RCk-n2-EhA" secondAttribute="leadingMargin" constant="-16" id="Gjw-3w-0MV"/>
+                            <constraint firstItem="ymp-Fj-l7G" firstAttribute="leading" secondItem="RCk-n2-EhA" secondAttribute="leadingMargin" constant="-16" id="jO5-Wd-ZFg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yM8-qn-wWN" secondAttribute="trailing" constant="-16" id="uu9-tM-A1s"/>
+                            <constraint firstItem="yM8-qn-wWN" firstAttribute="top" secondItem="ymp-Fj-l7G" secondAttribute="bottom" id="zG6-bK-DcL"/>
+                            <constraint firstItem="ymp-Fj-l7G" firstAttribute="top" secondItem="Wwt-9a-2Bi" secondAttribute="bottom" id="zgf-br-gNj"/>
+                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="contentView" destination="yM8-qn-wWN" id="U3o-m0-6Bu"/>
+                        <outlet property="navigationBar" destination="ymp-Fj-l7G" id="Z4v-Nn-Oa0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RVx-gQ-ibY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,8 +190,8 @@
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Log in" id="4i8-om-uaN">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="DQn-9S-RDu">
+                                    <navigationItem id="4i8-om-uaN">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="DQn-9S-RDu">
                                             <connections>
                                                 <action selector="cancelButtonPressed:" destination="bB4-56-LlZ" id="a4U-0V-Nu9"/>
                                             </connections>

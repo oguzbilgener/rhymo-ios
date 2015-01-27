@@ -11,7 +11,7 @@ import UIKit
 let LoginContentNibName = "LoginContent"
 let LoginEmailTag = 21
 let LoginPasswordTag = 22
-let loginButtonTag = 40
+let LoginButtonTag = 40
 
 class LoginViewController: BaseViewController, UITextFieldDelegate {
   
@@ -39,7 +39,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
     emailField = loginContent.viewWithTag(LoginEmailTag) as? UITextField
     passwordField = loginContent.viewWithTag(LoginPasswordTag) as? UITextField
     
-    let loginButton = loginContent.viewWithTag(loginButtonTag) as? UIButton
+    let loginButton = loginContent.viewWithTag(LoginButtonTag) as? UIButton
     loginButton?.addTarget(self, action: "loginButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
     
     

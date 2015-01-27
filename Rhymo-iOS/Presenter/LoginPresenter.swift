@@ -45,12 +45,16 @@ class LoginPresenter: BasePresenter {
         hud.indicatorView = JGProgressHUDIndicatorView(contentView: UIView())
         
         if let user = authenticatedUser {
-          // TODO: make this hud actually be seen
-          hud.textLabel.text = "Welcome back, "+user.userName+"!"
+          if(user.userName != "") {
+            hud.textLabel.text = "Welcome back, "+user.userName+"!"
+          }
+          else {
+            hud.textLabel.text = "Welcome back!"
+          }
           hud.showInView(self.userInterface?.view)
           hud.dismissAfterDelay(LoginResultDialogTimeout, animated: true)
           
-          self.loginSuccess()
+          let successTimer = NSTimer.scheduledTimerWithTimeInterval(LoginResultDialogTimeout, target: self, selector: "loginSuccess:", userInfo: nil, repeats: false)
         }
         else {
           debugPrintln(error)
@@ -62,16 +66,10 @@ class LoginPresenter: BasePresenter {
     }
   }
   
-  private func loginSuccess() {
+  func loginSuccess(sender: AnyObject?) {
     let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
     if let window = appDelegate.window {
       appDelegate.appDependencies.installRootViewControllerIntoWindow(window)
-    }
-  }
-  
-  func prepareForUnwind(segue: UIStoryboardSegue) {
-    if let viewController = segue.destinationViewController as? LandingViewController {
-      viewController.setContentVisibility(true)
     }
   }
   

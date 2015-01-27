@@ -9,5 +9,8 @@
 import UIKit
 
 class RegisterWireframe: BaseWireframe {
+  
+  var registerInteractor: RegisterInteractor?
+  var registerPresenter: RegisterPresenter?
    
 }

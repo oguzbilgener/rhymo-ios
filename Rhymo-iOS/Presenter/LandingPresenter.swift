@@ -28,7 +28,11 @@ class LandingPresenter: BasePresenter {
       loginViewController?.eventHandler = landingWireframe?.login?.loginPresenter
     }
     else if(segue.identifier? == RegisterViewControllerIdentifier) {
+      let registerViewController = segue.destinationViewController as? RegisterViewController
       
+      landingWireframe?.register?.registerPresenter?.userInterface = registerViewController
+      
+      registerViewController?.eventHandler = landingWireframe?.register?.registerPresenter
     }
   }
   
