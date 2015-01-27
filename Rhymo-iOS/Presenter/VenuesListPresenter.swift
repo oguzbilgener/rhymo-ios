@@ -157,4 +157,16 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
       }
     }
   }
+  
+  func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+    if(identifier != nil && identifier! == "Show Venue Details") {
+      if let cell = sender as? UITableViewCell {
+        if let path = userInterface?.venuesTable.indexPathForCell(cell) {
+          // only open the venue details if the venue is online
+          return filteredVenues[path.row].online
+        }
+      }
+    }
+    return true
+  }
 }

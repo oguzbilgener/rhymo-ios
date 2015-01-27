@@ -272,6 +272,13 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
     eventHandler?.prepareForSegue(segue, sender: sender)
   }
   
+  override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+    if let handler = self.eventHandler {
+      return handler.shouldPerformSegueWithIdentifier(identifier, sender: sender)
+    }
+    return false
+  }
+  
   override func preferredStatusBarStyle() -> UIStatusBarStyle {
     return UIStatusBarStyle.LightContent
   }

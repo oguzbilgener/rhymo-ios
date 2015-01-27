@@ -34,6 +34,7 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
   
   let imageManager = SDWebImageManager.sharedManager() // cannot use objc class extensions with swift :(
   
+  var everScrolledToMiddle = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -266,10 +267,14 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
   func updateTracksList() {
     UIView.transitionWithView(self.venueSongTable, duration: VenueDetailsAnimationDuration, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () in
       self.venueSongTable.reloadData()
-      if(self.eventHandler?.historyPlaylist?.count > 10) {
-        
-      }
-      }, completion: nil)
+
+      }, completion: {(animationFinished: Bool) -> Void in
+        if(self.eventHandler?.historyPlaylist?.count > 7 && !self.everScrolledToMiddle) {
+          let indexPath = NSIndexPath(forRow: 7, inSection: 0)
+          self.venueSongTable.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+          self.everScrolledToMiddle = true
+        }
+      })
   }
   
   func updateNowPlaying(track: PlaylistTrack) {
