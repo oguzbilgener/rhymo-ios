@@ -89,8 +89,6 @@ class RhymoSocket: NSObject, WebSocketDelegate {
       }
       else if(label == "noSong") {
         delegate?.nowPlayingUpdated(PlaylistTrack(), currentAutoIndex: nil)
-        delegate?.autoPlaylistUpdated([PlaylistTrack]())
-        delegate?.historyPlaylistUpdated([PlaylistTrack]())
       }
       else {
         println("got some gibberish: \(text)")
