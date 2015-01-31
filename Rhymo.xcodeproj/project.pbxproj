@@ -30,6 +30,7 @@
 		DD30F80A1A63318F0033EB63 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F8091A63318F0033EB63 /* RegisterViewController.swift */; };
 		DD30F80C1A6333190033EB63 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F80B1A6333190033EB63 /* LoginPresenter.swift */; };
 		DD30F80E1A63335F0033EB63 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD30F80D1A63335F0033EB63 /* LoginInteractor.swift */; };
+		DD3137A21A78D02F00F4AC2B /* UIAppearanceSwift.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3137A11A78D02F00F4AC2B /* UIAppearanceSwift.m */; };
 		DD351E6C1A753A3F000A15B3 /* Array+slice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD351E6B1A753A3F000A15B3 /* Array+slice.swift */; };
 		DD3646BC1A646E17008CA1B6 /* VenuesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3646BB1A646E17008CA1B6 /* VenuesListPresenter.swift */; };
 		DD3646BE1A648708008CA1B6 /* VenuesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3646BD1A648708008CA1B6 /* VenuesListViewController.swift */; };
@@ -115,7 +116,7 @@
 		DD1675981A77E08100DEB858 /* RegisterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterPresenter.swift; path = Presenter/RegisterPresenter.swift; sourceTree = "<group>"; };
 		DD237B881A76EE8900DD4802 /* Pods-Rhymo.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-Rhymo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rhymo/Pods-Rhymo.debug.xcconfig"; sourceTree = "<group>"; };
 		DD237B891A76EE8900DD4802 /* Pods-Rhymo.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-Rhymo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rhymo/Pods-Rhymo.release.xcconfig"; sourceTree = "<group>"; };
-		DD237B8C1A76F08700DD4802 /* Array+Shuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Shuffle.swift"; sourceTree = "<group>"; };
+		DD237B8C1A76F08700DD4802 /* Array+Shuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Array+Shuffle.swift"; path = "ThirdParty/Array+Shuffle.swift"; sourceTree = "<group>"; };
 		DD29BF2F1A65AF7700FC4EA3 /* Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Encryption.swift; path = RhymoClient/Encryption.swift; sourceTree = "<group>"; };
 		DD30F8011A632CFD0033EB63 /* LandingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingInteractor.swift; path = Interactor/LandingInteractor.swift; sourceTree = "<group>"; };
 		DD30F8031A6331080033EB63 /* LoginWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginWireframe.swift; path = Wireframe/LoginWireframe.swift; sourceTree = "<group>"; };
@@ -124,7 +125,9 @@
 		DD30F8091A63318F0033EB63 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ViewController/RegisterViewController.swift; sourceTree = "<group>"; };
 		DD30F80B1A6333190033EB63 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPresenter.swift; path = Presenter/LoginPresenter.swift; sourceTree = "<group>"; };
 		DD30F80D1A63335F0033EB63 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginInteractor.swift; path = Interactor/LoginInteractor.swift; sourceTree = "<group>"; };
-		DD351E6B1A753A3F000A15B3 /* Array+slice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+slice.swift"; sourceTree = "<group>"; };
+		DD3137A01A78CFF500F4AC2B /* UIAppearanceSwift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIAppearanceSwift.h; path = ThirdParty/UIAppearanceSwift.h; sourceTree = "<group>"; };
+		DD3137A11A78D02F00F4AC2B /* UIAppearanceSwift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIAppearanceSwift.m; path = ThirdParty/UIAppearanceSwift.m; sourceTree = "<group>"; };
+		DD351E6B1A753A3F000A15B3 /* Array+slice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Array+slice.swift"; path = "ThirdParty/Array+slice.swift"; sourceTree = "<group>"; };
 		DD3646BB1A646E17008CA1B6 /* VenuesListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenuesListPresenter.swift; path = Presenter/VenuesListPresenter.swift; sourceTree = "<group>"; };
 		DD3646BD1A648708008CA1B6 /* VenuesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenuesListViewController.swift; path = ViewController/VenuesListViewController.swift; sourceTree = "<group>"; };
 		DD3646BF1A648786008CA1B6 /* VenuesListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenuesListInteractor.swift; path = Interactor/VenuesListInteractor.swift; sourceTree = "<group>"; };
@@ -134,8 +137,8 @@
 		DD470CFE1A63C7AE0082F33D /* BasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasePresenter.swift; path = Presenter/BasePresenter.swift; sourceTree = "<group>"; };
 		DD470D001A63C8350082F33D /* LoginContent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginContent.xib; path = View/LoginContent.xib; sourceTree = "<group>"; };
 		DD75F9E51A6B2E18009A4E9E /* SearchTrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTrackCell.swift; path = View/SearchTrackCell.swift; sourceTree = "<group>"; };
-		DD7B2AD21A69CABE00A21780 /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
-		DD7B2AD31A69CABE00A21780 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
+		DD7B2AD21A69CABE00A21780 /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIImageEffects.h; path = ThirdParty/UIImageEffects.h; sourceTree = "<group>"; };
+		DD7B2AD31A69CABE00A21780 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIImageEffects.m; path = ThirdParty/UIImageEffects.m; sourceTree = "<group>"; };
 		DD7B2AD51A69DC9D00A21780 /* TrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackCell.swift; path = View/TrackCell.swift; sourceTree = "<group>"; };
 		DD7BFDD71A6308DE009ADC4F /* AppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		DD7BFDE11A630BBB009ADC4F /* AuthWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthWireframe.swift; path = Wireframe/AuthWireframe.swift; sourceTree = "<group>"; };
@@ -361,6 +364,8 @@
 				DDA4313D1A65359300513755 /* UIColorExtension.swift */,
 				DD351E6B1A753A3F000A15B3 /* Array+slice.swift */,
 				DD237B8C1A76F08700DD4802 /* Array+Shuffle.swift */,
+				DD3137A01A78CFF500F4AC2B /* UIAppearanceSwift.h */,
+				DD3137A11A78D02F00F4AC2B /* UIAppearanceSwift.m */,
 			);
 			name = ThirdParty;
 			sourceTree = "<group>";
@@ -597,6 +602,7 @@
 				DD30F80E1A63335F0033EB63 /* LoginInteractor.swift in Sources */,
 				DD351E6C1A753A3F000A15B3 /* Array+slice.swift in Sources */,
 				DD3646BE1A648708008CA1B6 /* VenuesListViewController.swift in Sources */,
+				DD3137A21A78D02F00F4AC2B /* UIAppearanceSwift.m in Sources */,
 				DD7BFDE41A630BE6009ADC4F /* RootWireframe.swift in Sources */,
 				DDCD68E41A6436430079089F /* BaseViewController.swift in Sources */,
 				DD1675901A77A4E400DEB858 /* LandingViewController.swift in Sources */,
