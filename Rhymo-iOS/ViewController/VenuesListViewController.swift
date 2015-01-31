@@ -15,7 +15,7 @@ let VenuesSectionHeaderNibName = "VenuesSectionHeader"
 let MapViewTag = 21
 let VenuesSectionTitleTag = 24
 
-class VenuesListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate {
+class VenuesListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate, MKMapViewDelegate {
   
   var eventHandler: VenuesListPresenter?
 
@@ -70,6 +70,8 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
     searchBar!.searchBarStyle = UISearchBarStyle.Minimal
     searchBar!.tintColor = textOnPrimaryColor
     customNavigationItem?.titleView = searchBar!
+    UITextField.my_appearanceWhenContainedIn(UISearchBar).textColor = textOnPrimaryColor
+    UILabel.my_appearanceWhenContainedIn(UISearchBar).textColor = darkerTextOnPrimaryColor
 
     customNavigationBar?.setTranslatesAutoresizingMaskIntoConstraints(false)
     self.view.addConstraint(NSLayoutConstraint(item: customNavigationBar!, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .Leading, multiplier: 1, constant: 0))
@@ -101,6 +103,7 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
     mapView = headerView.viewWithTag(MapViewTag) as? MKMapView
     mapView!.bounds.size.width = self.view.bounds.size.width
     mapView!.updateConstraints()
+    mapView!.delegate = self
     venuesTable.tableHeaderView = headerView
     
     tableSectionHeaderView = NSBundle.mainBundle().loadNibNamed(VenuesSectionHeaderNibName, owner: self, options: nil)[0] as? UITableViewHeaderFooterView
@@ -243,7 +246,36 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
         annotation.title = venue.name
         mapView.addAnnotation(annotation)
       }
+      
+      let ownAnnotation = MKPointAnnotation()
+      ownAnnotation.coordinate = location.coordinate
+      ownAnnotation.title = "You"
+      mapView.addAnnotation(ownAnnotation)
     }
+  }
+  
+  func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+    var v: MKAnnotationView! = nil
+    if(annotation.title == "You") {
+      let ident = "youPin"
+      v = mapView.dequeueReusableAnnotationViewWithIdentifier(ident)
+      if(v == nil) {
+        let p = MKPinAnnotationView(annotation: annotation, reuseIdentifier: ident)
+        p.pinColor = MKPinAnnotationColor.Green
+        v = p
+      }
+      v.annotation = annotation
+    }
+    else {
+      let ident = "regularPin"
+      v = mapView.dequeueReusableAnnotationViewWithIdentifier(ident)
+      if(v == nil) {
+        v = MKPinAnnotationView(annotation: annotation, reuseIdentifier: ident)
+        v.canShowCallout = true
+      }
+      v.annotation = annotation
+    }
+    return v
   }
   
   // MARK: - Keyboard

@@ -29,4 +29,6 @@
 
 #import "InvertButton.h"
 
+#import "UIAppearanceSwift.h"
+
 #endif

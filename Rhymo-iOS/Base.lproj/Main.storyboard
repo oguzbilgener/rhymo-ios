@@ -286,6 +286,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="X7L-Et-SbG" secondAttribute="trailing" constant="-16" id="BX5-ih-myl"/>
                             <constraint firstItem="X7L-Et-SbG" firstAttribute="leading" secondItem="3UK-gR-Qsy" secondAttribute="leadingMargin" constant="-16" id="EQj-kc-Qjn"/>
