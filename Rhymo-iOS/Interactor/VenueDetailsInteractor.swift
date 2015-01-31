@@ -101,13 +101,21 @@ class VenueDetailsInteractor: BaseInteractor, RhymoSocketDelegate {
       auto = auto.slice(self.currentAutoIndex + 1)
     }
     if(auto.count > 0 && output?.nowPlaying != nil && auto[0].fizyId == output?.nowPlaying?.fizyId && auto[0].fizyId != 0) {
-      auto = auto.slice(1)
+      if(auto.count == 1) {
+        auto = [auto[0]]
+      }
+      else {
+        auto = auto.slice(1)
+      }
     }
     
     if(request.count > 0 && output?.nowPlaying != nil && request[0].fizyId == output?.nowPlaying?.fizyId) {
-      println(request)
-      request = request.slice(1)
-      println(request)
+      if(request.count == 1) {
+        request = [request[0]]
+      }
+      else {
+        request = request.slice(1)
+      }
     }
     return (request + auto)
   }
