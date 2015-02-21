@@ -58,7 +58,7 @@ class SearchTracksPresenter: BasePresenter, UISearchBarDelegate {
   }
   
   func clearTracksList() {
-    if(countElements(displayedTracks) > 0) {
+    if(count(displayedTracks) > 0) {
       displayedTracks.removeAll(keepCapacity: false)
     }
     updateTracksList()
@@ -79,14 +79,12 @@ class SearchTracksPresenter: BasePresenter, UISearchBarDelegate {
   }
   
   func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if let cell = sender as? UITableViewCell {
-      if let path = userInterface?.trackResultsTable.indexPathForCell(cell) {
-        if let window = UIApplication.sharedApplication().delegate?.window? {
-          if let viewController = segue.destinationViewController as? RequestConfirmViewController {
-            searchTracksWireframe?.requestConfirmWireframe?.configureDependencies(window, viewController: viewController)
-            searchTracksWireframe?.passVenueAndTrackToDetails(track: displayedTracks[path.row])
-          }
-        }
+    if let cell = sender as? UITableViewCell,
+           path = userInterface?.trackResultsTable.indexPathForCell(cell),
+           window = UIApplication.sharedApplication().delegate?.window! {
+      if let viewController = segue.destinationViewController as? RequestConfirmViewController {
+        searchTracksWireframe?.requestConfirmWireframe?.configureDependencies(window, viewController: viewController)
+        searchTracksWireframe?.passVenueAndTrackToDetails(track: displayedTracks[path.row])
       }
     }
   }

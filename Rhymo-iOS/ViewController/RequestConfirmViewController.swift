@@ -99,7 +99,7 @@ class RequestConfirmViewController: BaseViewController {
     let infoString = complement + venue.name
     
     var venueInfoString = NSMutableAttributedString(string: infoString, attributes: normalFontAttrs)
-    venueInfoString.setAttributes(boldFontAttrs, range: NSMakeRange(countElements(complement), countElements(venue.name)))
+    venueInfoString.setAttributes(boldFontAttrs, range: NSMakeRange(count(complement), count(venue.name)))
     
     venueDisplayLabel.attributedText = venueInfoString
     

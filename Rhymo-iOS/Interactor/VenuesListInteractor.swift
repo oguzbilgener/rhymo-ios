@@ -103,7 +103,7 @@ class VenuesListInteractor: BaseInteractor, CLLocationManagerDelegate {
     }
     let status = CLLocationManager.authorizationStatus()
     switch(status) {
-    case .Authorized, .AuthorizedWhenInUse:
+    case .AuthorizedWhenInUse:
       return true
     case .NotDetermined:
       self.locationManager.requestWhenInUseAuthorization()
@@ -111,6 +111,8 @@ class VenuesListInteractor: BaseInteractor, CLLocationManagerDelegate {
     case .Restricted:
       return false
     case .Denied:
+      return false
+    default:
       return false
     }
   }
@@ -145,7 +147,7 @@ class VenuesListInteractor: BaseInteractor, CLLocationManagerDelegate {
   }
   
   func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-    let location = locations.last as CLLocation
+    let location = locations.last as! CLLocation
     let accurracy = location.horizontalAccuracy
     let time = location.timestamp
     let coords = location.coordinate
@@ -177,7 +179,7 @@ class VenuesListInteractor: BaseInteractor, CLLocationManagerDelegate {
   // MARK: - Search
   
   func filterVenuesByName(#venues: [Venue], keyword: String) -> [Venue] {
-    if(countElements(keyword) == 0) {
+    if(count(keyword) == 0) {
       return venues
     }
     let keywordLowercase = keyword.lowercaseString

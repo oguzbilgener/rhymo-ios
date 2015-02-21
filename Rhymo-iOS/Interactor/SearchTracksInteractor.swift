@@ -25,11 +25,11 @@ class SearchTracksInteractor: BaseInteractor {
   }
   
   func getTracksByName(name: String, venueId: Int, result:(error: NSError?, tracks: [Track])->()) {
-    if(countElements(name) == 0) {
+    if(count(name) == 0) {
       output?.clearTracksList()
       return
     }
-    if(countElements(name) < TrackSearchMinimumLength) {
+    if(count(name) < TrackSearchMinimumLength) {
       // keyword is too short yet. return without sending any callbacks
       return
     }

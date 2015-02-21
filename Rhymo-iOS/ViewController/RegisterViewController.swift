@@ -32,7 +32,7 @@ class RegisterViewController: BaseViewController, UITextFieldDelegate {
     navigationBar.translucent = true
     
     // Get the content of Login screen from a nib file
-    let registerContent = NSBundle.mainBundle().loadNibNamed(RegisterContentNibName, owner: self, options: nil)[0] as UIView
+    let registerContent = NSBundle.mainBundle().loadNibNamed(RegisterContentNibName, owner: self, options: nil)[0] as! UIView
     
     
     // Find email and passwords fields in it

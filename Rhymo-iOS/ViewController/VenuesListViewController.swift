@@ -98,7 +98,7 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
     venuesTable.tableFooterView = UIView(frame: CGRectZero)
     
     // Set up the table header and map view
-    let headerView = NSBundle.mainBundle().loadNibNamed(VenuesListHeaderNibName, owner: self, options: nil)[0] as UIView
+    let headerView = NSBundle.mainBundle().loadNibNamed(VenuesListHeaderNibName, owner: self, options: nil)[0] as! UIView
     headerView.bounds.size.width = self.view.bounds.size.width
     mapView = headerView.viewWithTag(MapViewTag) as? MKMapView
     mapView!.bounds.size.width = self.view.bounds.size.width
@@ -141,7 +141,7 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
   // MARK: - Table data population
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("VenueCell", forIndexPath: indexPath) as VenueCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("VenueCell", forIndexPath: indexPath) as! VenueCell
   
     let titleLabel = cell.venueTitle
     let descriptionLabel = cell.venueAddress

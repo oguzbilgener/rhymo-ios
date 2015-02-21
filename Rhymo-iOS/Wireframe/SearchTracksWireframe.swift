@@ -25,7 +25,7 @@ class SearchTracksWireframe: BaseWireframe {
     searchTracksPresenter?.searchTracksInteractor = searchTracksInteractor
     searchTracksPresenter?.searchTracksWireframe = self
     
-    if let userInterface = viewController? {
+    if let userInterface = viewController {
       userInterface.eventHandler = searchTracksPresenter
       searchTracksPresenter?.userInterface = userInterface
     }

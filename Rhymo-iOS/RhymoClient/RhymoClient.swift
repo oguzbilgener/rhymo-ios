@@ -23,6 +23,8 @@ let kLogoutEnabled = "logout_enabled"
 let kLoggedInEmailAddress = "logged_in_email_address"
 let kFakeLocation = "DebugSettingsUseFakeLocation"
 
+let kAuthSecureName = "com.oguzdev.Rhymo.auth"
+
 let RhymoErrorDomain = NSBundle.mainBundle().bundleIdentifier!
 let RhymoUnauthorizedCode = 401
 let RhymoBadRequestCode = 400
@@ -104,7 +106,7 @@ class RhymoClient {
   }
   
   func logout() {
-    let defaults = RhymoClient.getDefaults()
+    let defaults = RhymoClient.getAuthDefaults()
     
     defaults.removeObjectForKey(kUser)
     defaults.removeObjectForKey(kLoggedInEmailAddress)
@@ -482,7 +484,7 @@ class RhymoClient {
 
   class func getAuthenticatedUser() -> User? {
     
-    let defaults = RhymoClient.getDefaults()
+    let defaults = RhymoClient.getAuthDefaults()
     
     if let logout_enabled = defaults.objectForKey(kLogoutEnabled) as? Bool {
       defaults.removeObjectForKey(kLogoutEnabled)
@@ -492,7 +494,7 @@ class RhymoClient {
     
     // get the user object from an unencrypted data store
     if let data = defaults.objectForKey(kUser) as? NSData {
-      let user = NSKeyedUnarchiver.unarchiveObjectWithData(data) as User
+      let user = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! User
 //      // fill the public key and secret token from an encrypted data store
 //      if let publicKey = defaults.stringForKey(kPublicKey) {
 //        user.publicKey = publicKey
@@ -509,7 +511,7 @@ class RhymoClient {
   
   private func storeAuthenticatedUser(user: User) {
     
-    let defaults = RhymoClient.getDefaults()
+    let defaults = RhymoClient.getAuthDefaults()
 
     
     let data = NSKeyedArchiver.archivedDataWithRootObject(user)
@@ -540,5 +542,9 @@ class RhymoClient {
   
   class func getDefaults() -> NSUserDefaults {
     return NSUserDefaults.standardUserDefaults()
+  }
+  
+  class func getAuthDefaults() -> NSUserDefaults {
+    return NSUserDefaults(suiteName: kAuthSecureName)!
   }
 }

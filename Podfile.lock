@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (1.1.3)
+  - Alamofire (1.1.4)
   - CommonCrypto (1.1)
   - GPUImage (0.1.6)
   - JGProgressHUD (1.2.3)
@@ -9,11 +9,11 @@ PODS:
   - SDWebImage (3.7.1):
     - SDWebImage/Core (= 3.7.1)
   - SDWebImage/Core (3.7.1)
-  - Starscream (0.9.1)
-  - SwiftyJSON (2.1.1)
+  - Starscream (0.9.2)
+  - SwiftyJSON (2.1.3)
 
 DEPENDENCIES:
-  - Alamofire (from `https://github.com/mrackwitz/Alamofire.git`, branch `podspec`)
+  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `xcode-6.3`)
   - CommonCrypto (~> 1.1)
   - GPUImage (~> 0.1)
   - JGProgressHUD
@@ -21,33 +21,33 @@ DEPENDENCIES:
   - Lockbox (~> 2.1)
   - RPFloatingPlaceholders (~> 0.2.6)
   - SDWebImage (~> 3.6)
-  - Starscream (from `https://github.com/daltoniam/Starscream.git`, branch `master`)
-  - SwiftyJSON (from `https://github.com/orta/SwiftyJSON`, branch `podspec`)
+  - Starscream (from `https://github.com/daltoniam/Starscream.git`, branch `swift-1.2`)
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON`, branch `xcode6.3`)
 
 EXTERNAL SOURCES:
   Alamofire:
-    :branch: podspec
-    :git: https://github.com/mrackwitz/Alamofire.git
+    :branch: xcode-6.3
+    :git: https://github.com/Alamofire/Alamofire.git
   Starscream:
-    :branch: master
+    :branch: swift-1.2
     :git: https://github.com/daltoniam/Starscream.git
   SwiftyJSON:
-    :branch: podspec
-    :git: https://github.com/orta/SwiftyJSON
+    :branch: xcode6.3
+    :git: https://github.com/SwiftyJSON/SwiftyJSON
 
 CHECKOUT OPTIONS:
   Alamofire:
-    :commit: e4baf843f89e7c5d2d2478cebcf196f9338a86ba
-    :git: https://github.com/mrackwitz/Alamofire.git
+    :commit: cde1cc93824a689f5d429f035bc663548fcca135
+    :git: https://github.com/Alamofire/Alamofire.git
   Starscream:
-    :commit: f8dfae1e6065fc41e8bd2c18349e5b30ca73d2be
+    :commit: 25ff7ad6f5f216283d224c223ad5ab3d7534bf48
     :git: https://github.com/daltoniam/Starscream.git
   SwiftyJSON:
-    :commit: 252838693668023571c46f56d7ea8347e6948d1b
-    :git: https://github.com/orta/SwiftyJSON
+    :commit: 0691445da4c4a94484621919c347d7b69f9598fe
+    :git: https://github.com/SwiftyJSON/SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: 82bd273df6adffbda9740509993f29b2fa5a6d10
+  Alamofire: 6a2cbaebe78a6d469bc55ee37f0a24ba22af76ac
   CommonCrypto: e29ad10d288d7da1cad5d5eec03ed68b010b0072
   GPUImage: cecb0830bb9428f50192042e3c7b53810f51388e
   JGProgressHUD: 733523c80f69b6dfc41b88a0f33883a89a8b4c3b
@@ -55,7 +55,7 @@ SPEC CHECKSUMS:
   Lockbox: 3168f08cb26680b05a0702b8c0cc6da32788059d
   RPFloatingPlaceholders: a5c88c55c73b9118607f8bafc28df7dfd717dbad
   SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
-  Starscream: 6fcbd646fc23bbc55bb27d3479eb3a2758abe1e6
-  SwiftyJSON: 626bbe0ede796bf69e849b7aa7473778b03fe44c
+  Starscream: 7b58834eff655baf6ec456c5dd056ec62fd147c9
+  SwiftyJSON: a561c2a840121085bec8a2dfeac97a360fc66901
 
-COCOAPODS: 0.36.0.beta.1
+COCOAPODS: 0.36.0.beta.2

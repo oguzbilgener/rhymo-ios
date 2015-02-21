@@ -22,7 +22,7 @@ class HomeWireframe: BaseWireframe {
   }
   
   func homeViewControllerFromStoryboard() -> HomeViewController {
-    return mainStoryboard().instantiateViewControllerWithIdentifier(HomeViewControllerIdentifier) as HomeViewController
+    return mainStoryboard().instantiateViewControllerWithIdentifier(HomeViewControllerIdentifier) as! HomeViewController
   }
   
   func configureDependencies(window: UIWindow) {
@@ -36,9 +36,9 @@ class HomeWireframe: BaseWireframe {
     
     venueDetailsWireframe = VenueDetailsWireframe()
     
-    let navigationViewController = window.rootViewController as UINavigationController
+    let navigationViewController = window.rootViewController as! UINavigationController
 
-    let venuesListViewController = navigationViewController.viewControllers[0] as VenuesListViewController
+    let venuesListViewController = navigationViewController.viewControllers[0] as! VenuesListViewController
     venuesListViewController.eventHandler = venuesListPresenter
     venuesListPresenter?.userInterface = venuesListViewController
   }

@@ -24,7 +24,7 @@ class RequestConfirmWireframe: BaseWireframe {
     requestConfirmPresenter?.requestConfirmInteractor = requestConfirmInteractor
     requestConfirmPresenter?.requestConfirmWireframe = self
     
-    if let userInterface = viewController? {
+    if let userInterface = viewController {
       userInterface.eventHandler = requestConfirmPresenter
       requestConfirmPresenter?.userInterface = userInterface
     }

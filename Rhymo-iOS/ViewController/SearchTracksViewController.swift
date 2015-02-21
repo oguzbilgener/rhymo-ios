@@ -97,7 +97,7 @@ class SearchTracksViewController: BaseViewController, UITableViewDelegate, UITab
   // MARK: - Table data population
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("SearchTrackCell", forIndexPath: indexPath) as SearchTrackCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("SearchTrackCell", forIndexPath: indexPath) as! SearchTrackCell
     
     cell.selectionStyle = UITableViewCellSelectionStyle.None
     

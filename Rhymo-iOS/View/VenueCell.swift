@@ -16,17 +16,17 @@ class VenueCell: UITableViewCell {
   @IBOutlet weak var iconOnline: UIImageView!
   @IBOutlet weak var iconOffline: UIImageView!
   
-  override func touchesBegan(touches: NSSet, withEvent: UIEvent) {
+  override func touchesBegan(touches: Set<NSObject>, withEvent: UIEvent) {
     super.touchesBegan(touches, withEvent: withEvent)
     self.backgroundColor = accentColor
   }
   
-  override func touchesEnded(touches: NSSet, withEvent: UIEvent) {
+  override func touchesEnded(touches: Set<NSObject>, withEvent: UIEvent) {
     super.touchesEnded(touches, withEvent: withEvent)
     self.backgroundColor = contentBackgroundColor
   }
   
-  override func touchesCancelled(touches: NSSet, withEvent: UIEvent) {
+  override func touchesCancelled(touches: Set<NSObject>, withEvent: UIEvent) {
     super.touchesCancelled(touches, withEvent: withEvent)
     self.backgroundColor = contentBackgroundColor
   }

@@ -168,7 +168,7 @@ class VenueDetailsViewController: BaseViewController, UITableViewDelegate, UITab
   // MARK: - Table data population
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("TrackCell", forIndexPath: indexPath) as TrackCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("TrackCell", forIndexPath: indexPath) as! TrackCell
     
     let albumArtView = cell.albumArtView
     let nameLabel = cell.nameLabel

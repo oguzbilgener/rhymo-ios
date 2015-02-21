@@ -23,7 +23,7 @@ class AuthWireframe: BaseWireframe {
   }
   
   func landingViewControllerFromStoryboard() -> LandingViewController {
-    return mainStoryboard().instantiateViewControllerWithIdentifier(LandingViewControllerIdentifier) as LandingViewController
+    return mainStoryboard().instantiateViewControllerWithIdentifier(LandingViewControllerIdentifier) as! LandingViewController
   }
   
   func configureDependencies(window: UIWindow) {

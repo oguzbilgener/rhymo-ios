@@ -24,7 +24,7 @@ class RhymoSocket: NSObject, WebSocketDelegate {
     super.init()
     println("init rhymosocket")
     socket = WebSocket(url: NSURL(scheme: "ws", host: RhymoClient.retrievePreferredHostname(), path: "/v1/socket/client")!)
-    socket!.delegate = self
+    socket?.delegate = self
   }
   
   func connect() {
@@ -37,7 +37,7 @@ class RhymoSocket: NSObject, WebSocketDelegate {
     socket?.disconnect()
   }
   
-  func websocketDidConnect() {
+  func websocketDidConnect(socket: WebSocket) {
     println("websocket is connected")
     
     handshake()
@@ -46,18 +46,14 @@ class RhymoSocket: NSObject, WebSocketDelegate {
     }
   }
   
-  func websocketDidDisconnect(error: NSError?) {
+  func websocketDidDisconnect(socket: WebSocket, error: NSError?) {
     println("websocket is disconnected: \(error?.localizedDescription)")
     if let socketDelegate = delegate {
       socketDelegate.socketDisconnected()
     }
   }
   
-  func websocketDidWriteError(error: NSError?) {
-    println("wez got an error from the websocket: \(error?.localizedDescription)")
-  }
-  
-  func websocketDidReceiveMessage(text: String) {
+  func websocketDidReceiveMessage(socket: WebSocket, text: String) {
     if let data = text.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
       let json = JSON(data: data, options: NSJSONReadingOptions.MutableContainers, error: nil)
       let label = json["label"].stringValue
@@ -96,7 +92,7 @@ class RhymoSocket: NSObject, WebSocketDelegate {
     }
   }
   
-  func websocketDidReceiveData(data: NSData) {
+  func websocketDidReceiveData(socket: WebSocket, data: NSData) {
     println("got some data: \(data.length)")
   }
   

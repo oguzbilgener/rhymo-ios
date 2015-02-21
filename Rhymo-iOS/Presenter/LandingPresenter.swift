@@ -19,7 +19,7 @@ class LandingPresenter: BasePresenter {
   var userInterface: LandingViewController?
   
   func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if(segue.identifier? == LoginViewControllerIdentifier) {
+    if(segue.identifier == LoginViewControllerIdentifier) {
       // Get the view controller
       let loginViewController  = segue.destinationViewController as? LoginViewController
       // Set it as the userInterface for LoginPresenter
@@ -27,7 +27,7 @@ class LandingPresenter: BasePresenter {
       // Set its event handler as LoginPresenter
       loginViewController?.eventHandler = landingWireframe?.login?.loginPresenter
     }
-    else if(segue.identifier? == RegisterViewControllerIdentifier) {
+    else if(segue.identifier == RegisterViewControllerIdentifier) {
       let registerViewController = segue.destinationViewController as? RegisterViewController
       
       landingWireframe?.register?.registerPresenter?.userInterface = registerViewController

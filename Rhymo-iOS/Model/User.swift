@@ -25,13 +25,13 @@ class User: NSObject, NSCoding {
   
   required init(coder decoder: NSCoder) {
     id = decoder.decodeIntegerForKey("id")
-    userName = decoder.decodeObjectForKey("userName") as String
-    email = decoder.decodeObjectForKey("email") as String
-    password = decoder.decodeObjectForKey("password") as String
-    publicKey = decoder.decodeObjectForKey("publicKey") as String
-    secretToken = decoder.decodeObjectForKey("secretToken") as String
-    profilePic = decoder.decodeObjectForKey("profilePic") as String
-    birthday = decoder.decodeObjectForKey("birthday") as String
+    userName = decoder.decodeObjectForKey("userName") as! String
+    email = decoder.decodeObjectForKey("email") as! String
+    password = decoder.decodeObjectForKey("password") as! String
+    publicKey = decoder.decodeObjectForKey("publicKey") as! String
+    secretToken = decoder.decodeObjectForKey("secretToken") as! String
+    profilePic = decoder.decodeObjectForKey("profilePic") as! String
+    birthday = decoder.decodeObjectForKey("birthday") as! String
   }
   
   func encodeWithCoder(encoder: NSCoder) {

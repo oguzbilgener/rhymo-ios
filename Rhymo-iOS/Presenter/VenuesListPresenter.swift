@@ -139,21 +139,19 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
   }
   
   func logout() {
-    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     appDelegate.appDependencies.logout(window: appDelegate.window!)
   }
   
   // MARK: - Segue delegation
   
   func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if let cell = sender as? UITableViewCell {
-      if let path = userInterface?.venuesTable.indexPathForCell(cell) {
-        if let window = UIApplication.sharedApplication().delegate?.window? {
-          if let viewController = segue.destinationViewController as? VenueDetailsViewController {
-            venuesListWireframe?.venueDetailsWireframe?.configureDependencies(window, viewController: viewController)
-            venuesListWireframe?.passVenueToDetails(filteredVenues[path.row])
-          }
-        }
+    if let window = UIApplication.sharedApplication().delegate?.window!,
+           cell = sender as? UITableViewCell,
+           path = userInterface?.venuesTable.indexPathForCell(cell) {
+      if let viewController = segue.destinationViewController as? VenueDetailsViewController {
+        venuesListWireframe?.venueDetailsWireframe?.configureDependencies(window, viewController: viewController)
+        venuesListWireframe?.passVenueToDetails(filteredVenues[path.row])
       }
     }
   }

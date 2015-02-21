@@ -67,7 +67,7 @@ class LoginPresenter: BasePresenter {
   }
   
   func loginSuccess(sender: AnyObject?) {
-    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     if let window = appDelegate.window {
       appDelegate.appDependencies.installRootViewControllerIntoWindow(window)
     }

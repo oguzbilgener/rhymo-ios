@@ -26,7 +26,7 @@ class VenueDetailsWireframe: BaseWireframe {
     venueDetailsPresenter?.venueDetailsInteractor = venueDetailsInteractor
     venueDetailsPresenter?.venueDetailsWireframe = self
     
-    if let userInterface = viewController? {
+    if let userInterface = viewController {
       userInterface.eventHandler = venueDetailsPresenter
       venueDetailsPresenter?.userInterface = userInterface
     }

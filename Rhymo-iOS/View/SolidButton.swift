@@ -23,7 +23,7 @@ class SolidButton: UIButton {
     if let color = self.titleColorForState(UIControlState.Normal) {
       self.primaryColor = color
     }
-    self.secondaryColor = UIColor(CGColor: self.layer.backgroundColor)
+    self.secondaryColor = UIColor(CGColor: self.layer.backgroundColor)!
     
     configurateToDefault()
   }
@@ -40,7 +40,7 @@ class SolidButton: UIButton {
     if let color = self.titleColorForState(UIControlState.Normal) {
       self.primaryColor = color
     }
-    self.secondaryColor = UIColor(CGColor: self.layer.backgroundColor)
+    self.secondaryColor = UIColor(CGColor: self.layer.backgroundColor)!
     
     configurateToDefault()
     // Initialization code
@@ -62,7 +62,7 @@ class SolidButton: UIButton {
     self.tintColor = UIColor.whiteColor()
   }
   
-  override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+  override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
     super.touchesBegan(touches, withEvent: event)
 //    self.layer.borderColor = UIColor(rgba: "#000000").CGColor //self.currentTitleColor!.CGColor
     self.layer.borderColor = self.primaryColor.CGColor
@@ -80,7 +80,7 @@ class SolidButton: UIButton {
     self.setNeedsDisplay()
   }
   
-  override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+  override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
     super.touchesEnded(touches, withEvent: event)
 //    self.layer.borderColor = UIColor.blueColor().CGColor//self.currentTitleColor!.CGColor
     self.layer.borderColor = self.primaryColor.CGColor
@@ -94,7 +94,7 @@ class SolidButton: UIButton {
     self.setNeedsDisplay()
   }
   
-  override func touchesCancelled(touches: NSSet, withEvent event: UIEvent) {
+  override func touchesCancelled(touches: Set<NSObject>, withEvent event: UIEvent) {
     super.touchesEnded(touches, withEvent: event)
 //    self.layer.borderColor = UIColor.greenColor().CGColor//self.currentTitleColor!.CGColor
     self.layer.borderColor = self.primaryColor.CGColor

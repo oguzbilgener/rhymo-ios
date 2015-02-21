@@ -155,13 +155,12 @@ class VenueDetailsPresenter: BasePresenter {
   }
   
   func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if let button = sender as? UIButton {
+    if let window = UIApplication.sharedApplication().delegate?.window!,
+           button = sender as? UIButton {
       if(button.tag == RequestButtonTag) {
-        if let window = UIApplication.sharedApplication().delegate?.window? {
-          if let viewController = segue.destinationViewController as? SearchTracksViewController {
-            venueDetailsWireframe?.searchTracksWireframe?.configureDependencies(window, viewController: viewController)
-            venueDetailsWireframe?.passVenueToDetails()
-          }
+        if let viewController = segue.destinationViewController as? SearchTracksViewController {
+          venueDetailsWireframe?.searchTracksWireframe?.configureDependencies(window, viewController: viewController)
+          venueDetailsWireframe?.passVenueToDetails()
         }
       }
     }
