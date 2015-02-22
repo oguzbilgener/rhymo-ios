@@ -246,8 +246,11 @@ static stateChange stateGraph[] = {
       break;
     }
   }
-  NSAssert(state != STATE_ASSERT, @"Transition not found in graph %i %i",
-           _state, transition);
+  if(state != STATE_ASSERT) {
+    return;
+  }
+//  NSAssert(state != STATE_ASSERT, @"Transition not found in graph %i %i",
+//           _state, transition);
   _state = state;
 
   if ((_state == STATE_SCANNING) || (_state == STATE_INACTIVE_SCANNING)) {
