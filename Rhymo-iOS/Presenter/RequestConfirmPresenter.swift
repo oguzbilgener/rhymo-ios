@@ -8,6 +8,7 @@
 
 import UIKit
 
+let RequestConfirmAlertTag = 11
 let RequestSuccessfulAlertTag = 99
 
 class RequestConfirmPresenter: BasePresenter, UIAlertViewDelegate {
@@ -33,15 +34,22 @@ class RequestConfirmPresenter: BasePresenter, UIAlertViewDelegate {
     // show the parts in the user interface
     userInterface?.displayVenueDetails(venue!)
     userInterface?.displayChosenTrack(track!)
-    userInterface?.displayPurchaseButton(value: 0.99, currency: "TL", verb: "Play")
+    userInterface?.displayPurchaseButton(value: 1.99, currency: "TL", verb: "Play")
   }
 
   func playConfirmButtonTouched(sender: UIButton) {
     // No purchase this time, go ahead and make the request right away
-    sendTrackRequest()
+    showConfirmationDialog()
   }
   
   // MARK: - Payment
+  
+  func showConfirmationDialog() {
+    let confirm = UIAlertView(title: "Confirm Your In-App Purchase", message: "Do you want to Play this song for 1.99 TL?", delegate: self, cancelButtonTitle: "No")
+    confirm.addButtonWithTitle("Yes")
+    confirm.tag = RequestConfirmAlertTag
+    confirm.show()
+  }
   
   // MARK: - Request
   
@@ -62,7 +70,8 @@ class RequestConfirmPresenter: BasePresenter, UIAlertViewDelegate {
         if(error != nil) {
           debugPrintln(error)
           if(error?.code == RhymoBadRequestCode) {
-            let alert = UIAlertView(title: "Slow down!", message: "You have sent too many requests already! "+reason, delegate: self, cancelButtonTitle: "Ok")
+            let alert = UIAlertView(title: "Slow down!", message: "You have sent too many requests already!", delegate: self, cancelButtonTitle: "Ok")
+            println(reason)
             alert.tag = RequestSuccessfulAlertTag
             alert.show()
           }
@@ -83,6 +92,14 @@ class RequestConfirmPresenter: BasePresenter, UIAlertViewDelegate {
     if(alertView.tag == RequestSuccessfulAlertTag) {
       // close this VC when ok button is clicked
       backPressed(nil)
+    }
+  }
+  
+  func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+    if(alertView.tag == RequestConfirmAlertTag) {
+      if(buttonIndex == 1) {
+        sendTrackRequest()
+      }
     }
   }
   
