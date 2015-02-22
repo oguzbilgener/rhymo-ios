@@ -246,6 +246,8 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
       transition.subtype = kCATransitionFromTop // actually bottom
       transition.duration = 0.3
       venueSuggestionView!.layer.addAnimation(transition, forKey: nil)
+      
+      self.eventHandler?.venueSuggestionViewUpdated(venueSuggestionView!)
     }
   }
   

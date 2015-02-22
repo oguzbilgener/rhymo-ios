@@ -9,6 +9,8 @@
 import UIKit
 import CoreLocation
 
+let kVenueDetailsIdentifier = "Show Venue Details"
+
 class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
   
   var venuesListInteractor: VenuesListInteractor?
@@ -129,6 +131,15 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
     }
   }
   
+  func venueSuggestionViewUpdated(view: VenueSuggestionView) {
+    let tapRecognizer = UITapGestureRecognizer(target: self, action: "venueSuggestionTapped:")
+    view.addGestureRecognizer(tapRecognizer)
+  }
+  
+  func venueSuggestionTapped(sender: AnyObject?) {
+    userInterface?.performSegueWithIdentifier(kVenueDetailsIdentifier, sender: userInterface?.venueSuggestionView)
+  }
+  
   // MARK: - UI Update Delegation
   
   func updateVenuesList() {
@@ -154,18 +165,26 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
   // MARK: - Segue delegation
   
   func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if let window = UIApplication.sharedApplication().delegate?.window!,
-           cell = sender as? UITableViewCell,
-           path = userInterface?.venuesTable.indexPathForCell(cell) {
-      if let viewController = segue.destinationViewController as? VenueDetailsViewController {
-        venuesListWireframe?.venueDetailsWireframe?.configureDependencies(window, viewController: viewController)
-        venuesListWireframe?.passVenueToDetails(filteredVenues[path.row])
+    if let window = UIApplication.sharedApplication().delegate?.window! {
+      if let cell = sender as? UITableViewCell,
+             path = userInterface?.venuesTable.indexPathForCell(cell) {
+        if let viewController = segue.destinationViewController as? VenueDetailsViewController {
+          venuesListWireframe?.venueDetailsWireframe?.configureDependencies(window, viewController: viewController)
+          venuesListWireframe?.passVenueToDetails(filteredVenues[path.row])
+        }
+      }
+      else if let view = sender as? VenueSuggestionView,
+                  venue = view.displayedVenue {
+        if let viewController = segue.destinationViewController as? VenueDetailsViewController {
+          venuesListWireframe?.venueDetailsWireframe?.configureDependencies(window, viewController: viewController)
+          venuesListWireframe?.passVenueToDetails(venue)
+        }
       }
     }
   }
   
   func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-    if(identifier != nil && identifier! == "Show Venue Details") {
+    if(identifier != nil && identifier! == kVenueDetailsIdentifier) {
       if let cell = sender as? UITableViewCell {
         if let path = userInterface?.venuesTable.indexPathForCell(cell) {
           // only open the venue details if the venue is online
