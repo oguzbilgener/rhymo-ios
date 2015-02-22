@@ -119,6 +119,11 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
     userInterface?.buildMap(location, venues: venues)
     refreshControl.endRefreshing()
     hideActivityIndicator()
+    
+    
+    venuesListInteractor?.scanBeacons { venues in
+      println(venues)
+    }
   }
   
   // MARK: - UI Update Delegation

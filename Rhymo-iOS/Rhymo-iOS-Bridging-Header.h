@@ -31,4 +31,7 @@
 
 #import "UIAppearanceSwift.h"
 
+#import "UBUriBeacon.h"
+#import "UBUriBeaconScanner.h"
+
 #endif

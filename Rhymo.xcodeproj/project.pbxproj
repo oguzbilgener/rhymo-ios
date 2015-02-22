@@ -45,6 +45,16 @@
 		DD7BFDD81A6308DE009ADC4F /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDD71A6308DE009ADC4F /* AppDependencies.swift */; };
 		DD7BFDE21A630BBB009ADC4F /* AuthWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDE11A630BBB009ADC4F /* AuthWireframe.swift */; };
 		DD7BFDE41A630BE6009ADC4F /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7BFDE31A630BE6009ADC4F /* RootWireframe.swift */; };
+		DD94C2C21A991D2600ECF06C /* NSString+UB.m in Sources */ = {isa = PBXBuildFile; fileRef = DD94C2AD1A991D2600ECF06C /* NSString+UB.m */; };
+		DD94C2C31A991D2600ECF06C /* NSURL+UB.m in Sources */ = {isa = PBXBuildFile; fileRef = DD94C2AF1A991D2600ECF06C /* NSURL+UB.m */; };
+		DD94C2C41A991D2600ECF06C /* UBConfigurableUriBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = DD94C2B11A991D2600ECF06C /* UBConfigurableUriBeacon.m */; };
+		DD94C2C51A991D2600ECF06C /* UBUriBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = DD94C2B41A991D2600ECF06C /* UBUriBeacon.m */; };
+		DD94C2C61A991D2600ECF06C /* UBUriBeaconReader.m in Sources */ = {isa = PBXBuildFile; fileRef = DD94C2B71A991D2600ECF06C /* UBUriBeaconReader.m */; };
+		DD94C2C71A991D2600ECF06C /* UBUriBeaconScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = DD94C2B91A991D2600ECF06C /* UBUriBeaconScanner.m */; };
+		DD94C2C81A991D2600ECF06C /* UBUriBeaconWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD94C2BC1A991D2600ECF06C /* UBUriBeaconWriter.m */; };
+		DD94C2C91A991D2600ECF06C /* UBUriReader.m in Sources */ = {isa = PBXBuildFile; fileRef = DD94C2BE1A991D2600ECF06C /* UBUriReader.m */; };
+		DD94C2CA1A991D2600ECF06C /* UBUriWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD94C2C01A991D2600ECF06C /* UBUriWriter.m */; };
+		DD94C2CC1A9923FA00ECF06C /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD94C2CB1A9923FA00ECF06C /* CoreBluetooth.framework */; };
 		DD9C6A5D1A6BD8BE0077BC37 /* RequestConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9C6A5C1A6BD8BE0077BC37 /* RequestConfirmViewController.swift */; };
 		DD9C6A5F1A6BDA390077BC37 /* RequestConfirmWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9C6A5E1A6BDA390077BC37 /* RequestConfirmWireframe.swift */; };
 		DD9C6A611A6BDAA20077BC37 /* RequestConfirmInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9C6A601A6BDAA20077BC37 /* RequestConfirmInteractor.swift */; };
@@ -143,6 +153,29 @@
 		DD7BFDD71A6308DE009ADC4F /* AppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		DD7BFDE11A630BBB009ADC4F /* AuthWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthWireframe.swift; path = Wireframe/AuthWireframe.swift; sourceTree = "<group>"; };
 		DD7BFDE31A630BE6009ADC4F /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootWireframe.swift; path = Wireframe/RootWireframe.swift; sourceTree = "<group>"; };
+		DD94C2AC1A991D2600ECF06C /* NSString+UB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UB.h"; sourceTree = "<group>"; };
+		DD94C2AD1A991D2600ECF06C /* NSString+UB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UB.m"; sourceTree = "<group>"; };
+		DD94C2AE1A991D2600ECF06C /* NSURL+UB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+UB.h"; sourceTree = "<group>"; };
+		DD94C2AF1A991D2600ECF06C /* NSURL+UB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+UB.m"; sourceTree = "<group>"; };
+		DD94C2B01A991D2600ECF06C /* UBConfigurableUriBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBConfigurableUriBeacon.h; sourceTree = "<group>"; };
+		DD94C2B11A991D2600ECF06C /* UBConfigurableUriBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBConfigurableUriBeacon.m; sourceTree = "<group>"; };
+		DD94C2B21A991D2600ECF06C /* UBConfigurableURIBeaconPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBConfigurableURIBeaconPrivate.h; sourceTree = "<group>"; };
+		DD94C2B31A991D2600ECF06C /* UBUriBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBUriBeacon.h; sourceTree = "<group>"; };
+		DD94C2B41A991D2600ECF06C /* UBUriBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBUriBeacon.m; sourceTree = "<group>"; };
+		DD94C2B51A991D2600ECF06C /* UBUriBeaconPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBUriBeaconPrivate.h; sourceTree = "<group>"; };
+		DD94C2B61A991D2600ECF06C /* UBUriBeaconReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBUriBeaconReader.h; sourceTree = "<group>"; };
+		DD94C2B71A991D2600ECF06C /* UBUriBeaconReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBUriBeaconReader.m; sourceTree = "<group>"; };
+		DD94C2B81A991D2600ECF06C /* UBUriBeaconScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBUriBeaconScanner.h; sourceTree = "<group>"; };
+		DD94C2B91A991D2600ECF06C /* UBUriBeaconScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBUriBeaconScanner.m; sourceTree = "<group>"; };
+		DD94C2BA1A991D2600ECF06C /* UBUriBeaconScannerPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBUriBeaconScannerPrivate.h; sourceTree = "<group>"; };
+		DD94C2BB1A991D2600ECF06C /* UBUriBeaconWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBUriBeaconWriter.h; sourceTree = "<group>"; };
+		DD94C2BC1A991D2600ECF06C /* UBUriBeaconWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBUriBeaconWriter.m; sourceTree = "<group>"; };
+		DD94C2BD1A991D2600ECF06C /* UBUriReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBUriReader.h; sourceTree = "<group>"; };
+		DD94C2BE1A991D2600ECF06C /* UBUriReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBUriReader.m; sourceTree = "<group>"; };
+		DD94C2BF1A991D2600ECF06C /* UBUriWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBUriWriter.h; sourceTree = "<group>"; };
+		DD94C2C01A991D2600ECF06C /* UBUriWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBUriWriter.m; sourceTree = "<group>"; };
+		DD94C2C11A991D2600ECF06C /* UriBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UriBeacon.h; sourceTree = "<group>"; };
+		DD94C2CB1A9923FA00ECF06C /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		DD9C6A5C1A6BD8BE0077BC37 /* RequestConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestConfirmViewController.swift; path = ViewController/RequestConfirmViewController.swift; sourceTree = "<group>"; };
 		DD9C6A5E1A6BDA390077BC37 /* RequestConfirmWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestConfirmWireframe.swift; path = Wireframe/RequestConfirmWireframe.swift; sourceTree = "<group>"; };
 		DD9C6A601A6BDAA20077BC37 /* RequestConfirmInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestConfirmInteractor.swift; path = Interactor/RequestConfirmInteractor.swift; sourceTree = "<group>"; };
@@ -189,6 +222,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD94C2CC1A9923FA00ECF06C /* CoreBluetooth.framework in Frameworks */,
 				DDBD485B1A6DAAEF0029425A /* QuartzCore.framework in Frameworks */,
 				DDBD48591A6DAAEA0029425A /* AVFoundation.framework in Frameworks */,
 				DDBD48571A6DAAE20029425A /* OpenGLES.framework in Frameworks */,
@@ -356,9 +390,40 @@
 			name = ViewController;
 			sourceTree = "<group>";
 		};
+		DD94C2AB1A991D2600ECF06C /* uribeacon */ = {
+			isa = PBXGroup;
+			children = (
+				DD94C2AC1A991D2600ECF06C /* NSString+UB.h */,
+				DD94C2AD1A991D2600ECF06C /* NSString+UB.m */,
+				DD94C2AE1A991D2600ECF06C /* NSURL+UB.h */,
+				DD94C2AF1A991D2600ECF06C /* NSURL+UB.m */,
+				DD94C2B01A991D2600ECF06C /* UBConfigurableUriBeacon.h */,
+				DD94C2B11A991D2600ECF06C /* UBConfigurableUriBeacon.m */,
+				DD94C2B21A991D2600ECF06C /* UBConfigurableURIBeaconPrivate.h */,
+				DD94C2B31A991D2600ECF06C /* UBUriBeacon.h */,
+				DD94C2B41A991D2600ECF06C /* UBUriBeacon.m */,
+				DD94C2B51A991D2600ECF06C /* UBUriBeaconPrivate.h */,
+				DD94C2B61A991D2600ECF06C /* UBUriBeaconReader.h */,
+				DD94C2B71A991D2600ECF06C /* UBUriBeaconReader.m */,
+				DD94C2B81A991D2600ECF06C /* UBUriBeaconScanner.h */,
+				DD94C2B91A991D2600ECF06C /* UBUriBeaconScanner.m */,
+				DD94C2BA1A991D2600ECF06C /* UBUriBeaconScannerPrivate.h */,
+				DD94C2BB1A991D2600ECF06C /* UBUriBeaconWriter.h */,
+				DD94C2BC1A991D2600ECF06C /* UBUriBeaconWriter.m */,
+				DD94C2BD1A991D2600ECF06C /* UBUriReader.h */,
+				DD94C2BE1A991D2600ECF06C /* UBUriReader.m */,
+				DD94C2BF1A991D2600ECF06C /* UBUriWriter.h */,
+				DD94C2C01A991D2600ECF06C /* UBUriWriter.m */,
+				DD94C2C11A991D2600ECF06C /* UriBeacon.h */,
+			);
+			name = uribeacon;
+			path = ThirdParty/uribeacon;
+			sourceTree = "<group>";
+		};
 		DDA4313C1A65356C00513755 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				DD94C2AB1A991D2600ECF06C /* uribeacon */,
 				DD7B2AD21A69CABE00A21780 /* UIImageEffects.h */,
 				DD7B2AD31A69CABE00A21780 /* UIImageEffects.m */,
 				DDA4313D1A65359300513755 /* UIColorExtension.swift */,
@@ -418,6 +483,7 @@
 		F341DC48B3112F834C579838 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DD94C2CB1A9923FA00ECF06C /* CoreBluetooth.framework */,
 				DDBD485A1A6DAAEF0029425A /* QuartzCore.framework */,
 				DDBD48581A6DAAEA0029425A /* AVFoundation.framework */,
 				DDBD48561A6DAAE20029425A /* OpenGLES.framework */,
@@ -594,6 +660,7 @@
 				DDD258AF1A66E0CE008FD58B /* VenueDetailsViewController.swift in Sources */,
 				DDAAD7B91A6AD1B400355C71 /* SearchTracksPresenter.swift in Sources */,
 				DD9C6A631A6BDAB90077BC37 /* RequestConfirmPresenter.swift in Sources */,
+				DD94C2C51A991D2600ECF06C /* UBUriBeacon.m in Sources */,
 				DDFDD9A61A658B85001F4AFA /* Venue.swift in Sources */,
 				DDAAD7BB1A6AD33400355C71 /* SearchTracksInteractor.swift in Sources */,
 				DD470CFF1A63C7AE0082F33D /* BasePresenter.swift in Sources */,
@@ -606,11 +673,14 @@
 				DD7BFDE41A630BE6009ADC4F /* RootWireframe.swift in Sources */,
 				DDCD68E41A6436430079089F /* BaseViewController.swift in Sources */,
 				DD1675901A77A4E400DEB858 /* LandingViewController.swift in Sources */,
+				DD94C2C21A991D2600ECF06C /* NSString+UB.m in Sources */,
 				DDE410571A6313C5008D9A13 /* BaseWireframe.swift in Sources */,
+				DD94C2C41A991D2600ECF06C /* UBConfigurableUriBeacon.m in Sources */,
 				DDD258B31A66E0FF008FD58B /* VenueDetailsPresenter.swift in Sources */,
 				DD3646C01A648786008CA1B6 /* VenuesListInteractor.swift in Sources */,
 				DDDE30981A6A73C5001F33F3 /* PlaylistTrack.swift in Sources */,
 				DD75F9E61A6B2E18009A4E9E /* SearchTrackCell.swift in Sources */,
+				DD94C2C61A991D2600ECF06C /* UBUriBeaconReader.m in Sources */,
 				DDCD68E21A6435990079089F /* AuthCompleteTransition.swift in Sources */,
 				DD1675991A77E08100DEB858 /* RegisterPresenter.swift in Sources */,
 				DD7BFDE21A630BBB009ADC4F /* AuthWireframe.swift in Sources */,
@@ -622,17 +692,21 @@
 				DDE410511A630DD8008D9A13 /* HomeViewController.swift in Sources */,
 				DDA4313E1A65359300513755 /* UIColorExtension.swift in Sources */,
 				DD4549A71A7238D400048027 /* InvertButton.m in Sources */,
+				DD94C2C31A991D2600ECF06C /* NSURL+UB.m in Sources */,
 				DD237B8D1A76F08700DD4802 /* Array+Shuffle.swift in Sources */,
 				DDAA4ECB1A666D1D00CF0C82 /* VenueCell.swift in Sources */,
+				DD94C2C71A991D2600ECF06C /* UBUriBeaconScanner.m in Sources */,
 				DD9C6A5F1A6BDA390077BC37 /* RequestConfirmWireframe.swift in Sources */,
 				DDAAD7B71A6AD10000355C71 /* SearchTracksWireframe.swift in Sources */,
 				DD30F8021A632CFE0033EB63 /* LandingInteractor.swift in Sources */,
 				DD9C6A5D1A6BD8BE0077BC37 /* RequestConfirmViewController.swift in Sources */,
+				DD94C2CA1A991D2600ECF06C /* UBUriWriter.m in Sources */,
 				DD15CF431A62E75C00812A70 /* RhymoClient.swift in Sources */,
 				DD15CF461A62E84B00812A70 /* User.swift in Sources */,
 				DD29BF301A65AF7700FC4EA3 /* Encryption.swift in Sources */,
 				DD1675971A77DFCD00DEB858 /* RegisterInteractor.swift in Sources */,
 				DDAAD7B51A6AB4A400355C71 /* SearchTracksViewController.swift in Sources */,
+				DD94C2C91A991D2600ECF06C /* UBUriReader.m in Sources */,
 				DD30F80C1A6333190033EB63 /* LoginPresenter.swift in Sources */,
 				DD7B2AD41A69CABE00A21780 /* UIImageEffects.m in Sources */,
 				DD30F8081A6331700033EB63 /* LoginViewController.swift in Sources */,
@@ -640,6 +714,7 @@
 				DDE4105C1A63292D008D9A13 /* LandingPresenter.swift in Sources */,
 				DD30F8061A6331210033EB63 /* RegisterWireframe.swift in Sources */,
 				DD9C6A611A6BDAA20077BC37 /* RequestConfirmInteractor.swift in Sources */,
+				DD94C2C81A991D2600ECF06C /* UBUriBeaconWriter.m in Sources */,
 				DDE410551A630EA5008D9A13 /* HomeWireframe.swift in Sources */,
 				DDD258B11A66E0E9008FD58B /* VenueDetailsInteractor.swift in Sources */,
 				DD1675931A77BC9700DEB858 /* UnderlinedTextField.m in Sources */,

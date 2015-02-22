@@ -35,6 +35,7 @@ class VenuesListInteractor: BaseInteractor, CLLocationManagerDelegate {
   private var currentAttempts = 0
   private var failedAttempts = 0
   private var locationTimer: NSTimer?
+  private let beaconScanner = UBUriBeaconScanner()
   
   var locationResultClosure: ((success: Bool, failReason: FailReason?, location: CLLocation?) -> ())?
   var locationLastUpdated: NSDate?
@@ -166,6 +167,39 @@ class VenuesListInteractor: BaseInteractor, CLLocationManagerDelegate {
       self.locationLastUpdated = NSDate()
       self.stopTryingToGetLocation()
       self.submitSuccessfulLocationResult(location)
+    }
+  }
+  
+  // MARK: - Beacon interactions
+  
+  func scanBeacons(result: ([Venue])->()) {
+    var scanCount = 0
+    beaconScanner.startScanningWithUpdateBlock {
+      scanCount = scanCount + 1
+      if(scanCount >= 3) {
+        self.beaconScanner.stopScanning()
+        var venues = [Venue]()
+        let beacons = self.beaconScanner.beacons() as! [UBUriBeacon]
+        
+        var nearbyVenueIds = [Int]()
+        // find all the relevant nearby venue ids
+        for beacon in beacons {
+          if(beacon.URI.scheme == "rhymo") {
+            if let paths = beacon.URI.pathComponents as? [String] {
+              if(count(paths) >= 2 && beacon.URI.host == "near") {
+                if let venueId = paths[1].toInt() {
+                  nearbyVenueIds.append(venueId)
+                }
+              }
+            }
+          }
+        }
+        // then filter from all the venues that are really nearby
+        if let allVenues = self.output?.venues {
+          venues = allVenues.filter { contains(nearbyVenueIds, $0.id) }
+        }
+        result(venues)
+      }
     }
   }
   
