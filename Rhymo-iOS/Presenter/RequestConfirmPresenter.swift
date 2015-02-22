@@ -33,7 +33,7 @@ class RequestConfirmPresenter: BasePresenter, UIAlertViewDelegate {
     // show the parts in the user interface
     userInterface?.displayVenueDetails(venue!)
     userInterface?.displayChosenTrack(track!)
-    userInterface?.displayPurchaseButton(value: 0.99, currency: "TRY", verb: "Play")
+    userInterface?.displayPurchaseButton(value: 0.99, currency: "TL", verb: "Play")
   }
 
   func playConfirmButtonTouched(sender: UIButton) {

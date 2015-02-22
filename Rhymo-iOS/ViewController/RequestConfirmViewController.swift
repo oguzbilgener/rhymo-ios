@@ -115,11 +115,11 @@ class RequestConfirmViewController: BaseViewController {
       titleStr = verb
     }
     else {
-      titleStr = String(format: "%.2f %s %s", value, currency, verb)
+      titleStr = String(format: "%.2f \(currency) \(verb)", value)
     }
-    playConfirmButton.setTitle(verb, forState: UIControlState.Normal)
-    playConfirmButton.setTitle(verb, forState: UIControlState.Highlighted)
-    playConfirmButton.setTitle(verb, forState: UIControlState.Disabled)
+    playConfirmButton.setTitle(titleStr, forState: UIControlState.Normal)
+    playConfirmButton.setTitle(titleStr, forState: UIControlState.Highlighted)
+    playConfirmButton.setTitle(titleStr, forState: UIControlState.Disabled)
 
     let buttonColor = UIColor(rgba: "#63A345")
 
