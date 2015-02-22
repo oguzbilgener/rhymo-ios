@@ -15,6 +15,8 @@ let LocationMaximumAttempts = 10
 let LocationMaximumFailedAttempts = 3
 let LocationTimeoutInSeconds = 90
 let LocationInvalidationPeriod = 5 * 60 // 5 minutes
+let BeaconMaximumAttempts = 2
+let BeaconTimeoutInSeconds = 20
 
 class VenuesListInteractor: BaseInteractor, CLLocationManagerDelegate {
   
@@ -37,6 +39,7 @@ class VenuesListInteractor: BaseInteractor, CLLocationManagerDelegate {
   private var locationTimer: NSTimer?
   private let beaconScanner = UBUriBeaconScanner()
   private var beaconScanCount = 0
+  private var beaconTimer: NSTimer?
   
   var locationResultClosure: ((success: Bool, failReason: FailReason?, location: CLLocation?) -> ())?
   var locationLastUpdated: NSDate?
@@ -179,32 +182,46 @@ class VenuesListInteractor: BaseInteractor, CLLocationManagerDelegate {
     }
     beaconScanner.startScanningWithUpdateBlock {
       self.beaconScanCount = self.beaconScanCount + 1
-      if(self.beaconScanCount >= 3) {
+      if(self.beaconScanCount >= BeaconMaximumAttempts) {
         self.beaconScanCount = 0
         self.beaconScanner.stopScanning()
         var venues = [Venue]()
-        let beacons = self.beaconScanner.beacons() as! [UBUriBeacon]
-        
-        var nearbyVenueIds = [Int]()
-        // find all the relevant nearby venue ids
-        for beacon in beacons {
-          if(beacon.URI.scheme == "rhymo") {
-            if let paths = beacon.URI.pathComponents as? [String] {
-              if(count(paths) >= 2 && beacon.URI.host == "near") {
-                if let venueId = paths[1].toInt() {
-                  nearbyVenueIds.append(venueId)
+        if(self.beaconScanner.beacons() != nil) {
+          if(self.beaconTimer != nil) {
+            self.beaconTimer!.invalidate()
+          }
+          let beacons = self.beaconScanner.beacons() as! [UBUriBeacon]
+          
+          var nearbyVenueIds = [Int]()
+          // find all the relevant nearby venue ids
+          for beacon in beacons {
+            if(beacon.URI.scheme == "rhymo") {
+              if let paths = beacon.URI.pathComponents as? [String] {
+                if(count(paths) >= 2 && beacon.URI.host == "near") {
+                  if let venueId = paths[1].toInt() {
+                    nearbyVenueIds.append(venueId)
+                  }
                 }
               }
             }
           }
-        }
-        // then filter from all the venues that are really nearby
-        if let allVenues = self.output?.venues {
-          venues = allVenues.filter { contains(nearbyVenueIds, $0.id) }
+          // then filter from all the venues that are really nearby
+          if let allVenues = self.output?.venues {
+            venues = allVenues.filter { contains(nearbyVenueIds, $0.id) }
+          }
         }
         result(venues)
       }
     }
+    if(beaconTimer != nil) {
+      beaconTimer!.invalidate()
+    }
+    beaconTimer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(BeaconTimeoutInSeconds), target: self, selector: "scanTimeoutHappened:", userInfo: nil, repeats: false)
+  }
+  
+  func scanTimeoutHappened(sender: AnyObject?) {
+    self.beaconScanCount = 0
+    self.beaconScanner.stopScanning()
   }
   
   // MARK: - HTTP Interactions
