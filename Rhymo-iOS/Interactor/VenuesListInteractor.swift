@@ -36,6 +36,7 @@ class VenuesListInteractor: BaseInteractor, CLLocationManagerDelegate {
   private var failedAttempts = 0
   private var locationTimer: NSTimer?
   private let beaconScanner = UBUriBeaconScanner()
+  private var beaconScanCount = 0
   
   var locationResultClosure: ((success: Bool, failReason: FailReason?, location: CLLocation?) -> ())?
   var locationLastUpdated: NSDate?
@@ -173,10 +174,13 @@ class VenuesListInteractor: BaseInteractor, CLLocationManagerDelegate {
   // MARK: - Beacon interactions
   
   func scanBeacons(result: ([Venue])->()) {
-    var scanCount = 0
+    if(beaconScanCount != 0) {
+      return
+    }
     beaconScanner.startScanningWithUpdateBlock {
-      scanCount = scanCount + 1
-      if(scanCount >= 3) {
+      self.beaconScanCount = self.beaconScanCount + 1
+      if(self.beaconScanCount >= 3) {
+        self.beaconScanCount = 0
         self.beaconScanner.stopScanning()
         var venues = [Venue]()
         let beacons = self.beaconScanner.beacons() as! [UBUriBeacon]

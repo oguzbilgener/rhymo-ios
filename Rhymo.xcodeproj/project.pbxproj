@@ -19,6 +19,7 @@
 		DD1675951A77D62400DEB858 /* RegisterContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD1675941A77D62400DEB858 /* RegisterContent.xib */; };
 		DD1675971A77DFCD00DEB858 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1675961A77DFCD00DEB858 /* RegisterInteractor.swift */; };
 		DD1675991A77E08100DEB858 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1675981A77E08100DEB858 /* RegisterPresenter.swift */; };
+		DD220E171A99D91200378C71 /* VenueSuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD220E161A99D91200378C71 /* VenueSuggestionView.swift */; };
 		DD237B8D1A76F08700DD4802 /* Array+Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD237B8C1A76F08700DD4802 /* Array+Shuffle.swift */; };
 		DD237B8E1A76F2BD00DD4802 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD15CF231A62E0DB00812A70 /* Main.storyboard */; };
 		DD237B8F1A76F2C400DD4802 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD15CF281A62E0DB00812A70 /* LaunchScreen.xib */; };
@@ -124,6 +125,7 @@
 		DD1675941A77D62400DEB858 /* RegisterContent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RegisterContent.xib; path = View/RegisterContent.xib; sourceTree = "<group>"; };
 		DD1675961A77DFCD00DEB858 /* RegisterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterInteractor.swift; path = Interactor/RegisterInteractor.swift; sourceTree = "<group>"; };
 		DD1675981A77E08100DEB858 /* RegisterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterPresenter.swift; path = Presenter/RegisterPresenter.swift; sourceTree = "<group>"; };
+		DD220E161A99D91200378C71 /* VenueSuggestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenueSuggestionView.swift; path = View/VenueSuggestionView.swift; sourceTree = "<group>"; };
 		DD237B881A76EE8900DD4802 /* Pods-Rhymo.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-Rhymo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rhymo/Pods-Rhymo.debug.xcconfig"; sourceTree = "<group>"; };
 		DD237B891A76EE8900DD4802 /* Pods-Rhymo.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-Rhymo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rhymo/Pods-Rhymo.release.xcconfig"; sourceTree = "<group>"; };
 		DD237B8C1A76F08700DD4802 /* Array+Shuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Array+Shuffle.swift"; path = "ThirdParty/Array+Shuffle.swift"; sourceTree = "<group>"; };
@@ -461,6 +463,7 @@
 				DD4549A61A7238D400048027 /* InvertButton.m */,
 				DD1675911A77BC9700DEB858 /* UnderlinedTextField.h */,
 				DD1675921A77BC9700DEB858 /* UnderlinedTextField.m */,
+				DD220E161A99D91200378C71 /* VenueSuggestionView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -680,6 +683,7 @@
 				DD3646C01A648786008CA1B6 /* VenuesListInteractor.swift in Sources */,
 				DDDE30981A6A73C5001F33F3 /* PlaylistTrack.swift in Sources */,
 				DD75F9E61A6B2E18009A4E9E /* SearchTrackCell.swift in Sources */,
+				DD220E171A99D91200378C71 /* VenueSuggestionView.swift in Sources */,
 				DD94C2C61A991D2600ECF06C /* UBUriBeaconReader.m in Sources */,
 				DDCD68E21A6435990079089F /* AuthCompleteTransition.swift in Sources */,
 				DD1675991A77E08100DEB858 /* RegisterPresenter.swift in Sources */,

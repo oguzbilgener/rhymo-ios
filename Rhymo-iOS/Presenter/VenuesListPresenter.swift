@@ -123,6 +123,9 @@ class VenuesListPresenter: BasePresenter, UISearchBarDelegate {
     
     venuesListInteractor?.scanBeacons { venues in
       println(venues)
+      if(venues.count > 0) {
+        self.userInterface?.displayNearbyVenueSuggestion(venues[0])
+      }
     }
   }
   

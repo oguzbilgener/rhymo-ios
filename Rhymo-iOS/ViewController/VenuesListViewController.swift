@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import QuartzCore
 
 let VenuesListHeaderNibName = "VenuesListHeader"
 let VenuesSectionHeaderNibName = "VenuesSectionHeader"
@@ -26,6 +27,7 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
   var refreshControl: VenuesListRefreshControl?
   var mapView: MKMapView?
   var tableSectionHeaderView: UIView?
+  var venueSuggestionView: VenueSuggestionView?
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
@@ -224,6 +226,27 @@ class VenuesListViewController: BaseViewController, UITableViewDelegate, UITable
         }, completion: nil)
     }
     // venuesTable.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Fade)
+  }
+  
+  func displayNearbyVenueSuggestion(venue: Venue) {
+    if let suggestionView = venueSuggestionView {
+      suggestionView.removeFromSuperview()
+    }
+    if(venue.online) {
+      venueSuggestionView = VenueSuggestionView(venue: venue)
+      self.view.addSubview(venueSuggestionView!)
+      venueSuggestionView!.setTranslatesAutoresizingMaskIntoConstraints(false)
+      self.view.addConstraint(NSLayoutConstraint(item: venueSuggestionView!, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .Leading, multiplier: 1, constant: 0))
+      self.view.addConstraint(NSLayoutConstraint(item: venueSuggestionView!, attribute: .Trailing, relatedBy: .Equal, toItem: self.view, attribute: .Trailing, multiplier: 1, constant: 0))
+      self.view.addConstraint(NSLayoutConstraint(item: venueSuggestionView!, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1, constant: 0))
+      self.view.addConstraint(NSLayoutConstraint(item: venueSuggestionView!, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 0, constant: 44))
+      
+      let transition = CATransition()
+      transition.type = kCATransitionMoveIn
+      transition.subtype = kCATransitionFromTop // actually bottom
+      transition.duration = 0.3
+      venueSuggestionView!.layer.addAnimation(transition, forKey: nil)
+    }
   }
   
   // MARK: - Map Management
